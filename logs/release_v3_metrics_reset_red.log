@@ -1,0 +1,92 @@
+..FF                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_reset_keeps_terminal_stage_metrics_alongside_new_episode_logs[True-reset_ids0] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74300f75aa50>
+reset_ids = [0], have_metrics = True
+
+    @pytest.mark.parametrize("reset_ids", [[0], [0, 1]])
+    @pytest.mark.parametrize("have_metrics", [False, True])
+    def test_reset_keeps_terminal_stage_metrics_alongside_new_episode_logs(monkeypatch, reset_ids, have_metrics):
+        import torch
+    
+        from isaaclab.envs import ManagerBasedRLEnv
+    
+        from isaaclab_tutorial.tasks.place_box.env import BoxEnv
+    
+        # Reproduce the installed framework's log replacement without launching physics.
+        ids = torch.tensor(reset_ids)
+        env = BoxEnv.__new__(BoxEnv)
+        env._is_closed = True
+        metrics = {"Metrics/on_target_rate": 1.0, "Metrics/success_rate": 0.5} if have_metrics else {}
+        env.extras = {"log": {**metrics, "stale_episode_value": 99}, "other_extra": "retained"}
+    
+        def manager_reset(self, env_ids):
+            assert env_ids is ids
+            self.extras["log"] = {"Episode_Reward/success": 2.0, "Episode_Termination/success": 0.5}
+    
+        monkeypatch.setattr(ManagerBasedRLEnv, "_reset_idx", manager_reset)
+        env._reset_idx(ids)
+>       assert env.extras["log"] == {
+            "Episode_Reward/success": 2.0,
+            "Episode_Termination/success": 0.5,
+            **metrics,
+        }
+E       AssertionError: assert {'Episode_Rew...success': 0.5} == {'Episode_Rew...ss_rate': 0.5}
+E         
+E         Omitting 2 identical items, use -vv to show
+E         Right contains 2 more items:
+E         {'Metrics/on_target_rate': 1.0, 'Metrics/success_rate': 0.5}
+E         Use -v to get more diff
+
+tests/test_box_config.py:104: AssertionError
+_ test_reset_keeps_terminal_stage_metrics_alongside_new_episode_logs[True-reset_ids1] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74300f055b50>
+reset_ids = [0, 1], have_metrics = True
+
+    @pytest.mark.parametrize("reset_ids", [[0], [0, 1]])
+    @pytest.mark.parametrize("have_metrics", [False, True])
+    def test_reset_keeps_terminal_stage_metrics_alongside_new_episode_logs(monkeypatch, reset_ids, have_metrics):
+        import torch
+    
+        from isaaclab.envs import ManagerBasedRLEnv
+    
+        from isaaclab_tutorial.tasks.place_box.env import BoxEnv
+    
+        # Reproduce the installed framework's log replacement without launching physics.
+        ids = torch.tensor(reset_ids)
+        env = BoxEnv.__new__(BoxEnv)
+        env._is_closed = True
+        metrics = {"Metrics/on_target_rate": 1.0, "Metrics/success_rate": 0.5} if have_metrics else {}
+        env.extras = {"log": {**metrics, "stale_episode_value": 99}, "other_extra": "retained"}
+    
+        def manager_reset(self, env_ids):
+            assert env_ids is ids
+            self.extras["log"] = {"Episode_Reward/success": 2.0, "Episode_Termination/success": 0.5}
+    
+        monkeypatch.setattr(ManagerBasedRLEnv, "_reset_idx", manager_reset)
+        env._reset_idx(ids)
+>       assert env.extras["log"] == {
+            "Episode_Reward/success": 2.0,
+            "Episode_Termination/success": 0.5,
+            **metrics,
+        }
+E       AssertionError: assert {'Episode_Rew...success': 0.5} == {'Episode_Rew...ss_rate': 0.5}
+E         
+E         Omitting 2 identical items, use -vv to show
+E         Right contains 2 more items:
+E         {'Metrics/on_target_rate': 1.0, 'Metrics/success_rate': 0.5}
+E         Use -v to get more diff
+
+tests/test_box_config.py:104: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: 35 warnings
+  /mnt/d/work/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_box_config.py::test_reset_keeps_terminal_stage_metrics_alongside_new_episode_logs[True-reset_ids0]
+FAILED tests/test_box_config.py::test_reset_keeps_terminal_stage_metrics_alongside_new_episode_logs[True-reset_ids1]
+2 failed, 2 passed, 8 deselected, 35 warnings in 36.89s

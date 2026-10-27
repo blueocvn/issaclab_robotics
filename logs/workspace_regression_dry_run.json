@@ -1,0 +1,41 @@
+{
+  "output_dir": "logs/workspace_20261026_170001_teacher_regression_F",
+  "jobs": [
+    {
+      "seed_group": 42,
+      "batch": 0,
+      "start_index": 0,
+      "count": 3,
+      "sampling_seed": 42,
+      "reset_mode": "replay",
+      "command": [
+        "/mnt/d/work/robotics/IsaacLabTutorial/.venv/bin/isaaclab",
+        "play",
+        "--rl_library",
+        "rsl_rl",
+        "--task",
+        "IsaacTutorial-Pick-Box-SO101",
+        "--num_envs",
+        "3",
+        "--seed",
+        "42",
+        "--device",
+        "cuda:0",
+        "--checkpoint",
+        "/mnt/d/work/robotics/IsaacLabTutorial/logs/rsl_rl/so101_box_state/2026-10-26_14-59-07_so101-box-release-v3-refine/model_2196.pt",
+        "--visualizer",
+        "none",
+        "--external_callback",
+        "isaaclab_tutorial.tasks.place_box.evaluation.install_episode_counter",
+        "presets=newton_mjwarp",
+        "env.events.reset_home.params.position_noise=0.1",
+        "env.events.reset_home.params.yaw_noise=3.141592653589793",
+        "env.events.reset_home.params.nominal_fraction=0.0",
+        "env.events.reset_home.params.reset_mode=replay",
+        "env.events.reset_home.params.sampling_seed=42",
+        "env.events.reset_home.params.grid_start_index=0",
+        "env.events.reset_home.params.replay_path=\"/mnt/d/work/robotics/IsaacLabTutorial/logs/workspace_20261026_170001_teacher_regression_F/case527.json\""
+      ]
+    }
+  ]
+}

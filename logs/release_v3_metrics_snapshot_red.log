@@ -1,0 +1,40 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___ test_later_steps_do_not_overwrite_success_metrics_buffered_by_the_logger ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7cc925a55640>
+
+    def test_later_steps_do_not_overwrite_success_metrics_buffered_by_the_logger(monkeypatch):
+        from isaaclab_tutorial.tasks.place_box.progress import BoxProgress
+    
+        env, q, _, _ = target_fixture(monkeypatch)
+        p = BoxProgress(1, "cpu")
+        p.grasped[:] = True
+        p.lifted[:] = True
+        p.stable_count[:] = 14
+        q["contacts"][:] = False
+        q["jaw_distance"][:] = 0.08
+        q["gripper_distance"][:] = 0.09
+        env.extras = {"log": {"Episode_Reward/success": 2.0}}
+        monkeypatch.setattr(mdp, "progress", lambda _: p)
+        term = mdp.BoxSuccess.__new__(mdp.BoxSuccess)
+        assert term(env).item()
+        # RSL-RL buffers this dictionary by reference rather than copying its entries.
+        buffered = env.extras["log"]
+        p.reset()
+        assert not term(env).item()
+>       assert buffered["Metrics/success_rate"].item() == 1.0
+E       assert 0.0 == 1.0
+E        +  where 0.0 = <built-in method item of Tensor object at 0x7cc92595d040>()
+E        +    where <built-in method item of Tensor object at 0x7cc92595d040> = tensor(0.).item
+
+tests/test_box_rewards.py:243: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: 35 warnings
+  /mnt/d/work/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_box_rewards.py::test_later_steps_do_not_overwrite_success_metrics_buffered_by_the_logger
+1 failed, 16 deselected, 35 warnings in 25.24s

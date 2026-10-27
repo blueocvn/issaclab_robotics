@@ -1,0 +1,58 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__ test_batch_results_must_match_planned_case_indices_and_sampling_seed[case] __
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_batch_results_must_match_0')
+corruption = 'case'
+
+    @pytest.mark.parametrize("corruption", ["case", "seed"])
+    def test_batch_results_must_match_planned_case_indices_and_sampling_seed(tmp_path, corruption):
+        from isaaclab_tutorial.tasks.place_box.workspace_audit import build_jobs, read_result
+    
+        job = build_jobs(tmp_path / "model.pt", "teacher", "grid", "F", [45], 2)[1]
+        data = dict(
+            argv=job["command"][1:], summary={"episodes": 2, "success_rate": 1.0},
+            reset_parameters=dict(nominal_fraction=0, reset_mode="grid", grid_start_index=job["start_index"],
+                                  sampling_seed=job["sampling_seed"]),
+            episodes=[dict(env_id=i, success=True, case_id=job["start_index"]+i) for i in range(2)],
+        )
+        if corruption == "case":
+            data["episodes"][0]["case_id"] = 0
+        else:
+            data["reset_parameters"]["sampling_seed"] += 1
+        path = tmp_path / "result.json"
+        path.write_text(json.dumps(data))
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_box_workspace_audit.py:146: Failed
+__ test_batch_results_must_match_planned_case_indices_and_sampling_seed[seed] __
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_batch_results_must_match_1')
+corruption = 'seed'
+
+    @pytest.mark.parametrize("corruption", ["case", "seed"])
+    def test_batch_results_must_match_planned_case_indices_and_sampling_seed(tmp_path, corruption):
+        from isaaclab_tutorial.tasks.place_box.workspace_audit import build_jobs, read_result
+    
+        job = build_jobs(tmp_path / "model.pt", "teacher", "grid", "F", [45], 2)[1]
+        data = dict(
+            argv=job["command"][1:], summary={"episodes": 2, "success_rate": 1.0},
+            reset_parameters=dict(nominal_fraction=0, reset_mode="grid", grid_start_index=job["start_index"],
+                                  sampling_seed=job["sampling_seed"]),
+            episodes=[dict(env_id=i, success=True, case_id=job["start_index"]+i) for i in range(2)],
+        )
+        if corruption == "case":
+            data["episodes"][0]["case_id"] = 0
+        else:
+            data["reset_parameters"]["sampling_seed"] += 1
+        path = tmp_path / "result.json"
+        path.write_text(json.dumps(data))
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_box_workspace_audit.py:146: Failed
+=========================== short test summary info ============================
+FAILED tests/test_box_workspace_audit.py::test_batch_results_must_match_planned_case_indices_and_sampling_seed[case]
+FAILED tests/test_box_workspace_audit.py::test_batch_results_must_match_planned_case_indices_and_sampling_seed[seed]
+2 failed, 15 deselected in 28.20s

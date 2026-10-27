@@ -1,0 +1,21 @@
+{
+  "run": "/mnt/d/work/robotics/IsaacLabTutorial/logs/rsl_rl/so101_box_state/2026-10-26_16-55-57_so101-box-workspace-A-smoke-fixed",
+  "checkpoint": "/mnt/d/work/robotics/IsaacLabTutorial/logs/rsl_rl/so101_box_state/2026-10-26_16-55-57_so101-box-workspace-A-smoke-fixed/model_2197.pt",
+  "loaded_teacher": "/mnt/d/work/robotics/IsaacLabTutorial/logs/rsl_rl/so101_box_state/2026-10-26_14-59-07_so101-box-release-v3-refine/model_2196.pt",
+  "optimizer_step_before": 88000.0,
+  "optimizer_step_after": 80.0,
+  "all_training_scalars_finite": true,
+  "loss_sample_counts": {
+    "Loss/value": 2,
+    "Loss/surrogate": 2,
+    "Loss/entropy": 2,
+    "Loss/learning_rate": 2
+  },
+  "reset_count": 512,
+  "nominal_count": 105,
+  "current_stage_count": 407,
+  "nominal_max_xy_offset_m": 0.009985066950321198,
+  "stage_max_xy_offset_m": 0.01998715102672577,
+  "intended_mixture_and_ranges_verified": true,
+  "note": "Two-update integration check; no policy competency or workspace acceptance claim."
+}

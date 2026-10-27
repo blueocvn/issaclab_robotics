@@ -1,0 +1,219 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_ test_framework_int32_reset_ids_are_compatible_with_provenance_storage[random] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77a1b7717140>
+mode = 'random'
+
+    @pytest.mark.parametrize("mode", ["random", "grid"])
+    def test_framework_int32_reset_ids_are_compatible_with_provenance_storage(monkeypatch, mode):
+        env, _ = reset_fixture(monkeypatch)
+>       mdp.reset_home(env, torch.arange(env.num_envs, dtype=torch.int32), reset_mode=mode)
+
+tests/test_box_workspace.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+env = namespace(scene={'robot': namespace(data=namespace(default_joint_pos=namespace(torch=tensor([[0., 0., 0., 0., 0., 0.],...-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]), _box_reset_case=tensor([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]))
+env_ids = tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11], dtype=torch.int32)
+position_noise = 0.01, yaw_noise = 0.1, paper_yaw = 0.0, nominal_fraction = 0.0
+reset_mode = 'random', sampling_seed = None, grid_start_index = 0
+replay_path = ''
+
+    def reset_home(
+        env, env_ids, position_noise=0.01, yaw_noise=0.1, paper_yaw=0.0,
+        nominal_fraction=0.0, reset_mode="random", sampling_seed=None, grid_start_index=0, replay_path="",
+    ):
+        """Independent home resets, using this box's geometry rather than vial dataset rows."""
+        from .workspace import grid_offsets, replay_poses, sample_offsets, validate_distribution
+    
+        validate_distribution(position_noise, yaw_noise, nominal_fraction)
+        if reset_mode not in ("random", "grid", "replay"):
+            raise ValueError("reset_mode must be random, grid or replay")
+        if reset_mode != "random" and nominal_fraction:
+            raise ValueError("Grid/replay audits cannot mix nominal training starts")
+        if not isinstance(grid_start_index, int) or grid_start_index < 0:
+            raise ValueError("grid_start_index must be a nonnegative integer")
+        ids = _ids(env, env_ids)
+        generator = None
+        if sampling_seed is not None:
+            if not isinstance(sampling_seed, int) or sampling_seed < 0:
+                raise ValueError("sampling_seed must be a nonnegative integer or None")
+            if getattr(env, "_box_sampling_seed", None) != sampling_seed:
+                env._box_sampling_generator = torch.Generator(device=env.device).manual_seed(sampling_seed)
+                env._box_sampling_seed = sampling_seed
+            generator = env._box_sampling_generator
+        robot, box = env.scene["robot"], env.scene["box"]
+        pose = box.data.default_root_pose.torch[ids].clone()
+        case = torch.full_like(ids, -1)
+        source = torch.ones_like(ids)
+        if reset_mode == "replay":
+            if getattr(env, "_box_replay_path", None) != replay_path:
+                env._box_replay_poses = replay_poses(replay_path, env.device)
+                env._box_replay_path = replay_path
+            case = ids + grid_start_index
+            pose = env._box_replay_poses[case % len(env._box_replay_poses)].clone()
+            source[:] = 3
+        else:
+            if reset_mode == "grid":
+                case = ids + grid_start_index
+                offsets = grid_offsets(case, position_noise, yaw_noise)
+                source[:] = 2
+            else:
+                offsets, nominal = sample_offsets(
+                    len(ids), env.device, position_noise, yaw_noise, nominal_fraction, generator
+                )
+                source[nominal] = 0
+            pose[:, :2] += offsets[:, :2]
+            pose[:, 3:] = _yaw_quat(offsets[:, 2])
+        joints = robot.data.default_joint_pos.torch[ids].clone()
+        zeros = torch.zeros_like(joints)
+        robot.write_joint_position_to_sim_index(position=joints, env_ids=ids)
+        robot.write_joint_velocity_to_sim_index(velocity=zeros, env_ids=ids)
+        robot.set_joint_position_target_index(target=joints, env_ids=ids)
+        robot.set_joint_velocity_target_index(target=zeros, env_ids=ids)
+        pose[:, :3] += env.scene.env_origins[ids]
+        box.write_root_pose_to_sim_index(root_pose=pose, env_ids=ids)
+        box.write_root_velocity_to_sim_index(root_velocity=torch.zeros(len(ids), 6, device=env.device), env_ids=ids)
+        progress(env).reset(ids)
+        if not hasattr(env, "_box_initial_pose"):
+            env._box_initial_pose = pose.new_zeros(env.num_envs, 7)
+            env._box_reset_source = torch.full((env.num_envs,), -1, device=env.device, dtype=torch.long)
+            env._box_reset_case = torch.full_like(env._box_reset_source, -1)
+        env._box_initial_pose[ids] = pose - torch.cat((env.scene.env_origins[ids], pose.new_zeros(len(ids), 4)), -1)
+>       env._box_reset_source[ids] = source
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       RuntimeError: Index put requires the source and destination dtypes match, got Long for the destination and Int for the source.
+
+src/isaaclab_tutorial/tasks/place_box/mdp.py:115: RuntimeError
+_ test_framework_int32_reset_ids_are_compatible_with_provenance_storage[grid] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x77a1b81e2e70>
+mode = 'grid'
+
+    @pytest.mark.parametrize("mode", ["random", "grid"])
+    def test_framework_int32_reset_ids_are_compatible_with_provenance_storage(monkeypatch, mode):
+        env, _ = reset_fixture(monkeypatch)
+>       mdp.reset_home(env, torch.arange(env.num_envs, dtype=torch.int32), reset_mode=mode)
+
+tests/test_box_workspace.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+env = namespace(scene={'robot': namespace(data=namespace(default_joint_pos=namespace(torch=tensor([[0., 0., 0., 0., 0., 0.],...-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]), _box_reset_case=tensor([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]))
+env_ids = tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11], dtype=torch.int32)
+position_noise = 0.01, yaw_noise = 0.1, paper_yaw = 0.0, nominal_fraction = 0.0
+reset_mode = 'grid', sampling_seed = None, grid_start_index = 0
+replay_path = ''
+
+    def reset_home(
+        env, env_ids, position_noise=0.01, yaw_noise=0.1, paper_yaw=0.0,
+        nominal_fraction=0.0, reset_mode="random", sampling_seed=None, grid_start_index=0, replay_path="",
+    ):
+        """Independent home resets, using this box's geometry rather than vial dataset rows."""
+        from .workspace import grid_offsets, replay_poses, sample_offsets, validate_distribution
+    
+        validate_distribution(position_noise, yaw_noise, nominal_fraction)
+        if reset_mode not in ("random", "grid", "replay"):
+            raise ValueError("reset_mode must be random, grid or replay")
+        if reset_mode != "random" and nominal_fraction:
+            raise ValueError("Grid/replay audits cannot mix nominal training starts")
+        if not isinstance(grid_start_index, int) or grid_start_index < 0:
+            raise ValueError("grid_start_index must be a nonnegative integer")
+        ids = _ids(env, env_ids)
+        generator = None
+        if sampling_seed is not None:
+            if not isinstance(sampling_seed, int) or sampling_seed < 0:
+                raise ValueError("sampling_seed must be a nonnegative integer or None")
+            if getattr(env, "_box_sampling_seed", None) != sampling_seed:
+                env._box_sampling_generator = torch.Generator(device=env.device).manual_seed(sampling_seed)
+                env._box_sampling_seed = sampling_seed
+            generator = env._box_sampling_generator
+        robot, box = env.scene["robot"], env.scene["box"]
+        pose = box.data.default_root_pose.torch[ids].clone()
+        case = torch.full_like(ids, -1)
+        source = torch.ones_like(ids)
+        if reset_mode == "replay":
+            if getattr(env, "_box_replay_path", None) != replay_path:
+                env._box_replay_poses = replay_poses(replay_path, env.device)
+                env._box_replay_path = replay_path
+            case = ids + grid_start_index
+            pose = env._box_replay_poses[case % len(env._box_replay_poses)].clone()
+            source[:] = 3
+        else:
+            if reset_mode == "grid":
+                case = ids + grid_start_index
+                offsets = grid_offsets(case, position_noise, yaw_noise)
+                source[:] = 2
+            else:
+                offsets, nominal = sample_offsets(
+                    len(ids), env.device, position_noise, yaw_noise, nominal_fraction, generator
+                )
+                source[nominal] = 0
+            pose[:, :2] += offsets[:, :2]
+            pose[:, 3:] = _yaw_quat(offsets[:, 2])
+        joints = robot.data.default_joint_pos.torch[ids].clone()
+        zeros = torch.zeros_like(joints)
+        robot.write_joint_position_to_sim_index(position=joints, env_ids=ids)
+        robot.write_joint_velocity_to_sim_index(velocity=zeros, env_ids=ids)
+        robot.set_joint_position_target_index(target=joints, env_ids=ids)
+        robot.set_joint_velocity_target_index(target=zeros, env_ids=ids)
+        pose[:, :3] += env.scene.env_origins[ids]
+        box.write_root_pose_to_sim_index(root_pose=pose, env_ids=ids)
+        box.write_root_velocity_to_sim_index(root_velocity=torch.zeros(len(ids), 6, device=env.device), env_ids=ids)
+        progress(env).reset(ids)
+        if not hasattr(env, "_box_initial_pose"):
+            env._box_initial_pose = pose.new_zeros(env.num_envs, 7)
+            env._box_reset_source = torch.full((env.num_envs,), -1, device=env.device, dtype=torch.long)
+            env._box_reset_case = torch.full_like(env._box_reset_source, -1)
+        env._box_initial_pose[ids] = pose - torch.cat((env.scene.env_origins[ids], pose.new_zeros(len(ids), 4)), -1)
+>       env._box_reset_source[ids] = source
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       RuntimeError: Index put requires the source and destination dtypes match, got Long for the destination and Int for the source.
+
+src/isaaclab_tutorial/tasks/place_box/mdp.py:115: RuntimeError
+____ test_balanced_duplicate_grid_repeat_ids_cannot_replace_missing_repeats ____
+
+    def test_balanced_duplicate_grid_repeat_ids_cannot_replace_missing_repeats():
+        rows = grid_rows()
+        for row in rows:
+            row["case_id"] %= 200
+>       assert report(rows)["status"] == "insufficient_coverage"
+E       AssertionError: assert 'pass' == 'insufficient_coverage'
+E         
+E         - insufficient_coverage
+E         + pass
+
+tests/test_box_workspace_audit.py:110: AssertionError
+_______________ test_truncated_planned_audit_cannot_report_pass ________________
+
+    def test_truncated_planned_audit_cannot_report_pass():
+>       from isaaclab_tutorial.tasks.place_box.workspace_audit import finalize_report
+E       ImportError: cannot import name 'finalize_report' from 'isaaclab_tutorial.tasks.place_box.workspace_audit' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py)
+
+tests/test_box_workspace_audit.py:114: ImportError
+____ test_overlapping_seed_groups_cannot_duplicate_actual_sampling_streams _____
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_overlapping_seed_groups_c0')
+
+    def test_overlapping_seed_groups_cannot_duplicate_actual_sampling_streams(tmp_path):
+        from isaaclab_tutorial.tasks.place_box.workspace_audit import build_jobs
+    
+        jobs = build_jobs(tmp_path / "model.pt", "teacher", "grid", "F", [45, 1000048, 2000051], 256)
+>       assert len({job["sampling_seed"] for job in jobs}) == len(jobs)
+E       AssertionError: assert 6 == 12
+E        +  where 6 = len({45, 1000048, 2000051, 3000054, 4000057, 5000060})
+E        +  and   12 = len([{'seed_group': 45, 'batch': 0, 'start_index': 0, 'count': 256, ...}, {'seed_group': 45, 'batch': 1, 'start_index': 25... 'start_index': 0, 'count': 256, ...}, {'seed_group': 1000048, 'batch': 1, 'start_index': 256, 'count': 256, ...}, ...])
+
+tests/test_box_workspace_audit.py:125: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: 35 warnings
+  /mnt/d/work/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_box_workspace.py::test_framework_int32_reset_ids_are_compatible_with_provenance_storage[random]
+FAILED tests/test_box_workspace.py::test_framework_int32_reset_ids_are_compatible_with_provenance_storage[grid]
+FAILED tests/test_box_workspace_audit.py::test_balanced_duplicate_grid_repeat_ids_cannot_replace_missing_repeats
+FAILED tests/test_box_workspace_audit.py::test_truncated_planned_audit_cannot_report_pass
+FAILED tests/test_box_workspace_audit.py::test_overlapping_seed_groups_cannot_duplicate_actual_sampling_streams
+5 failed, 24 deselected, 35 warnings in 28.98s

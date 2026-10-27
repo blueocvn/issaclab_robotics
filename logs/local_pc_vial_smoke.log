@@ -1,0 +1,150 @@
+[INFO]: Parsing configuration from: isaaclab_tutorial.tasks.place_vial.config.so101.env_cfg:SO101VialEnvCfg
+Seed not set for the environment. The environment creation may not be deterministic.
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.03333333333333333
+	Environment step-size : 0.03333333333333333
+I: Initializing Version 2.74.0-release.7316+gl.ec99a64b
+I: Client ID: D55QR09P
+I: ThreadId(02) hub_client::client::Client::new Launching client mode=Shared with_cleaner=false cache_path=None cache_size=None
+I: ThreadId(03) launch self=Launcher { discovery_lock: RwLock { lock: RwLock { inner: File { fd: 27, path: "/tmp/hub-ubuntu.lock", read: false, write: true } } }, mode: Shared, with_cleaner: false, config_file: "/tmp/hub-ubuntu-960701E2.config.json" } cmd="hub" "--mode=shared" "--write-config" "/tmp/hub-ubuntu-960701E2.config.json" "--"
+I: Not using Hub: Hub not found
+I: Successfully created S3 provider for https://omniverse-content-production.s3-us-west-2.amazonaws.com
+I: Using CloudFront http://dcb18d6mfegct.cloudfront.net/, List = No
+Serving remote assets from the local cache under '/tmp'. Each copy is checked against the server before use; delete the directory to force a full re-download.
+/mnt/d/work/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/isaaclab_newton/cloner/newton_clone_utils.py:165: FutureWarning: Newton shape color replacement is enabled; this workaround will be deprecated in a future release.
+  replace_newton_builder_shape_colors(builder, stage)
+[INFO]: Time taken for scene creation Last: 5.351110 s, Mean: 5.351110 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 8
+	Environment spacing   : 0.9
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+Finalize builder took: Last: 0.615587 s, Mean: 0.615587 s, Std: 0.000000 s, N: 1
+Failed to get root com velocity. If the articulation is fixed, this is expected. Setting root com velocity to zeros.
+Contact sensor construction took: Last: 0.002337 s, Mean: 0.002337 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.000623 s, Mean: 0.001480 s, Std: 0.001212 s, N: 2
+Contact sensor construction took: Last: 0.000750 s, Mean: 0.001237 s, Std: 0.000955 s, N: 3
+Initialize solver took: Last: 2.545974 s, Mean: 2.545974 s, Std: 0.000000 s, N: 1
+[INFO]: Time taken for simulation start Last: 4.229775 s, Mean: 4.229775 s, Std: 0.000000 s, N: 1
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++----------------------+
+| Active Command Terms |
++-------+------+-------+
+| Index | Name |  Type |
++-------+------+-------+
++-------+------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 2 active terms.
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++-----------+---------------------------+
+|   Index   | Name                      |
++-----------+---------------------------+
+|     0     | vial_material             |
+|     1     | vial_mass                 |
++-----------+---------------------------+
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++--------+----------------------------+
+| Index  | Name                       |
++--------+----------------------------+
+|   0    | reset_from_dataset         |
++--------+----------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++-----------------------+
+| Active Recorder Terms |
++------------+----------+
+|   Index    | Name     |
++------------+----------+
++------------+----------+
+
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 6)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         5 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (60,)) |
++------------+---------------------------------+-------------+
+|   Index    | Name                            |    Shape    |
++------------+---------------------------------+-------------+
+|     0      | joint_pos                       |     (6,)    |
+|     1      | joint_vel                       |     (6,)    |
+|     2      | joint_target                    |     (6,)    |
+|     3      | previous_action                 |     (6,)    |
+|     4      | end_effector                    |    (13,)    |
+|     5      | vial                            |    (13,)    |
+|     6      | vial_in_rack                    |     (3,)    |
+|     7      | placement                       |     (4,)    |
+|     8      | progress                        |     (3,)    |
++------------+---------------------------------+-------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (63,)) |
++------------+---------------------------------+-------------+
+|   Index    | Name                            |    Shape    |
++------------+---------------------------------+-------------+
+|     0      | joint_pos                       |     (6,)    |
+|     1      | joint_vel                       |     (6,)    |
+|     2      | joint_target                    |     (6,)    |
+|     3      | previous_action                 |     (6,)    |
+|     4      | end_effector                    |    (13,)    |
+|     5      | vial                            |    (13,)    |
+|     6      | vial_in_rack                    |     (3,)    |
+|     7      | placement                       |     (4,)    |
+|     8      | progress                        |     (3,)    |
+|     9      | contact                         |     (3,)    |
++------------+---------------------------------+-------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 5 active terms.
++---------------------------------------+
+|        Active Termination Terms       |
++-------+--------------------+----------+
+| Index | Name               | Time Out |
++-------+--------------------+----------+
+|   0   | success            |  False   |
+|   1   | vial_dropped       |  False   |
+|   2   | vial_out_of_bounds |  False   |
+|   3   | unstable_robot     |  False   |
+|   4   | time_out           |   True   |
++-------+--------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 8 active terms.
++-------------------------------------+
+|         Active Reward Terms         |
++-------+-------------------+---------+
+| Index | Name              |  Weight |
++-------+-------------------+---------+
+|   0   | approach_progress |     1.0 |
+|   1   | held_goal         |     0.1 |
+|   2   | milestones        |    10.0 |
+|   3   | success           |   200.0 |
+|   4   | vial_lost         |   -50.0 |
+|   5   | action_rate       |  -0.002 |
+|   6   | joint_velocity    | -0.0002 |
+|   7   | joint_limits      |    -1.0 |
++-------+-------------------+---------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++-------------------------+
+| Active Curriculum Terms |
++-------------+-----------+
+|    Index    | Name      |
++-------------+-----------+
++-------------+-----------+
+
+[INFO]: Completed setting up the environment...
+[INFO]: Gym observation space: Dict('critic': Box(-inf, inf, (8, 63), float32), 'policy': Box(-inf, inf, (8, 60), float32))
+[INFO]: Gym action space: Box(-inf, inf, (8, 6), float32)
+[INFO] Zero agent is running, press Ctrl+C to exit...
+CUDA graph took: Last: 0.187533 s, Mean: 0.187533 s, Std: 0.000000 s, N: 1

@@ -1,0 +1,7 @@
+{
+  "minimum_yaw_rate": 0.9719626168224299,
+  "minimum_spatial_rate": 0.868421052631579,
+  "pass_strict_F": false,
+  "successes": 1013,
+  "episodes": 1024
+}

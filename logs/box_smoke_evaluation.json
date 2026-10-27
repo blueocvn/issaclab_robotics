@@ -1,0 +1,193 @@
+{
+  "summary": {
+    "episodes": 8,
+    "grasped_rate": 0.0,
+    "lifted_rate": 0.0,
+    "placed_rate": 0.0,
+    "success_rate": 0.0,
+    "dropped_rate": 0.0,
+    "out_of_bounds_rate": 0.0,
+    "unstable_robot_rate": 0.0,
+    "timed_out_rate": 1.0
+  },
+  "argv": [
+    "play",
+    "--rl_library",
+    "rsl_rl",
+    "--task",
+    "IsaacTutorial-Pick-Box-SO101",
+    "--num_envs",
+    "8",
+    "--device",
+    "cuda:0",
+    "--checkpoint",
+    "logs/rsl_rl/so101_box_state/2026-10-26_17-54-08_box-integration-smoke/model_1.pt",
+    "--visualizer",
+    "none",
+    "--external_callback",
+    "isaaclab_tutorial.tasks.place_box.evaluation.install_episode_counter",
+    "presets=newton_mjwarp"
+  ],
+  "episodes": [
+    {
+      "env_id": 0,
+      "initial_box_pose": [
+        0.17225921154022217,
+        -0.10979878902435303,
+        0.08049999922513962,
+        0.0,
+        0.0,
+        0.04875253140926361,
+        0.998810887336731
+      ],
+      "grasped": false,
+      "lifted": false,
+      "placed": false,
+      "success": false,
+      "dropped": false,
+      "out_of_bounds": false,
+      "unstable_robot": false,
+      "timed_out": true
+    },
+    {
+      "env_id": 1,
+      "initial_box_pose": [
+        0.1679682731628418,
+        -0.1091938316822052,
+        0.08049999922513962,
+        0.0,
+        0.0,
+        -0.037101518362760544,
+        0.9993115067481995
+      ],
+      "grasped": false,
+      "lifted": false,
+      "placed": false,
+      "success": false,
+      "dropped": false,
+      "out_of_bounds": false,
+      "unstable_robot": false,
+      "timed_out": true
+    },
+    {
+      "env_id": 2,
+      "initial_box_pose": [
+        0.1631253957748413,
+        -0.10035055875778198,
+        0.08049999922513962,
+        0.0,
+        0.0,
+        0.006210376508533955,
+        0.9999806880950928
+      ],
+      "grasped": false,
+      "lifted": false,
+      "placed": false,
+      "success": false,
+      "dropped": false,
+      "out_of_bounds": false,
+      "unstable_robot": false,
+      "timed_out": true
+    },
+    {
+      "env_id": 3,
+      "initial_box_pose": [
+        0.17472495138645172,
+        -0.10188031196594238,
+        0.08049999922513962,
+        0.0,
+        0.0,
+        0.0022108000703155994,
+        0.9999975562095642
+      ],
+      "grasped": false,
+      "lifted": false,
+      "placed": false,
+      "success": false,
+      "dropped": false,
+      "out_of_bounds": false,
+      "unstable_robot": false,
+      "timed_out": true
+    },
+    {
+      "env_id": 4,
+      "initial_box_pose": [
+        0.17037799954414368,
+        -0.10426577925682068,
+        0.08049999922513962,
+        0.0,
+        0.0,
+        0.02444532886147499,
+        0.9997011423110962
+      ],
+      "grasped": false,
+      "lifted": false,
+      "placed": false,
+      "success": false,
+      "dropped": false,
+      "out_of_bounds": false,
+      "unstable_robot": false,
+      "timed_out": true
+    },
+    {
+      "env_id": 5,
+      "initial_box_pose": [
+        0.16483160853385925,
+        -0.09154319763183594,
+        0.08049999922513962,
+        0.0,
+        0.0,
+        0.009547541849315166,
+        0.9999544024467468
+      ],
+      "grasped": false,
+      "lifted": false,
+      "placed": false,
+      "success": false,
+      "dropped": false,
+      "out_of_bounds": false,
+      "unstable_robot": false,
+      "timed_out": true
+    },
+    {
+      "env_id": 6,
+      "initial_box_pose": [
+        0.17659831047058105,
+        -0.10931622982025146,
+        0.08049999922513962,
+        0.0,
+        0.0,
+        0.04645397514104843,
+        0.9989204406738281
+      ],
+      "grasped": false,
+      "lifted": false,
+      "placed": false,
+      "success": false,
+      "dropped": false,
+      "out_of_bounds": false,
+      "unstable_robot": false,
+      "timed_out": true
+    },
+    {
+      "env_id": 7,
+      "initial_box_pose": [
+        0.16775786876678467,
+        -0.10835219919681549,
+        0.08049999922513962,
+        0.0,
+        0.0,
+        0.03978123143315315,
+        0.999208390712738
+      ],
+      "grasped": false,
+      "lifted": false,
+      "placed": false,
+      "success": false,
+      "dropped": false,
+      "out_of_bounds": false,
+      "unstable_robot": false,
+      "timed_out": true
+    }
+  ]
+}

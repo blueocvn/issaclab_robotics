@@ -1,0 +1,49 @@
+{
+  "checkpoint": "/mnt/d/work/robotics/IsaacLabTutorial/logs/rsl_rl/so101_box_state/2026-10-26_19-41-12_overnight_20261027_ppo_camera_ppo_F_block6_try0/model_4982.pt",
+  "checkpoint_sha256": "602ff89a2397e816efbfb681d4a5e456e70373c0b10846a08a7e5930533684e4",
+  "policy": "teacher",
+  "population": "stage",
+  "stage": "F",
+  "seed_groups": [
+    45
+  ],
+  "jobs": [
+    {
+      "seed_group": 45,
+      "batch": 0,
+      "start_index": 0,
+      "count": 1024,
+      "sampling_seed": 45,
+      "reset_mode": "random",
+      "command": [
+        "/mnt/d/work/robotics/IsaacLabTutorial/.venv/bin/isaaclab",
+        "play",
+        "--rl_library",
+        "rsl_rl",
+        "--task",
+        "IsaacTutorial-Pick-Box-SO101",
+        "--num_envs",
+        "1024",
+        "--seed",
+        "45",
+        "--device",
+        "cuda:0",
+        "--checkpoint",
+        "/mnt/d/work/robotics/IsaacLabTutorial/logs/rsl_rl/so101_box_state/2026-10-26_19-41-12_overnight_20261027_ppo_camera_ppo_F_block6_try0/model_4982.pt",
+        "--visualizer",
+        "none",
+        "--external_callback",
+        "isaaclab_tutorial.tasks.place_box.evaluation.install_episode_counter",
+        "presets=newton_mjwarp",
+        "env.events.reset_home.params.position_noise=0.1",
+        "env.events.reset_home.params.yaw_noise=3.141592653589793",
+        "env.events.reset_home.params.nominal_fraction=0.0",
+        "env.events.reset_home.params.reset_mode=random",
+        "env.events.reset_home.params.sampling_seed=45",
+        "env.events.reset_home.params.grid_start_index=0"
+      ]
+    }
+  ],
+  "started_job": 0,
+  "completed_jobs": 1
+}

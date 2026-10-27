@@ -1,0 +1,28 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__________ test_repeated_single_seed_group_cannot_pass_final_coverage __________
+
+    def test_repeated_single_seed_group_cannot_pass_final_coverage():
+        rows = grid_rows()
+        for row in rows:
+            row["seed_group"] = 45
+>       assert report(rows)["status"] == "insufficient_coverage"
+E       AssertionError: assert 'pass' == 'insufficient_coverage'
+E         
+E         - insufficient_coverage
+E         + pass
+
+tests/test_box_workspace_audit.py:80: AssertionError
+____________ test_grid_case_labels_cannot_hide_wrong_physical_start ____________
+
+    def test_grid_case_labels_cannot_hide_wrong_physical_start():
+        rows = grid_rows()
+        rows[0]["initial_box_pose"] = rows[1]["initial_box_pose"].copy()
+>       with pytest.raises(ValueError, match="grid"):
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_box_workspace_audit.py:86: Failed
+=========================== short test summary info ============================
+FAILED tests/test_box_workspace_audit.py::test_repeated_single_seed_group_cannot_pass_final_coverage
+FAILED tests/test_box_workspace_audit.py::test_grid_case_labels_cannot_hide_wrong_physical_start
+2 failed, 10 deselected in 22.74s

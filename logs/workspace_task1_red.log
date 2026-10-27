@@ -1,0 +1,228 @@
+FFFFFFFFFFFF                                                             [100%]
+=================================== FAILURES ===================================
+_________ test_stage_limits_and_grid_cover_boundaries_yaw_and_repeats __________
+
+    def test_stage_limits_and_grid_cover_boundaries_yaw_and_repeats():
+>       w = helpers()
+            ^^^^^^^^^
+
+tests/test_box_workspace.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def helpers():
+>       from isaaclab_tutorial.tasks.place_box import workspace
+E       ImportError: cannot import name 'workspace' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace.py:14: ImportError
+_____________ test_nominal_default_preserves_original_rng_sequence _____________
+
+    def test_nominal_default_preserves_original_rng_sequence():
+>       w = helpers()
+            ^^^^^^^^^
+
+tests/test_box_workspace.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def helpers():
+>       from isaaclab_tutorial.tasks.place_box import workspace
+E       ImportError: cannot import name 'workspace' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace.py:14: ImportError
+_____ test_training_mixture_preserves_nominal_ranges_and_uses_wider_starts _____
+
+    def test_training_mixture_preserves_nominal_ranges_and_uses_wider_starts():
+>       offsets, nominal = helpers().sample_offsets(
+                           ^^^^^^^^^
+            10000, "cpu", .1, math.pi, nominal_fraction=.2, generator=torch.Generator().manual_seed(42)
+        )
+
+tests/test_box_workspace.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def helpers():
+>       from isaaclab_tutorial.tasks.place_box import workspace
+E       ImportError: cannot import name 'workspace' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace.py:14: ImportError
+_____________ test_invalid_reset_distribution_is_rejected[kwargs0] _____________
+
+kwargs = {'position_noise': -1}
+
+    @pytest.mark.parametrize("kwargs", [
+        {"position_noise": -1}, {"position_noise": float("nan")},
+        {"yaw_noise": float("inf")}, {"nominal_fraction": 1.1}, {"nominal_fraction": -.1},
+    ])
+    def test_invalid_reset_distribution_is_rejected(kwargs):
+        args = dict(count=2, device="cpu", position_noise=.1, yaw_noise=math.pi)
+        args.update(kwargs)
+        with pytest.raises(ValueError):
+>           helpers().sample_offsets(**args)
+            ^^^^^^^^^
+
+tests/test_box_workspace.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def helpers():
+>       from isaaclab_tutorial.tasks.place_box import workspace
+E       ImportError: cannot import name 'workspace' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace.py:14: ImportError
+_____________ test_invalid_reset_distribution_is_rejected[kwargs1] _____________
+
+kwargs = {'position_noise': nan}
+
+    @pytest.mark.parametrize("kwargs", [
+        {"position_noise": -1}, {"position_noise": float("nan")},
+        {"yaw_noise": float("inf")}, {"nominal_fraction": 1.1}, {"nominal_fraction": -.1},
+    ])
+    def test_invalid_reset_distribution_is_rejected(kwargs):
+        args = dict(count=2, device="cpu", position_noise=.1, yaw_noise=math.pi)
+        args.update(kwargs)
+        with pytest.raises(ValueError):
+>           helpers().sample_offsets(**args)
+            ^^^^^^^^^
+
+tests/test_box_workspace.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def helpers():
+>       from isaaclab_tutorial.tasks.place_box import workspace
+E       ImportError: cannot import name 'workspace' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace.py:14: ImportError
+_____________ test_invalid_reset_distribution_is_rejected[kwargs2] _____________
+
+kwargs = {'yaw_noise': inf}
+
+    @pytest.mark.parametrize("kwargs", [
+        {"position_noise": -1}, {"position_noise": float("nan")},
+        {"yaw_noise": float("inf")}, {"nominal_fraction": 1.1}, {"nominal_fraction": -.1},
+    ])
+    def test_invalid_reset_distribution_is_rejected(kwargs):
+        args = dict(count=2, device="cpu", position_noise=.1, yaw_noise=math.pi)
+        args.update(kwargs)
+        with pytest.raises(ValueError):
+>           helpers().sample_offsets(**args)
+            ^^^^^^^^^
+
+tests/test_box_workspace.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def helpers():
+>       from isaaclab_tutorial.tasks.place_box import workspace
+E       ImportError: cannot import name 'workspace' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace.py:14: ImportError
+_____________ test_invalid_reset_distribution_is_rejected[kwargs3] _____________
+
+kwargs = {'nominal_fraction': 1.1}
+
+    @pytest.mark.parametrize("kwargs", [
+        {"position_noise": -1}, {"position_noise": float("nan")},
+        {"yaw_noise": float("inf")}, {"nominal_fraction": 1.1}, {"nominal_fraction": -.1},
+    ])
+    def test_invalid_reset_distribution_is_rejected(kwargs):
+        args = dict(count=2, device="cpu", position_noise=.1, yaw_noise=math.pi)
+        args.update(kwargs)
+        with pytest.raises(ValueError):
+>           helpers().sample_offsets(**args)
+            ^^^^^^^^^
+
+tests/test_box_workspace.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def helpers():
+>       from isaaclab_tutorial.tasks.place_box import workspace
+E       ImportError: cannot import name 'workspace' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace.py:14: ImportError
+_____________ test_invalid_reset_distribution_is_rejected[kwargs4] _____________
+
+kwargs = {'nominal_fraction': -0.1}
+
+    @pytest.mark.parametrize("kwargs", [
+        {"position_noise": -1}, {"position_noise": float("nan")},
+        {"yaw_noise": float("inf")}, {"nominal_fraction": 1.1}, {"nominal_fraction": -.1},
+    ])
+    def test_invalid_reset_distribution_is_rejected(kwargs):
+        args = dict(count=2, device="cpu", position_noise=.1, yaw_noise=math.pi)
+        args.update(kwargs)
+        with pytest.raises(ValueError):
+>           helpers().sample_offsets(**args)
+            ^^^^^^^^^
+
+tests/test_box_workspace.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def helpers():
+>       from isaaclab_tutorial.tasks.place_box import workspace
+E       ImportError: cannot import name 'workspace' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace.py:14: ImportError
+______ test_partial_grid_reset_changes_only_selected_pose_and_provenance _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x70677b00d910>
+
+    def test_partial_grid_reset_changes_only_selected_pose_and_provenance(monkeypatch):
+        env, written = reset_fixture(monkeypatch)
+>       mdp.reset_home(env, None, position_noise=.1, yaw_noise=math.pi, reset_mode="grid")
+E       TypeError: reset_home() got an unexpected keyword argument 'reset_mode'
+
+tests/test_box_workspace.py:92: TypeError
+_ test_audit_sampling_seed_is_independent_of_global_rng_and_model_initialization _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x70677b00ed50>
+
+    def test_audit_sampling_seed_is_independent_of_global_rng_and_model_initialization(monkeypatch):
+        a, _ = reset_fixture(monkeypatch)
+        b, _ = reset_fixture(monkeypatch)
+        torch.manual_seed(1)
+>       mdp.reset_home(a, None, position_noise=.1, yaw_noise=math.pi, sampling_seed=45)
+E       TypeError: reset_home() got an unexpected keyword argument 'sampling_seed'
+
+tests/test_box_workspace.py:109: TypeError
+________________ test_saved_pose_replay_keeps_exact_local_pose _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x70677a76f260>
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-1/test_saved_pose_replay_keeps_e0')
+
+    def test_saved_pose_replay_keeps_exact_local_pose(monkeypatch, tmp_path):
+        env, _ = reset_fixture(monkeypatch, n=3)
+        path = tmp_path / "poses.json"
+        pose = [.175, -.095, .0805, 0, 0, .03, math.sqrt(1-.03**2)]
+        path.write_text(json.dumps({"poses": [pose]}))
+>       mdp.reset_home(env, None, reset_mode="replay", replay_path=str(path))
+E       TypeError: reset_home() got an unexpected keyword argument 'reset_mode'
+
+tests/test_box_workspace.py:123: TypeError
+___________ test_grid_and_replay_cannot_mix_nominal_training_starts ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x70677a5f3320>
+
+    def test_grid_and_replay_cannot_mix_nominal_training_starts(monkeypatch):
+        env, _ = reset_fixture(monkeypatch)
+        with pytest.raises(ValueError, match="nominal"):
+>           mdp.reset_home(env, None, reset_mode="grid", nominal_fraction=.2)
+E           TypeError: reset_home() got an unexpected keyword argument 'reset_mode'
+
+tests/test_box_workspace.py:131: TypeError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: 35 warnings
+  /mnt/d/work/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_box_workspace.py::test_stage_limits_and_grid_cover_boundaries_yaw_and_repeats
+FAILED tests/test_box_workspace.py::test_nominal_default_preserves_original_rng_sequence
+FAILED tests/test_box_workspace.py::test_training_mixture_preserves_nominal_ranges_and_uses_wider_starts
+FAILED tests/test_box_workspace.py::test_invalid_reset_distribution_is_rejected[kwargs0]
+FAILED tests/test_box_workspace.py::test_invalid_reset_distribution_is_rejected[kwargs1]
+FAILED tests/test_box_workspace.py::test_invalid_reset_distribution_is_rejected[kwargs2]
+FAILED tests/test_box_workspace.py::test_invalid_reset_distribution_is_rejected[kwargs3]
+FAILED tests/test_box_workspace.py::test_invalid_reset_distribution_is_rejected[kwargs4]
+FAILED tests/test_box_workspace.py::test_partial_grid_reset_changes_only_selected_pose_and_provenance
+FAILED tests/test_box_workspace.py::test_audit_sampling_seed_is_independent_of_global_rng_and_model_initialization
+FAILED tests/test_box_workspace.py::test_saved_pose_replay_keeps_exact_local_pose
+FAILED tests/test_box_workspace.py::test_grid_and_replay_cannot_mix_nominal_training_starts
+12 failed, 35 warnings in 24.56s

@@ -1,0 +1,4 @@
+Started 2026-10-27T00:19:56.3758998+07:00; automatic shutdown authorized for success or unresolved failure.
+Pipeline exited 1 at 2026-10-27T03:13:19.5186570+07:00.
+Pipeline ended; allowing 180 seconds for recovery before shutdown.
+Requesting graceful Windows shutdown at 2026-10-27T03:16:19.6255865+07:00.

@@ -1,0 +1,12 @@
+E501 Line too long (125 > 120)
+  --> src/isaaclab_tutorial/tasks/place_box/workspace_audit.py:76:121
+   |
+74 |     parser.add_argument("--output-dir", type=Path)
+75 |     parser.add_argument("--regression-source", type=Path, default=Path("logs/box_release_v3_1997_evaluation.json"))
+76 |     parser.add_argument("--max-jobs", type=int, default=0, help="Bounded integration check; incomplete coverage cannot pass")
+   |                                                                                                                         ^^^^^
+77 |     parser.add_argument("--dry-run", action="store_true")
+78 |     args = parser.parse_args(argv)
+   |
+
+Found 1 error.

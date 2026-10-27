@@ -1,0 +1,74 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+______ test_corrupt_newest_checkpoint_does_not_hide_older_valid_progress _______
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_corrupt_newest_checkpoint0')
+
+    def test_corrupt_newest_checkpoint_does_not_hide_older_valid_progress(tmp_path):
+        import torch
+    
+        torch.save({"actor_state_dict": {"weight": torch.ones(1)}}, tmp_path/"model_50.pt")
+        (tmp_path/"model_100.pt").write_bytes(b"interrupted save")
+>       assert pipeline().usable_checkpoint(tmp_path).name == "model_50.pt"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'isaaclab_tutorial.tasks.place_box.workspace_pipeline' has no attribute 'usable_checkpoint'. Did you mean: 'latest_checkpoint'?
+
+tests/test_box_workspace_pipeline.py:104: AttributeError
+______ test_deadline_exception_records_newer_saved_checkpoint_before_exit ______
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_deadline_exception_record0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7cf485c6bf80>
+
+    def test_deadline_exception_records_newer_saved_checkpoint_before_exit(tmp_path, monkeypatch):
+        controller = pipeline().Pipeline(tmp_path/"run", tmp_path/"old.pt")
+        newer = tmp_path/"model_50.pt"
+        monkeypatch.setattr(controller, "find_run_checkpoint", lambda *a: newer, raising=False)
+    
+        def deadline(*args):
+            raise RuntimeError("deadline")
+    
+        monkeypatch.setattr(controller, "execute", deadline)
+        with pytest.raises(RuntimeError, match="deadline"):
+            controller.train("teacher", tmp_path/"old.pt", "A", "test", 200)
+>       assert json.loads((controller.output/"status.json").read_text())["last_checkpoint"] == str(newer)
+E       AssertionError: assert '/tmp/pytest-...ecord0/old.pt' == '/tmp/pytest-...0/model_50.pt'
+E         
+E         Skipping 53 identical leading characters in diff, use -v to show
+E         - n_record0/model_50.pt
+E         ?           -  -----
+E         + n_record0/old.pt
+E         ?            +
+
+tests/test_box_workspace_pipeline.py:118: AssertionError
+----------------------------- Captured stdout call -----------------------------
+{"time": "2026-10-26T17:17:01.794459+00:00", "event": "initialized"}
+_________ test_finished_group_leader_cannot_leave_a_running_descendant _________
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_finished_group_leader_can0')
+
+    @pytest.mark.skipif(os.name != "posix", reason="Linux process-group cleanup")
+    def test_finished_group_leader_cannot_leave_a_running_descendant(tmp_path):
+        controller = pipeline().Pipeline(tmp_path/"run", tmp_path/"old.pt")
+        log = tmp_path/"child.log"
+        code = "import subprocess,sys; p=subprocess.Popen([sys.executable,'-c','import time;time.sleep(600)']);print(p.pid,flush=True)"
+        try:
+            assert controller.execute([sys.executable, "-c", code], log) == 0
+            descendant = int(log.read_text().strip())
+            stat = Path(f"/proc/{descendant}/stat")
+>           assert not stat.exists() or stat.read_text().split()[2] == "Z"
+E           AssertionError: assert (not True or 'S' == 'Z'
+E            +  where True = exists()
+E            +    where exists = PosixPath('/proc/659/stat').exists
+E             
+E             - Z
+E             + S)
+
+tests/test_box_workspace_pipeline.py:130: AssertionError
+----------------------------- Captured stdout call -----------------------------
+{"time": "2026-10-26T17:17:01.825854+00:00", "event": "initialized"}
+{"time": "2026-10-26T17:17:01.832821+00:00", "event": "process_started", "command": ["/mnt/d/work/robotics/IsaacLabTutorial/.venv/bin/python", "-c", "import subprocess,sys; p=subprocess.Popen([sys.executable,'-c','import time;time.sleep(600)']);print(p.pid,flush=True)"], "current_log": "/tmp/pytest-of-ubuntu/pytest-0/test_finished_group_leader_can0/child.log"}
+=========================== short test summary info ============================
+FAILED tests/test_box_workspace_pipeline.py::test_corrupt_newest_checkpoint_does_not_hide_older_valid_progress
+FAILED tests/test_box_workspace_pipeline.py::test_deadline_exception_records_newer_saved_checkpoint_before_exit
+FAILED tests/test_box_workspace_pipeline.py::test_finished_group_leader_cannot_leave_a_running_descendant
+3 failed, 7 deselected in 28.81s

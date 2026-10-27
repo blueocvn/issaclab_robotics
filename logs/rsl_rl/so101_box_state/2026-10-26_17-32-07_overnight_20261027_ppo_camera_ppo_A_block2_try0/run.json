@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-10-26T17:32:07.287793+00:00",
+  "library": "rsl_rl",
+  "metadata": {
+    "agent": "rsl_rl_cfg_entry_point"
+  },
+  "task": "IsaacTutorial-Pick-Box-SO101",
+  "version": 1
+}

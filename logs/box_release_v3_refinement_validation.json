@@ -1,0 +1,90 @@
+{
+  "checkpoint": "logs/rsl_rl/so101_box_state/2026-10-26_14-59-07_so101-box-release-v3-refine/model_2196.pt",
+  "audits": {
+    "42": {
+      "summary": {
+        "episodes": 1024,
+        "grasped_rate": 1.0,
+        "lifted_rate": 1.0,
+        "placed_rate": 1.0,
+        "success_rate": 1.0,
+        "dropped_rate": 0.0,
+        "out_of_bounds_rate": 0.0,
+        "unstable_robot_rate": 0.0,
+        "timed_out_rate": 0.0,
+        "on_target_rate": 1.0,
+        "released_rate": 1.0,
+        "withdrawn_rate": 1.0,
+        "upright_rate": 1.0
+      },
+      "matches_original_starts": 1024,
+      "failed_ids": []
+    },
+    "43": {
+      "summary": {
+        "episodes": 1024,
+        "grasped_rate": 1.0,
+        "lifted_rate": 1.0,
+        "placed_rate": 1.0,
+        "success_rate": 1.0,
+        "dropped_rate": 0.0,
+        "out_of_bounds_rate": 0.0,
+        "unstable_robot_rate": 0.0,
+        "timed_out_rate": 0.0,
+        "on_target_rate": 1.0,
+        "released_rate": 1.0,
+        "withdrawn_rate": 1.0,
+        "upright_rate": 1.0
+      },
+      "matches_original_starts": 0,
+      "failed_ids": []
+    },
+    "44": {
+      "summary": {
+        "episodes": 1024,
+        "grasped_rate": 1.0,
+        "lifted_rate": 1.0,
+        "placed_rate": 1.0,
+        "success_rate": 1.0,
+        "dropped_rate": 0.0,
+        "out_of_bounds_rate": 0.0,
+        "unstable_robot_rate": 0.0,
+        "timed_out_rate": 0.0,
+        "on_target_rate": 1.0,
+        "released_rate": 1.0,
+        "withdrawn_rate": 1.0,
+        "upright_rate": 1.0
+      },
+      "matches_original_starts": 0,
+      "failed_ids": []
+    }
+  },
+  "total_episodes": 3072,
+  "successes": 3072,
+  "old_case_527_success": false,
+  "refined_case_527": {
+    "env_id": 527,
+    "initial_box_pose": [
+      0.16114312410354614,
+      -0.09224039316177368,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      -0.03959650546312332,
+      0.9992157220840454
+    ],
+    "grasped": true,
+    "lifted": true,
+    "placed": true,
+    "success": true,
+    "on_target": true,
+    "released": true,
+    "withdrawn": true,
+    "upright": true,
+    "dropped": false,
+    "out_of_bounds": false,
+    "unstable_robot": false,
+    "timed_out": false
+  },
+  "finite_training_scalars": true
+}

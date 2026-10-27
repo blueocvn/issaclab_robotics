@@ -1,0 +1,124 @@
+FFFFFFF                                                                  [100%]
+=================================== FAILURES ===================================
+_______________ test_checkpoint_selection_uses_numeric_iteration _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_checkpoint_selection_uses0')
+
+    def test_checkpoint_selection_uses_numeric_iteration(tmp_path):
+        for name in ("model_99.pt", "model_100.pt", "model_9.pt", "other.pt"):
+            (tmp_path / name).touch()
+>       assert pipeline().latest_checkpoint(tmp_path).name == "model_100.pt"
+               ^^^^^^^^^^
+
+tests/test_box_workspace_pipeline.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def pipeline():
+>       from isaaclab_tutorial.tasks.place_box import workspace_pipeline
+E       ImportError: cannot import name 'workspace_pipeline' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace_pipeline.py:9: ImportError
+________ test_stage_readiness_never_accepts_incomplete_or_failed_audits ________
+
+    def test_stage_readiness_never_accepts_incomplete_or_failed_audits():
+>       w = pipeline()
+            ^^^^^^^^^^
+
+tests/test_box_workspace_pipeline.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def pipeline():
+>       from isaaclab_tutorial.tasks.place_box import workspace_pipeline
+E       ImportError: cannot import name 'workspace_pipeline' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace_pipeline.py:9: ImportError
+____________ test_full_yaw_stage_requires_good_spatial_and_yaw_bins ____________
+
+    def test_full_yaw_stage_requires_good_spatial_and_yaw_bins():
+        result = dict(status="pass", success_rate=.995, spatial_counts=[[100]*5]*5,
+                      spatial_successes=[[100]*5]*5, yaw_counts=[100]*8, yaw_successes=[100]*8)
+>       assert pipeline().stage_ready(result, "F")
+               ^^^^^^^^^^
+
+tests/test_box_workspace_pipeline.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def pipeline():
+>       from isaaclab_tutorial.tasks.place_box import workspace_pipeline
+E       ImportError: cannot import name 'workspace_pipeline' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace_pipeline.py:9: ImportError
+______ test_camera_initialization_and_continuation_use_correct_load_mode _______
+
+    def test_camera_initialization_and_continuation_use_correct_load_mode():
+>       w = pipeline()
+            ^^^^^^^^^^
+
+tests/test_box_workspace_pipeline.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def pipeline():
+>       from isaaclab_tutorial.tasks.place_box import workspace_pipeline
+E       ImportError: cannot import name 'workspace_pipeline' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace_pipeline.py:9: ImportError
+__________ test_execution_failure_is_saved_and_blocks_camera_training __________
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_execution_failure_is_save0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x71cb1ee7d0a0>
+
+    def test_execution_failure_is_saved_and_blocks_camera_training(tmp_path, monkeypatch):
+>       w = pipeline()
+            ^^^^^^^^^^
+
+tests/test_box_workspace_pipeline.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def pipeline():
+>       from isaaclab_tutorial.tasks.place_box import workspace_pipeline
+E       ImportError: cannot import name 'workspace_pipeline' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace_pipeline.py:9: ImportError
+_____ test_unaccepted_teacher_never_reaches_camera_and_retries_are_bounded _____
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_unaccepted_teacher_never_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x71cb1ee7d9a0>
+
+    def test_unaccepted_teacher_never_reaches_camera_and_retries_are_bounded(tmp_path, monkeypatch):
+>       w = pipeline()
+            ^^^^^^^^^^
+
+tests/test_box_workspace_pipeline.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def pipeline():
+>       from isaaclab_tutorial.tasks.place_box import workspace_pipeline
+E       ImportError: cannot import name 'workspace_pipeline' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace_pipeline.py:9: ImportError
+_________ test_camera_requires_all_four_independent_final_populations __________
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_camera_requires_all_four_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x71cc06049610>
+
+    def test_camera_requires_all_four_independent_final_populations(tmp_path, monkeypatch):
+>       controller = pipeline().Pipeline(tmp_path / "run", tmp_path / "teacher.pt")
+                     ^^^^^^^^^^
+
+tests/test_box_workspace_pipeline.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def pipeline():
+>       from isaaclab_tutorial.tasks.place_box import workspace_pipeline
+E       ImportError: cannot import name 'workspace_pipeline' from 'isaaclab_tutorial.tasks.place_box' (/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/__init__.py)
+
+tests/test_box_workspace_pipeline.py:9: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_box_workspace_pipeline.py::test_checkpoint_selection_uses_numeric_iteration
+FAILED tests/test_box_workspace_pipeline.py::test_stage_readiness_never_accepts_incomplete_or_failed_audits
+FAILED tests/test_box_workspace_pipeline.py::test_full_yaw_stage_requires_good_spatial_and_yaw_bins
+FAILED tests/test_box_workspace_pipeline.py::test_camera_initialization_and_continuation_use_correct_load_mode
+FAILED tests/test_box_workspace_pipeline.py::test_execution_failure_is_saved_and_blocks_camera_training
+FAILED tests/test_box_workspace_pipeline.py::test_unaccepted_teacher_never_reaches_camera_and_retries_are_bounded
+FAILED tests/test_box_workspace_pipeline.py::test_camera_requires_all_four_independent_final_populations
+7 failed in 24.06s

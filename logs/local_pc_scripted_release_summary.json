@@ -1,0 +1,71 @@
+{
+  "episodes": 8,
+  "successes": 8,
+  "scripted_release_at": 450,
+  "episodes_detail": [
+    {
+      "env_id": 7,
+      "step": 563,
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "bottom_height_m": -4.86522912979126e-06
+    },
+    {
+      "env_id": 3,
+      "step": 565,
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "bottom_height_m": -4.8317015171051025e-06
+    },
+    {
+      "env_id": 0,
+      "step": 566,
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "bottom_height_m": -4.7907233238220215e-06
+    },
+    {
+      "env_id": 2,
+      "step": 566,
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "bottom_height_m": -4.727393388748169e-06
+    },
+    {
+      "env_id": 1,
+      "step": 568,
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "bottom_height_m": -4.697591066360474e-06
+    },
+    {
+      "env_id": 4,
+      "step": 568,
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "bottom_height_m": -4.6603381633758545e-06
+    },
+    {
+      "env_id": 5,
+      "step": 568,
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "bottom_height_m": -4.686415195465088e-06
+    },
+    {
+      "env_id": 6,
+      "step": 568,
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "bottom_height_m": -4.723668098449707e-06
+    }
+  ]
+}

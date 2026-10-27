@@ -1,0 +1,90 @@
+FFF.FF                                                                   [100%]
+=================================== FAILURES ===================================
+______ test_approach_guidance_resumes_after_a_latched_grasp_loses_contact ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7d62007fd610>
+
+    def test_approach_guidance_resumes_after_a_latched_grasp_loses_contact(monkeypatch):
+        env, q, center, _ = fixture(monkeypatch)
+        q['contacts'][:] = False
+        center[:, 0] -= 0.10
+        reward = mdp.ApproachReward.__new__(mdp.ApproachReward)
+        reward.previous = torch.full((1,), float('nan'))
+        assert reward(env).item() == 0
+        center[:, 0] += 0.005
+>       assert reward(env).item() == pytest.approx(0.5, abs=1e-5)
+E       assert 0.0 == 0.5 ± 1.0e-05
+E         
+E         comparison failed
+E         Obtained: 0.0
+E         Expected: 0.5 ± 1.0e-05
+
+tests/test_box_rewards.py:34: AssertionError
+____ test_lift_guidance_is_nonzero_on_table_and_increases_for_upward_motion ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7d6200935640>
+
+    def test_lift_guidance_is_nonzero_on_table_and_increases_for_upward_motion(monkeypatch):
+        env, q, center, p = fixture(monkeypatch, n=3)
+        q['position'][1, 2] += 0.01
+        q['position'][2, 2] -= 0.005
+        center[:] = q['position']
+        reward = mdp.transport_reward(env)
+>       assert reward[1] > reward[0] > reward[2]
+E       assert tensor(0.) > tensor(0.)
+
+tests/test_box_rewards.py:43: AssertionError
+______ test_lifted_box_uses_b_target_and_receives_guidance_while_lowering ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7d62007fc8c0>
+
+    def test_lifted_box_uses_b_target_and_receives_guidance_while_lowering(monkeypatch):
+        env, q, center, p = fixture(monkeypatch, n=2)
+        p.lifted[:] = True
+        q['position'][1, 1] = 0.10
+        center[:] = q['position']
+        reward = mdp.transport_reward(env)
+>       assert reward[1] > reward[0]
+E       assert tensor(0.) > tensor(0.)
+
+tests/test_box_rewards.py:59: AssertionError
+__________ test_downward_pressure_penalty_subtracts_actual_box_weight __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7d62007fe5d0>
+
+    def test_downward_pressure_penalty_subtracts_actual_box_weight(monkeypatch):
+        masses = torch.tensor([[0.10], [0.20], [0.10]])
+        env = SimpleNamespace(scene={'box': SimpleNamespace(data=SimpleNamespace(body_mass=SimpleNamespace(torch=masses)))})
+        monkeypatch.setattr(mdp, 'contact_force', lambda _, name: torch.tensor([0.981, 1.962, 10.981]))
+>       reward = mdp.table_pressure(env)
+                 ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'isaaclab_tutorial.tasks.place_box.mdp' has no attribute 'table_pressure'
+
+tests/test_box_rewards.py:73: AttributeError
+__ test_grasp_requires_two_consecutive_steps_and_partial_reset_clears_counter __
+
+    def test_grasp_requires_two_consecutive_steps_and_partial_reset_clears_counter():
+        from isaaclab_tutorial.tasks.place_box.progress import BoxProgress
+        p = BoxProgress(2, 'cpu')
+        yes, no = torch.ones(2, dtype=torch.bool), torch.zeros(2, dtype=torch.bool)
+        p.update(yes, no, no)
+>       assert not p.grasped.any()
+E       assert not tensor(True)
+E        +  where tensor(True) = <built-in method any of Tensor object at 0x7d6200f45f90>()
+E        +    where <built-in method any of Tensor object at 0x7d6200f45f90> = tensor([True, True]).any
+E        +      where tensor([True, True]) = <isaaclab_tutorial.tasks.place_box.progress.BoxProgress object at 0x7d62007fecf0>.grasped
+
+tests/test_box_rewards.py:82: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: 35 warnings
+  /mnt/e/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_box_rewards.py::test_approach_guidance_resumes_after_a_latched_grasp_loses_contact
+FAILED tests/test_box_rewards.py::test_lift_guidance_is_nonzero_on_table_and_increases_for_upward_motion
+FAILED tests/test_box_rewards.py::test_lifted_box_uses_b_target_and_receives_guidance_while_lowering
+FAILED tests/test_box_rewards.py::test_downward_pressure_penalty_subtracts_actual_box_weight
+FAILED tests/test_box_rewards.py::test_grasp_requires_two_consecutive_steps_and_partial_reset_clears_counter
+5 failed, 1 passed, 35 warnings in 21.96s

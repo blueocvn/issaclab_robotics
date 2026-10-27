@@ -1,0 +1,50 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+______ test_contact_loss_and_reapproach_cycle_cannot_farm_approach_reward ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x749e0abf1be0>
+
+    def test_contact_loss_and_reapproach_cycle_cannot_farm_approach_reward(monkeypatch):
+        env, q, center, _ = fixture(monkeypatch)
+        center[:, 0] -= 0.02
+        reward = mdp.ApproachReward.__new__(mdp.ApproachReward)
+        reward.previous = torch.full((1,), float("nan"))
+        assert reward(env).item() == 0
+        center[:, 0] -= 0.02
+        total = reward(env).item()
+        q["contacts"][:] = False
+        for _ in range(4):
+            center[:, 0] += 0.005
+            total += reward(env).item()
+>       assert total <= 1e-4
+E       assert 1.9999980926513672 <= 0.0001
+
+tests/test_box_rewards.py:88: AssertionError
+_________ test_approach_reward_does_not_penalize_withdrawal_after_lift _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x749e0abf19d0>
+
+    def test_approach_reward_does_not_penalize_withdrawal_after_lift(monkeypatch):
+        env, q, center, p = fixture(monkeypatch)
+        p.lifted[:] = True
+        q["contacts"][:] = False
+        reward = mdp.ApproachReward.__new__(mdp.ApproachReward)
+        reward.previous = torch.zeros(1)
+        center[:, 0] += 0.10
+>       assert reward(env).item() == 0
+E       assert -1.0 == 0
+E        +  where -1.0 = <built-in method item of Tensor object at 0x749e0b371e00>()
+E        +    where <built-in method item of Tensor object at 0x749e0b371e00> = tensor([-1.]).item
+E        +      where tensor([-1.]) = <isaaclab_tutorial.tasks.place_box.mdp.ApproachReward object at 0x749e0abf1f70>(namespace(cfg=namespace(box_size=(0.13, 0.045, 0.09)), scene=namespace(env_origins=tensor([[0., 0., 0.]])), _box_initial_pose=tensor([[ 0.1700, -0.1000,  0.0800,  0.0000,  0.0000,  0.0000,  1.0000]])))
+
+tests/test_box_rewards.py:98: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: 35 warnings
+  /mnt/e/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_box_rewards.py::test_contact_loss_and_reapproach_cycle_cannot_farm_approach_reward
+FAILED tests/test_box_rewards.py::test_approach_reward_does_not_penalize_withdrawal_after_lift
+2 failed, 35 warnings in 21.73s

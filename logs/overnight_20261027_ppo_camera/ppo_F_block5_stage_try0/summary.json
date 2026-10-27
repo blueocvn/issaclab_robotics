@@ -1,0 +1,123 @@
+{
+  "population": "stage",
+  "policy": "teacher",
+  "episodes": 1024,
+  "successes": 1002,
+  "success_rate": 0.978515625,
+  "success_wilson_95": [
+    0.9676845929397435,
+    0.9857698446000833
+  ],
+  "required_success_rate": 0.95,
+  "seed_groups": [
+    43
+  ],
+  "stage_counts": {
+    "grasped": 1019,
+    "lifted": 1009,
+    "placed": 1002,
+    "success": 1002,
+    "timed_out": 22,
+    "dropped": 0,
+    "out_of_bounds": 0,
+    "unstable_robot": 0
+  },
+  "spatial_counts": [
+    [
+      51,
+      33,
+      42,
+      39,
+      42
+    ],
+    [
+      44,
+      47,
+      53,
+      42,
+      49
+    ],
+    [
+      47,
+      39,
+      41,
+      34,
+      38
+    ],
+    [
+      40,
+      40,
+      40,
+      34,
+      51
+    ],
+    [
+      36,
+      38,
+      20,
+      51,
+      33
+    ]
+  ],
+  "spatial_successes": [
+    [
+      49,
+      32,
+      42,
+      39,
+      34
+    ],
+    [
+      42,
+      46,
+      53,
+      42,
+      47
+    ],
+    [
+      46,
+      38,
+      40,
+      33,
+      38
+    ],
+    [
+      40,
+      39,
+      40,
+      34,
+      51
+    ],
+    [
+      36,
+      38,
+      20,
+      51,
+      32
+    ]
+  ],
+  "yaw_counts": [
+    128,
+    137,
+    150,
+    124,
+    121,
+    115,
+    131,
+    118
+  ],
+  "yaw_successes": [
+    120,
+    137,
+    150,
+    123,
+    115,
+    112,
+    130,
+    115
+  ],
+  "coverage_sufficient": true,
+  "status": "pass",
+  "completed_jobs": 1,
+  "planned_jobs": 1
+}

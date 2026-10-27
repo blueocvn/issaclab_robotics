@@ -1,0 +1,6513 @@
+{
+  "training_blocks": 16,
+  "additional_ppo_updates": 3200,
+  "accepted_stages": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "camera_started": false,
+  "stages": [
+    {
+      "name": "ppo_A_block1",
+      "successes": 954,
+      "min_spatial": [
+        0.5531914893617021,
+        0,
+        2,
+        47
+      ],
+      "min_yaw": [
+        0.88,
+        2,
+        150
+      ]
+    },
+    {
+      "name": "ppo_A_block2",
+      "successes": 1022,
+      "min_spatial": [
+        0.95,
+        2,
+        4,
+        20
+      ],
+      "min_yaw": [
+        0.9915254237288136,
+        7,
+        118
+      ]
+    },
+    {
+      "name": "ppo_B_block1",
+      "successes": 1011,
+      "min_spatial": [
+        0.8181818181818182,
+        4,
+        4,
+        33
+      ],
+      "min_yaw": [
+        0.9765625,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_C_block1",
+      "successes": 892,
+      "min_spatial": [
+        0.047619047619047616,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.8203125,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_C_block2",
+      "successes": 977,
+      "min_spatial": [
+        0.2857142857142857,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.9266666666666666,
+        2,
+        150
+      ]
+    },
+    {
+      "name": "ppo_D_block1",
+      "successes": 983,
+      "min_spatial": [
+        0.5952380952380952,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.875,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_E_block1",
+      "successes": 957,
+      "min_spatial": [
+        0.7575757575757576,
+        4,
+        4,
+        33
+      ],
+      "min_yaw": [
+        0.703125,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_E_block2",
+      "successes": 999,
+      "min_spatial": [
+        0.825,
+        0,
+        3,
+        40
+      ],
+      "min_yaw": [
+        0.90625,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block1",
+      "successes": 845,
+      "min_spatial": [
+        0.5476190476190477,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.0859375,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block2",
+      "successes": 960,
+      "min_spatial": [
+        0.5952380952380952,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.7578125,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block3",
+      "successes": 982,
+      "min_spatial": [
+        0.7380952380952381,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.8515625,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block4",
+      "successes": 987,
+      "min_spatial": [
+        0.6666666666666666,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.8983050847457628,
+        7,
+        118
+      ]
+    },
+    {
+      "name": "ppo_F_block5",
+      "successes": 1002,
+      "min_spatial": [
+        0.8095238095238095,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.9375,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block6",
+      "successes": 1009,
+      "min_spatial": [
+        0.8333333333333334,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.9491525423728814,
+        7,
+        118
+      ]
+    },
+    {
+      "name": "ppo_F_block7",
+      "successes": 1004,
+      "min_spatial": [
+        0.9166666666666666,
+        0,
+        4,
+        36
+      ],
+      "min_yaw": [
+        0.8813559322033898,
+        7,
+        118
+      ]
+    },
+    {
+      "name": "ppo_F_block8",
+      "successes": 1006,
+      "min_spatial": [
+        0.9210526315789473,
+        1,
+        4,
+        38
+      ],
+      "min_yaw": [
+        0.953125,
+        0,
+        128
+      ]
+    }
+  ],
+  "failures": {
+    "ppo_F_block1": {
+      "counts": {
+        "never_grasped": 28,
+        "grasped_without_lift": 124,
+        "lifted_without_success": 27
+      },
+      "ids": [
+        3,
+        5,
+        10,
+        24,
+        27,
+        29,
+        34,
+        40,
+        41,
+        54,
+        58,
+        64,
+        67,
+        68,
+        80,
+        85,
+        87,
+        98,
+        102,
+        103,
+        104,
+        115,
+        117,
+        121,
+        127,
+        128,
+        136,
+        139,
+        140,
+        147,
+        159,
+        161,
+        165,
+        173,
+        174,
+        177,
+        180,
+        191,
+        194,
+        205,
+        208,
+        211,
+        213,
+        217,
+        220,
+        227,
+        241,
+        246,
+        252,
+        253,
+        255,
+        261,
+        263,
+        266,
+        268,
+        283,
+        288,
+        294,
+        299,
+        301,
+        307,
+        327,
+        328,
+        329,
+        330,
+        341,
+        342,
+        343,
+        347,
+        348,
+        352,
+        361,
+        369,
+        376,
+        381,
+        390,
+        393,
+        397,
+        405,
+        408,
+        411,
+        422,
+        425,
+        437,
+        439,
+        445,
+        452,
+        496,
+        508,
+        521,
+        523,
+        530,
+        531,
+        532,
+        539,
+        551,
+        552,
+        591,
+        593,
+        597,
+        606,
+        614,
+        616,
+        622,
+        623,
+        638,
+        641,
+        643,
+        644,
+        647,
+        649,
+        651,
+        661,
+        672,
+        675,
+        676,
+        677,
+        688,
+        696,
+        697,
+        702,
+        706,
+        709,
+        710,
+        711,
+        720,
+        742,
+        755,
+        758,
+        759,
+        762,
+        764,
+        785,
+        794,
+        796,
+        801,
+        804,
+        821,
+        828,
+        832,
+        834,
+        842,
+        850,
+        851,
+        855,
+        860,
+        862,
+        866,
+        871,
+        892,
+        899,
+        905,
+        908,
+        912,
+        919,
+        924,
+        928,
+        934,
+        937,
+        941,
+        945,
+        949,
+        950,
+        958,
+        960,
+        961,
+        962,
+        965,
+        967,
+        970,
+        973,
+        976,
+        985,
+        990,
+        991,
+        999,
+        1010,
+        1019,
+        1021
+      ],
+      "starts": [
+        {
+          "env_id": 3,
+          "xy": [
+            0.1282520294189453,
+            -0.18234920501708984
+          ],
+          "yaw_deg": -135.54346301090507,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 5,
+          "xy": [
+            0.07590675354003906,
+            -0.10915184020996094
+          ],
+          "yaw_deg": -140.2595450885813,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 10,
+          "xy": [
+            0.2622241973876953,
+            -0.07265996932983398
+          ],
+          "yaw_deg": -124.47396660351626,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 24,
+          "xy": [
+            0.20350265502929688,
+            -0.17407894134521484
+          ],
+          "yaw_deg": -140.62796480212825,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 27,
+          "xy": [
+            0.26493072509765625,
+            -0.17514991760253906
+          ],
+          "yaw_deg": -144.21842089400587,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 29,
+          "xy": [
+            0.07481956481933594,
+            -0.04406166076660156
+          ],
+          "yaw_deg": 76.88041708573306,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 34,
+          "xy": [
+            0.09272575378417969,
+            -0.005230903625488281
+          ],
+          "yaw_deg": -165.52318619439322,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 40,
+          "xy": [
+            0.22955703735351562,
+            -0.16663646697998047
+          ],
+          "yaw_deg": -145.2348055784182,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 41,
+          "xy": [
+            0.1488037109375,
+            -0.02368783950805664
+          ],
+          "yaw_deg": -179.2051621988239,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 54,
+          "xy": [
+            0.15956878662109375,
+            -0.10733938217163086
+          ],
+          "yaw_deg": -154.80159216633155,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 58,
+          "xy": [
+            0.08809661865234375,
+            -0.15136241912841797
+          ],
+          "yaw_deg": -172.14364801431594,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 64,
+          "xy": [
+            0.20986080169677734,
+            -0.13530921936035156
+          ],
+          "yaw_deg": -169.45521724395633,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 67,
+          "xy": [
+            0.1656055450439453,
+            -0.13467121124267578
+          ],
+          "yaw_deg": -144.8389961641034,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 68,
+          "xy": [
+            0.18361759185791016,
+            -0.07075309753417969
+          ],
+          "yaw_deg": -153.5251951118264,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 80,
+          "xy": [
+            0.11034393310546875,
+            -0.1810973882675171
+          ],
+          "yaw_deg": -150.72952697066987,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 85,
+          "xy": [
+            0.09916400909423828,
+            -0.006909847259521484
+          ],
+          "yaw_deg": -138.11388306027322,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 87,
+          "xy": [
+            0.1136922836303711,
+            -0.018181800842285156
+          ],
+          "yaw_deg": -148.0729669927136,
+          "grasped": false,
+          "lifted": false,
+          "on_target": true,
+          "upright": true,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 98,
+          "xy": [
+            0.21716880798339844,
+            -0.1718158721923828
+          ],
+          "yaw_deg": -118.44145552858406,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 102,
+          "xy": [
+            0.11303901672363281,
+            -0.13521385192871094
+          ],
+          "yaw_deg": -164.60662967209626,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 103,
+          "xy": [
+            0.2038125991821289,
+            -0.11697959899902344
+          ],
+          "yaw_deg": -154.22329356994948,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 104,
+          "xy": [
+            0.26621341705322266,
+            -0.16216373443603516
+          ],
+          "yaw_deg": -47.02387625355899,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 115,
+          "xy": [
+            0.25569725036621094,
+            -0.197495698928833
+          ],
+          "yaw_deg": -142.54890222129225,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 117,
+          "xy": [
+            0.2610797882080078,
+            -0.15668106079101562
+          ],
+          "yaw_deg": -86.669341075066,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 121,
+          "xy": [
+            0.15205001831054688,
+            -0.19566059112548828
+          ],
+          "yaw_deg": 176.59157668203724,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 127,
+          "xy": [
+            0.23461151123046875,
+            -0.01495361328125
+          ],
+          "yaw_deg": -144.31010760007194,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 128,
+          "xy": [
+            0.24646759033203125,
+            -0.15332794189453125
+          ],
+          "yaw_deg": -123.47721052608355,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 136,
+          "xy": [
+            0.09978008270263672,
+            -0.16316699981689453
+          ],
+          "yaw_deg": -155.66585863646745,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 139,
+          "xy": [
+            0.1602640151977539,
+            -0.14624404907226562
+          ],
+          "yaw_deg": -148.32305991638617,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 140,
+          "xy": [
+            0.19738197326660156,
+            -0.02046942710876465
+          ],
+          "yaw_deg": -148.91645553335727,
+          "grasped": true,
+          "lifted": false,
+          "on_target": true,
+          "upright": true,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 147,
+          "xy": [
+            0.1878824234008789,
+            -0.13302206993103027
+          ],
+          "yaw_deg": 179.3494022188263,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 159,
+          "xy": [
+            0.2347545623779297,
+            -0.11865806579589844
+          ],
+          "yaw_deg": -134.99275991710422,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 161,
+          "xy": [
+            0.1978740692138672,
+            -0.023031234741210938
+          ],
+          "yaw_deg": -156.98107872410785,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 165,
+          "xy": [
+            0.121063232421875,
+            -0.13239479064941406
+          ],
+          "yaw_deg": -148.34090167020233,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 173,
+          "xy": [
+            0.2649078369140625,
+            -0.003439188003540039
+          ],
+          "yaw_deg": 77.77384685045166,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 174,
+          "xy": [
+            0.26984119415283203,
+            -0.18291139602661133
+          ],
+          "yaw_deg": 85.52416527846357,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 177,
+          "xy": [
+            0.20852279663085938,
+            -0.11348402500152588
+          ],
+          "yaw_deg": -159.1979411273854,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 180,
+          "xy": [
+            0.21385478973388672,
+            -0.15253591537475586
+          ],
+          "yaw_deg": -146.82054364228108,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 191,
+          "xy": [
+            0.2675628662109375,
+            -0.1372699737548828
+          ],
+          "yaw_deg": -159.29951869858323,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 194,
+          "xy": [
+            0.22028827667236328,
+            -0.07213783264160156
+          ],
+          "yaw_deg": -153.71638517713694,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 205,
+          "xy": [
+            0.2675514221191406,
+            -0.03497815132141113
+          ],
+          "yaw_deg": -148.24981278070769,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 208,
+          "xy": [
+            0.1305704116821289,
+            -0.00592958927154541
+          ],
+          "yaw_deg": 128.23443862169458,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 211,
+          "xy": [
+            0.22999095916748047,
+            -0.010831832885742188
+          ],
+          "yaw_deg": -178.0353283007821,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 213,
+          "xy": [
+            0.2579202651977539,
+            -0.010966300964355469
+          ],
+          "yaw_deg": -145.82293851667328,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 217,
+          "xy": [
+            0.09504890441894531,
+            -0.014708518981933594
+          ],
+          "yaw_deg": 153.3166556577546,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 220,
+          "xy": [
+            0.23276519775390625,
+            -0.078704833984375
+          ],
+          "yaw_deg": 177.18406828743784,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 227,
+          "xy": [
+            0.24643707275390625,
+            -0.1196889877319336
+          ],
+          "yaw_deg": -127.07961728923758,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 241,
+          "xy": [
+            0.14464569091796875,
+            -0.16383516788482666
+          ],
+          "yaw_deg": -160.18777035260183,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 246,
+          "xy": [
+            0.2544279098510742,
+            -0.06489276885986328
+          ],
+          "yaw_deg": -153.6828638457946,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 252,
+          "xy": [
+            0.26794910430908203,
+            -0.18643760681152344
+          ],
+          "yaw_deg": -140.85042418648158,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 253,
+          "xy": [
+            0.24756145477294922,
+            -0.1825876235961914
+          ],
+          "yaw_deg": -176.96339847921237,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 255,
+          "xy": [
+            0.2304677963256836,
+            -0.1901874542236328
+          ],
+          "yaw_deg": -116.30323433537046,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 261,
+          "xy": [
+            0.1327838897705078,
+            -0.11264324188232422
+          ],
+          "yaw_deg": -159.82594746430001,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 263,
+          "xy": [
+            0.1598215103149414,
+            -0.16726970672607422
+          ],
+          "yaw_deg": -170.5397559199814,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 266,
+          "xy": [
+            0.08640670776367188,
+            -0.08617305755615234
+          ],
+          "yaw_deg": 178.92263835811124,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 268,
+          "xy": [
+            0.234222412109375,
+            -0.15241408348083496
+          ],
+          "yaw_deg": -154.73540858691348,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 283,
+          "xy": [
+            0.22168445587158203,
+            -0.16353607177734375
+          ],
+          "yaw_deg": -172.42587150880263,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 288,
+          "xy": [
+            0.2506246566772461,
+            -0.1732769012451172
+          ],
+          "yaw_deg": -104.5954036999272,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 294,
+          "xy": [
+            0.18016862869262695,
+            -0.04386615753173828
+          ],
+          "yaw_deg": 162.44449258794637,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 299,
+          "xy": [
+            0.14875364303588867,
+            -0.12817955017089844
+          ],
+          "yaw_deg": -138.8167769720904,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 301,
+          "xy": [
+            0.1370849609375,
+            -0.19851303100585938
+          ],
+          "yaw_deg": -137.14019991478037,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 307,
+          "xy": [
+            0.2555270195007324,
+            -0.1905379295349121
+          ],
+          "yaw_deg": -169.0257215230475,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 327,
+          "xy": [
+            0.1573796272277832,
+            -0.12781238555908203
+          ],
+          "yaw_deg": -157.8489639503212,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 328,
+          "xy": [
+            0.24042224884033203,
+            -0.18372440338134766
+          ],
+          "yaw_deg": -113.22950489715866,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 329,
+          "xy": [
+            0.14462661743164062,
+            -0.05113410949707031
+          ],
+          "yaw_deg": -172.2681489338336,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 330,
+          "xy": [
+            0.21851158142089844,
+            -0.03641796112060547
+          ],
+          "yaw_deg": 152.90323786613445,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 341,
+          "xy": [
+            0.08163642883300781,
+            -0.0029244422912597656
+          ],
+          "yaw_deg": 89.80068412527822,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 342,
+          "xy": [
+            0.15294885635375977,
+            -0.049074649810791016
+          ],
+          "yaw_deg": -162.8559563302008,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 343,
+          "xy": [
+            0.19651269912719727,
+            -0.18390560150146484
+          ],
+          "yaw_deg": -155.3819809943965,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 347,
+          "xy": [
+            0.21470165252685547,
+            -0.029524803161621094
+          ],
+          "yaw_deg": 168.94799472467272,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 348,
+          "xy": [
+            0.15499353408813477,
+            -0.04563713073730469
+          ],
+          "yaw_deg": -163.2504962442311,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 352,
+          "xy": [
+            0.26375722885131836,
+            -0.006534576416015625
+          ],
+          "yaw_deg": -168.51502847997423,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 361,
+          "xy": [
+            0.11627721786499023,
+            -0.08495140075683594
+          ],
+          "yaw_deg": -94.32845494055857,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 369,
+          "xy": [
+            0.17509222030639648,
+            -0.18831443786621094
+          ],
+          "yaw_deg": -141.94419816833337,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 376,
+          "xy": [
+            0.20678043365478516,
+            -0.1140289306640625
+          ],
+          "yaw_deg": 164.47783917375534,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 381,
+          "xy": [
+            0.1742262840270996,
+            -0.053119659423828125
+          ],
+          "yaw_deg": -156.45661710568444,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 390,
+          "xy": [
+            0.19682717323303223,
+            -0.184661865234375
+          ],
+          "yaw_deg": -163.96530397548665,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 393,
+          "xy": [
+            0.08008980751037598,
+            -0.17898893356323242
+          ],
+          "yaw_deg": -169.57988210327747,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 397,
+          "xy": [
+            0.18727612495422363,
+            -0.17641568183898926
+          ],
+          "yaw_deg": -135.1439682445921,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 405,
+          "xy": [
+            0.07459521293640137,
+            -0.07036828994750977
+          ],
+          "yaw_deg": 151.73419690499136,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 408,
+          "xy": [
+            0.11849856376647949,
+            -0.15862655639648438
+          ],
+          "yaw_deg": -156.78421906664903,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 411,
+          "xy": [
+            0.22174620628356934,
+            -0.029938697814941406
+          ],
+          "yaw_deg": -143.8117888167683,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 422,
+          "xy": [
+            0.16667985916137695,
+            -0.14026546478271484
+          ],
+          "yaw_deg": -139.22953689496325,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 425,
+          "xy": [
+            0.0859062671661377,
+            -0.16538667678833008
+          ],
+          "yaw_deg": -148.7841676767379,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 437,
+          "xy": [
+            0.13027667999267578,
+            -0.029427051544189453
+          ],
+          "yaw_deg": -165.27059293186554,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 439,
+          "xy": [
+            0.20176029205322266,
+            -0.05544281005859375
+          ],
+          "yaw_deg": 175.5858450529574,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 445,
+          "xy": [
+            0.08636069297790527,
+            -0.12515735626220703
+          ],
+          "yaw_deg": 174.08026635790887,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 452,
+          "xy": [
+            0.1109476089477539,
+            -0.18520259857177734
+          ],
+          "yaw_deg": 168.9066034221174,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 496,
+          "xy": [
+            0.25667184591293335,
+            -0.12531021237373352
+          ],
+          "yaw_deg": -179.33068744859278,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 508,
+          "xy": [
+            0.1968722939491272,
+            -0.11495780944824219
+          ],
+          "yaw_deg": -170.62271531908527,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 521,
+          "xy": [
+            0.1255713701248169,
+            -0.16447687149047852
+          ],
+          "yaw_deg": -163.56818173428545,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 523,
+          "xy": [
+            0.09328663349151611,
+            -0.08669281005859375
+          ],
+          "yaw_deg": 179.29506119359203,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 530,
+          "xy": [
+            0.13252681493759155,
+            -0.08878064155578613
+          ],
+          "yaw_deg": 170.1264061180012,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 531,
+          "xy": [
+            0.17909511923789978,
+            -0.13407206535339355
+          ],
+          "yaw_deg": -150.64617369905227,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 532,
+          "xy": [
+            0.18682625889778137,
+            -0.18591642379760742
+          ],
+          "yaw_deg": -172.52966301100724,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 539,
+          "xy": [
+            0.074186772108078,
+            -0.1664600372314453
+          ],
+          "yaw_deg": -149.02814185306408,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 551,
+          "xy": [
+            0.11167621612548828,
+            -0.0023756027221679688
+          ],
+          "yaw_deg": 156.28965906218775,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 552,
+          "xy": [
+            0.19524633884429932,
+            -0.10191059112548828
+          ],
+          "yaw_deg": -163.31506803126507,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 591,
+          "xy": [
+            0.10006546974182129,
+            -0.11088734865188599
+          ],
+          "yaw_deg": -143.3390604712325,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 593,
+          "xy": [
+            0.23123693466186523,
+            -0.1236577033996582
+          ],
+          "yaw_deg": -178.3701306429738,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 597,
+          "xy": [
+            0.09520530700683594,
+            -0.16846466064453125
+          ],
+          "yaw_deg": -179.17808734644498,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 606,
+          "xy": [
+            0.2567293643951416,
+            -0.061435699462890625
+          ],
+          "yaw_deg": -177.74652049163242,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 614,
+          "xy": [
+            0.2172565460205078,
+            -0.19377422332763672
+          ],
+          "yaw_deg": -105.75165038866155,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 616,
+          "xy": [
+            0.19617891311645508,
+            -0.13695144653320312
+          ],
+          "yaw_deg": -133.58682100213454,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 622,
+          "xy": [
+            0.13490915298461914,
+            -0.17847013473510742
+          ],
+          "yaw_deg": -122.6142441796288,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 623,
+          "xy": [
+            0.26433682441711426,
+            -0.08132529258728027
+          ],
+          "yaw_deg": -169.01412408880762,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 638,
+          "xy": [
+            0.25194263458251953,
+            -0.15380001068115234
+          ],
+          "yaw_deg": -150.07127489925628,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 641,
+          "xy": [
+            0.2140212059020996,
+            -0.13115310668945312
+          ],
+          "yaw_deg": -164.84791388740507,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 643,
+          "xy": [
+            0.10538864135742188,
+            -0.026281356811523438
+          ],
+          "yaw_deg": 169.59944343280918,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 644,
+          "xy": [
+            0.20511722564697266,
+            -0.03761482238769531
+          ],
+          "yaw_deg": -149.80175755169975,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 647,
+          "xy": [
+            0.1251215934753418,
+            -0.00830841064453125
+          ],
+          "yaw_deg": 135.93834401897834,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 649,
+          "xy": [
+            0.25795841217041016,
+            -0.1887660026550293
+          ],
+          "yaw_deg": -178.08434177866758,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 651,
+          "xy": [
+            0.09550809860229492,
+            -0.09137725830078125
+          ],
+          "yaw_deg": 176.18003048846896,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 661,
+          "xy": [
+            0.10537290573120117,
+            -0.12744426727294922
+          ],
+          "yaw_deg": -151.69762652056932,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 672,
+          "xy": [
+            0.12405252456665039,
+            -0.1320171356201172
+          ],
+          "yaw_deg": -173.91046788144533,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 675,
+          "xy": [
+            0.097686767578125,
+            -0.08316802978515625
+          ],
+          "yaw_deg": 165.7591295612668,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 676,
+          "xy": [
+            0.24583816528320312,
+            -0.03715991973876953
+          ],
+          "yaw_deg": -146.62151083746699,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 677,
+          "xy": [
+            0.230804443359375,
+            -0.005114555358886719
+          ],
+          "yaw_deg": -157.6027500798387,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 688,
+          "xy": [
+            0.2359151840209961,
+            -0.007030308246612549
+          ],
+          "yaw_deg": 136.8012027696601,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 696,
+          "xy": [
+            0.12512826919555664,
+            -0.11565494537353516
+          ],
+          "yaw_deg": -159.46750021585723,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 697,
+          "xy": [
+            0.09884309768676758,
+            -0.002635955810546875
+          ],
+          "yaw_deg": 108.9703006216211,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 702,
+          "xy": [
+            0.1825399398803711,
+            -0.15684032440185547
+          ],
+          "yaw_deg": -139.99219846798852,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 706,
+          "xy": [
+            0.2213897705078125,
+            -0.001850128173828125
+          ],
+          "yaw_deg": -142.94129825081637,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 709,
+          "xy": [
+            0.18275690078735352,
+            -0.1952190399169922
+          ],
+          "yaw_deg": -174.99735598978452,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 710,
+          "xy": [
+            0.1255931854248047,
+            -0.0971078872680664
+          ],
+          "yaw_deg": 172.0409902820479,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 711,
+          "xy": [
+            0.12960529327392578,
+            -0.09679317474365234
+          ],
+          "yaw_deg": -157.87886712391457,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 720,
+          "xy": [
+            0.16074323654174805,
+            -0.11995118856430054
+          ],
+          "yaw_deg": -160.78975621742813,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 742,
+          "xy": [
+            0.07126426696777344,
+            -0.05403614044189453
+          ],
+          "yaw_deg": 121.05470893980703,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 755,
+          "xy": [
+            0.0979013442993164,
+            -0.03137612342834473
+          ],
+          "yaw_deg": 157.09872240837586,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 758,
+          "xy": [
+            0.0863809585571289,
+            -0.018673419952392578
+          ],
+          "yaw_deg": 116.26670776829894,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 759,
+          "xy": [
+            0.25580883026123047,
+            -0.1804046630859375
+          ],
+          "yaw_deg": -133.92908186834174,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 762,
+          "xy": [
+            0.13218402862548828,
+            -0.10315990447998047
+          ],
+          "yaw_deg": -171.63803674753726,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 764,
+          "xy": [
+            0.1525411605834961,
+            -0.0018186569213867188
+          ],
+          "yaw_deg": 177.08124659918514,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 785,
+          "xy": [
+            0.10520744323730469,
+            -0.15900063514709473
+          ],
+          "yaw_deg": -129.90645167958832,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 794,
+          "xy": [
+            0.14597702026367188,
+            -0.14334678649902344
+          ],
+          "yaw_deg": -165.86849383208283,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 796,
+          "xy": [
+            0.21914386749267578,
+            -0.13032913208007812
+          ],
+          "yaw_deg": -140.78176878992264,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 801,
+          "xy": [
+            0.26095008850097656,
+            -0.1866626739501953
+          ],
+          "yaw_deg": -77.01753629726117,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 804,
+          "xy": [
+            0.08990001678466797,
+            -0.049060821533203125
+          ],
+          "yaw_deg": -175.5960766640295,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 821,
+          "xy": [
+            0.11545085906982422,
+            -0.08300447463989258
+          ],
+          "yaw_deg": -175.21038974177395,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 828,
+          "xy": [
+            0.2314910888671875,
+            -0.04279327392578125
+          ],
+          "yaw_deg": -154.41081101596637,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 832,
+          "xy": [
+            0.12483501434326172,
+            -0.06159210205078125
+          ],
+          "yaw_deg": -177.50490953735,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 834,
+          "xy": [
+            0.2471179962158203,
+            -0.1485443115234375
+          ],
+          "yaw_deg": -132.01173699230918,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 842,
+          "xy": [
+            0.2245626449584961,
+            -0.07205343246459961
+          ],
+          "yaw_deg": -168.89510116457816,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 850,
+          "xy": [
+            0.18021392822265625,
+            -0.10262155532836914
+          ],
+          "yaw_deg": -175.4405259327435,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 851,
+          "xy": [
+            0.25919151306152344,
+            -0.1757500171661377
+          ],
+          "yaw_deg": -82.80872241193597,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 855,
+          "xy": [
+            0.1308612823486328,
+            -0.035103797912597656
+          ],
+          "yaw_deg": -168.13798846369644,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 860,
+          "xy": [
+            0.15740013122558594,
+            -0.15206050872802734
+          ],
+          "yaw_deg": -144.19847341508623,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 862,
+          "xy": [
+            0.15374374389648438,
+            -0.12272071838378906
+          ],
+          "yaw_deg": -173.70558973373616,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 866,
+          "xy": [
+            0.16693973541259766,
+            -0.19553852081298828
+          ],
+          "yaw_deg": 91.0183885875166,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 871,
+          "xy": [
+            0.2537412643432617,
+            -0.19611644744873047
+          ],
+          "yaw_deg": -170.63550152076817,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 892,
+          "xy": [
+            0.07506465911865234,
+            -0.11684036254882812
+          ],
+          "yaw_deg": -137.8541735935131,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 899,
+          "xy": [
+            0.2574129104614258,
+            -0.19747543334960938
+          ],
+          "yaw_deg": -81.1822962555381,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 905,
+          "xy": [
+            0.24137592315673828,
+            -0.0483250617980957
+          ],
+          "yaw_deg": -155.9836938128977,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 908,
+          "xy": [
+            0.11462020874023438,
+            -0.17656159400939941
+          ],
+          "yaw_deg": -171.00971391720404,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 912,
+          "xy": [
+            0.2616128921508789,
+            -0.15016037225723267
+          ],
+          "yaw_deg": -157.91262079304258,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 919,
+          "xy": [
+            0.11052131652832031,
+            -0.05743694305419922
+          ],
+          "yaw_deg": -148.5119589271296,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 924,
+          "xy": [
+            0.15781879425048828,
+            -0.1606893539428711
+          ],
+          "yaw_deg": -151.32359158689388,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 928,
+          "xy": [
+            0.10477256774902344,
+            -0.11188697814941406
+          ],
+          "yaw_deg": -169.44721235264956,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 934,
+          "xy": [
+            0.1672534942626953,
+            -0.17957401275634766
+          ],
+          "yaw_deg": -129.36681394002537,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 937,
+          "xy": [
+            0.26651763916015625,
+            -0.17514848709106445
+          ],
+          "yaw_deg": -49.77446150382218,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 941,
+          "xy": [
+            0.14292240142822266,
+            -0.07319903373718262
+          ],
+          "yaw_deg": 160.8423344733862,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 945,
+          "xy": [
+            0.22596168518066406,
+            -0.1795576810836792
+          ],
+          "yaw_deg": -116.27471158952935,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 949,
+          "xy": [
+            0.23663806915283203,
+            -0.18997573852539062
+          ],
+          "yaw_deg": -164.05067907858054,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 950,
+          "xy": [
+            0.0823049545288086,
+            -0.14996623992919922
+          ],
+          "yaw_deg": -145.95851772921353,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 958,
+          "xy": [
+            0.22096729278564453,
+            -0.1548023223876953
+          ],
+          "yaw_deg": -145.48444922554813,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 960,
+          "xy": [
+            0.25792884826660156,
+            -0.1606884002685547
+          ],
+          "yaw_deg": -167.6925101126322,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 961,
+          "xy": [
+            0.16704177856445312,
+            -0.031352996826171875
+          ],
+          "yaw_deg": 175.49213471149926,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 962,
+          "xy": [
+            0.09749317169189453,
+            -0.008886337280273438
+          ],
+          "yaw_deg": 131.87726573960597,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 965,
+          "xy": [
+            0.08310317993164062,
+            -0.058002471923828125
+          ],
+          "yaw_deg": -171.18115138303807,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 967,
+          "xy": [
+            0.2567167282104492,
+            -0.1582469940185547
+          ],
+          "yaw_deg": -159.34820385984435,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 970,
+          "xy": [
+            0.22807025909423828,
+            -0.03605079650878906
+          ],
+          "yaw_deg": -167.14665463663542,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 973,
+          "xy": [
+            0.17096614837646484,
+            -0.12308740615844727
+          ],
+          "yaw_deg": -149.99994014594537,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 976,
+          "xy": [
+            0.1433238983154297,
+            -0.13118070363998413
+          ],
+          "yaw_deg": -157.19773352615474,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 985,
+          "xy": [
+            0.2003154754638672,
+            -0.14875125885009766
+          ],
+          "yaw_deg": -153.08916878002395,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 990,
+          "xy": [
+            0.14956092834472656,
+            -0.03881359100341797
+          ],
+          "yaw_deg": -174.6319137794944,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 991,
+          "xy": [
+            0.09862899780273438,
+            -0.05832862854003906
+          ],
+          "yaw_deg": 178.03140781757608,
+          "grasped": true,
+          "lifted": false,
+          "on_target": true,
+          "upright": true,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 999,
+          "xy": [
+            0.1833362579345703,
+            -0.07696914672851562
+          ],
+          "yaw_deg": -145.96346431532558,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 1010,
+          "xy": [
+            0.12607574462890625,
+            -0.035114288330078125
+          ],
+          "yaw_deg": 172.57724292592883,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 1019,
+          "xy": [
+            0.10798835754394531,
+            -0.10070133209228516
+          ],
+          "yaw_deg": 176.05389063196142,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 1021,
+          "xy": [
+            0.2442169189453125,
+            -0.06948566436767578
+          ],
+          "yaw_deg": -167.61213213086566,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        }
+      ]
+    },
+    "ppo_F_block2": {
+      "counts": {
+        "never_grasped": 21,
+        "grasped_without_lift": 28,
+        "lifted_without_success": 15
+      },
+      "ids": [
+        27,
+        34,
+        41,
+        51,
+        83,
+        87,
+        104,
+        115,
+        116,
+        162,
+        191,
+        211,
+        217,
+        252,
+        253,
+        254,
+        266,
+        268,
+        283,
+        294,
+        307,
+        413,
+        437,
+        445,
+        452,
+        496,
+        523,
+        541,
+        547,
+        558,
+        560,
+        593,
+        597,
+        606,
+        623,
+        649,
+        693,
+        716,
+        755,
+        756,
+        764,
+        778,
+        782,
+        801,
+        804,
+        832,
+        835,
+        842,
+        854,
+        855,
+        867,
+        871,
+        883,
+        912,
+        918,
+        925,
+        927,
+        937,
+        949,
+        960,
+        965,
+        967,
+        970,
+        990
+      ],
+      "starts": [
+        {
+          "env_id": 27,
+          "xy": [
+            0.26493072509765625,
+            -0.17514991760253906
+          ],
+          "yaw_deg": -144.21842089400587,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 34,
+          "xy": [
+            0.09272575378417969,
+            -0.005230903625488281
+          ],
+          "yaw_deg": -165.52318619439322,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 41,
+          "xy": [
+            0.1488037109375,
+            -0.02368783950805664
+          ],
+          "yaw_deg": -179.2051621988239,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 51,
+          "xy": [
+            0.2562274932861328,
+            -0.15760159492492676
+          ],
+          "yaw_deg": 175.26309143051606,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 83,
+          "xy": [
+            0.15723705291748047,
+            -0.14510774612426758
+          ],
+          "yaw_deg": 167.67544800887097,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 87,
+          "xy": [
+            0.1136922836303711,
+            -0.018181800842285156
+          ],
+          "yaw_deg": -148.0729669927136,
+          "grasped": true,
+          "lifted": false,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 104,
+          "xy": [
+            0.26621341705322266,
+            -0.16216373443603516
+          ],
+          "yaw_deg": -47.02387625355899,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 115,
+          "xy": [
+            0.25569725036621094,
+            -0.197495698928833
+          ],
+          "yaw_deg": -142.54890222129225,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 116,
+          "xy": [
+            0.2069263458251953,
+            -0.19150638580322266
+          ],
+          "yaw_deg": 83.39015896474002,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 162,
+          "xy": [
+            0.26364803314208984,
+            -0.19237518310546875
+          ],
+          "yaw_deg": 55.650562663965964,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 191,
+          "xy": [
+            0.2675628662109375,
+            -0.1372699737548828
+          ],
+          "yaw_deg": -159.29951869858323,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 211,
+          "xy": [
+            0.22999095916748047,
+            -0.010831832885742188
+          ],
+          "yaw_deg": -178.0353283007821,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 217,
+          "xy": [
+            0.09504890441894531,
+            -0.014708518981933594
+          ],
+          "yaw_deg": 153.3166556577546,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 252,
+          "xy": [
+            0.26794910430908203,
+            -0.18643760681152344
+          ],
+          "yaw_deg": -140.85042418648158,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 253,
+          "xy": [
+            0.24756145477294922,
+            -0.1825876235961914
+          ],
+          "yaw_deg": -176.96339847921237,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 254,
+          "xy": [
+            0.23054218292236328,
+            -0.14478111267089844
+          ],
+          "yaw_deg": 87.62639855649368,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 266,
+          "xy": [
+            0.08640670776367188,
+            -0.08617305755615234
+          ],
+          "yaw_deg": 178.92263835811124,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 268,
+          "xy": [
+            0.234222412109375,
+            -0.15241408348083496
+          ],
+          "yaw_deg": -154.73540858691348,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 283,
+          "xy": [
+            0.22168445587158203,
+            -0.16353607177734375
+          ],
+          "yaw_deg": -172.42587150880263,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 294,
+          "xy": [
+            0.18016862869262695,
+            -0.04386615753173828
+          ],
+          "yaw_deg": 162.44449258794637,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 307,
+          "xy": [
+            0.2555270195007324,
+            -0.1905379295349121
+          ],
+          "yaw_deg": -169.0257215230475,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 413,
+          "xy": [
+            0.07807230949401855,
+            -0.14223289489746094
+          ],
+          "yaw_deg": 75.32128152702387,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 437,
+          "xy": [
+            0.13027667999267578,
+            -0.029427051544189453
+          ],
+          "yaw_deg": -165.27059293186554,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 445,
+          "xy": [
+            0.08636069297790527,
+            -0.12515735626220703
+          ],
+          "yaw_deg": 174.08026635790887,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 452,
+          "xy": [
+            0.1109476089477539,
+            -0.18520259857177734
+          ],
+          "yaw_deg": 168.9066034221174,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 496,
+          "xy": [
+            0.25667184591293335,
+            -0.12531021237373352
+          ],
+          "yaw_deg": -179.33068744859278,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 523,
+          "xy": [
+            0.09328663349151611,
+            -0.08669281005859375
+          ],
+          "yaw_deg": 179.29506119359203,
+          "grasped": true,
+          "lifted": false,
+          "on_target": true,
+          "upright": true,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 541,
+          "xy": [
+            0.09796863794326782,
+            -0.08082771301269531
+          ],
+          "yaw_deg": 61.23275416881469,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 547,
+          "xy": [
+            0.21943116188049316,
+            -0.019998550415039062
+          ],
+          "yaw_deg": 160.76063151649512,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 558,
+          "xy": [
+            0.07438445091247559,
+            -0.14085698127746582
+          ],
+          "yaw_deg": 64.9014529140428,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 560,
+          "xy": [
+            0.10406672954559326,
+            -0.15051767230033875
+          ],
+          "yaw_deg": 177.21026869646394,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 593,
+          "xy": [
+            0.23123693466186523,
+            -0.1236577033996582
+          ],
+          "yaw_deg": -178.3701306429738,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 597,
+          "xy": [
+            0.09520530700683594,
+            -0.16846466064453125
+          ],
+          "yaw_deg": -179.17808734644498,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 606,
+          "xy": [
+            0.2567293643951416,
+            -0.061435699462890625
+          ],
+          "yaw_deg": -177.74652049163242,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 623,
+          "xy": [
+            0.26433682441711426,
+            -0.08132529258728027
+          ],
+          "yaw_deg": -169.01412408880762,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 649,
+          "xy": [
+            0.25795841217041016,
+            -0.1887660026550293
+          ],
+          "yaw_deg": -178.08434177866758,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 693,
+          "xy": [
+            0.22018003463745117,
+            -0.024708271026611328
+          ],
+          "yaw_deg": 154.03398949031262,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 716,
+          "xy": [
+            0.20416927337646484,
+            -0.18847107887268066
+          ],
+          "yaw_deg": 144.9049896451222,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 755,
+          "xy": [
+            0.0979013442993164,
+            -0.03137612342834473
+          ],
+          "yaw_deg": 157.09872240837586,
+          "grasped": true,
+          "lifted": false,
+          "on_target": true,
+          "upright": true,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 756,
+          "xy": [
+            0.10554313659667969,
+            -0.06765937805175781
+          ],
+          "yaw_deg": 56.043128304793704,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 764,
+          "xy": [
+            0.1525411605834961,
+            -0.0018186569213867188
+          ],
+          "yaw_deg": 177.08124659918514,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 778,
+          "xy": [
+            0.2637643814086914,
+            -0.17974138259887695
+          ],
+          "yaw_deg": 111.6587609887023,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 782,
+          "xy": [
+            0.2560749053955078,
+            -0.18555796146392822
+          ],
+          "yaw_deg": 43.76601242540061,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 801,
+          "xy": [
+            0.26095008850097656,
+            -0.1866626739501953
+          ],
+          "yaw_deg": -77.01753629726117,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 804,
+          "xy": [
+            0.08990001678466797,
+            -0.049060821533203125
+          ],
+          "yaw_deg": -175.5960766640295,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 832,
+          "xy": [
+            0.12483501434326172,
+            -0.06159210205078125
+          ],
+          "yaw_deg": -177.50490953735,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 835,
+          "xy": [
+            0.07222938537597656,
+            -0.10390567779541016
+          ],
+          "yaw_deg": -51.78619326143345,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 842,
+          "xy": [
+            0.2245626449584961,
+            -0.07205343246459961
+          ],
+          "yaw_deg": -168.89510116457816,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 854,
+          "xy": [
+            0.13428211212158203,
+            -0.08752775192260742
+          ],
+          "yaw_deg": 52.50194557427385,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 855,
+          "xy": [
+            0.1308612823486328,
+            -0.035103797912597656
+          ],
+          "yaw_deg": -168.13798846369644,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 867,
+          "xy": [
+            0.2655220031738281,
+            -0.1703939437866211
+          ],
+          "yaw_deg": 52.54791112783078,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 871,
+          "xy": [
+            0.2537412643432617,
+            -0.19611644744873047
+          ],
+          "yaw_deg": -170.63550152076817,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 883,
+          "xy": [
+            0.2469930648803711,
+            -0.19692397117614746
+          ],
+          "yaw_deg": 60.612151790910396,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 912,
+          "xy": [
+            0.2616128921508789,
+            -0.15016037225723267
+          ],
+          "yaw_deg": -157.91262079304258,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 918,
+          "xy": [
+            0.2370452880859375,
+            -0.15867280960083008
+          ],
+          "yaw_deg": 178.4975819279063,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 925,
+          "xy": [
+            0.10010051727294922,
+            -0.1364917755126953
+          ],
+          "yaw_deg": 174.28980283883925,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 927,
+          "xy": [
+            0.22377395629882812,
+            -0.16201210021972656
+          ],
+          "yaw_deg": 77.94599970240169,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 937,
+          "xy": [
+            0.26651763916015625,
+            -0.17514848709106445
+          ],
+          "yaw_deg": -49.77446150382218,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 949,
+          "xy": [
+            0.23663806915283203,
+            -0.18997573852539062
+          ],
+          "yaw_deg": -164.05067907858054,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 960,
+          "xy": [
+            0.25792884826660156,
+            -0.1606884002685547
+          ],
+          "yaw_deg": -167.6925101126322,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 965,
+          "xy": [
+            0.08310317993164062,
+            -0.058002471923828125
+          ],
+          "yaw_deg": -171.18115138303807,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 967,
+          "xy": [
+            0.2567167282104492,
+            -0.1582469940185547
+          ],
+          "yaw_deg": -159.34820385984435,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 970,
+          "xy": [
+            0.22807025909423828,
+            -0.03605079650878906
+          ],
+          "yaw_deg": -167.14665463663542,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 990,
+          "xy": [
+            0.14956092834472656,
+            -0.03881359100341797
+          ],
+          "yaw_deg": -174.6319137794944,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        }
+      ]
+    },
+    "ppo_F_block3": {
+      "counts": {
+        "never_grasped": 6,
+        "grasped_without_lift": 22,
+        "lifted_without_success": 14
+      },
+      "ids": [
+        27,
+        41,
+        51,
+        121,
+        228,
+        253,
+        259,
+        283,
+        307,
+        352,
+        382,
+        393,
+        405,
+        445,
+        495,
+        541,
+        548,
+        560,
+        579,
+        601,
+        606,
+        634,
+        636,
+        643,
+        649,
+        695,
+        711,
+        730,
+        794,
+        804,
+        850,
+        862,
+        871,
+        888,
+        909,
+        912,
+        918,
+        925,
+        949,
+        960,
+        967,
+        991
+      ],
+      "starts": [
+        {
+          "env_id": 27,
+          "xy": [
+            0.26493072509765625,
+            -0.17514991760253906
+          ],
+          "yaw_deg": -144.21842089400587,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 41,
+          "xy": [
+            0.1488037109375,
+            -0.02368783950805664
+          ],
+          "yaw_deg": -179.2051621988239,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 51,
+          "xy": [
+            0.2562274932861328,
+            -0.15760159492492676
+          ],
+          "yaw_deg": 175.26309143051606,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 121,
+          "xy": [
+            0.15205001831054688,
+            -0.19566059112548828
+          ],
+          "yaw_deg": 176.59157668203724,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 228,
+          "xy": [
+            0.08349037170410156,
+            -0.16756343841552734
+          ],
+          "yaw_deg": 25.513601509143715,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 253,
+          "xy": [
+            0.24756145477294922,
+            -0.1825876235961914
+          ],
+          "yaw_deg": -176.96339847921237,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 259,
+          "xy": [
+            0.24298477172851562,
+            -0.13935279846191406
+          ],
+          "yaw_deg": -78.06669215540057,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 283,
+          "xy": [
+            0.22168445587158203,
+            -0.16353607177734375
+          ],
+          "yaw_deg": -172.42587150880263,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 307,
+          "xy": [
+            0.2555270195007324,
+            -0.1905379295349121
+          ],
+          "yaw_deg": -169.0257215230475,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 352,
+          "xy": [
+            0.26375722885131836,
+            -0.006534576416015625
+          ],
+          "yaw_deg": -168.51502847997423,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 382,
+          "xy": [
+            0.07808732986450195,
+            -0.14451217651367188
+          ],
+          "yaw_deg": 36.343996881551995,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 393,
+          "xy": [
+            0.08008980751037598,
+            -0.17898893356323242
+          ],
+          "yaw_deg": -169.57988210327747,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 405,
+          "xy": [
+            0.07459521293640137,
+            -0.07036828994750977
+          ],
+          "yaw_deg": 151.73419690499136,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 445,
+          "xy": [
+            0.08636069297790527,
+            -0.12515735626220703
+          ],
+          "yaw_deg": 174.08026635790887,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 495,
+          "xy": [
+            0.2386762499809265,
+            -0.1511971354484558
+          ],
+          "yaw_deg": -71.69355862600639,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 541,
+          "xy": [
+            0.09796863794326782,
+            -0.08082771301269531
+          ],
+          "yaw_deg": 61.23275416881469,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 548,
+          "xy": [
+            0.07515370845794678,
+            -0.12702274322509766
+          ],
+          "yaw_deg": 21.52163753161835,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 560,
+          "xy": [
+            0.10406672954559326,
+            -0.15051767230033875
+          ],
+          "yaw_deg": 177.21026869646394,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 579,
+          "xy": [
+            0.25694990158081055,
+            -0.18866729736328125
+          ],
+          "yaw_deg": 125.50480681661381,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 601,
+          "xy": [
+            0.2568631172180176,
+            -0.18953227996826172
+          ],
+          "yaw_deg": -24.39752470451584,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 606,
+          "xy": [
+            0.2567293643951416,
+            -0.061435699462890625
+          ],
+          "yaw_deg": -177.74652049163242,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 634,
+          "xy": [
+            0.1659092903137207,
+            -0.1429891586303711
+          ],
+          "yaw_deg": 90.29830508222314,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 636,
+          "xy": [
+            0.19317293167114258,
+            -0.1964702606201172
+          ],
+          "yaw_deg": 176.20448284443236,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 643,
+          "xy": [
+            0.10538864135742188,
+            -0.026281356811523438
+          ],
+          "yaw_deg": 169.59944343280918,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 649,
+          "xy": [
+            0.25795841217041016,
+            -0.1887660026550293
+          ],
+          "yaw_deg": -178.08434177866758,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 695,
+          "xy": [
+            0.23634672164916992,
+            -0.1949148178100586
+          ],
+          "yaw_deg": 81.03011842847245,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 711,
+          "xy": [
+            0.12960529327392578,
+            -0.09679317474365234
+          ],
+          "yaw_deg": -157.87886712391457,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 730,
+          "xy": [
+            0.12987470626831055,
+            -0.16127300262451172
+          ],
+          "yaw_deg": 23.30983411020494,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 794,
+          "xy": [
+            0.14597702026367188,
+            -0.14334678649902344
+          ],
+          "yaw_deg": -165.86849383208283,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 804,
+          "xy": [
+            0.08990001678466797,
+            -0.049060821533203125
+          ],
+          "yaw_deg": -175.5960766640295,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 850,
+          "xy": [
+            0.18021392822265625,
+            -0.10262155532836914
+          ],
+          "yaw_deg": -175.4405259327435,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 862,
+          "xy": [
+            0.15374374389648438,
+            -0.12272071838378906
+          ],
+          "yaw_deg": -173.70558973373616,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 871,
+          "xy": [
+            0.2537412643432617,
+            -0.19611644744873047
+          ],
+          "yaw_deg": -170.63550152076817,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 888,
+          "xy": [
+            0.2358713150024414,
+            -0.19678783416748047
+          ],
+          "yaw_deg": 0.8198118506095571,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 909,
+          "xy": [
+            0.12271785736083984,
+            -0.14485883712768555
+          ],
+          "yaw_deg": 45.43091432992828,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 912,
+          "xy": [
+            0.2616128921508789,
+            -0.15016037225723267
+          ],
+          "yaw_deg": -157.91262079304258,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 918,
+          "xy": [
+            0.2370452880859375,
+            -0.15867280960083008
+          ],
+          "yaw_deg": 178.4975819279063,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 925,
+          "xy": [
+            0.10010051727294922,
+            -0.1364917755126953
+          ],
+          "yaw_deg": 174.28980283883925,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 949,
+          "xy": [
+            0.23663806915283203,
+            -0.18997573852539062
+          ],
+          "yaw_deg": -164.05067907858054,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 960,
+          "xy": [
+            0.25792884826660156,
+            -0.1606884002685547
+          ],
+          "yaw_deg": -167.6925101126322,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 967,
+          "xy": [
+            0.2567167282104492,
+            -0.1582469940185547
+          ],
+          "yaw_deg": -159.34820385984435,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 991,
+          "xy": [
+            0.09862899780273438,
+            -0.05832862854003906
+          ],
+          "yaw_deg": 178.03140781757608,
+          "grasped": true,
+          "lifted": false,
+          "on_target": true,
+          "upright": true,
+          "released": true,
+          "withdrawn": false
+        }
+      ]
+    },
+    "ppo_F_block4": {
+      "counts": {
+        "never_grasped": 12,
+        "grasped_without_lift": 11,
+        "lifted_without_success": 14
+      },
+      "ids": [
+        27,
+        34,
+        51,
+        87,
+        121,
+        122,
+        146,
+        162,
+        174,
+        190,
+        202,
+        252,
+        303,
+        307,
+        309,
+        356,
+        417,
+        532,
+        560,
+        636,
+        649,
+        677,
+        686,
+        709,
+        759,
+        766,
+        782,
+        788,
+        802,
+        804,
+        867,
+        871,
+        883,
+        918,
+        941,
+        955,
+        960
+      ],
+      "starts": [
+        {
+          "env_id": 27,
+          "xy": [
+            0.26493072509765625,
+            -0.17514991760253906
+          ],
+          "yaw_deg": -144.21842089400587,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 34,
+          "xy": [
+            0.09272575378417969,
+            -0.005230903625488281
+          ],
+          "yaw_deg": -165.52318619439322,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 51,
+          "xy": [
+            0.2562274932861328,
+            -0.15760159492492676
+          ],
+          "yaw_deg": 175.26309143051606,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 87,
+          "xy": [
+            0.1136922836303711,
+            -0.018181800842285156
+          ],
+          "yaw_deg": -148.0729669927136,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 121,
+          "xy": [
+            0.15205001831054688,
+            -0.19566059112548828
+          ],
+          "yaw_deg": 176.59157668203724,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 122,
+          "xy": [
+            0.22986602783203125,
+            -0.07107734680175781
+          ],
+          "yaw_deg": 49.14705774366319,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 146,
+          "xy": [
+            0.0790252685546875,
+            -0.12346029281616211
+          ],
+          "yaw_deg": 158.01145414667576,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 162,
+          "xy": [
+            0.26364803314208984,
+            -0.19237518310546875
+          ],
+          "yaw_deg": 55.650562663965964,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 174,
+          "xy": [
+            0.26984119415283203,
+            -0.18291139602661133
+          ],
+          "yaw_deg": 85.52416527846357,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 190,
+          "xy": [
+            0.20101451873779297,
+            -0.16621875762939453
+          ],
+          "yaw_deg": 177.18755157927515,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 202,
+          "xy": [
+            0.08286571502685547,
+            -0.028435707092285156
+          ],
+          "yaw_deg": 52.2873495695375,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 252,
+          "xy": [
+            0.26794910430908203,
+            -0.18643760681152344
+          ],
+          "yaw_deg": -140.85042418648158,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 303,
+          "xy": [
+            0.1801319122314453,
+            -0.19662272930145264
+          ],
+          "yaw_deg": 159.0813485284072,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 307,
+          "xy": [
+            0.2555270195007324,
+            -0.1905379295349121
+          ],
+          "yaw_deg": -169.0257215230475,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 309,
+          "xy": [
+            0.26090431213378906,
+            -0.19494342803955078
+          ],
+          "yaw_deg": 38.914393640426155,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 356,
+          "xy": [
+            0.25318193435668945,
+            -0.19633865356445312
+          ],
+          "yaw_deg": -62.826629020129324,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 417,
+          "xy": [
+            0.24029850959777832,
+            -0.15380287170410156
+          ],
+          "yaw_deg": 173.68956577308322,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 532,
+          "xy": [
+            0.18682625889778137,
+            -0.18591642379760742
+          ],
+          "yaw_deg": -172.52966301100724,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 560,
+          "xy": [
+            0.10406672954559326,
+            -0.15051767230033875
+          ],
+          "yaw_deg": 177.21026869646394,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 636,
+          "xy": [
+            0.19317293167114258,
+            -0.1964702606201172
+          ],
+          "yaw_deg": 176.20448284443236,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 649,
+          "xy": [
+            0.25795841217041016,
+            -0.1887660026550293
+          ],
+          "yaw_deg": -178.08434177866758,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 677,
+          "xy": [
+            0.230804443359375,
+            -0.005114555358886719
+          ],
+          "yaw_deg": -157.6027500798387,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 686,
+          "xy": [
+            0.23758459091186523,
+            -0.0022253990173339844
+          ],
+          "yaw_deg": -131.48294186655497,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 709,
+          "xy": [
+            0.18275690078735352,
+            -0.1952190399169922
+          ],
+          "yaw_deg": -174.99735598978452,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 759,
+          "xy": [
+            0.25580883026123047,
+            -0.1804046630859375
+          ],
+          "yaw_deg": -133.92908186834174,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 766,
+          "xy": [
+            0.18968963623046875,
+            -0.18982410430908203
+          ],
+          "yaw_deg": 167.0564550153492,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 782,
+          "xy": [
+            0.2560749053955078,
+            -0.18555796146392822
+          ],
+          "yaw_deg": 43.76601242540061,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 788,
+          "xy": [
+            0.0730733871459961,
+            -0.10129356384277344
+          ],
+          "yaw_deg": 51.27789321747394,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": true,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 802,
+          "xy": [
+            0.08414745330810547,
+            -0.09628486633300781
+          ],
+          "yaw_deg": 158.96187501142094,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 804,
+          "xy": [
+            0.08990001678466797,
+            -0.049060821533203125
+          ],
+          "yaw_deg": -175.5960766640295,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 867,
+          "xy": [
+            0.2655220031738281,
+            -0.1703939437866211
+          ],
+          "yaw_deg": 52.54791112783078,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 871,
+          "xy": [
+            0.2537412643432617,
+            -0.19611644744873047
+          ],
+          "yaw_deg": -170.63550152076817,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 883,
+          "xy": [
+            0.2469930648803711,
+            -0.19692397117614746
+          ],
+          "yaw_deg": 60.612151790910396,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 918,
+          "xy": [
+            0.2370452880859375,
+            -0.15867280960083008
+          ],
+          "yaw_deg": 178.4975819279063,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 941,
+          "xy": [
+            0.14292240142822266,
+            -0.07319903373718262
+          ],
+          "yaw_deg": 160.8423344733862,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 955,
+          "xy": [
+            0.24901962280273438,
+            -0.11937427520751953
+          ],
+          "yaw_deg": -82.72250527498687,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 960,
+          "xy": [
+            0.25792884826660156,
+            -0.1606884002685547
+          ],
+          "yaw_deg": -167.6925101126322,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        }
+      ]
+    },
+    "ppo_F_block5": {
+      "counts": {
+        "never_grasped": 5,
+        "grasped_without_lift": 10,
+        "lifted_without_success": 7
+      },
+      "ids": [
+        19,
+        174,
+        223,
+        252,
+        307,
+        316,
+        352,
+        464,
+        507,
+        541,
+        560,
+        574,
+        649,
+        691,
+        739,
+        767,
+        778,
+        821,
+        832,
+        850,
+        871,
+        925
+      ],
+      "starts": [
+        {
+          "env_id": 19,
+          "xy": [
+            0.1162567138671875,
+            -0.19800710678100586
+          ],
+          "yaw_deg": 33.31797375622017,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 174,
+          "xy": [
+            0.26984119415283203,
+            -0.18291139602661133
+          ],
+          "yaw_deg": 85.52416527846357,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 223,
+          "xy": [
+            0.09127330780029297,
+            -0.1667022705078125
+          ],
+          "yaw_deg": 41.52510255282716,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 252,
+          "xy": [
+            0.26794910430908203,
+            -0.18643760681152344
+          ],
+          "yaw_deg": -140.85042418648158,
+          "grasped": true,
+          "lifted": false,
+          "on_target": true,
+          "upright": true,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 307,
+          "xy": [
+            0.2555270195007324,
+            -0.1905379295349121
+          ],
+          "yaw_deg": -169.0257215230475,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 316,
+          "xy": [
+            0.24666118621826172,
+            -0.18631458282470703
+          ],
+          "yaw_deg": 21.868544319226196,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 352,
+          "xy": [
+            0.26375722885131836,
+            -0.006534576416015625
+          ],
+          "yaw_deg": -168.51502847997423,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 464,
+          "xy": [
+            0.26503050327301025,
+            -0.15612486004829407
+          ],
+          "yaw_deg": 9.941640076626863,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 507,
+          "xy": [
+            0.253273606300354,
+            -0.15224552154541016
+          ],
+          "yaw_deg": 12.418178043976162,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 541,
+          "xy": [
+            0.09796863794326782,
+            -0.08082771301269531
+          ],
+          "yaw_deg": 61.23275416881469,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 560,
+          "xy": [
+            0.10406672954559326,
+            -0.15051767230033875
+          ],
+          "yaw_deg": 177.21026869646394,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 574,
+          "xy": [
+            0.24908661842346191,
+            -0.16931724548339844
+          ],
+          "yaw_deg": -2.0856214490712155,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 649,
+          "xy": [
+            0.25795841217041016,
+            -0.1887660026550293
+          ],
+          "yaw_deg": -178.08434177866758,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 691,
+          "xy": [
+            0.20029258728027344,
+            -0.08782482147216797
+          ],
+          "yaw_deg": 179.9652256849911,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 739,
+          "xy": [
+            0.09852409362792969,
+            -0.1939382553100586
+          ],
+          "yaw_deg": 41.812656547965915,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 767,
+          "xy": [
+            0.11322021484375,
+            -0.12434959411621094
+          ],
+          "yaw_deg": 76.02272932493605,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 778,
+          "xy": [
+            0.2637643814086914,
+            -0.17974138259887695
+          ],
+          "yaw_deg": 111.6587609887023,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 821,
+          "xy": [
+            0.11545085906982422,
+            -0.08300447463989258
+          ],
+          "yaw_deg": -175.21038974177395,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 832,
+          "xy": [
+            0.12483501434326172,
+            -0.06159210205078125
+          ],
+          "yaw_deg": -177.50490953735,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 850,
+          "xy": [
+            0.18021392822265625,
+            -0.10262155532836914
+          ],
+          "yaw_deg": -175.4405259327435,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 871,
+          "xy": [
+            0.2537412643432617,
+            -0.19611644744873047
+          ],
+          "yaw_deg": -170.63550152076817,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 925,
+          "xy": [
+            0.10010051727294922,
+            -0.1364917755126953
+          ],
+          "yaw_deg": 174.28980283883925,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        }
+      ]
+    },
+    "ppo_F_block6": {
+      "counts": {
+        "never_grasped": 4,
+        "grasped_without_lift": 3,
+        "lifted_without_success": 8
+      },
+      "ids": [
+        51,
+        83,
+        174,
+        188,
+        253,
+        304,
+        352,
+        464,
+        579,
+        649,
+        664,
+        766,
+        778,
+        871,
+        918
+      ],
+      "starts": [
+        {
+          "env_id": 51,
+          "xy": [
+            0.2562274932861328,
+            -0.15760159492492676
+          ],
+          "yaw_deg": 175.26309143051606,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 83,
+          "xy": [
+            0.15723705291748047,
+            -0.14510774612426758
+          ],
+          "yaw_deg": 167.67544800887097,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 174,
+          "xy": [
+            0.26984119415283203,
+            -0.18291139602661133
+          ],
+          "yaw_deg": 85.52416527846357,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 188,
+          "xy": [
+            0.12577533721923828,
+            -0.07667350769042969
+          ],
+          "yaw_deg": 77.82133551797874,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 253,
+          "xy": [
+            0.24756145477294922,
+            -0.1825876235961914
+          ],
+          "yaw_deg": -176.96339847921237,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 304,
+          "xy": [
+            0.2647590637207031,
+            -0.16104727983474731
+          ],
+          "yaw_deg": 138.83983604825838,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 352,
+          "xy": [
+            0.26375722885131836,
+            -0.006534576416015625
+          ],
+          "yaw_deg": -168.51502847997423,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 464,
+          "xy": [
+            0.26503050327301025,
+            -0.15612486004829407
+          ],
+          "yaw_deg": 9.941640076626863,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 579,
+          "xy": [
+            0.25694990158081055,
+            -0.18866729736328125
+          ],
+          "yaw_deg": 125.50480681661381,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 649,
+          "xy": [
+            0.25795841217041016,
+            -0.1887660026550293
+          ],
+          "yaw_deg": -178.08434177866758,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 664,
+          "xy": [
+            0.17739582061767578,
+            -0.13093090057373047
+          ],
+          "yaw_deg": 168.65844843607223,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 766,
+          "xy": [
+            0.18968963623046875,
+            -0.18982410430908203
+          ],
+          "yaw_deg": 167.0564550153492,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 778,
+          "xy": [
+            0.2637643814086914,
+            -0.17974138259887695
+          ],
+          "yaw_deg": 111.6587609887023,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 871,
+          "xy": [
+            0.2537412643432617,
+            -0.19611644744873047
+          ],
+          "yaw_deg": -170.63550152076817,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 918,
+          "xy": [
+            0.2370452880859375,
+            -0.15867280960083008
+          ],
+          "yaw_deg": 178.4975819279063,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        }
+      ]
+    },
+    "ppo_F_block7": {
+      "counts": {
+        "never_grasped": 5,
+        "grasped_without_lift": 9,
+        "lifted_without_success": 6
+      },
+      "ids": [
+        34,
+        51,
+        109,
+        266,
+        417,
+        445,
+        520,
+        523,
+        530,
+        560,
+        651,
+        710,
+        804,
+        821,
+        878,
+        918,
+        925,
+        932,
+        961,
+        1014
+      ],
+      "starts": [
+        {
+          "env_id": 34,
+          "xy": [
+            0.09272575378417969,
+            -0.005230903625488281
+          ],
+          "yaw_deg": -165.52318619439322,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 51,
+          "xy": [
+            0.2562274932861328,
+            -0.15760159492492676
+          ],
+          "yaw_deg": 175.26309143051606,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 109,
+          "xy": [
+            0.07615947723388672,
+            -0.0010826587677001953
+          ],
+          "yaw_deg": -22.727871356010887,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 266,
+          "xy": [
+            0.08640670776367188,
+            -0.08617305755615234
+          ],
+          "yaw_deg": 178.92263835811124,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 417,
+          "xy": [
+            0.24029850959777832,
+            -0.15380287170410156
+          ],
+          "yaw_deg": 173.68956577308322,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 445,
+          "xy": [
+            0.08636069297790527,
+            -0.12515735626220703
+          ],
+          "yaw_deg": 174.08026635790887,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 520,
+          "xy": [
+            0.1413533091545105,
+            -0.04169273376464844
+          ],
+          "yaw_deg": 157.68098104547974,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 523,
+          "xy": [
+            0.09328663349151611,
+            -0.08669281005859375
+          ],
+          "yaw_deg": 179.29506119359203,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 530,
+          "xy": [
+            0.13252681493759155,
+            -0.08878064155578613
+          ],
+          "yaw_deg": 170.1264061180012,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 560,
+          "xy": [
+            0.10406672954559326,
+            -0.15051767230033875
+          ],
+          "yaw_deg": 177.21026869646394,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 651,
+          "xy": [
+            0.09550809860229492,
+            -0.09137725830078125
+          ],
+          "yaw_deg": 176.18003048846896,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 710,
+          "xy": [
+            0.1255931854248047,
+            -0.0971078872680664
+          ],
+          "yaw_deg": 172.0409902820479,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 804,
+          "xy": [
+            0.08990001678466797,
+            -0.049060821533203125
+          ],
+          "yaw_deg": -175.5960766640295,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 821,
+          "xy": [
+            0.11545085906982422,
+            -0.08300447463989258
+          ],
+          "yaw_deg": -175.21038974177395,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 878,
+          "xy": [
+            0.2669095993041992,
+            -0.05501449108123779
+          ],
+          "yaw_deg": 21.651908245322595,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 918,
+          "xy": [
+            0.2370452880859375,
+            -0.15867280960083008
+          ],
+          "yaw_deg": 178.4975819279063,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 925,
+          "xy": [
+            0.10010051727294922,
+            -0.1364917755126953
+          ],
+          "yaw_deg": 174.28980283883925,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 932,
+          "xy": [
+            0.08829879760742188,
+            -0.009348869323730469
+          ],
+          "yaw_deg": 72.04521416273711,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 961,
+          "xy": [
+            0.16704177856445312,
+            -0.031352996826171875
+          ],
+          "yaw_deg": 175.49213471149926,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 1014,
+          "xy": [
+            0.26529884338378906,
+            -0.15138006210327148
+          ],
+          "yaw_deg": 160.43677204478314,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        }
+      ]
+    },
+    "ppo_F_block8": {
+      "counts": {
+        "never_grasped": 4,
+        "grasped_without_lift": 3,
+        "lifted_without_success": 11
+      },
+      "ids": [
+        4,
+        34,
+        109,
+        188,
+        197,
+        208,
+        316,
+        413,
+        445,
+        560,
+        638,
+        654,
+        683,
+        778,
+        804,
+        832,
+        855,
+        990
+      ],
+      "starts": [
+        {
+          "env_id": 4,
+          "xy": [
+            0.14228248596191406,
+            -0.16122817993164062
+          ],
+          "yaw_deg": 143.92059257253777,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 34,
+          "xy": [
+            0.09272575378417969,
+            -0.005230903625488281
+          ],
+          "yaw_deg": -165.52318619439322,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 109,
+          "xy": [
+            0.07615947723388672,
+            -0.0010826587677001953
+          ],
+          "yaw_deg": -22.727871356010887,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": false
+        },
+        {
+          "env_id": 188,
+          "xy": [
+            0.12577533721923828,
+            -0.07667350769042969
+          ],
+          "yaw_deg": 77.82133551797874,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 197,
+          "xy": [
+            0.22217464447021484,
+            -0.017928123474121094
+          ],
+          "yaw_deg": 110.3485946133578,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 208,
+          "xy": [
+            0.1305704116821289,
+            -0.00592958927154541
+          ],
+          "yaw_deg": 128.23443862169458,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 316,
+          "xy": [
+            0.24666118621826172,
+            -0.18631458282470703
+          ],
+          "yaw_deg": 21.868544319226196,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 413,
+          "xy": [
+            0.07807230949401855,
+            -0.14223289489746094
+          ],
+          "yaw_deg": 75.32128152702387,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 445,
+          "xy": [
+            0.08636069297790527,
+            -0.12515735626220703
+          ],
+          "yaw_deg": 174.08026635790887,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 560,
+          "xy": [
+            0.10406672954559326,
+            -0.15051767230033875
+          ],
+          "yaw_deg": 177.21026869646394,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 638,
+          "xy": [
+            0.25194263458251953,
+            -0.15380001068115234
+          ],
+          "yaw_deg": -150.07127489925628,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 654,
+          "xy": [
+            0.09639358520507812,
+            -0.19079184532165527
+          ],
+          "yaw_deg": 133.89559883354087,
+          "grasped": true,
+          "lifted": true,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 683,
+          "xy": [
+            0.2581300735473633,
+            -0.1509108543395996
+          ],
+          "yaw_deg": -97.17812940334183,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 778,
+          "xy": [
+            0.2637643814086914,
+            -0.17974138259887695
+          ],
+          "yaw_deg": 111.6587609887023,
+          "grasped": true,
+          "lifted": true,
+          "on_target": true,
+          "upright": false,
+          "released": true,
+          "withdrawn": true
+        },
+        {
+          "env_id": 804,
+          "xy": [
+            0.08990001678466797,
+            -0.049060821533203125
+          ],
+          "yaw_deg": -175.5960766640295,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 832,
+          "xy": [
+            0.12483501434326172,
+            -0.06159210205078125
+          ],
+          "yaw_deg": -177.50490953735,
+          "grasped": false,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 855,
+          "xy": [
+            0.1308612823486328,
+            -0.035103797912597656
+          ],
+          "yaw_deg": -168.13798846369644,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        },
+        {
+          "env_id": 990,
+          "xy": [
+            0.14956092834472656,
+            -0.03881359100341797
+          ],
+          "yaw_deg": -174.6319137794944,
+          "grasped": true,
+          "lifted": false,
+          "on_target": false,
+          "upright": false,
+          "released": false,
+          "withdrawn": false
+        }
+      ]
+    }
+  },
+  "all_F_initial_poses_match": true,
+  "persistent_F_failures": [],
+  "most_frequent_F_failures": [
+    [
+      649,
+      6
+    ],
+    [
+      804,
+      6
+    ],
+    [
+      871,
+      6
+    ],
+    [
+      560,
+      6
+    ],
+    [
+      34,
+      5
+    ],
+    [
+      307,
+      5
+    ],
+    [
+      445,
+      5
+    ],
+    [
+      918,
+      5
+    ],
+    [
+      51,
+      5
+    ],
+    [
+      27,
+      4
+    ],
+    [
+      174,
+      4
+    ],
+    [
+      252,
+      4
+    ]
+  ],
+  "training": [
+    {
+      "run": "2026-10-26_17-21-21_overnight_20261027_ppo_camera_ppo_A_block1_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 9.999999747378752e-06,
+        "last": 7.593750342493877e-05,
+        "minimum": 9.999999747378752e-06,
+        "maximum": 0.00017085937724914402
+      }
+    },
+    {
+      "run": "2026-10-26_17-32-07_overnight_20261027_ppo_camera_ppo_A_block2_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 0.00011390625149942935,
+        "last": 0.00017085937724914402,
+        "minimum": 9.999999747378752e-06,
+        "maximum": 0.00017085937724914402
+      }
+    },
+    {
+      "run": "2026-10-26_17-42-52_overnight_20261027_ppo_camera_ppo_B_block1_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 9.999999747378752e-06,
+        "last": 2.2500000341096893e-05,
+        "minimum": 9.999999747378752e-06,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_17-53-33_overnight_20261027_ppo_camera_ppo_C_block1_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 9.999999747378752e-06,
+        "last": 0.00017085937724914402,
+        "minimum": 9.999999747378752e-06,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_18-04-06_overnight_20261027_ppo_camera_ppo_C_block2_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 0.00017085937724914402,
+        "last": 0.00011390625149942935,
+        "minimum": 3.3749998692655936e-05,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_18-14-52_overnight_20261027_ppo_camera_ppo_D_block1_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 9.999999747378752e-06,
+        "last": 0.0002562890585977584,
+        "minimum": 9.999999747378752e-06,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_18-25-38_overnight_20261027_ppo_camera_ppo_E_block1_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 9.999999747378752e-06,
+        "last": 0.00017085937724914402,
+        "minimum": 9.999999747378752e-06,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_18-36-23_overnight_20261027_ppo_camera_ppo_E_block2_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 0.00017085937724914402,
+        "last": 0.00011390625149942935,
+        "minimum": 3.3749998692655936e-05,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_18-47-10_overnight_20261027_ppo_camera_ppo_F_block1_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 9.999999747378752e-06,
+        "last": 0.00017085937724914402,
+        "minimum": 9.999999747378752e-06,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_18-57-47_overnight_20261027_ppo_camera_ppo_F_block2_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 0.00017085937724914402,
+        "last": 0.00017085937724914402,
+        "minimum": 2.2500000341096893e-05,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_19-08-33_overnight_20261027_ppo_camera_ppo_F_block3_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 0.00011390625149942935,
+        "last": 0.00011390625149942935,
+        "minimum": 3.3749998692655936e-05,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_19-19-29_overnight_20261027_ppo_camera_ppo_F_block4_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 0.00017085937724914402,
+        "last": 0.00017085937724914402,
+        "minimum": 3.3749998692655936e-05,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_19-30-15_overnight_20261027_ppo_camera_ppo_F_block5_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 0.00017085937724914402,
+        "last": 0.00017085937724914402,
+        "minimum": 3.3749998692655936e-05,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_19-41-12_overnight_20261027_ppo_camera_ppo_F_block6_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 5.062499985797331e-05,
+        "last": 0.00011390625149942935,
+        "minimum": 5.062499985797331e-05,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_19-52-12_overnight_20261027_ppo_camera_ppo_F_block7_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 0.00017085937724914402,
+        "last": 0.00017085937724914402,
+        "minimum": 3.3749998692655936e-05,
+        "maximum": 0.0002562890585977584
+      }
+    },
+    {
+      "run": "2026-10-26_20-03-12_overnight_20261027_ppo_camera_ppo_F_block8_try0",
+      "all_scalars_finite": true,
+      "learning_rate": {
+        "first": 7.593750342493877e-05,
+        "last": 0.00011390625149942935,
+        "minimum": 3.3749998692655936e-05,
+        "maximum": 0.00017085937724914402
+      }
+    }
+  ]
+}

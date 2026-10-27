@@ -1,0 +1,27 @@
+{
+  "grid": {
+    "jobs": 12,
+    "episodes": 3000,
+    "distinct_sampling_seeds": 12
+  },
+  "random": {
+    "jobs": 12,
+    "episodes": 3072,
+    "distinct_sampling_seeds": 12
+  },
+  "stage": {
+    "jobs": 12,
+    "episodes": 3072,
+    "distinct_sampling_seeds": 12
+  },
+  "nominal": {
+    "jobs": 12,
+    "episodes": 3072,
+    "distinct_sampling_seeds": 12
+  },
+  "regression": {
+    "jobs": 1,
+    "episodes": 3,
+    "distinct_sampling_seeds": 1
+  }
+}

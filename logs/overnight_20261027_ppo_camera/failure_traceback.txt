@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/mnt/d/work/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/workspace_pipeline.py", line 305, in run
+    raise RuntimeError(
+RuntimeError: PPO stage F did not pass within 8 training blocks; best stage success=0.9854, best checkpoint=/mnt/d/work/robotics/IsaacLabTutorial/logs/rsl_rl/so101_box_state/2026-10-26_19-41-12_overnight_20261027_ppo_camera_ppo_F_block6_try0/model_4982.pt

@@ -1,0 +1,8 @@
+{
+  "coverage_status": "insufficient_coverage",
+  "episodes_per_policy": 200,
+  "camera_successes": 6,
+  "matching_initial_poses": 200,
+  "teacher_successes": 4,
+  "note": "Integration only; frozen models do not pass the broad task"
+}

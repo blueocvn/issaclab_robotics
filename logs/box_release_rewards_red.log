@@ -1,0 +1,118 @@
+........FFFFFFF                                                          [100%]
+=================================== FAILURES ===================================
+_ test_stationary_target_hold_cannot_earn_repeated_progress_reward[TransportProgressReward] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74efc4c50fb0>
+kind = 'TransportProgressReward'
+
+    @pytest.mark.parametrize("kind", ["TransportProgressReward", "ReleaseProgressReward"])
+    def test_stationary_target_hold_cannot_earn_repeated_progress_reward(monkeypatch, kind):
+        env, q, _, _ = target_fixture(monkeypatch)
+        q["jaw_distance"][:] = 0.0566
+>       reward = getattr(mdp, kind).__new__(getattr(mdp, kind))
+                 ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'isaaclab_tutorial.tasks.place_box.mdp' has no attribute 'TransportProgressReward'
+
+tests/test_box_rewards.py:134: AttributeError
+_ test_stationary_target_hold_cannot_earn_repeated_progress_reward[ReleaseProgressReward] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74efc4bf7bf0>
+kind = 'ReleaseProgressReward'
+
+    @pytest.mark.parametrize("kind", ["TransportProgressReward", "ReleaseProgressReward"])
+    def test_stationary_target_hold_cannot_earn_repeated_progress_reward(monkeypatch, kind):
+        env, q, _, _ = target_fixture(monkeypatch)
+        q["jaw_distance"][:] = 0.0566
+>       reward = getattr(mdp, kind).__new__(getattr(mdp, kind))
+                 ^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'isaaclab_tutorial.tasks.place_box.mdp' has no attribute 'ReleaseProgressReward'
+
+tests/test_box_rewards.py:134: AttributeError
+_________ test_open_release_and_withdraw_have_distinct_progress_credit _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74efc4ada330>
+
+    def test_open_release_and_withdraw_have_distinct_progress_credit(monkeypatch):
+        env, q, _, _ = target_fixture(monkeypatch)
+>       reward = mdp.ReleaseProgressReward.__new__(mdp.ReleaseProgressReward)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'isaaclab_tutorial.tasks.place_box.mdp' has no attribute 'ReleaseProgressReward'
+
+tests/test_box_rewards.py:143: AttributeError
+_______ test_wide_jaws_still_touching_box_cannot_get_full_release_credit _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74efc4ad9580>
+
+    def test_wide_jaws_still_touching_box_cannot_get_full_release_credit(monkeypatch):
+        env, q, _, _ = target_fixture(monkeypatch)
+        q["jaw_distance"][:] = 0.08
+        q["gripper_distance"][:] = 0.09
+>       assert mdp.release_reward(env).item() == pytest.approx(0.25)
+E       assert 1.0 == 0.25 ± 2.5e-07
+E         
+E         comparison failed
+E         Obtained: 1.0
+E         Expected: 0.25 ± 2.5e-07
+
+tests/test_box_rewards.py:159: AssertionError
+________ test_release_regrasp_cycle_has_no_positive_net_progress_reward ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74efc4c51ac0>
+
+    def test_release_regrasp_cycle_has_no_positive_net_progress_reward(monkeypatch):
+        env, q, _, _ = target_fixture(monkeypatch)
+>       reward = mdp.ReleaseProgressReward.__new__(mdp.ReleaseProgressReward)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'isaaclab_tutorial.tasks.place_box.mdp' has no attribute 'ReleaseProgressReward'
+
+tests/test_box_rewards.py:166: AttributeError
+______ test_release_potential_rejects_wrong_zone_hovering_and_excess_tilt ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74efc5512b70>
+
+    def test_release_potential_rejects_wrong_zone_hovering_and_excess_tilt(monkeypatch):
+        import math
+        env, q, _, _ = target_fixture(monkeypatch, 4)
+        q["jaw_distance"][:] = 0.08
+        q["contacts"][:] = False
+        q["gripper_distance"][:] = 0.09
+        q["position"][1, 0] += 0.20
+        q["position"][2, 2] += 0.02
+        q["quaternion"][3] = torch.tensor([math.sin(math.radians(20)), 0, 0, math.cos(math.radians(20))])
+>       assert mdp.release_reward(env).tolist() == pytest.approx([1, 0, 0, 0])
+E       assert [1.0, 0.0, 0.0, 1.0] == approx([1 ± 1... 0 ± 1.0e-12])
+E         
+E         comparison failed. Mismatched elements: 1 / 4:
+E         Max absolute difference: 1.0
+E         Max relative difference: 1.0
+E         Index | Obtained | Expected   
+E         3     | 1.0      | 0 ± 1.0e-12
+
+tests/test_box_rewards.py:191: AssertionError
+_________ test_potential_partial_reset_leaves_other_env_history_intact _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74efc5513ad0>
+
+    def test_potential_partial_reset_leaves_other_env_history_intact(monkeypatch):
+        values = torch.tensor([0.2, 0.7])
+        monkeypatch.setattr(mdp, "release_reward", lambda _: values)
+>       reward = mdp.ReleaseProgressReward.__new__(mdp.ReleaseProgressReward)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'isaaclab_tutorial.tasks.place_box.mdp' has no attribute 'ReleaseProgressReward'
+
+tests/test_box_rewards.py:197: AttributeError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: 35 warnings
+  /mnt/e/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_box_rewards.py::test_stationary_target_hold_cannot_earn_repeated_progress_reward[TransportProgressReward]
+FAILED tests/test_box_rewards.py::test_stationary_target_hold_cannot_earn_repeated_progress_reward[ReleaseProgressReward]
+FAILED tests/test_box_rewards.py::test_open_release_and_withdraw_have_distinct_progress_credit
+FAILED tests/test_box_rewards.py::test_wide_jaws_still_touching_box_cannot_get_full_release_credit
+FAILED tests/test_box_rewards.py::test_release_regrasp_cycle_has_no_positive_net_progress_reward
+FAILED tests/test_box_rewards.py::test_release_potential_rejects_wrong_zone_hovering_and_excess_tilt
+FAILED tests/test_box_rewards.py::test_potential_partial_reset_leaves_other_env_history_intact
+7 failed, 8 passed, 35 warnings in 21.90s

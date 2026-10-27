@@ -1,0 +1,86 @@
+{
+  "audits": {
+    "latest_first": {
+      "summary": {
+        "episodes": 1024,
+        "grasped_rate": 1.0,
+        "lifted_rate": 1.0,
+        "placed_rate": 0.9970703125,
+        "success_rate": 0.99609375,
+        "dropped_rate": 0.0,
+        "out_of_bounds_rate": 0.0,
+        "unstable_robot_rate": 0.0,
+        "timed_out_rate": 0.00390625,
+        "on_target_rate": 1.0,
+        "released_rate": 0.99609375,
+        "withdrawn_rate": 0.99609375,
+        "upright_rate": 1.0
+      },
+      "successes": 1020,
+      "failed_ids": [
+        55,
+        177,
+        238,
+        885
+      ]
+    },
+    "latest_repeat": {
+      "summary": {
+        "episodes": 1024,
+        "grasped_rate": 1.0,
+        "lifted_rate": 1.0,
+        "placed_rate": 0.994140625,
+        "success_rate": 0.994140625,
+        "dropped_rate": 0.0,
+        "out_of_bounds_rate": 0.0,
+        "unstable_robot_rate": 0.0,
+        "timed_out_rate": 0.005859375,
+        "on_target_rate": 0.99609375,
+        "released_rate": 0.994140625,
+        "withdrawn_rate": 0.994140625,
+        "upright_rate": 0.99609375
+      },
+      "successes": 1018,
+      "failed_ids": [
+        112,
+        161,
+        339,
+        416,
+        630,
+        1008
+      ]
+    },
+    "previous": {
+      "summary": {
+        "episodes": 1024,
+        "grasped_rate": 1.0,
+        "lifted_rate": 1.0,
+        "placed_rate": 0.998046875,
+        "success_rate": 0.998046875,
+        "dropped_rate": 0.0,
+        "out_of_bounds_rate": 0.0,
+        "unstable_robot_rate": 0.0,
+        "timed_out_rate": 0.001953125,
+        "on_target_rate": 0.998046875,
+        "released_rate": 0.998046875,
+        "withdrawn_rate": 0.998046875,
+        "upright_rate": 0.998046875
+      },
+      "successes": 1022,
+      "failed_ids": [
+        270,
+        709
+      ]
+    }
+  },
+  "all_audit_initial_poses_match": true,
+  "finite_training_scalars": true,
+  "instrumented_replay_terminal_successes": {
+    "55": true,
+    "177": true,
+    "885": true,
+    "238": true
+  },
+  "latest_pooled_successes": 2038,
+  "latest_pooled_episodes": 2048
+}

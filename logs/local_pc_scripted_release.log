@@ -1,0 +1,130 @@
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 42
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.03333333333333333
+	Environment step-size : 0.03333333333333333
+I: Initializing Version 2.74.0-release.7316+gl.ec99a64b
+I: Client ID: 3EZOLCEA
+I: ThreadId(02) hub_client::client::Client::new Launching client mode=Shared with_cleaner=false cache_path=None cache_size=None
+I: ThreadId(03) launch self=Launcher { discovery_lock: RwLock { lock: RwLock { inner: File { fd: 26, path: "/tmp/hub-ubuntu.lock", read: false, write: true } } }, mode: Shared, with_cleaner: false, config_file: "/tmp/hub-ubuntu-760AF805.config.json" } cmd="hub" "--mode=shared" "--write-config" "/tmp/hub-ubuntu-760AF805.config.json" "--"
+I: Not using Hub: Hub not found
+I: Successfully created S3 provider for https://omniverse-content-production.s3-us-west-2.amazonaws.com
+I: Using CloudFront http://dcb18d6mfegct.cloudfront.net/, List = No
+Serving remote assets from the local cache under '/tmp'. Each copy is checked against the server before use; delete the directory to force a full re-download.
+/mnt/d/work/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/isaaclab_newton/cloner/newton_clone_utils.py:165: FutureWarning: Newton shape color replacement is enabled; this workaround will be deprecated in a future release.
+  replace_newton_builder_shape_colors(builder, stage)
+[INFO]: Time taken for scene creation Last: 7.675339 s, Mean: 7.675339 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 8
+	Environment spacing   : 1.1
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+Finalize builder took: Last: 0.171829 s, Mean: 0.171829 s, Std: 0.000000 s, N: 1
+Failed to get root com velocity. If the articulation is fixed, this is expected. Setting root com velocity to zeros.
+Contact sensor construction took: Last: 0.004989 s, Mean: 0.004989 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.000817 s, Mean: 0.002903 s, Std: 0.002950 s, N: 2
+Contact sensor construction took: Last: 0.001517 s, Mean: 0.002441 s, Std: 0.002234 s, N: 3
+Initialize solver took: Last: 3.058344 s, Mean: 3.058344 s, Std: 0.000000 s, N: 1
+[INFO]: Time taken for simulation start Last: 4.034330 s, Mean: 4.034330 s, Std: 0.000000 s, N: 1
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++----------------------+
+| Active Command Terms |
++-------+------+-------+
+| Index | Name |  Type |
++-------+------+-------+
++-------+------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 2 active terms.
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++------------+--------------------------+
+|   Index    | Name                     |
++------------+--------------------------+
+|     0      | box_material             |
++------------+--------------------------+
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++------------+------------------------+
+|   Index    | Name                   |
++------------+------------------------+
+|     0      | reset_home             |
++------------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++-----------------------+
+| Active Recorder Terms |
++------------+----------+
+|   Index    | Name     |
++------------+----------+
++------------+----------+
+
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 6)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         5 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (54,)) |
++-------------------+-------------------+--------------------+
+|       Index       | Name              |       Shape        |
++-------------------+-------------------+--------------------+
+|         0         | state             |       (54,)        |
++-------------------+-------------------+--------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (54,)) |
++-------------------+-------------------+--------------------+
+|       Index       | Name              |       Shape        |
++-------------------+-------------------+--------------------+
+|         0         | state             |       (54,)        |
++-------------------+-------------------+--------------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 5 active terms.
++--------------------------------------+
+|       Active Termination Terms       |
++-------+-------------------+----------+
+| Index | Name              | Time Out |
++-------+-------------------+----------+
+|   0   | success           |  False   |
+|   1   | box_dropped       |  False   |
+|   2   | box_out_of_bounds |  False   |
+|   3   | unstable_robot    |  False   |
+|   4   | time_out          |   True   |
++-------+-------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 10 active terms.
++----------------------------------+
+|       Active Reward Terms        |
++-------+----------------+---------+
+| Index | Name           |  Weight |
++-------+----------------+---------+
+|   0   | approach       |     1.0 |
+|   1   | transport      |     2.0 |
+|   2   | table_pressure |    -2.0 |
+|   3   | release        |    10.0 |
+|   4   | milestones     |    10.0 |
+|   5   | success        |   200.0 |
+|   6   | lost           |   -50.0 |
+|   7   | action_rate    |  -0.002 |
+|   8   | joint_velocity | -0.0002 |
+|   9   | joint_limits   |    -1.0 |
++-------+----------------+---------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++-------------------------+
+| Active Curriculum Terms |
++-------------+-----------+
+|    Index    | Name      |
++-------------+-----------+
++-------------+-----------+
+
+[INFO]: Completed setting up the environment...
+CUDA graph took: Last: 0.245152 s, Mean: 0.245152 s, Std: 0.000000 s, N: 1
+BOX_PLAYBACK_TRACE=logs/local_pc_scripted_release.json

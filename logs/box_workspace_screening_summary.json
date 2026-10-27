@@ -1,0 +1,395 @@
+{
+  "teacher_pm5cm": {
+    "source": "box_workspace_teacher_2196_pm5cm_seed42_evaluation.json",
+    "summary": {
+      "episodes": 256,
+      "grasped_rate": 0.64453125,
+      "lifted_rate": 0.61328125,
+      "placed_rate": 0.4296875,
+      "success_rate": 0.4296875,
+      "dropped_rate": 0.0,
+      "out_of_bounds_rate": 0.0,
+      "unstable_robot_rate": 0.0,
+      "timed_out_rate": 0.5703125,
+      "on_target_rate": 0.4296875,
+      "released_rate": 0.4296875,
+      "withdrawn_rate": 0.4296875,
+      "upright_rate": 0.4296875
+    },
+    "successes": 110,
+    "failure_stages": {
+      "never_grasped": 91,
+      "grasped_without_lift": 8,
+      "lifted_without_full_success": 47
+    },
+    "observed_dx_m": [
+      -0.04989139556884767,
+      0.04995830535888671
+    ],
+    "observed_dy_m": [
+      -0.04990425109863281,
+      0.04992303848266602
+    ],
+    "observed_yaw_deg": [
+      -5.72733915909555,
+      5.694431434688789
+    ],
+    "grid_counts": [
+      [
+        14,
+        15,
+        13,
+        10,
+        6
+      ],
+      [
+        12,
+        11,
+        6,
+        10,
+        12
+      ],
+      [
+        6,
+        7,
+        9,
+        11,
+        11
+      ],
+      [
+        12,
+        7,
+        7,
+        8,
+        13
+      ],
+      [
+        11,
+        8,
+        12,
+        9,
+        16
+      ]
+    ],
+    "grid_successes": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        8,
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        7,
+        9,
+        11,
+        7
+      ],
+      [
+        1,
+        6,
+        7,
+        8,
+        7
+      ],
+      [
+        0,
+        8,
+        12,
+        8,
+        4
+      ]
+    ],
+    "yaw_counts": [
+      30,
+      38,
+      26,
+      32,
+      41,
+      34,
+      31,
+      24
+    ],
+    "yaw_successes": [
+      13,
+      16,
+      8,
+      14,
+      18,
+      15,
+      14,
+      12
+    ],
+    "sampling": "Uniform random starts, grouped into bins after evaluation; not fixed grid points."
+  },
+  "teacher_pm10cm_full_yaw": {
+    "source": "box_workspace_teacher_2196_pm10cm_full_yaw_seed42_evaluation.json",
+    "summary": {
+      "episodes": 1024,
+      "grasped_rate": 0.25390625,
+      "lifted_rate": 0.0732421875,
+      "placed_rate": 0.03515625,
+      "success_rate": 0.03515625,
+      "dropped_rate": 0.0,
+      "out_of_bounds_rate": 0.0,
+      "unstable_robot_rate": 0.0,
+      "timed_out_rate": 0.96484375,
+      "on_target_rate": 0.03515625,
+      "released_rate": 0.03515625,
+      "withdrawn_rate": 0.03515625,
+      "upright_rate": 0.03515625
+    },
+    "successes": 36,
+    "failure_stages": {
+      "never_grasped": 764,
+      "grasped_without_lift": 185,
+      "lifted_without_full_success": 39
+    },
+    "observed_dx_m": [
+      -0.09999458312988282,
+      0.09991820335388182
+    ],
+    "observed_dy_m": [
+      -0.09980907440185546,
+      0.09984550476074219
+    ],
+    "observed_yaw_deg": [
+      -179.95017194626618,
+      179.3561093903636
+    ],
+    "grid_counts": [
+      [
+        45,
+        41,
+        51,
+        45,
+        29
+      ],
+      [
+        39,
+        39,
+        39,
+        41,
+        36
+      ],
+      [
+        29,
+        43,
+        47,
+        44,
+        56
+      ],
+      [
+        46,
+        36,
+        29,
+        42,
+        46
+      ],
+      [
+        48,
+        43,
+        43,
+        32,
+        35
+      ]
+    ],
+    "grid_successes": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        3,
+        2,
+        0
+      ],
+      [
+        2,
+        4,
+        13,
+        3,
+        0
+      ],
+      [
+        0,
+        2,
+        1,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "yaw_counts": [
+      129,
+      142,
+      124,
+      134,
+      140,
+      136,
+      119,
+      100
+    ],
+    "yaw_successes": [
+      0,
+      0,
+      3,
+      23,
+      10,
+      0,
+      0,
+      0
+    ],
+    "sampling": "Uniform random starts, grouped into bins after evaluation; not fixed grid points."
+  },
+  "camera_pm10cm_full_yaw": {
+    "source": "box_workspace_camera_1599_pm10cm_full_yaw_seed42_evaluation.json",
+    "summary": {
+      "episodes": 1024,
+      "grasped_rate": 0.1689453125,
+      "lifted_rate": 0.1064453125,
+      "placed_rate": 0.048828125,
+      "success_rate": 0.0478515625,
+      "dropped_rate": 0.0,
+      "out_of_bounds_rate": 0.0,
+      "unstable_robot_rate": 0.0,
+      "timed_out_rate": 0.9521484375,
+      "on_target_rate": 0.0732421875,
+      "released_rate": 0.0595703125,
+      "withdrawn_rate": 0.056640625,
+      "upright_rate": 0.068359375
+    },
+    "successes": 49,
+    "failure_stages": {
+      "never_grasped": 851,
+      "grasped_without_lift": 64,
+      "lifted_without_full_success": 60
+    },
+    "observed_dx_m": [
+      -0.09986488342285157,
+      0.09990222930908202
+    ],
+    "observed_dy_m": [
+      -0.099981689453125,
+      0.09931716918945313
+    ],
+    "observed_yaw_deg": [
+      -179.19389245688254,
+      179.92451775813393
+    ],
+    "grid_counts": [
+      [
+        39,
+        32,
+        41,
+        43,
+        33
+      ],
+      [
+        49,
+        50,
+        35,
+        39,
+        50
+      ],
+      [
+        40,
+        32,
+        40,
+        38,
+        46
+      ],
+      [
+        49,
+        49,
+        43,
+        39,
+        33
+      ],
+      [
+        36,
+        46,
+        43,
+        40,
+        39
+      ]
+    ],
+    "grid_successes": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        2,
+        13,
+        7,
+        0
+      ],
+      [
+        0,
+        6,
+        17,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "yaw_counts": [
+      140,
+      129,
+      118,
+      144,
+      119,
+      106,
+      137,
+      131
+    ],
+    "yaw_successes": [
+      14,
+      0,
+      0,
+      12,
+      12,
+      0,
+      0,
+      11
+    ],
+    "sampling": "Uniform random starts, grouped into bins after evaluation; not fixed grid points."
+  }
+}

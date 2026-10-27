@@ -1,0 +1,207 @@
+FFFFFFFFFF.F                                                             [100%]
+=================================== FAILURES ===================================
+_____ test_full_grid_passes_with_all_boundary_cases_and_sufficient_counts ______
+
+    def test_full_grid_passes_with_all_boundary_cases_and_sufficient_counts():
+>       result = report(grid_rows())
+                 ^^^^^^^^^^^^^^^^^^^
+
+tests/test_box_workspace_audit.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'initial_box_pose': [0.06999999850988389, -0.20000000149011612, 0.0805, 0, 0, -0.999999999999999, ...], 'success': T...0000000149011612, 0.0805, 0, 0, 0.38268344246110436, ...], 'success': True, 'grasped': True, 'lifted': True, ...}, ...]
+population = 'grid', policy = 'teacher'
+
+    def report(rows, population="grid", policy="teacher"):
+>       from isaaclab_tutorial.tasks.place_box.workspace_report import summarize
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_report'
+
+tests/test_box_workspace_audit.py:12: ModuleNotFoundError
+_ test_missing_grid_case_and_duplicate_cannot_pass_even_with_perfect_aggregate _
+
+    def test_missing_grid_case_and_duplicate_cannot_pass_even_with_perfect_aggregate():
+        rows = grid_rows()
+        rows[0] = rows[1].copy()
+>       assert report(rows)["status"] == "insufficient_coverage"
+               ^^^^^^^^^^^^
+
+tests/test_box_workspace_audit.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'initial_box_pose': [0.06999999850988389, -0.20000000149011612, 0.0805, 0, 0, -0.9238795336521503, ...], 'success': ...0000000149011612, 0.0805, 0, 0, 0.38268344246110436, ...], 'success': True, 'grasped': True, 'lifted': True, ...}, ...]
+population = 'grid', policy = 'teacher'
+
+    def report(rows, population="grid", policy="teacher"):
+>       from isaaclab_tutorial.tasks.place_box.workspace_report import summarize
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_report'
+
+tests/test_box_workspace_audit.py:12: ModuleNotFoundError
+_______________ test_small_smoke_grid_is_explicitly_insufficient _______________
+
+    def test_small_smoke_grid_is_explicitly_insufficient():
+>       assert report(grid_rows(1))["status"] == "insufficient_coverage"
+               ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_box_workspace_audit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'initial_box_pose': [0.06999999850988389, -0.20000000149011612, 0.0805, 0, 0, -0.999999999999999, ...], 'success': T...0000000149011612, 0.0805, 0, 0, 0.38268344246110436, ...], 'success': True, 'grasped': True, 'lifted': True, ...}, ...]
+population = 'grid', policy = 'teacher'
+
+    def report(rows, population="grid", policy="teacher"):
+>       from isaaclab_tutorial.tasks.place_box.workspace_report import summarize
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_report'
+
+tests/test_box_workspace_audit.py:12: ModuleNotFoundError
+_______________ test_nominal_training_contamination_is_rejected ________________
+
+    def test_nominal_training_contamination_is_rejected():
+        rows = grid_rows()
+        rows[10]["reset_source"] = "nominal"
+        with pytest.raises(ValueError, match="source"):
+>           report(rows)
+
+tests/test_box_workspace_audit.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'initial_box_pose': [0.06999999850988389, -0.20000000149011612, 0.0805, 0, 0, -0.999999999999999, ...], 'success': T...0000000149011612, 0.0805, 0, 0, 0.38268344246110436, ...], 'success': True, 'grasped': True, 'lifted': True, ...}, ...]
+population = 'grid', policy = 'teacher'
+
+    def report(rows, population="grid", policy="teacher"):
+>       from isaaclab_tutorial.tasks.place_box.workspace_report import summarize
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_report'
+
+tests/test_box_workspace_audit.py:12: ModuleNotFoundError
+_______ test_failure_cluster_blocks_promotion_despite_high_overall_score _______
+
+    def test_failure_cluster_blocks_promotion_despite_high_overall_score():
+        rows = grid_rows()
+        # Seven failures in one spatial point:99.77% aggregate but94.17% in that point.
+        indices = [i for i in range(len(rows)) if i % 200 < 8][:7]
+        for i in indices:
+            rows[i]["success"] = False
+>       result = report(rows)
+                 ^^^^^^^^^^^^
+
+tests/test_box_workspace_audit.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'initial_box_pose': [0.06999999850988389, -0.20000000149011612, 0.0805, 0, 0, -0.999999999999999, ...], 'success': F...000000149011612, 0.0805, 0, 0, 0.38268344246110436, ...], 'success': False, 'grasped': True, 'lifted': True, ...}, ...]
+population = 'grid', policy = 'teacher'
+
+    def report(rows, population="grid", policy="teacher"):
+>       from isaaclab_tutorial.tasks.place_box.workspace_report import summarize
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_report'
+
+tests/test_box_workspace_audit.py:12: ModuleNotFoundError
+________ test_nominal_policy_specific_thresholds_and_regression_failure ________
+
+    def test_nominal_policy_specific_thresholds_and_regression_failure():
+        rows = [dict(success=i >= 4, reset_source="current") for i in range(3072)]
+>       assert report(rows, "nominal", "teacher")["status"] == "fail"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_box_workspace_audit.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'success': False, 'reset_source': 'current'}, {'success': False, 'reset_source': 'current'}, {'success': False, 'res...t_source': 'current'}, {'success': True, 'reset_source': 'current'}, {'success': True, 'reset_source': 'current'}, ...]
+population = 'nominal', policy = 'teacher'
+
+    def report(rows, population="grid", policy="teacher"):
+>       from isaaclab_tutorial.tasks.place_box.workspace_report import summarize
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_report'
+
+tests/test_box_workspace_audit.py:12: ModuleNotFoundError
+__ test_batched_jobs_cover_every_grid_index_without_repeating_random_streams ___
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_batched_jobs_cover_every_0')
+
+    def test_batched_jobs_cover_every_grid_index_without_repeating_random_streams(tmp_path):
+>       from isaaclab_tutorial.tasks.place_box.workspace_audit import build_jobs
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_audit'
+
+tests/test_box_workspace_audit.py:76: ModuleNotFoundError
+______________ test_invalid_job_dimensions_are_rejected[kwargs0] _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_invalid_job_dimensions_ar0')
+kwargs = {'batch_size': 0}
+
+    @pytest.mark.parametrize("kwargs", [{"batch_size": 0}, {"grid_repeats": 0}, {"seeds": []}])
+    def test_invalid_job_dimensions_are_rejected(tmp_path, kwargs):
+>       from isaaclab_tutorial.tasks.place_box.workspace_audit import build_jobs
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_audit'
+
+tests/test_box_workspace_audit.py:87: ModuleNotFoundError
+______________ test_invalid_job_dimensions_are_rejected[kwargs1] _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_invalid_job_dimensions_ar1')
+kwargs = {'grid_repeats': 0}
+
+    @pytest.mark.parametrize("kwargs", [{"batch_size": 0}, {"grid_repeats": 0}, {"seeds": []}])
+    def test_invalid_job_dimensions_are_rejected(tmp_path, kwargs):
+>       from isaaclab_tutorial.tasks.place_box.workspace_audit import build_jobs
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_audit'
+
+tests/test_box_workspace_audit.py:87: ModuleNotFoundError
+______________ test_invalid_job_dimensions_are_rejected[kwargs2] _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_invalid_job_dimensions_ar2')
+kwargs = {'seeds': []}
+
+    @pytest.mark.parametrize("kwargs", [{"batch_size": 0}, {"grid_repeats": 0}, {"seeds": []}])
+    def test_invalid_job_dimensions_are_rejected(tmp_path, kwargs):
+>       from isaaclab_tutorial.tasks.place_box.workspace_audit import build_jobs
+E       ModuleNotFoundError: No module named 'isaaclab_tutorial.tasks.place_box.workspace_audit'
+
+tests/test_box_workspace_audit.py:87: ModuleNotFoundError
+_________ test_box_audit_preserves_start_provenance_before_auto_reset __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74f8cbd2ec30>
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-0/test_box_audit_preserves_start0')
+
+    def test_box_audit_preserves_start_provenance_before_auto_reset(monkeypatch, tmp_path):
+        class ResettingWrapper(FakeWrapper):
+            def __init__(self):
+                super().__init__()
+                self._box_reset_source = torch.tensor([2, 2])
+                self._box_reset_case = torch.tensor([200, 201])
+                self._box_reset_parameters = {"reset_mode": "grid", "nominal_fraction": 0}
+    
+            def step(self, actions):
+                self._box_reset_source[:] = 0
+                self._box_reset_case[:] = -1
+                return super().step(actions)
+    
+        monkeypatch.setattr(rsl_rl, "RslRlVecEnvWrapper", ResettingWrapper)
+        monkeypatch.setattr(ResettingWrapper, "step", ResettingWrapper.step)
+        monkeypatch.setattr(evaluation, "EXACT_EVALUATION_ACTIVE", False)
+        monkeypatch.setenv("SO101_EVALUATION_EPISODES", "2")
+        output = tmp_path / "provenance.json"
+        monkeypatch.setenv("SO101_EVALUATION_OUTPUT", str(output))
+        evaluation.install_episode_counter()
+        wrapper = ResettingWrapper()
+        wrapper.step(None)
+        wrapper.step(None)
+        with pytest.raises(SystemExit):
+            wrapper.step(None)
+        data = json.loads(output.read_text())
+>       assert data["reset_parameters"]["reset_mode"] == "grid"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'reset_parameters'
+
+tests/test_box_evaluation.py:86: KeyError
+----------------------------- Captured stdout call -----------------------------
+SO101_BOX_EVAL_RESULT={"dropped_rate": 0.0, "episodes": 2, "grasped_rate": 1.0, "lifted_rate": 0.5, "on_target_rate": 1.0, "out_of_bounds_rate": 0.0, "placed_rate": 0.5, "released_rate": 0.5, "success_rate": 0.5, "timed_out_rate": 0.5, "unstable_robot_rate": 0.0, "upright_rate": 1.0, "withdrawn_rate": 0.5}
+=========================== short test summary info ============================
+FAILED tests/test_box_workspace_audit.py::test_full_grid_passes_with_all_boundary_cases_and_sufficient_counts
+FAILED tests/test_box_workspace_audit.py::test_missing_grid_case_and_duplicate_cannot_pass_even_with_perfect_aggregate
+FAILED tests/test_box_workspace_audit.py::test_small_smoke_grid_is_explicitly_insufficient
+FAILED tests/test_box_workspace_audit.py::test_nominal_training_contamination_is_rejected
+FAILED tests/test_box_workspace_audit.py::test_failure_cluster_blocks_promotion_despite_high_overall_score
+FAILED tests/test_box_workspace_audit.py::test_nominal_policy_specific_thresholds_and_regression_failure
+FAILED tests/test_box_workspace_audit.py::test_batched_jobs_cover_every_grid_index_without_repeating_random_streams
+FAILED tests/test_box_workspace_audit.py::test_invalid_job_dimensions_are_rejected[kwargs0]
+FAILED tests/test_box_workspace_audit.py::test_invalid_job_dimensions_are_rejected[kwargs1]
+FAILED tests/test_box_workspace_audit.py::test_invalid_job_dimensions_are_rejected[kwargs2]
+FAILED tests/test_box_evaluation.py::test_box_audit_preserves_start_provenance_before_auto_reset
+11 failed, 1 passed in 36.95s

@@ -1,0 +1,3697 @@
+{
+  "initial_poses_match": true,
+  "initial_poses": {
+    "55": [
+      0.16093063354492188,
+      -0.0975503921508789,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      -0.043908748775720596,
+      0.9990355372428894
+    ],
+    "177": [
+      0.16071796417236328,
+      -0.09778487682342529,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      -0.009054799564182758,
+      0.9999589920043945
+    ],
+    "238": [
+      0.16098880767822266,
+      -0.10745549201965332,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      -0.009857850149273872,
+      0.9999514222145081
+    ],
+    "885": [
+      0.16073036193847656,
+      -0.1024942398071289,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      -0.04083365201950073,
+      0.999165952205658
+    ]
+  },
+  "terminal": {
+    "55": {
+      "step": 207,
+      "box_position": [
+        0.21893310546875,
+        0.07661819458007812,
+        0.08175777643918991
+      ],
+      "tilt_deg": 4.914860416607388,
+      "bottom_height_m": -4.49642539024353e-06,
+      "jaw_gap_m": 0.06826479732990265,
+      "pad_distance_m": 0.09340622276067734,
+      "contacts": [
+        false,
+        false
+      ],
+      "fixed_contact_n": 0.0,
+      "moving_contact_n": 0.0,
+      "table_contact_n": 0.9810025691986084,
+      "linear_speed_m_s": 0.00031595752807334065,
+      "angular_speed_rad_s": 0.006284575909376144,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "stable_steps": 15,
+      "on_target": true,
+      "released": true,
+      "withdrawn": true,
+      "upright": true,
+      "success": true,
+      "timed_out": false
+    },
+    "177": {
+      "step": 213,
+      "box_position": [
+        0.2141733169555664,
+        0.07321417331695557,
+        0.08072479814291
+      ],
+      "tilt_deg": 1.9173443046783762,
+      "bottom_height_m": -4.135072231292725e-06,
+      "jaw_gap_m": 0.06956472247838974,
+      "pad_distance_m": 0.09452330321073532,
+      "contacts": [
+        false,
+        false
+      ],
+      "fixed_contact_n": 0.0,
+      "moving_contact_n": 0.0,
+      "table_contact_n": 0.9810043573379517,
+      "linear_speed_m_s": 0.0002639360318426043,
+      "angular_speed_rad_s": 0.005239586345851421,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "stable_steps": 15,
+      "on_target": true,
+      "released": true,
+      "withdrawn": true,
+      "upright": true,
+      "success": true,
+      "timed_out": false
+    },
+    "885": {
+      "step": 214,
+      "box_position": [
+        0.2184162139892578,
+        0.07500839233398438,
+        0.08295536041259766
+      ],
+      "tilt_deg": 8.980979182600997,
+      "bottom_height_m": -5.45009970664978e-06,
+      "jaw_gap_m": 0.0682438462972641,
+      "pad_distance_m": 0.09372062236070633,
+      "contacts": [
+        false,
+        false
+      ],
+      "fixed_contact_n": 0.0,
+      "moving_contact_n": 0.0,
+      "table_contact_n": 0.981022298336029,
+      "linear_speed_m_s": 0.0002087560569634661,
+      "angular_speed_rad_s": 0.004128639120608568,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "stable_steps": 15,
+      "on_target": true,
+      "released": true,
+      "withdrawn": true,
+      "upright": true,
+      "success": true,
+      "timed_out": false
+    },
+    "238": {
+      "step": 222,
+      "box_position": [
+        0.22146034240722656,
+        0.07529962062835693,
+        0.08263865113258362
+      ],
+      "tilt_deg": 7.822753205484473,
+      "bottom_height_m": -5.163252353668213e-06,
+      "jaw_gap_m": 0.06792349368333817,
+      "pad_distance_m": 0.097627192735672,
+      "contacts": [
+        false,
+        false
+      ],
+      "fixed_contact_n": 0.0,
+      "moving_contact_n": 0.0,
+      "table_contact_n": 0.9809966087341309,
+      "linear_speed_m_s": 0.0002402471291134134,
+      "angular_speed_rad_s": 0.004781328607350588,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "stable_steps": 15,
+      "on_target": true,
+      "released": true,
+      "withdrawn": true,
+      "upright": true,
+      "success": true,
+      "timed_out": false
+    }
+  },
+  "traces": {
+    "55": [
+      {
+        "step": 10,
+        "box_position": [
+          0.16093063354492188,
+          -0.0975503921508789,
+          0.07999683916568756
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.162771463394165e-06,
+        "jaw_gap_m": 0.053397536277770996,
+        "pad_distance_m": 0.16922610998153687,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809958338737488,
+        "linear_speed_m_s": 1.4761388911210815e-06,
+        "angular_speed_rad_s": 6.659377049800241e-09,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9845262765884399,
+          1.0018585920333862,
+          -1.0106720924377441,
+          0.9895187616348267,
+          -1.0086194276809692,
+          0.9942435026168823
+        ],
+        "terminal": false
+      },
+      {
+        "step": 20,
+        "box_position": [
+          0.16093063354492188,
+          -0.0975503921508789,
+          0.07999686896800995
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1329691410064697e-06,
+        "jaw_gap_m": 0.06137524172663689,
+        "pad_distance_m": 0.13858087360858917,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809999465942383,
+        "linear_speed_m_s": 4.916051921100006e-07,
+        "angular_speed_rad_s": 9.239965379492787e-07,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9818203449249268,
+          1.0058797597885132,
+          -1.0118328332901,
+          0.9111312031745911,
+          -1.0015766620635986,
+          0.9984785318374634
+        ],
+        "terminal": false
+      },
+      {
+        "step": 30,
+        "box_position": [
+          0.16093063354492188,
+          -0.0975503921508789,
+          0.07999686896800995
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1329691410064697e-06,
+        "jaw_gap_m": 0.06923730671405792,
+        "pad_distance_m": 0.11172612011432648,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810000061988831,
+        "linear_speed_m_s": 5.728040264330048e-07,
+        "angular_speed_rad_s": 9.237116849192262e-09,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9985679388046265,
+          0.9978973269462585,
+          -1.0117132663726807,
+          -0.23551499843597412,
+          -1.0050355195999146,
+          1.0004382133483887
+        ],
+        "terminal": false
+      },
+      {
+        "step": 40,
+        "box_position": [
+          0.16093063354492188,
+          -0.0975503921508789,
+          0.07999686896800995
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1329691410064697e-06,
+        "jaw_gap_m": 0.07689618319272995,
+        "pad_distance_m": 0.08516837656497955,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810000658035278,
+        "linear_speed_m_s": 5.319856768437603e-07,
+        "angular_speed_rad_s": 5.732334216190793e-07,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0022857189178467,
+          0.9978758692741394,
+          -1.0034323930740356,
+          -1.0130245685577393,
+          -0.594390869140625,
+          0.9998606443405151
+        ],
+        "terminal": false
+      },
+      {
+        "step": 50,
+        "box_position": [
+          0.16148948669433594,
+          -0.09867572784423828,
+          0.0801641196012497
+        ],
+        "tilt_deg": 0.5028000761732737,
+        "bottom_height_m": -3.258511424064636e-05,
+        "jaw_gap_m": 0.08427287638187408,
+        "pad_distance_m": 0.061251744627952576,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9782503247261047,
+        "linear_speed_m_s": 0.00071339012356475,
+        "angular_speed_rad_s": 0.004489710088819265,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9749939441680908,
+          -0.2201138734817505,
+          -0.5671166777610779,
+          -1.0577545166015625,
+          0.27436795830726624,
+          0.9482153654098511
+        ],
+        "terminal": false
+      },
+      {
+        "step": 60,
+        "box_position": [
+          0.16148948669433594,
+          -0.09859943389892578,
+          0.08014930784702301
+        ],
+        "tilt_deg": 0.39016950448481,
+        "bottom_height_m": -3.2633543014526367e-06,
+        "jaw_gap_m": 0.08910221606492996,
+        "pad_distance_m": 0.0476510226726532,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809985160827637,
+        "linear_speed_m_s": 0.0003020627482328564,
+        "angular_speed_rad_s": 0.006005605682730675,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0046650171279907,
+          0.7200093269348145,
+          -1.0013859272003174,
+          -1.0166425704956055,
+          0.25076523423194885,
+          -0.1790745109319687
+        ],
+        "terminal": false
+      },
+      {
+        "step": 70,
+        "box_position": [
+          0.16148948669433594,
+          -0.09846210479736328,
+          0.0800919383764267
+        ],
+        "tilt_deg": 0.24787221470538592,
+        "bottom_height_m": -6.3516199588775635e-06,
+        "jaw_gap_m": 0.08333490788936615,
+        "pad_distance_m": 0.02703827992081642,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9808707237243652,
+        "linear_speed_m_s": 0.0002831144956871867,
+        "angular_speed_rad_s": 0.005992606747895479,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9829839468002319,
+          0.8408350348472595,
+          -1.00617516040802,
+          -0.9939864873886108,
+          0.1427360475063324,
+          -1.0218199491500854
+        ],
+        "terminal": false
+      },
+      {
+        "step": 80,
+        "box_position": [
+          0.16237258911132812,
+          -0.1011800765991211,
+          0.08011646568775177
+        ],
+        "tilt_deg": 0.4664620079771672,
+        "bottom_height_m": -7.891654968261719e-05,
+        "jaw_gap_m": 0.0764862522482872,
+        "pad_distance_m": 0.017333636060357094,
+        "contacts": [
+          false,
+          true
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.9109868407249451,
+        "table_contact_n": 1.8965249061584473,
+        "linear_speed_m_s": 0.0039558084681630135,
+        "angular_speed_rad_s": 0.04089990630745888,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.3445618152618408,
+          -0.5380376577377319,
+          -0.799129068851471,
+          0.08161964267492294,
+          0.14238372445106506,
+          -1.0540651082992554
+        ],
+        "terminal": false
+      },
+      {
+        "step": 90,
+        "box_position": [
+          0.1650066375732422,
+          -0.09815120697021484,
+          0.0811961367726326
+        ],
+        "tilt_deg": 3.2924746628573027,
+        "bottom_height_m": -7.663294672966003e-05,
+        "jaw_gap_m": 0.0696994811296463,
+        "pad_distance_m": 0.016361644491553307,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 11.19365406036377,
+        "moving_contact_n": 11.488028526306152,
+        "table_contact_n": 1.2344907522201538,
+        "linear_speed_m_s": 0.01885678619146347,
+        "angular_speed_rad_s": 0.47642314434051514,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.7656493186950684,
+          -0.6079614162445068,
+          -1.00591242313385,
+          0.19661420583724976,
+          0.09587600082159042,
+          -1.0100663900375366
+        ],
+        "terminal": false
+      },
+      {
+        "step": 100,
+        "box_position": [
+          0.17194175720214844,
+          -0.08944129943847656,
+          0.08307535201311111
+        ],
+        "tilt_deg": 9.0119909767958,
+        "bottom_height_m": 5.4813921451568604e-05,
+        "jaw_gap_m": 0.06297864019870758,
+        "pad_distance_m": 0.01735379360616207,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 16.963268280029297,
+        "moving_contact_n": 16.41474723815918,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.035601019859313965,
+        "angular_speed_rad_s": 0.35920584201812744,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.8707915544509888,
+          -0.6883159875869751,
+          -1.0003191232681274,
+          -0.13308614492416382,
+          0.21014723181724548,
+          -1.0038466453552246
+        ],
+        "terminal": false
+      },
+      {
+        "step": 110,
+        "box_position": [
+          0.1936626434326172,
+          -0.07981109619140625,
+          0.09651557356119156
+        ],
+        "tilt_deg": 16.95943811088097,
+        "bottom_height_m": 0.006491217762231827,
+        "jaw_gap_m": 0.06044318526983261,
+        "pad_distance_m": 0.018226712942123413,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 31.797359466552734,
+        "moving_contact_n": 31.360820770263672,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.0941622257232666,
+        "angular_speed_rad_s": 0.700689435005188,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9722157716751099,
+          -0.9939818978309631,
+          -1.0094292163848877,
+          -1.0418068170547485,
+          0.99545818567276,
+          -0.9994392395019531
+        ],
+        "terminal": false
+      },
+      {
+        "step": 120,
+        "box_position": [
+          0.21586227416992188,
+          -0.06562328338623047,
+          0.11428306251764297
+        ],
+        "tilt_deg": 24.033575552821087,
+        "bottom_height_m": 0.017933905124664307,
+        "jaw_gap_m": 0.05994674563407898,
+        "pad_distance_m": 0.018788818269968033,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 28.073884963989258,
+        "moving_contact_n": 27.604490280151367,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09633228927850723,
+        "angular_speed_rad_s": 0.6210371255874634,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9758020043373108,
+          -1.0002204179763794,
+          -1.0128087997436523,
+          -1.0362685918807983,
+          0.8019083738327026,
+          -0.9934464693069458
+        ],
+        "terminal": false
+      },
+      {
+        "step": 130,
+        "box_position": [
+          0.23414993286132812,
+          -0.04829692840576172,
+          0.1339186578989029
+        ],
+        "tilt_deg": 31.106385073173602,
+        "bottom_height_m": 0.03270601108670235,
+        "jaw_gap_m": 0.05946052446961403,
+        "pad_distance_m": 0.019386550411581993,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 26.98136329650879,
+        "moving_contact_n": 26.449634552001953,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09572850912809372,
+        "angular_speed_rad_s": 0.44908076524734497,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9944008588790894,
+          -1.0049614906311035,
+          -1.008897066116333,
+          -1.0194035768508911,
+          0.19798627495765686,
+          -0.9785845279693604
+        ],
+        "terminal": false
+      },
+      {
+        "step": 140,
+        "box_position": [
+          0.24789047241210938,
+          -0.02856159210205078,
+          0.15489569306373596
+        ],
+        "tilt_deg": 37.392294431292925,
+        "bottom_height_m": 0.04953225329518318,
+        "jaw_gap_m": 0.059021227061748505,
+        "pad_distance_m": 0.020019857212901115,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 21.512483596801758,
+        "moving_contact_n": 20.94784164428711,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09532465785741806,
+        "angular_speed_rad_s": 0.3908037543296814,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9766727089881897,
+          -1.0063005685806274,
+          -1.0061213970184326,
+          -1.0486583709716797,
+          -0.16475051641464233,
+          -0.8071892261505127
+        ],
+        "terminal": false
+      },
+      {
+        "step": 150,
+        "box_position": [
+          0.25711631774902344,
+          -0.007561683654785156,
+          0.17537139356136322
+        ],
+        "tilt_deg": 42.224731949522244,
+        "bottom_height_m": 0.06705354154109955,
+        "jaw_gap_m": 0.05860985815525055,
+        "pad_distance_m": 0.020920313894748688,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 18.582229614257812,
+        "moving_contact_n": 18.0189266204834,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.08441157639026642,
+        "angular_speed_rad_s": 0.23033177852630615,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9782459735870361,
+          -0.9007177948951721,
+          -1.0075393915176392,
+          -1.0051218271255493,
+          -0.39871877431869507,
+          -0.6911081075668335
+        ],
+        "terminal": false
+      },
+      {
+        "step": 160,
+        "box_position": [
+          0.2591133117675781,
+          0.013973236083984375,
+          0.1780436635017395
+        ],
+        "tilt_deg": 41.15653067373431,
+        "bottom_height_m": 0.06913556158542633,
+        "jaw_gap_m": 0.0581960454583168,
+        "pad_distance_m": 0.022066190838813782,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 18.40243911743164,
+        "moving_contact_n": 17.853845596313477,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.06635983288288116,
+        "angular_speed_rad_s": 0.18506968021392822,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -1.0034905672073364,
+          -0.2541481852531433,
+          -1.0123767852783203,
+          0.09394765645265579,
+          -0.6484113335609436,
+          -0.7161171436309814
+        ],
+        "terminal": false
+      },
+      {
+        "step": 170,
+        "box_position": [
+          0.2533226013183594,
+          0.035103797912597656,
+          0.1700609028339386
+        ],
+        "tilt_deg": 36.20943262972276,
+        "bottom_height_m": 0.06323231756687164,
+        "jaw_gap_m": 0.057847436517477036,
+        "pad_distance_m": 0.0234618429094553,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 17.06877326965332,
+        "moving_contact_n": 16.556386947631836,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07358946651220322,
+        "angular_speed_rad_s": 0.35271337628364563,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -1.0117342472076416,
+          -0.12992197275161743,
+          -1.0079034566879272,
+          0.49170753359794617,
+          -0.5298556685447693,
+          -0.6427607536315918
+        ],
+        "terminal": false
+      },
+      {
+        "step": 180,
+        "box_position": [
+          0.24275779724121094,
+          0.055286407470703125,
+          0.1599588543176651
+        ],
+        "tilt_deg": 30.795182419910702,
+        "bottom_height_m": 0.05708320066332817,
+        "jaw_gap_m": 0.057736512273550034,
+        "pad_distance_m": 0.024679606780409813,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 8.50584888458252,
+        "moving_contact_n": 8.031234741210938,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07541221380233765,
+        "angular_speed_rad_s": 0.31363019347190857,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -1.0098870992660522,
+          -0.12408077716827393,
+          -1.0110782384872437,
+          0.6828520894050598,
+          -0.28693222999572754,
+          -0.3376164138317108
+        ],
+        "terminal": false
+      },
+      {
+        "step": 190,
+        "box_position": [
+          0.22454833984375,
+          0.07254695892333984,
+          0.10388310998678207
+        ],
+        "tilt_deg": 4.590730971073933,
+        "bottom_height_m": 0.01875445991754532,
+        "jaw_gap_m": 0.05946529656648636,
+        "pad_distance_m": 0.06999795883893967,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.8921838402748108,
+        "angular_speed_rad_s": 5.834817886352539,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.40859025716781616,
+          -0.8229364156723022,
+          0.6873632669448853,
+          0.8805786371231079,
+          0.4053936302661896,
+          0.890044093132019
+        ],
+        "terminal": false
+      },
+      {
+        "step": 200,
+        "box_position": [
+          0.21893310546875,
+          0.07656478881835938,
+          0.0817846804857254
+        ],
+        "tilt_deg": 4.998574601234133,
+        "bottom_height_m": -4.76837158203125e-06,
+        "jaw_gap_m": 0.06553041189908981,
+        "pad_distance_m": 0.08938217908143997,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809793829917908,
+        "linear_speed_m_s": 0.0003118894819635898,
+        "angular_speed_rad_s": 0.006236291490495205,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 8,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9972834587097168,
+          -0.07177377492189407,
+          -0.9964321255683899,
+          0.4441256821155548,
+          0.9873424172401428,
+          0.619530200958252
+        ],
+        "terminal": false
+      },
+      {
+        "step": 207,
+        "box_position": [
+          0.21893310546875,
+          0.07661819458007812,
+          0.08175777643918991
+        ],
+        "tilt_deg": 4.914860416607388,
+        "bottom_height_m": -4.49642539024353e-06,
+        "jaw_gap_m": 0.06826479732990265,
+        "pad_distance_m": 0.09340622276067734,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810025691986084,
+        "linear_speed_m_s": 0.00031595752807334065,
+        "angular_speed_rad_s": 0.006284575909376144,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 15,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": true,
+        "timed_out": false,
+        "actions": [
+          1.0174627304077148,
+          -0.12254142016172409,
+          -1.0038646459579468,
+          0.3392632007598877,
+          0.9923145174980164,
+          0.43527331948280334
+        ],
+        "terminal": true
+      }
+    ],
+    "177": [
+      {
+        "step": 10,
+        "box_position": [
+          0.16071796417236328,
+          -0.09778487682342529,
+          0.07999683916568756
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.162771463394165e-06,
+        "jaw_gap_m": 0.053409893065690994,
+        "pad_distance_m": 0.16938835382461548,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809959530830383,
+        "linear_speed_m_s": 1.5594482647429686e-06,
+        "angular_speed_rad_s": 1.017048806284393e-10,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9881592988967896,
+          1.0064753293991089,
+          -1.0121248960494995,
+          0.9857900142669678,
+          -1.0120307207107544,
+          0.9988263845443726
+        ],
+        "terminal": false
+      },
+      {
+        "step": 20,
+        "box_position": [
+          0.16071796417236328,
+          -0.09778487682342529,
+          0.07999686896800995
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1329691410064697e-06,
+        "jaw_gap_m": 0.06139389052987099,
+        "pad_distance_m": 0.13871870934963226,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809999465942383,
+        "linear_speed_m_s": 7.385986577901349e-07,
+        "angular_speed_rad_s": 8.368959691917865e-11,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9789255857467651,
+          1.0061339139938354,
+          -1.0107914209365845,
+          0.9274183511734009,
+          -0.9982907176017761,
+          0.9991496801376343
+        ],
+        "terminal": false
+      },
+      {
+        "step": 30,
+        "box_position": [
+          0.16071796417236328,
+          -0.09778487682342529,
+          0.07999686896800995
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1329691410064697e-06,
+        "jaw_gap_m": 0.06925436109304428,
+        "pad_distance_m": 0.11188896000385284,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.980999767780304,
+        "linear_speed_m_s": 7.386080369542469e-07,
+        "angular_speed_rad_s": 1.1617603407065857e-10,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.000526785850525,
+          0.9989748597145081,
+          -1.0116300582885742,
+          -0.21304401755332947,
+          -1.0033038854599,
+          0.9977995157241821
+        ],
+        "terminal": false
+      },
+      {
+        "step": 40,
+        "box_position": [
+          0.16071796417236328,
+          -0.09778487682342529,
+          0.07999686896800995
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1329691410064697e-06,
+        "jaw_gap_m": 0.07691308856010437,
+        "pad_distance_m": 0.08544749021530151,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809999465942383,
+        "linear_speed_m_s": 7.385972935480822e-07,
+        "angular_speed_rad_s": 5.018675405810136e-11,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.009717345237732,
+          0.9996252655982971,
+          -1.006554126739502,
+          -1.0281840562820435,
+          -0.5769763588905334,
+          1.0011579990386963
+        ],
+        "terminal": false
+      },
+      {
+        "step": 50,
+        "box_position": [
+          0.16112995147705078,
+          -0.0986107587814331,
+          0.08013024181127548
+        ],
+        "tilt_deg": 0.3626169041463061,
+        "bottom_height_m": -1.222267746925354e-05,
+        "jaw_gap_m": 0.08429127186536789,
+        "pad_distance_m": 0.06143513694405556,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.980442225933075,
+        "linear_speed_m_s": 0.0002765760291367769,
+        "angular_speed_rad_s": 0.005891246255487204,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9721137285232544,
+          -0.1259078085422516,
+          -0.6726775169372559,
+          -1.0224508047103882,
+          0.2786177396774292,
+          0.9657866954803467
+        ],
+        "terminal": false
+      },
+      {
+        "step": 60,
+        "box_position": [
+          0.16112995147705078,
+          -0.09851646423339844,
+          0.08009354770183563
+        ],
+        "tilt_deg": 0.24628834802245791,
+        "bottom_height_m": -3.1515955924987793e-06,
+        "jaw_gap_m": 0.08938027918338776,
+        "pad_distance_m": 0.048140235245227814,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809945821762085,
+        "linear_speed_m_s": 0.0003063255571760237,
+        "angular_speed_rad_s": 0.00609392486512661,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.007338285446167,
+          0.6164963245391846,
+          -1.000396490097046,
+          -1.0115022659301758,
+          0.27945247292518616,
+          -0.08648714423179626
+        ],
+        "terminal": false
+      },
+      {
+        "step": 70,
+        "box_position": [
+          0.16112804412841797,
+          -0.09839141368865967,
+          0.0800400823354721
+        ],
+        "tilt_deg": 0.11364091540157657,
+        "bottom_height_m": -6.157904863357544e-06,
+        "jaw_gap_m": 0.08401298522949219,
+        "pad_distance_m": 0.029649624601006508,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9808835983276367,
+        "linear_speed_m_s": 0.0002896420774050057,
+        "angular_speed_rad_s": 0.006110370624810457,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0006271600723267,
+          0.5610017776489258,
+          -1.005740761756897,
+          -0.9881302118301392,
+          0.18814674019813538,
+          -1.0161899328231812
+        ],
+        "terminal": false
+      },
+      {
+        "step": 80,
+        "box_position": [
+          0.16121673583984375,
+          -0.09903371334075928,
+          0.08006308227777481
+        ],
+        "tilt_deg": 0.7055438033297335,
+        "bottom_height_m": -0.00034747645258903503,
+        "jaw_gap_m": 0.0768507570028305,
+        "pad_distance_m": 0.02005990967154503,
+        "contacts": [
+          false,
+          true
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 2.1540048122406006,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.0837458148598671,
+        "angular_speed_rad_s": 1.3271502256393433,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9765921831130981,
+          0.5107569694519043,
+          -1.0021605491638184,
+          -0.9749231934547424,
+          0.12572309374809265,
+          -0.9986833333969116
+        ],
+        "terminal": false
+      },
+      {
+        "step": 90,
+        "box_position": [
+          0.1632862091064453,
+          -0.09932947158813477,
+          0.08085545152425766
+        ],
+        "tilt_deg": 2.346019230697342,
+        "bottom_height_m": -0.00011003389954566956,
+        "jaw_gap_m": 0.07056614756584167,
+        "pad_distance_m": 0.019462982192635536,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 6.234946250915527,
+        "moving_contact_n": 7.1576714515686035,
+        "table_contact_n": 2.1691064834594727,
+        "linear_speed_m_s": 0.011854824610054493,
+        "angular_speed_rad_s": 0.7781587839126587,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.631119966506958,
+          -0.5778305530548096,
+          -1.0110251903533936,
+          0.2349192202091217,
+          0.07806804031133652,
+          -1.0120384693145752
+        ],
+        "terminal": false
+      },
+      {
+        "step": 100,
+        "box_position": [
+          0.1683664321899414,
+          -0.09206926822662354,
+          0.08248277753591537
+        ],
+        "tilt_deg": 5.348446426446046,
+        "bottom_height_m": 7.284805178642273e-05,
+        "jaw_gap_m": 0.06413628160953522,
+        "pad_distance_m": 0.01964137889444828,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 17.006885528564453,
+        "moving_contact_n": 16.48515510559082,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.04403063282370567,
+        "angular_speed_rad_s": 0.43139272928237915,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9906890988349915,
+          -0.8843538165092468,
+          -1.0168533325195312,
+          -0.44318678975105286,
+          0.45090463757514954,
+          -1.0147165060043335
+        ],
+        "terminal": false
+      },
+      {
+        "step": 110,
+        "box_position": [
+          0.17688655853271484,
+          -0.08245182037353516,
+          0.0917539969086647
+        ],
+        "tilt_deg": 13.27560479911103,
+        "bottom_height_m": 3.6016106605529785e-05,
+        "jaw_gap_m": 0.06108354032039642,
+        "pad_distance_m": 0.022271092981100082,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 21.24789047241211,
+        "moving_contact_n": 20.686803817749023,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.04558809846639633,
+        "angular_speed_rad_s": 0.6730479001998901,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9883481860160828,
+          -0.9804474711418152,
+          -1.007119059562683,
+          -0.5334687232971191,
+          0.3835848867893219,
+          -1.0068917274475098
+        ],
+        "terminal": false
+      },
+      {
+        "step": 120,
+        "box_position": [
+          0.19723129272460938,
+          -0.07137393951416016,
+          0.10745248943567276
+        ],
+        "tilt_deg": 16.493996355238416,
+        "bottom_height_m": 0.01992824673652649,
+        "jaw_gap_m": 0.059761445969343185,
+        "pad_distance_m": 0.023371249437332153,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 25.592023849487305,
+        "moving_contact_n": 25.10173225402832,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09475596249103546,
+        "angular_speed_rad_s": 0.6958189010620117,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9658423662185669,
+          -1.0027207136154175,
+          -1.0128644704818726,
+          -1.038600206375122,
+          0.9097350239753723,
+          -0.9956588745117188
+        ],
+        "terminal": false
+      },
+      {
+        "step": 130,
+        "box_position": [
+          0.21747779846191406,
+          -0.057024359703063965,
+          0.12680715322494507
+        ],
+        "tilt_deg": 21.26560147150072,
+        "bottom_height_m": 0.037330854684114456,
+        "jaw_gap_m": 0.05921972543001175,
+        "pad_distance_m": 0.023878833279013634,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 25.997577667236328,
+        "moving_contact_n": 25.468029022216797,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09470801800489426,
+        "angular_speed_rad_s": 0.5247914791107178,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9689252376556396,
+          -1.0054785013198853,
+          -1.0102325677871704,
+          -1.0085166692733765,
+          0.35198381543159485,
+          -0.992440938949585
+        ],
+        "terminal": false
+      },
+      {
+        "step": 140,
+        "box_position": [
+          0.23349761962890625,
+          -0.03915095329284668,
+          0.1479325145483017
+        ],
+        "tilt_deg": 26.682701540960718,
+        "bottom_height_m": 0.051367904990911484,
+        "jaw_gap_m": 0.05875157192349434,
+        "pad_distance_m": 0.024385439231991768,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 23.05721092224121,
+        "moving_contact_n": 22.492504119873047,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09665188938379288,
+        "angular_speed_rad_s": 0.47140395641326904,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.97612065076828,
+          -1.0143489837646484,
+          -1.0008814334869385,
+          -1.0391490459442139,
+          -0.018057890236377716,
+          -0.8913662433624268
+        ],
+        "terminal": false
+      },
+      {
+        "step": 150,
+        "box_position": [
+          0.24525833129882812,
+          -0.019490480422973633,
+          0.17066437005996704
+        ],
+        "tilt_deg": 32.65440148017261,
+        "bottom_height_m": 0.06798684597015381,
+        "jaw_gap_m": 0.058399803936481476,
+        "pad_distance_m": 0.024736586958169937,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 16.019542694091797,
+        "moving_contact_n": 15.400527000427246,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09589921683073044,
+        "angular_speed_rad_s": 0.42927128076553345,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.973069965839386,
+          -0.9737998843193054,
+          -0.997818648815155,
+          -1.0411467552185059,
+          -0.30299460887908936,
+          -0.6862393617630005
+        ],
+        "terminal": false
+      },
+      {
+        "step": 160,
+        "box_position": [
+          0.25189208984375,
+          0.001881718635559082,
+          0.18237026035785675
+        ],
+        "tilt_deg": 35.37927296007232,
+        "bottom_height_m": 0.07643164694309235,
+        "jaw_gap_m": 0.05809347704052925,
+        "pad_distance_m": 0.025088032707571983,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 15.119595527648926,
+        "moving_contact_n": 14.491890907287598,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.06638263165950775,
+        "angular_speed_rad_s": 0.1427641659975052,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9932675361633301,
+          -0.27420732378959656,
+          -1.0087274312973022,
+          -0.209197998046875,
+          -0.6668525338172913,
+          -0.6468007564544678
+        ],
+        "terminal": false
+      },
+      {
+        "step": 170,
+        "box_position": [
+          0.25031280517578125,
+          0.023989319801330566,
+          0.1780168116092682
+        ],
+        "tilt_deg": 33.41437732640329,
+        "bottom_height_m": 0.07239025831222534,
+        "jaw_gap_m": 0.05782005190849304,
+        "pad_distance_m": 0.025402557104825974,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 14.871418952941895,
+        "moving_contact_n": 14.27886962890625,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07184217125177383,
+        "angular_speed_rad_s": 0.2008327841758728,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -1.0008240938186646,
+          -0.06499062478542328,
+          -1.0143440961837769,
+          0.33390820026397705,
+          -0.6124073266983032,
+          -0.6293853521347046
+        ],
+        "terminal": false
+      },
+      {
+        "step": 180,
+        "box_position": [
+          0.2432413101196289,
+          0.04541206359863281,
+          0.16699260473251343
+        ],
+        "tilt_deg": 29.541013622030594,
+        "bottom_height_m": 0.0640769749879837,
+        "jaw_gap_m": 0.057662565261125565,
+        "pad_distance_m": 0.025727529078722,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 11.598251342773438,
+        "moving_contact_n": 11.073119163513184,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07680714875459671,
+        "angular_speed_rad_s": 0.29154279828071594,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -1.0105338096618652,
+          -0.03835415095090866,
+          -1.015748381614685,
+          0.5945151448249817,
+          -0.41526076197624207,
+          -0.4836280047893524
+        ],
+        "terminal": false
+      },
+      {
+        "step": 190,
+        "box_position": [
+          0.23153400421142578,
+          0.0646672248840332,
+          0.15485668182373047
+        ],
+        "tilt_deg": 25.32203245758532,
+        "bottom_height_m": 0.05678251013159752,
+        "jaw_gap_m": 0.05770255997776985,
+        "pad_distance_m": 0.026263754814863205,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 2.438321113586426,
+        "moving_contact_n": 2.0381031036376953,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07664048671722412,
+        "angular_speed_rad_s": 0.5057781338691711,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.928053617477417,
+          -0.055869728326797485,
+          -1.0178616046905518,
+          0.8207966685295105,
+          -0.08102504163980484,
+          0.029373034834861755
+        ],
+        "terminal": false
+      },
+      {
+        "step": 200,
+        "box_position": [
+          0.21427249908447266,
+          0.07311475276947021,
+          0.08076310902833939
+        ],
+        "tilt_deg": 2.070275762399808,
+        "bottom_height_m": -2.104043960571289e-05,
+        "jaw_gap_m": 0.06354037672281265,
+        "pad_distance_m": 0.08908963948488235,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9796967506408691,
+        "linear_speed_m_s": 0.0004268466145731509,
+        "angular_speed_rad_s": 0.00690147839486599,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 2,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9686611890792847,
+          -0.03065621107816696,
+          -1.0033949613571167,
+          0.7680026292800903,
+          0.6752119660377502,
+          0.7846673727035522
+        ],
+        "terminal": false
+      },
+      {
+        "step": 210,
+        "box_position": [
+          0.21419620513916016,
+          0.07319414615631104,
+          0.08073573559522629
+        ],
+        "tilt_deg": 1.9473233131145922,
+        "bottom_height_m": -4.135072231292725e-06,
+        "jaw_gap_m": 0.06850479543209076,
+        "pad_distance_m": 0.09244738519191742,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809973835945129,
+        "linear_speed_m_s": 0.000262864981777966,
+        "angular_speed_rad_s": 0.005229299422353506,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 12,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0236588716506958,
+          -0.03369542211294174,
+          -1.0033272504806519,
+          0.35305142402648926,
+          1.0146299600601196,
+          0.5593750476837158
+        ],
+        "terminal": false
+      },
+      {
+        "step": 213,
+        "box_position": [
+          0.2141733169555664,
+          0.07321417331695557,
+          0.08072479814291
+        ],
+        "tilt_deg": 1.9173443046783762,
+        "bottom_height_m": -4.135072231292725e-06,
+        "jaw_gap_m": 0.06956472247838974,
+        "pad_distance_m": 0.09452330321073532,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810043573379517,
+        "linear_speed_m_s": 0.0002639360318426043,
+        "angular_speed_rad_s": 0.005239586345851421,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 15,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": true,
+        "timed_out": false,
+        "actions": [
+          1.0079792737960815,
+          -0.06577380746603012,
+          -1.0019196271896362,
+          0.3142831027507782,
+          0.984098494052887,
+          0.417265921831131
+        ],
+        "terminal": true
+      }
+    ],
+    "238": [
+      {
+        "step": 10,
+        "box_position": [
+          0.16098880767822266,
+          -0.10745549201965332,
+          0.07999686151742935
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1404197216033936e-06,
+        "jaw_gap_m": 0.05338922515511513,
+        "pad_distance_m": 0.17621521651744843,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809961318969727,
+        "linear_speed_m_s": 1.3107727454553242e-06,
+        "angular_speed_rad_s": 1.891905077044953e-09,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9854875802993774,
+          1.005811095237732,
+          -1.0126962661743164,
+          0.9816126823425293,
+          -1.0095046758651733,
+          0.9913647174835205
+        ],
+        "terminal": false
+      },
+      {
+        "step": 20,
+        "box_position": [
+          0.16098880767822266,
+          -0.10745549201965332,
+          0.07999688386917114
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.118067979812622e-06,
+        "jaw_gap_m": 0.061366721987724304,
+        "pad_distance_m": 0.14572040736675262,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810000061988831,
+        "linear_speed_m_s": 6.55702081076015e-07,
+        "angular_speed_rad_s": 1.855480435963841e-09,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9809486865997314,
+          1.005369782447815,
+          -1.0092657804489136,
+          0.9109095931053162,
+          -1.0081050395965576,
+          0.9963606595993042
+        ],
+        "terminal": false
+      },
+      {
+        "step": 30,
+        "box_position": [
+          0.16098880767822266,
+          -0.10745549201965332,
+          0.07999688386917114
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.118067979812622e-06,
+        "jaw_gap_m": 0.06922654807567596,
+        "pad_distance_m": 0.11898989230394363,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810000658035278,
+        "linear_speed_m_s": 6.557015126418264e-07,
+        "angular_speed_rad_s": 1.8178482052988443e-09,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9967406988143921,
+          0.9931914210319519,
+          -1.007285475730896,
+          -0.24967816472053528,
+          -1.0096156597137451,
+          1.001908540725708
+        ],
+        "terminal": false
+      },
+      {
+        "step": 40,
+        "box_position": [
+          0.16098880767822266,
+          -0.10745549201965332,
+          0.07999688386917114
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.118067979812622e-06,
+        "jaw_gap_m": 0.07688344269990921,
+        "pad_distance_m": 0.09243366122245789,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810000061988831,
+        "linear_speed_m_s": 6.355025448101514e-07,
+        "angular_speed_rad_s": 5.443600343824073e-07,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0021851062774658,
+          0.9949286580085754,
+          -1.0086917877197266,
+          -1.01327645778656,
+          -0.5947713255882263,
+          0.9958553314208984
+        ],
+        "terminal": false
+      },
+      {
+        "step": 50,
+        "box_position": [
+          0.16098880767822266,
+          -0.10745549201965332,
+          0.07999688386917114
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.121793270111084e-06,
+        "jaw_gap_m": 0.08420512080192566,
+        "pad_distance_m": 0.06698794662952423,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809999465942383,
+        "linear_speed_m_s": 8.007830274436856e-07,
+        "angular_speed_rad_s": 5.454706411001098e-07,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0225064754486084,
+          0.28928160667419434,
+          -1.0128464698791504,
+          -1.0356541872024536,
+          0.25866377353668213,
+          0.9805374145507812
+        ],
+        "terminal": false
+      },
+      {
+        "step": 60,
+        "box_position": [
+          0.16098880767822266,
+          -0.10745549201965332,
+          0.07999688386917114
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.118067979812622e-06,
+        "jaw_gap_m": 0.08966042101383209,
+        "pad_distance_m": 0.05232780799269676,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810000658035278,
+        "linear_speed_m_s": 6.557035590049054e-07,
+        "angular_speed_rad_s": 1.8961576753184772e-09,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0185304880142212,
+          0.43801864981651306,
+          -1.0029493570327759,
+          -1.0162932872772217,
+          0.29814693331718445,
+          0.07967928051948547
+        ],
+        "terminal": false
+      },
+      {
+        "step": 70,
+        "box_position": [
+          0.16244888305664062,
+          -0.11137449741363525,
+          0.08066246658563614
+        ],
+        "tilt_deg": 1.7953685747992087,
+        "bottom_height_m": -2.0887702703475952e-05,
+        "jaw_gap_m": 0.08639173954725266,
+        "pad_distance_m": 0.04295829311013222,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9797136783599854,
+        "linear_speed_m_s": 0.00043353793444111943,
+        "angular_speed_rad_s": 0.007526768837124109,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0035722255706787,
+          0.527692437171936,
+          -1.0054957866668701,
+          -0.9965283870697021,
+          0.16476869583129883,
+          -0.8978496789932251
+        ],
+        "terminal": false
+      },
+      {
+        "step": 80,
+        "box_position": [
+          0.1624460220336914,
+          -0.11119294166564941,
+          0.08061559498310089
+        ],
+        "tilt_deg": 1.6270244296026886,
+        "bottom_height_m": -5.692243576049805e-06,
+        "jaw_gap_m": 0.07966446876525879,
+        "pad_distance_m": 0.026544898748397827,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.98087078332901,
+        "linear_speed_m_s": 0.0002675946452654898,
+        "angular_speed_rad_s": 0.005670635495334864,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9926179647445679,
+          0.7292469143867493,
+          -1.0048874616622925,
+          -0.9966654777526855,
+          0.1330643594264984,
+          -0.9978674650192261
+        ],
+        "terminal": false
+      },
+      {
+        "step": 90,
+        "box_position": [
+          0.16448402404785156,
+          -0.11421847343444824,
+          0.08029071986675262
+        ],
+        "tilt_deg": 0.6792617007102136,
+        "bottom_height_m": 2.117455005645752e-05,
+        "jaw_gap_m": 0.07282520830631256,
+        "pad_distance_m": 0.020719846710562706,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 6.590342044830322,
+        "moving_contact_n": 8.382002830505371,
+        "table_contact_n": 3.4990789890289307,
+        "linear_speed_m_s": 0.020152725279331207,
+        "angular_speed_rad_s": 0.19369861483573914,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.5929288864135742,
+          -0.5191188454627991,
+          -1.0127058029174805,
+          0.23038530349731445,
+          0.1336522400379181,
+          -0.9955765008926392
+        ],
+        "terminal": false
+      },
+      {
+        "step": 100,
+        "box_position": [
+          0.16949462890625,
+          -0.10656082630157471,
+          0.0814075618982315
+        ],
+        "tilt_deg": 3.839818072746022,
+        "bottom_height_m": -5.476176738739014e-06,
+        "jaw_gap_m": 0.06583892554044724,
+        "pad_distance_m": 0.021203143522143364,
+        "contacts": [
+          true,
+          false
+        ],
+        "fixed_contact_n": 0.19127795100212097,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 1.3120380640029907,
+        "linear_speed_m_s": 0.022899508476257324,
+        "angular_speed_rad_s": 0.14792132377624512,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.7829084396362305,
+          -0.5950160026550293,
+          -0.9689435958862305,
+          0.10768315941095352,
+          0.04682989418506622,
+          -1.0061964988708496
+        ],
+        "terminal": false
+      },
+      {
+        "step": 110,
+        "box_position": [
+          0.1762838363647461,
+          -0.09731709957122803,
+          0.08488333970308304
+        ],
+        "tilt_deg": 7.408328992026417,
+        "bottom_height_m": 8.549913763999939e-05,
+        "jaw_gap_m": 0.06065719947218895,
+        "pad_distance_m": 0.023635054007172585,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 22.170162200927734,
+        "moving_contact_n": 21.694385528564453,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.05430625006556511,
+        "angular_speed_rad_s": 0.5619588494300842,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9808386564254761,
+          -1.0003013610839844,
+          -1.0225416421890259,
+          -0.7102600336074829,
+          0.5350742936134338,
+          -1.0026146173477173
+        ],
+        "terminal": false
+      },
+      {
+        "step": 120,
+        "box_position": [
+          0.18745994567871094,
+          -0.08592772483825684,
+          0.09718919545412064
+        ],
+        "tilt_deg": 13.297136911364928,
+        "bottom_height_m": 0.005309190601110458,
+        "jaw_gap_m": 0.05934320390224457,
+        "pad_distance_m": 0.026980377733707428,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 22.307571411132812,
+        "moving_contact_n": 21.820043563842773,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.0939829871058464,
+        "angular_speed_rad_s": 0.8118578791618347,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9540599584579468,
+          -0.9887457489967346,
+          -1.0103365182876587,
+          -1.0691893100738525,
+          0.9843204617500305,
+          -1.0085233449935913
+        ],
+        "terminal": false
+      },
+      {
+        "step": 130,
+        "box_position": [
+          0.21133995056152344,
+          -0.0745466947555542,
+          0.11518865078687668
+        ],
+        "tilt_deg": 16.347323096067257,
+        "bottom_height_m": 0.030303161591291428,
+        "jaw_gap_m": 0.05870451033115387,
+        "pad_distance_m": 0.027124840766191483,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 22.763351440429688,
+        "moving_contact_n": 22.224132537841797,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09697835147380829,
+        "angular_speed_rad_s": 0.6973417401313782,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9565911293029785,
+          -0.9867015480995178,
+          -1.0113192796707153,
+          -1.0137649774551392,
+          0.662378191947937,
+          -1.0087538957595825
+        ],
+        "terminal": false
+      },
+      {
+        "step": 140,
+        "box_position": [
+          0.2313241958618164,
+          -0.05847728252410889,
+          0.13584698736667633
+        ],
+        "tilt_deg": 22.82227915847362,
+        "bottom_height_m": 0.04214083030819893,
+        "jaw_gap_m": 0.05820508301258087,
+        "pad_distance_m": 0.02730787917971611,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 22.74043846130371,
+        "moving_contact_n": 22.156248092651367,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.0991283506155014,
+        "angular_speed_rad_s": 0.5611488223075867,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.974534273147583,
+          -1.005651831626892,
+          -1.0053881406784058,
+          -1.0203821659088135,
+          0.21888449788093567,
+          -1.0101227760314941
+        ],
+        "terminal": false
+      },
+      {
+        "step": 150,
+        "box_position": [
+          0.24669837951660156,
+          -0.0395275354385376,
+          0.15819169580936432
+        ],
+        "tilt_deg": 29.774141264470146,
+        "bottom_height_m": 0.057403724640607834,
+        "jaw_gap_m": 0.057805318385362625,
+        "pad_distance_m": 0.02754528634250164,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 20.640933990478516,
+        "moving_contact_n": 20.029922485351562,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09840856492519379,
+        "angular_speed_rad_s": 0.4970738887786865,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9450223445892334,
+          -0.9961199164390564,
+          -1.005757451057434,
+          -1.0103096961975098,
+          -0.12484244257211685,
+          -0.9054316282272339
+        ],
+        "terminal": false
+      },
+      {
+        "step": 160,
+        "box_position": [
+          0.25728511810302734,
+          -0.018585205078125,
+          0.18145954608917236
+        ],
+        "tilt_deg": 36.25056205301615,
+        "bottom_height_m": 0.0752677321434021,
+        "jaw_gap_m": 0.05751845985651016,
+        "pad_distance_m": 0.027853090316057205,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 15.719338417053223,
+        "moving_contact_n": 15.101445198059082,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09367707371711731,
+        "angular_speed_rad_s": 0.39078646898269653,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9646502137184143,
+          -0.9249321818351746,
+          -1.0094094276428223,
+          -1.069589376449585,
+          -0.39320993423461914,
+          -0.7031912803649902
+        ],
+        "terminal": false
+      },
+      {
+        "step": 170,
+        "box_position": [
+          0.2612619400024414,
+          0.0038690567016601562,
+          0.18688364326953888
+        ],
+        "tilt_deg": 37.28476105189642,
+        "bottom_height_m": 0.07883523404598236,
+        "jaw_gap_m": 0.057292014360427856,
+        "pad_distance_m": 0.02822849154472351,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 14.207608222961426,
+        "moving_contact_n": 13.606289863586426,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.06883367896080017,
+        "angular_speed_rad_s": 0.15094241499900818,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9838988780975342,
+          -0.19003447890281677,
+          -1.009775161743164,
+          0.06641507893800735,
+          -0.6346376538276672,
+          -0.6403990983963013
+        ],
+        "terminal": false
+      },
+      {
+        "step": 180,
+        "box_position": [
+          0.2577953338623047,
+          0.026666998863220215,
+          0.17991824448108673
+        ],
+        "tilt_deg": 34.49923472657994,
+        "bottom_height_m": 0.07274921238422394,
+        "jaw_gap_m": 0.0571315623819828,
+        "pad_distance_m": 0.0285759586840868,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 14.374653816223145,
+        "moving_contact_n": 13.806017875671387,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07561901956796646,
+        "angular_speed_rad_s": 0.22602781653404236,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -1.007993459701538,
+          -0.10267913341522217,
+          -1.0091042518615723,
+          0.45931461453437805,
+          -0.5357406735420227,
+          -0.6358450651168823
+        ],
+        "terminal": false
+      },
+      {
+        "step": 190,
+        "box_position": [
+          0.24960899353027344,
+          0.04861891269683838,
+          0.16969844698905945
+        ],
+        "tilt_deg": 30.684285504420938,
+        "bottom_height_m": 0.06492654979228973,
+        "jaw_gap_m": 0.05703302472829819,
+        "pad_distance_m": 0.028877122327685356,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 9.69521713256836,
+        "moving_contact_n": 9.16301155090332,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07717015594244003,
+        "angular_speed_rad_s": 0.2866327464580536,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -1.0003925561904907,
+          -0.09812387079000473,
+          -1.0155363082885742,
+          0.6451734304428101,
+          -0.3640979826450348,
+          -0.44872501492500305
+        ],
+        "terminal": false
+      },
+      {
+        "step": 200,
+        "box_position": [
+          0.23670291900634766,
+          0.06777811050415039,
+          0.1577778160572052
+        ],
+        "tilt_deg": 25.824850853055207,
+        "bottom_height_m": 0.05809549614787102,
+        "jaw_gap_m": 0.057100389152765274,
+        "pad_distance_m": 0.02944508194923401,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 3.919665813446045,
+        "moving_contact_n": 3.3653833866119385,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.0829654261469841,
+        "angular_speed_rad_s": 0.7774690389633179,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9555363059043884,
+          -0.08747430890798569,
+          -1.0149421691894531,
+          0.8378887176513672,
+          -0.03816813975572586,
+          0.0562012642621994
+        ],
+        "terminal": false
+      },
+      {
+        "step": 210,
+        "box_position": [
+          0.22155189514160156,
+          0.07522380352020264,
+          0.08265912532806396
+        ],
+        "tilt_deg": 7.931523472391516,
+        "bottom_height_m": -2.1014362573623657e-05,
+        "jaw_gap_m": 0.06308291852474213,
+        "pad_distance_m": 0.09360320121049881,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9802137017250061,
+        "linear_speed_m_s": 0.00031018612207844853,
+        "angular_speed_rad_s": 0.00506018940359354,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 3,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9509133100509644,
+          -0.12242906540632248,
+          -0.9701012372970581,
+          0.7418431043624878,
+          0.7028807997703552,
+          0.6793502569198608
+        ],
+        "terminal": false
+      },
+      {
+        "step": 220,
+        "box_position": [
+          0.22147560119628906,
+          0.07528626918792725,
+          0.08264376223087311
+        ],
+        "tilt_deg": 7.840998221575126,
+        "bottom_height_m": -5.19677996635437e-06,
+        "jaw_gap_m": 0.06729740649461746,
+        "pad_distance_m": 0.0964130386710167,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809995889663696,
+        "linear_speed_m_s": 0.00024004079750739038,
+        "angular_speed_rad_s": 0.00477201072499156,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 13,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9660590887069702,
+          -0.08466193825006485,
+          -0.9889712929725647,
+          0.37479567527770996,
+          0.9557964205741882,
+          0.47084030508995056
+        ],
+        "terminal": false
+      },
+      {
+        "step": 222,
+        "box_position": [
+          0.22146034240722656,
+          0.07529962062835693,
+          0.08263865113258362
+        ],
+        "tilt_deg": 7.822753205484473,
+        "bottom_height_m": -5.163252353668213e-06,
+        "jaw_gap_m": 0.06792349368333817,
+        "pad_distance_m": 0.097627192735672,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809966087341309,
+        "linear_speed_m_s": 0.0002402471291134134,
+        "angular_speed_rad_s": 0.004781328607350588,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 15,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": true,
+        "timed_out": false,
+        "actions": [
+          0.9727572202682495,
+          -0.12376228719949722,
+          -1.0012346506118774,
+          0.3334726095199585,
+          0.9657831788063049,
+          0.3986497223377228
+        ],
+        "terminal": true
+      }
+    ],
+    "885": [
+      {
+        "step": 10,
+        "box_position": [
+          0.16073036193847656,
+          -0.1024942398071289,
+          0.07999683171510696
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.170222043991089e-06,
+        "jaw_gap_m": 0.053406137973070145,
+        "pad_distance_m": 0.17263975739479065,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809960126876831,
+        "linear_speed_m_s": 1.4765524838367128e-06,
+        "angular_speed_rad_s": 1.4170876028174462e-08,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9809359312057495,
+          1.004616618156433,
+          -1.0120128393173218,
+          0.979216456413269,
+          -1.0113019943237305,
+          0.9901822805404663
+        ],
+        "terminal": false
+      },
+      {
+        "step": 20,
+        "box_position": [
+          0.16073036193847656,
+          -0.1024942398071289,
+          0.07999685406684875
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1515955924987793e-06,
+        "jaw_gap_m": 0.061388157308101654,
+        "pad_distance_m": 0.14204451441764832,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810000061988831,
+        "linear_speed_m_s": 8.640657824798836e-07,
+        "angular_speed_rad_s": 1.0347673651267542e-06,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9854931831359863,
+          1.0084998607635498,
+          -1.0084811449050903,
+          0.9078778028488159,
+          -1.00365149974823,
+          0.9959951639175415
+        ],
+        "terminal": false
+      },
+      {
+        "step": 30,
+        "box_position": [
+          0.16073036193847656,
+          -0.1024942398071289,
+          0.07999685406684875
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1515955924987793e-06,
+        "jaw_gap_m": 0.06924870610237122,
+        "pad_distance_m": 0.11519286036491394,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9809999465942383,
+        "linear_speed_m_s": 8.631274113213294e-07,
+        "angular_speed_rad_s": 6.323035677269218e-07,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9935380220413208,
+          0.9975597262382507,
+          -1.0102771520614624,
+          -0.24609801173210144,
+          -1.0109813213348389,
+          1.0016645193099976
+        ],
+        "terminal": false
+      },
+      {
+        "step": 40,
+        "box_position": [
+          0.16073036193847656,
+          -0.1024942398071289,
+          0.07999685406684875
+        ],
+        "tilt_deg": 0.0,
+        "bottom_height_m": -3.1478703022003174e-06,
+        "jaw_gap_m": 0.07691197097301483,
+        "pad_distance_m": 0.08854679018259048,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810001254081726,
+        "linear_speed_m_s": 7.804837878211401e-07,
+        "angular_speed_rad_s": 6.313800895441091e-07,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0130199193954468,
+          0.9917671084403992,
+          -1.0062729120254517,
+          -1.0130383968353271,
+          -0.591212809085846,
+          1.0051580667495728
+        ],
+        "terminal": false
+      },
+      {
+        "step": 50,
+        "box_position": [
+          0.16118717193603516,
+          -0.10342550277709961,
+          0.08008067309856415
+        ],
+        "tilt_deg": 0.41259432397074103,
+        "bottom_height_m": -8.165836334228516e-05,
+        "jaw_gap_m": 0.08431107550859451,
+        "pad_distance_m": 0.0640854462981224,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9744902849197388,
+        "linear_speed_m_s": 0.0026932847686111927,
+        "angular_speed_rad_s": 0.0011670480016618967,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0279022455215454,
+          0.27338358759880066,
+          -0.9971342086791992,
+          -1.0357545614242554,
+          0.24816679954528809,
+          0.9761618375778198
+        ],
+        "terminal": false
+      },
+      {
+        "step": 60,
+        "box_position": [
+          0.16118717193603516,
+          -0.10335254669189453,
+          0.08011656254529953
+        ],
+        "tilt_deg": 0.305827932186261,
+        "bottom_height_m": -3.2670795917510986e-06,
+        "jaw_gap_m": 0.08946157991886139,
+        "pad_distance_m": 0.04952267184853554,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.9810027480125427,
+        "linear_speed_m_s": 0.00030315257026813924,
+        "angular_speed_rad_s": 0.006035716272890568,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.0145193338394165,
+          0.5605584979057312,
+          -1.0016541481018066,
+          -1.0165690183639526,
+          0.2843511998653412,
+          -0.07129359245300293
+        ],
+        "terminal": false
+      },
+      {
+        "step": 70,
+        "box_position": [
+          0.16163349151611328,
+          -0.10409259796142578,
+          0.08023110777139664
+        ],
+        "tilt_deg": 0.6252627860499127,
+        "bottom_height_m": -1.5735626220703125e-05,
+        "jaw_gap_m": 0.08518106490373611,
+        "pad_distance_m": 0.03226442635059357,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 1.0211602449417114,
+        "linear_speed_m_s": 0.00030271548894234,
+        "angular_speed_rad_s": 0.006173414643853903,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.004779577255249,
+          1.0239589214324951,
+          -1.0114049911499023,
+          -0.9921019077301025,
+          0.024363592267036438,
+          -0.9738435745239258
+        ],
+        "terminal": false
+      },
+      {
+        "step": 80,
+        "box_position": [
+          0.1616373062133789,
+          -0.10394096374511719,
+          0.08017952740192413
+        ],
+        "tilt_deg": 0.47188377266937204,
+        "bottom_height_m": -5.6549906730651855e-06,
+        "jaw_gap_m": 0.07808176428079605,
+        "pad_distance_m": 0.019950971007347107,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.980922281742096,
+        "linear_speed_m_s": 0.00028667045990005136,
+        "angular_speed_rad_s": 0.005949709098786116,
+        "grasped": false,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.8288053870201111,
+          0.27342066168785095,
+          -1.000390887260437,
+          -0.9242470264434814,
+          0.15762993693351746,
+          -1.0123181343078613
+        ],
+        "terminal": false
+      },
+      {
+        "step": 90,
+        "box_position": [
+          0.16376972198486328,
+          -0.10542488098144531,
+          0.08074504137039185
+        ],
+        "tilt_deg": 2.101892670275001,
+        "bottom_height_m": -7.202103734016418e-05,
+        "jaw_gap_m": 0.07135282456874847,
+        "pad_distance_m": 0.01826244220137596,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 1.8029953241348267,
+        "moving_contact_n": 1.2083299160003662,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.02322470024228096,
+        "angular_speed_rad_s": 0.7458545565605164,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.6064032316207886,
+          -0.5467851758003235,
+          -1.0165106058120728,
+          0.18256914615631104,
+          0.14656564593315125,
+          -1.0077999830245972
+        ],
+        "terminal": false
+      },
+      {
+        "step": 100,
+        "box_position": [
+          0.16901874542236328,
+          -0.0969839096069336,
+          0.08161750435829163
+        ],
+        "tilt_deg": 4.744994567674378,
+        "bottom_height_m": -0.0001874081790447235,
+        "jaw_gap_m": 0.0643705204129219,
+        "pad_distance_m": 0.019472068175673485,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.6080832481384277,
+        "linear_speed_m_s": 0.035879768431186676,
+        "angular_speed_rad_s": 0.8369982242584229,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9179391264915466,
+          -0.7485108971595764,
+          -0.9988022446632385,
+          -0.022047236561775208,
+          0.0631476566195488,
+          -1.004742980003357
+        ],
+        "terminal": false
+      },
+      {
+        "step": 110,
+        "box_position": [
+          0.1775035858154297,
+          -0.08662652969360352,
+          0.09028362482786179
+        ],
+        "tilt_deg": 11.796853574164132,
+        "bottom_height_m": 9.468942880630493e-05,
+        "jaw_gap_m": 0.061130788177251816,
+        "pad_distance_m": 0.022317159920930862,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 21.984758377075195,
+        "moving_contact_n": 21.44295883178711,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.05266986042261124,
+        "angular_speed_rad_s": 0.4340766370296478,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9876581430435181,
+          -0.9827854037284851,
+          -1.0081939697265625,
+          -0.4900595545768738,
+          0.3793628215789795,
+          -1.0107605457305908
+        ],
+        "terminal": false
+      },
+      {
+        "step": 120,
+        "box_position": [
+          0.19379615783691406,
+          -0.07549905776977539,
+          0.10403933376073837
+        ],
+        "tilt_deg": 15.681441956924639,
+        "bottom_height_m": 0.014235284179449081,
+        "jaw_gap_m": 0.05967600271105766,
+        "pad_distance_m": 0.024336284026503563,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 24.317256927490234,
+        "moving_contact_n": 23.808719635009766,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09306737780570984,
+        "angular_speed_rad_s": 0.7346037030220032,
+        "grasped": true,
+        "lifted": false,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9562104940414429,
+          -0.9862520098686218,
+          -1.0091888904571533,
+          -1.0193337202072144,
+          0.9377523064613342,
+          -1.0099093914031982
+        ],
+        "terminal": false
+      },
+      {
+        "step": 130,
+        "box_position": [
+          0.21545696258544922,
+          -0.062035560607910156,
+          0.12291321158409119
+        ],
+        "tilt_deg": 20.109459411293376,
+        "bottom_height_m": 0.03536403551697731,
+        "jaw_gap_m": 0.059076957404613495,
+        "pad_distance_m": 0.024586794897913933,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 24.127805709838867,
+        "moving_contact_n": 23.552961349487305,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09539036452770233,
+        "angular_speed_rad_s": 0.5995349884033203,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9648022055625916,
+          -0.9945171475410461,
+          -1.0080657005310059,
+          -1.0172828435897827,
+          0.40940603613853455,
+          -0.9997152090072632
+        ],
+        "terminal": false
+      },
+      {
+        "step": 140,
+        "box_position": [
+          0.2329692840576172,
+          -0.0445561408996582,
+          0.144007608294487
+        ],
+        "tilt_deg": 26.184088077031475,
+        "bottom_height_m": 0.048374634236097336,
+        "jaw_gap_m": 0.058529410511255264,
+        "pad_distance_m": 0.024779468774795532,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 23.212574005126953,
+        "moving_contact_n": 22.58849334716797,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09725455194711685,
+        "angular_speed_rad_s": 0.5244051218032837,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9741346836090088,
+          -1.0112173557281494,
+          -1.002467155456543,
+          -0.9894447922706604,
+          0.04480922967195511,
+          -0.9768680334091187
+        ],
+        "terminal": false
+      },
+      {
+        "step": 150,
+        "box_position": [
+          0.24590206146240234,
+          -0.025036334991455078,
+          0.16668179631233215
+        ],
+        "tilt_deg": 32.664191577566235,
+        "bottom_height_m": 0.06457050144672394,
+        "jaw_gap_m": 0.05811062455177307,
+        "pad_distance_m": 0.025010934099555016,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 17.215696334838867,
+        "moving_contact_n": 16.5749454498291,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.09769666194915771,
+        "angular_speed_rad_s": 0.46166935563087463,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9600003957748413,
+          -1.0066192150115967,
+          -1.0003924369812012,
+          -1.0321682691574097,
+          -0.251581072807312,
+          -0.7545813322067261
+        ],
+        "terminal": false
+      },
+      {
+        "step": 160,
+        "box_position": [
+          0.2541952133178711,
+          -0.003642559051513672,
+          0.18351377546787262
+        ],
+        "tilt_deg": 36.94390051669085,
+        "bottom_height_m": 0.07711488008499146,
+        "jaw_gap_m": 0.0578007698059082,
+        "pad_distance_m": 0.025325613096356392,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 15.001994132995605,
+        "moving_contact_n": 14.367193222045898,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.06817968934774399,
+        "angular_speed_rad_s": 0.17159801721572876,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9859597682952881,
+          -0.5021091103553772,
+          -1.0090292692184448,
+          -0.6148475408554077,
+          -0.604741096496582,
+          -0.6444816589355469
+        ],
+        "terminal": false
+      },
+      {
+        "step": 170,
+        "box_position": [
+          0.2534217834472656,
+          0.01903390884399414,
+          0.18012751638889313
+        ],
+        "tilt_deg": 35.14371598839609,
+        "bottom_height_m": 0.07373781502246857,
+        "jaw_gap_m": 0.057580091059207916,
+        "pad_distance_m": 0.025614479556679726,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 15.080766677856445,
+        "moving_contact_n": 14.510726928710938,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07167880237102509,
+        "angular_speed_rad_s": 0.20155005156993866,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -0.9960154891014099,
+          -0.09295924007892609,
+          -1.0127804279327393,
+          0.2891009747982025,
+          -0.6031308770179749,
+          -0.6405916213989258
+        ],
+        "terminal": false
+      },
+      {
+        "step": 180,
+        "box_position": [
+          0.24702072143554688,
+          0.041176795959472656,
+          0.17017923295497894
+        ],
+        "tilt_deg": 31.356889578082267,
+        "bottom_height_m": 0.06586860120296478,
+        "jaw_gap_m": 0.0574987567961216,
+        "pad_distance_m": 0.025908255949616432,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 12.84417724609375,
+        "moving_contact_n": 12.34299087524414,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07629302889108658,
+        "angular_speed_rad_s": 0.2701186537742615,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -1.0077149868011475,
+          -0.07250027358531952,
+          -1.0115885734558105,
+          0.5692786574363708,
+          -0.4462137520313263,
+          -0.5363525152206421
+        ],
+        "terminal": false
+      },
+      {
+        "step": 190,
+        "box_position": [
+          0.2363595962524414,
+          0.06159543991088867,
+          0.15894976258277893
+        ],
+        "tilt_deg": 27.417229917894453,
+        "bottom_height_m": 0.058317411690950394,
+        "jaw_gap_m": 0.057489193975925446,
+        "pad_distance_m": 0.02627141959965229,
+        "contacts": [
+          true,
+          true
+        ],
+        "fixed_contact_n": 5.603622913360596,
+        "moving_contact_n": 5.153625965118408,
+        "table_contact_n": 0.0,
+        "linear_speed_m_s": 0.07779399305582047,
+        "angular_speed_rad_s": 0.3795236349105835,
+        "grasped": true,
+        "lifted": true,
+        "placed": false,
+        "stable_steps": 0,
+        "on_target": false,
+        "released": false,
+        "withdrawn": false,
+        "upright": false,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          -1.0004043579101562,
+          -0.06987112760543823,
+          -1.0157980918884277,
+          0.7734584808349609,
+          -0.14237475395202637,
+          -0.1374451369047165
+        ],
+        "terminal": false
+      },
+      {
+        "step": 200,
+        "box_position": [
+          0.21849918365478516,
+          0.07488107681274414,
+          0.08280665427446365
+        ],
+        "tilt_deg": 9.101030296789668,
+        "bottom_height_m": -0.00023945048451423645,
+        "jaw_gap_m": 0.061632540076971054,
+        "pad_distance_m": 0.09098204970359802,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.8456671833992004,
+        "linear_speed_m_s": 0.01826520636677742,
+        "angular_speed_rad_s": 0.10570061206817627,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 1,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          1.1603282690048218,
+          -0.15938815474510193,
+          -0.8293487429618835,
+          1.0760844945907593,
+          -0.043681807816028595,
+          0.9355642795562744
+        ],
+        "terminal": false
+      },
+      {
+        "step": 210,
+        "box_position": [
+          0.2184467315673828,
+          0.07499313354492188,
+          0.08296370506286621
+        ],
+        "tilt_deg": 9.012427006827675,
+        "bottom_height_m": -5.420297384262085e-06,
+        "jaw_gap_m": 0.06681673228740692,
+        "pad_distance_m": 0.09162695705890656,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.981009304523468,
+        "linear_speed_m_s": 0.0002070020855171606,
+        "angular_speed_rad_s": 0.004110000561922789,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 11,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": false,
+        "timed_out": false,
+        "actions": [
+          0.9750138521194458,
+          -0.052617885172367096,
+          -0.9910160899162292,
+          0.39455321431159973,
+          0.9541217684745789,
+          0.5483341217041016
+        ],
+        "terminal": false
+      },
+      {
+        "step": 214,
+        "box_position": [
+          0.2184162139892578,
+          0.07500839233398438,
+          0.08295536041259766
+        ],
+        "tilt_deg": 8.980979182600997,
+        "bottom_height_m": -5.45009970664978e-06,
+        "jaw_gap_m": 0.0682438462972641,
+        "pad_distance_m": 0.09372062236070633,
+        "contacts": [
+          false,
+          false
+        ],
+        "fixed_contact_n": 0.0,
+        "moving_contact_n": 0.0,
+        "table_contact_n": 0.981022298336029,
+        "linear_speed_m_s": 0.0002087560569634661,
+        "angular_speed_rad_s": 0.004128639120608568,
+        "grasped": true,
+        "lifted": true,
+        "placed": true,
+        "stable_steps": 15,
+        "on_target": true,
+        "released": true,
+        "withdrawn": true,
+        "upright": true,
+        "success": true,
+        "timed_out": false,
+        "actions": [
+          0.966834306716919,
+          -0.12031472474336624,
+          -0.9919980764389038,
+          0.37720564007759094,
+          0.9374712705612183,
+          0.44131192564964294
+        ],
+        "terminal": true
+      }
+    ]
+  }
+}

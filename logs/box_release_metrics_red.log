@@ -1,0 +1,36 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_box_audit_counts_first_episode_only_and_saves_failure_modes _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x717dc41c3e00>
+tmp_path = PosixPath('/tmp/pytest-of-apc/pytest-5/test_box_audit_counts_first_ep0')
+capsys = <_pytest.capture.CaptureFixture object at 0x717dc40998b0>
+
+    def test_box_audit_counts_first_episode_only_and_saves_failure_modes(monkeypatch, tmp_path, capsys):
+        monkeypatch.setattr(rsl_rl, "RslRlVecEnvWrapper", FakeWrapper)
+        monkeypatch.setattr(FakeWrapper, "step", FakeWrapper.step)
+        monkeypatch.setattr(evaluation, "EXACT_EVALUATION_ACTIVE", False)
+        monkeypatch.setenv("SO101_EVALUATION_EPISODES", "2")
+        output = tmp_path / "box_audit.json"
+        monkeypatch.setenv("SO101_EVALUATION_OUTPUT", str(output))
+        evaluation.install_episode_counter()
+        wrapper = FakeWrapper()
+        wrapper.step(None)
+        wrapper.step(None)
+        with pytest.raises(SystemExit) as result:
+            wrapper.step(None)
+        assert result.value.code == 0
+        saved = json.loads(output.read_text())
+        assert saved["summary"]["episodes"] == 2
+        assert saved["summary"]["success_rate"] == 0.5
+        assert saved["summary"]["timed_out_rate"] == 0.5
+>       assert saved["summary"]["on_target_rate"] == 1.0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'on_target_rate'
+
+tests/test_box_evaluation.py:52: KeyError
+----------------------------- Captured stdout call -----------------------------
+SO101_BOX_EVAL_RESULT={"dropped_rate": 0.0, "episodes": 2, "grasped_rate": 1.0, "lifted_rate": 0.5, "out_of_bounds_rate": 0.0, "placed_rate": 0.5, "success_rate": 0.5, "timed_out_rate": 0.5, "unstable_robot_rate": 0.0}
+=========================== short test summary info ============================
+FAILED tests/test_box_evaluation.py::test_box_audit_counts_first_episode_only_and_saves_failure_modes
+1 failed in 33.73s

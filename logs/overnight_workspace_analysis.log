@@ -1,0 +1,308 @@
+{
+  "training_blocks": 16,
+  "additional_ppo_updates": 3200,
+  "accepted_stages": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "camera_started": false,
+  "stages": [
+    {
+      "name": "ppo_A_block1",
+      "successes": 954,
+      "min_spatial": [
+        0.5531914893617021,
+        0,
+        2,
+        47
+      ],
+      "min_yaw": [
+        0.88,
+        2,
+        150
+      ]
+    },
+    {
+      "name": "ppo_A_block2",
+      "successes": 1022,
+      "min_spatial": [
+        0.95,
+        2,
+        4,
+        20
+      ],
+      "min_yaw": [
+        0.9915254237288136,
+        7,
+        118
+      ]
+    },
+    {
+      "name": "ppo_B_block1",
+      "successes": 1011,
+      "min_spatial": [
+        0.8181818181818182,
+        4,
+        4,
+        33
+      ],
+      "min_yaw": [
+        0.9765625,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_C_block1",
+      "successes": 892,
+      "min_spatial": [
+        0.047619047619047616,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.8203125,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_C_block2",
+      "successes": 977,
+      "min_spatial": [
+        0.2857142857142857,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.9266666666666666,
+        2,
+        150
+      ]
+    },
+    {
+      "name": "ppo_D_block1",
+      "successes": 983,
+      "min_spatial": [
+        0.5952380952380952,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.875,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_E_block1",
+      "successes": 957,
+      "min_spatial": [
+        0.7575757575757576,
+        4,
+        4,
+        33
+      ],
+      "min_yaw": [
+        0.703125,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_E_block2",
+      "successes": 999,
+      "min_spatial": [
+        0.825,
+        0,
+        3,
+        40
+      ],
+      "min_yaw": [
+        0.90625,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block1",
+      "successes": 845,
+      "min_spatial": [
+        0.5476190476190477,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.0859375,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block2",
+      "successes": 960,
+      "min_spatial": [
+        0.5952380952380952,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.7578125,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block3",
+      "successes": 982,
+      "min_spatial": [
+        0.7380952380952381,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.8515625,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block4",
+      "successes": 987,
+      "min_spatial": [
+        0.6666666666666666,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.8983050847457628,
+        7,
+        118
+      ]
+    },
+    {
+      "name": "ppo_F_block5",
+      "successes": 1002,
+      "min_spatial": [
+        0.8095238095238095,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.9375,
+        0,
+        128
+      ]
+    },
+    {
+      "name": "ppo_F_block6",
+      "successes": 1009,
+      "min_spatial": [
+        0.8333333333333334,
+        4,
+        0,
+        42
+      ],
+      "min_yaw": [
+        0.9491525423728814,
+        7,
+        118
+      ]
+    },
+    {
+      "name": "ppo_F_block7",
+      "successes": 1004,
+      "min_spatial": [
+        0.9166666666666666,
+        0,
+        4,
+        36
+      ],
+      "min_yaw": [
+        0.8813559322033898,
+        7,
+        118
+      ]
+    },
+    {
+      "name": "ppo_F_block8",
+      "successes": 1006,
+      "min_spatial": [
+        0.9210526315789473,
+        1,
+        4,
+        38
+      ],
+      "min_yaw": [
+        0.953125,
+        0,
+        128
+      ]
+    }
+  ],
+  "all_F_initial_poses_match": true,
+  "persistent_F_failures": [],
+  "most_frequent_F_failures": [
+    [
+      649,
+      6
+    ],
+    [
+      804,
+      6
+    ],
+    [
+      871,
+      6
+    ],
+    [
+      560,
+      6
+    ],
+    [
+      34,
+      5
+    ],
+    [
+      307,
+      5
+    ],
+    [
+      445,
+      5
+    ],
+    [
+      918,
+      5
+    ],
+    [
+      51,
+      5
+    ],
+    [
+      27,
+      4
+    ],
+    [
+      174,
+      4
+    ],
+    [
+      252,
+      4
+    ]
+  ]
+}
+F6_TRAINING={"run": "2026-10-26_19-41-12_overnight_20261027_ppo_camera_ppo_F_block6_try0", "all_scalars_finite": true, "learning_rate": {"first": 5.062499985797331e-05, "last": 0.00011390625149942935, "minimum": 5.062499985797331e-05, "maximum": 0.0002562890585977584}}
+F6_FAILURES={"never_grasped": 4, "grasped_without_lift": 3, "lifted_without_success": 8}

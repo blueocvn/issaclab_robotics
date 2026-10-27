@@ -1,0 +1,126 @@
+I: Initializing Version 2.74.0-release.7316+gl.ec99a64b
+I: Client ID: S0L7B6EM
+I: ThreadId(02) hub_client::client::Client::new Launching client mode=Shared with_cleaner=false cache_path=None cache_size=None
+I: ThreadId(03) launch self=Launcher { discovery_lock: RwLock { lock: RwLock { inner: File { fd: 27, path: "/tmp/hub-apc.lock", read: false, write: true } } }, mode: Shared, with_cleaner: false, config_file: "/tmp/hub-apc-3DB98142.config.json" } cmd="hub" "--mode=shared" "--write-config" "/tmp/hub-apc-3DB98142.config.json" "--"
+I: Not using Hub: Hub not found
+I: Successfully created S3 provider for https://omniverse-content-production.s3-us-west-2.amazonaws.com
+I: Using CloudFront http://dcb18d6mfegct.cloudfront.net/, List = No
+Serving remote assets from the local cache under '/tmp'. Each copy is checked against the server before use; delete the directory to force a full re-download.
+/mnt/e/robotics/IsaacLabTutorial/.venv/lib/python3.12/site-packages/isaaclab_newton/cloner/newton_clone_utils.py:165: FutureWarning: Newton shape color replacement is enabled; this workaround will be deprecated in a future release.
+  replace_newton_builder_shape_colors(builder, stage)
+Failed to get root com velocity. If the articulation is fixed, this is expected. Setting root com velocity to zeros.
+/mnt/e/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/check.py:98: DeprecationWarning: Articulation.set_joint_position_target_index is deprecated. Use articulation.actuators.target_command.set_position_index instead.
+  robot.set_joint_position_target_index(target=command(open_q))
+/mnt/e/robotics/IsaacLabTutorial/src/isaaclab_tutorial/tasks/place_box/check.py:90: DeprecationWarning: Articulation.set_joint_position_target_index is deprecated. Use articulation.actuators.target_command.set_position_index instead.
+  robot.set_joint_position_target_index(target=command(start * (1 - alpha) + end * alpha))
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 42
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.03333333333333333
+	Environment step-size : 0.03333333333333333
+[INFO]: Time taken for scene creation Last: 5.561164 s, Mean: 5.561164 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 1.1
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+Finalize builder took: Last: 0.085410 s, Mean: 0.085410 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.002613 s, Mean: 0.002613 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.000491 s, Mean: 0.001552 s, Std: 0.001500 s, N: 2
+Contact sensor construction took: Last: 0.000480 s, Mean: 0.001195 s, Std: 0.001228 s, N: 3
+Initialize solver took: Last: 2.116029 s, Mean: 2.116029 s, Std: 0.000000 s, N: 1
+[INFO]: Time taken for simulation start Last: 2.661514 s, Mean: 2.661514 s, Std: 0.000000 s, N: 1
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++----------------------+
+| Active Command Terms |
++-------+------+-------+
+| Index | Name |  Type |
++-------+------+-------+
++-------+------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++------------+------------------------+
+|   Index    | Name                   |
++------------+------------------------+
+|     0      | reset_home             |
++------------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++-----------------------+
+| Active Recorder Terms |
++------------+----------+
+|   Index    | Name     |
++------------+----------+
++------------+----------+
+
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 6)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         5 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (54,)) |
++-------------------+-------------------+--------------------+
+|       Index       | Name              |       Shape        |
++-------------------+-------------------+--------------------+
+|         0         | state             |       (54,)        |
++-------------------+-------------------+--------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (54,)) |
++-------------------+-------------------+--------------------+
+|       Index       | Name              |       Shape        |
++-------------------+-------------------+--------------------+
+|         0         | state             |       (54,)        |
++-------------------+-------------------+--------------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 5 active terms.
++--------------------------------------+
+|       Active Termination Terms       |
++-------+-------------------+----------+
+| Index | Name              | Time Out |
++-------+-------------------+----------+
+|   0   | success           |  False   |
+|   1   | box_dropped       |  False   |
+|   2   | box_out_of_bounds |  False   |
+|   3   | unstable_robot    |  False   |
+|   4   | time_out          |   True   |
++-------+-------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 9 active terms.
++----------------------------------+
+|       Active Reward Terms        |
++-------+----------------+---------+
+| Index | Name           |  Weight |
++-------+----------------+---------+
+|   0   | approach       |     1.0 |
+|   1   | transport      |     0.2 |
+|   2   | release        |     0.2 |
+|   3   | milestones     |    10.0 |
+|   4   | success        |   200.0 |
+|   5   | lost           |   -50.0 |
+|   6   | action_rate    |  -0.002 |
+|   7   | joint_velocity | -0.0002 |
+|   8   | joint_limits   |    -1.0 |
++-------+----------------+---------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++-------------------------+
+| Active Curriculum Terms |
++-------------+-----------+
+|    Index    | Name      |
++-------------+-----------+
++-------------+-----------+
+
+[INFO]: Completed setting up the environment...
+CUDA graph took: Last: 0.495587 s, Mean: 0.495587 s, Std: 0.000000 s, N: 1
+SO101_BOX_CHECK={"box_bottom_height_m": [-3.125518560409546e-06], "box_size_m": [0.13, 0.045, 0.09], "device": "cuda:0", "finite_observations": true, "grasp_probe": {"bilateral_after_lift": true, "bilateral_grasp": true, "box_bottom_height_m": 0.049162883311510086, "box_position_m": [0.16016866266727448, -0.11146166175603867, 0.14886334538459778], "box_quaternion_xyzw": [-0.1940828412771225, -0.11961302161216736, -0.0378996841609478, 0.9729276299476624], "ik_error_a_m": 0.001017080732304924, "ik_error_b_m": 0.004150312697749551, "ik_error_lift_m": 0.003628388896464389, "joint_tracking_error_rad": [-0.0024147629737854004, 0.017406150698661804, 0.059364914894104004, -0.003245234489440918, 0.0027391910552978516, 0.21429981291294098], "lifted": true, "passed": true}, "num_envs": 1, "paper_size_m": [0.297, 0.21]}

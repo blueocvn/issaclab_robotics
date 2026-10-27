@@ -1,0 +1,6 @@
+{
+  "shutdown": "Graceful Windows shutdown after success or unresolved failure, following saved logs and recovery grace",
+  "wrapper_pid": 32052,
+  "run_directory": "D:\\work\\robotics\\IsaacLabTutorial\\logs\\overnight_20261027_ppo_camera",
+  "launcher_directory": "D:\\work\\robotics\\IsaacLabTutorial\\logs\\overnight_20261027_ppo_camera_launcher"
+}
