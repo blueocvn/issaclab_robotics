@@ -1,0 +1,54 @@
+{
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 0,
+  "selected": "baseline",
+  "candidates": {
+    "control": {
+      "nominal": {
+        "episodes": 256,
+        "baseline_successes": 225,
+        "candidate_successes": 229,
+        "candidate_only_successes": 28,
+        "baseline_only_successes": 24,
+        "both_successes": 201,
+        "both_failures": 3,
+        "gain_pp": 1.5625,
+        "gain_paired_bootstrap_95_pp": [
+          -3.90625,
+          7.03125
+        ]
+      },
+      "wide": {
+        "episodes": 256,
+        "baseline_successes": 57,
+        "candidate_successes": 80,
+        "candidate_only_successes": 60,
+        "baseline_only_successes": 37,
+        "both_successes": 20,
+        "both_failures": 139,
+        "gain_pp": 8.984375,
+        "gain_paired_bootstrap_95_pp": [
+          1.5625,
+          16.40625
+        ]
+      },
+      "qualifies": false
+    }
+  },
+  "interpretation": "Experimental improvement selection, not deployment acceptance. Intervals are descriptive paired bootstrap intervals; no automatic training extension.",
+  "checkpoint_sha256": {
+    "baseline": "92e88f27e5f8e9b5817e42742d779f6c41d96fe50b983e9585212cf5529aebf6",
+    "control": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6"
+  },
+  "sources": {
+    "baseline_nominal": "logs/camera_800_gate_20261027_170933/comparison_cli/1798_nominal",
+    "baseline_wide": "logs/camera_800_gate_20261027_170933/comparison_cli/1798_stage",
+    "candidates": [
+      [
+        "control",
+        "logs/camera_800_gate_20261027_170933/comparison_cli/2200_nominal",
+        "logs/camera_800_gate_20261027_170933/comparison_cli/2200_stage"
+      ]
+    ]
+  }
+}

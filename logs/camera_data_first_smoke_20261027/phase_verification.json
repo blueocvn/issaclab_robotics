@@ -1,0 +1,38 @@
+{
+  "path": "logs/rsl_rl/so101_box_camera_data_first/2026-10-27_17-35-00_data-first-phase-smoke/model_2233.pt",
+  "relative_updates": 36,
+  "replay_sizes": [
+    4096,
+    1786,
+    1426,
+    395
+  ],
+  "all_four_phases_present": true,
+  "teacher_equal": true,
+  "student_finite": true,
+  "normalizer_increment": 9216,
+  "optimizer_steps": 81792,
+  "metrics": {
+    "teacher_episodes": {
+      "sum": 28.0,
+      "last": 1.0
+    },
+    "teacher_successes": {
+      "sum": 28.0,
+      "last": 1.0
+    },
+    "student_episodes": {
+      "sum": 0.0,
+      "last": 0.0
+    },
+    "student_successes": {
+      "sum": 0.0,
+      "last": 0.0
+    },
+    "teacher_control_fraction": {
+      "sum": 32.0,
+      "last": 1.0
+    }
+  },
+  "sha256": "0c8d9857402b2e26785dcb4c8740931bb3669af3d846a431203a8d04bcc1802f"
+}

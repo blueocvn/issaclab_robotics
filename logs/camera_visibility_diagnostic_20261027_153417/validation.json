@@ -1,0 +1,15 @@
+{
+  "selected_checkpoint_unchanged": true,
+  "validated_profiles": [
+    "nominal_teacher",
+    "nominal_student",
+    "interior_corrected/interior_teacher",
+    "interior_corrected/interior_student"
+  ],
+  "excluded_profiles": [
+    "interior_teacher",
+    "interior_student"
+  ],
+  "no_training": true,
+  "all_paired_initial_poses_exact": true
+}

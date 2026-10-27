@@ -1,0 +1,13 @@
+{
+  "candidates": [
+    1700,
+    1798
+  ],
+  "baseline_checkpoint": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1599.pt",
+  "baseline_evidence": "/mnt/e/issaclab_robotics/logs/camera_checkpoint_screen_20261027_135850/1599",
+  "episodes_per_population": 256,
+  "nominal_seed": 42,
+  "wide_seed": 45,
+  "selection_rule": "Highest wide successes; nominal successes break ties; retain the original baseline if neither improves",
+  "screen_only": true
+}

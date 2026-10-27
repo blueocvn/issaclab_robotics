@@ -1,0 +1,637 @@
+--- git commit ---
+28cb4cefa9ed79b8ca26d5c489dc4981e1d1afa7
+
+
+--- git status ---
+On branch camera-data-first
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   MODEL_INDEX.md
+	modified:   README.md
+	modified:   docs/BOX_WORKSPACE_TRAINING.md
+	modified:   docs/HANDOFF.md
+	modified:   src/isaaclab_tutorial/tasks/place_box/__init__.py
+	modified:   src/isaaclab_tutorial/tasks/place_box/agents.py
+	modified:   src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
+	modified:   tests/test_box_workspace_audit.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	docs/CAMERA_DATA_FIRST.md
+	docs/plans/
+	src/isaaclab_tutorial/tasks/place_box/camera_comparison.py
+	src/isaaclab_tutorial/tasks/place_box/distillation.py
+	tests/test_box_camera_comparison.py
+	tests/test_box_distillation.py
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/MODEL_INDEX.md b/MODEL_INDEX.md
+index 348d806..f545b00 100644
+--- a/MODEL_INDEX.md
++++ b/MODEL_INDEX.md
+@@ -6,10 +6,14 @@ commands and saved run configs refer to this layout.
+ 
+ | Role | Checkpoint | Validation status |
+ | --- | --- | --- |
+-| Latest expanded-workspace PPO refinement | [model_5381.pt](logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt) | 400-update fixed-rate refinement completed; independent acceptance pending |
++| Common camera experimental baseline | [model_2200.pt](logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2200.pt) | Strongest nominal-eligible endpoint from the completed800-update run:229/256 nominal (89.45%),80/256 wide (31.25%); wide gain8.98 points vs fresh1798 missed the10-point improvement gate; selected for the controlled data-first experiment, not full acceptance; see [report](logs/camera_800_gate_20261027_170933/REPORT.md) |
++| Latest expanded-workspace PPO refinement | [model_5381.pt](logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt) | User accepted for camera distillation at observed grid2,891/3,000 and random3,282/3,328; below original strict gates; nominal3,072/3,072 and regression3/3 passed; see [report](logs/workspace_5381_acceptance_20261027_122310/REPORT.md) |
+ | Best observed overnight expanded-workspace teacher | [model_4982.pt](logs/rsl_rl/so101_box_state/2026-10-26_19-41-12_overnight_20261027_ppo_camera_ppo_F_block6_try0/model_4982.pt) | 1,009/1,024 on selection seed43; 1,013/1,024 on unused seed45; still below full workspace gates |
+ | Accepted nominal box state teacher | [model_2196.pt](logs/rsl_rl/so101_box_state/2026-10-26_14-59-07_so101-box-release-v3-refine/model_2196.pt) | 3,072/3,072 nominal episodes across three seeds; not broad-workspace acceptance |
+ | Nominal box camera student | [model_1599.pt](logs/rsl_rl/so101_box_camera_distillation/2026-10-26_15-21-58_so101-box-camera-student/model_1599.pt) | 2,038/2,048 over two matching-start nominal audits; residual failures; not an expanded-workspace student |
++| Expanded-workspace box camera student | [model_1599.pt](logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1599.pt) | Completed1,600 iterations; exact frozen teacher5381; independent grid455/3,000 (15.17%), random673/3,328 (20.22%), nominal2,152/3,072 (70.05%), case5273/3; see [report](logs/camera_1599_evaluation_20261027_132245/REPORT.md) |
++| Selected lower-rate workspace camera continuation | [model_1798.pt](logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt) | Retained after the full400-update experiment; matched256-start screen: nominal231/256 (90.23%), wide54/256 (21.09%); later1900/1997 regressed; wide tied1599, nominal improved; full acceptance not established; see [report](logs/camera_lr1e4_block2_screen_20261027_151453/REPORT.md) |
++| Block2 camera endpoint, not selected | [model_1997.pt](logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2/model_1997.pt) | Completed the remaining200 updates with optimizer resumed at0.0001; nominal164/256 (64.06%), wide14/256 (5.47%); retain1798 |
+ 
+ All saved training checkpoints are included, together with available exported
+ policies, per-run agent/environment configs, TensorBoard events and evaluation
+@@ -24,8 +28,11 @@ records the source snapshot and copied-file hashes.
+ For the current training workflow, see
+ [HANDOFF.md](docs/HANDOFF.md) and
+ [BOX_WORKSPACE_TRAINING.md](docs/BOX_WORKSPACE_TRAINING.md). The latest completed
+-refinement is not yet approved for camera distillation or real-robot deployment.
+-No expanded-workspace camera distillation has been completed. The camera
++refinement is user-approved for camera distillation; real-robot deployment is not authorized.
++Expanded-workspace camera distillation completed1,600 iterations from5381;
++its independent evaluation completed and remains below the teacher, including
++nominal starts. The earlier five-iteration smoke model_4.pt
++is only an initialization check. See `logs/camera_5381_smoke_verification.json`. The camera
+ sim-to-real preset varies solid colors and image/camera parameters; printed
+ logos and texture variation are not implemented in the current task.
+ 
+diff --git a/README.md b/README.md
+index 89a2057..09975d8 100644
+--- a/README.md
++++ b/README.md
+@@ -13,8 +13,13 @@ The complete saved model archive, run configs and evaluation evidence are
+ included under `logs/`. Model binaries use **Git LFS**. See
+ [MODEL_INDEX.md](MODEL_INDEX.md) for checkpoint roles, validation status and
+ SHA256 inventory. The latest wider-workspace refinement is `model_5381.pt`;
+-its independent acceptance evaluation is still pending. The archived camera
++its independent grid/random acceptance failed; nominal and regression checks passed. The archived camera
+ student covers the earlier nominal task, not the expanded workspace.
++The user accepted teacher5381 at its observed96.37% grid /98.62% random rates
++for camera distillation. The new workspace camera student completed1,600
++iterations; independent success was15.17% grid,20.22% random,70.05% nominal
++and3/3 on historical case527. See the
++[camera evaluation report](logs/camera_1599_evaluation_20261027_132245/REPORT.md).
+ 
+ ```bash
+ git clone https://github.com/blueocvn/issaclab_robotics.git
+diff --git a/docs/BOX_WORKSPACE_TRAINING.md b/docs/BOX_WORKSPACE_TRAINING.md
+index 2ea01e6..bd05693 100644
+--- a/docs/BOX_WORKSPACE_TRAINING.md
++++ b/docs/BOX_WORKSPACE_TRAINING.md
+@@ -1,15 +1,26 @@
+ # Box workspace evaluation and training
+ 
+-Start with [HANDOFF.md](HANDOFF.md). Latest teacher5381 has finished training
+-but needs independent acceptance. Do not repeat Stage A or the completed
+-refinement before evaluating it. The user launches further long training manually.
++Current camera experiment: [CAMERA_DATA_FIRST.md](CAMERA_DATA_FIRST.md) contains
++the completed800-update checkpoint screen and direct user-run commands for the
++opt-in data-first trainer versus the unchanged-trainer control. Use2200 as the
++common experimental baseline; keep all historical results below as provenance.
++
++Start with [HANDOFF.md](HANDOFF.md). Teacher5381 finished training and failed
++independent acceptance: grid2,891/3,000; random3,282/3,328. Nominal3,072/3,072
++and historical case5273/3 passed. See the
++[evaluation report](../logs/workspace_5381_acceptance_20261027_122310/REPORT.md).
++The user accepted these observed teacher results as sufficient and requested
++camera distillation from5381. That decision supersedes the stricter teacher
++promotion gate for this step; original audit thresholds/results remain recorded.
++Use a fresh camera student with matching nominal physics. Do not repeat Stage A.
++The user launches further long training manually. Commands below reproduce audits.
+ 
+ ## Evaluate the latest refinement
+ 
+-On this PC, use the existing runtime in WSL distro `Ubuntu`:
++On this PC, use the existing runtime in WSL distro `Ubuntu-24.04`:
+ 
+ ```bash
+-cd /mnt/d/work/robotics/IsaacLabTutorial
++cd /mnt/e/issaclab_robotics
+ CKPT='logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt'
+ uv run --locked python -m isaaclab_tutorial.tasks.place_box.workspace_audit --checkpoint "$CKPT" --policy teacher --population stage --stage F --seeds 43 45 --batch-size 1024 --output-dir logs/workspace_5381_stage_screen_20261027
+ ```
+@@ -88,20 +99,42 @@ is already complete; this table is not an instruction to restart it.
+ 
+ ## Camera and sim-to-real stage
+ 
+-Only after teacher acceptance, initialize distillation from that accepted PPO
+-checkpoint. Camera1599 embeds its old teacher; loading it does not replace that teacher.
++The user accepted teacher5381 at the observed96.37% grid /98.62% random scores.
++Initialize distillation from that PPO checkpoint. Camera1599 embeds its old teacher;
++loading it does not replace that teacher. This refers to the archived nominal
++camera1599; the new2026-10-27 workspace camera1599 embeds5381 exactly.
++Provide direct commands for future runs rather than creating per-run launch scripts.
+ 
+ ```bash
+ uv run --locked isaaclab train --rl_library rsl_rl --task IsaacTutorial-Pick-Box-SO101-Camera --num_envs 128 --max_iterations 1600 --seed 42 --run_name so101-box-workspace-camera --device cuda:0 --checkpoint "$CKPT" --visualizer none presets=newton_mjwarp,newton_renderer env.events.reset_home.params.position_noise=0.1 env.events.reset_home.params.yaw_noise=3.141592653589793 env.events.reset_home.params.nominal_fraction=0.2
+ ```
+ 
+-This is a future user-launched command, not the approved next run. Audit the
++The1,600-iteration run above completed. Its final workspace camera1599 scored
++455/3,000 grid (15.17%),673/3,328 random (20.22%),2,152/3,072 nominal (70.05%)
++and3/3 case527. All starts matched the teacher comparison exactly. See the
++[camera evaluation report](../logs/camera_1599_evaluation_20261027_132245/REPORT.md).
++Further training and edge-case inspection are deferred by the user. Audit any
+ actual student with `--policy camera` on the same four populations. For hardware
+ transfer, first adapt/evaluate the teacher with `sim2real`, then match physics,
+ renderer and transfer presets for the student. Current variation covers solid
+ colors and image/camera parameters; printed patterns/logos need coverage and
+ real-image validation. See [BOX_PICK_PLACE.md](BOX_PICK_PLACE.md).
+ 
++Preparation verified on2026-10-27: five iterations at128 environments completed,
++student parameters updated with finite losses, and the embedded frozen teacher
++matched5381 exactly. Evidence: `logs/camera_5381_smoke_verification.json`.
++The smoke checkpoint is not a trained student; start the full run from5381.
++
++The subsequent400-update lower-rate experiment retained camera1798: matched
++256-start screens showed90.23% nominal and21.09% wide success. Later1900/1997
++regressed. Ordinary camera/data diagnostics found limited initial view coverage
++(estimated72.4% of full-workspace box centers inside the policy crop) and sparse
++post-lift phase visitation in student interior rollouts (5.6% of control steps,
++versus30.0% for the teacher). These are diagnostic findings with limitations, not
++confirmed causes. See the
++[diagnostic report](../logs/camera_visibility_diagnostic_20261027_153417/REPORT.md)
++before planning further training. No framing or replay changes have been implemented.
++
+ ## Optional overnight controller
+ 
+ `workspace_pipeline.py` and root `run_workspace_overnight.ps1` remain in the
+diff --git a/docs/HANDOFF.md b/docs/HANDOFF.md
+index be46c71..807731b 100644
+--- a/docs/HANDOFF.md
++++ b/docs/HANDOFF.md
+@@ -4,7 +4,206 @@ Updated **2026-10-27, Asia/Saigon**. This is the current continuation document.
+ Completed plans and superseded run reports were consolidated here. Their raw
+ evidence remains under `logs/`; previous documents remain in Git history.
+ 
+-## Current state: evaluate checkpoint 5381 next
++## Current state: data-first trainer implemented; controlled training is user-launched
++
++The completed800-update seed43 run was screened against1798 on matched256
++nominal/wide starts. Best eligible checkpoint2200 scored229/256 nominal
++(89.45%) and80/256 wide (31.25%); fresh1798 scored225/256 (87.89%) and57/256
++(22.27%). The8.98-point wide gain missed the agreed10-point gate. Other tested
++checkpoints2000/2400/2597 failed the nominal gate. No1024 confirmation triggered.
++[Gate evidence](../logs/camera_800_gate_20261027_170933/REPORT.md).
++
++Common experimental baseline is now2200 from
++`2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43`.
++The opt-in `rsl_rl_data_first_cfg_entry_point` adds episode-level teacher
++collection and persistent phase-balanced replay while preserving the default
++box/vial agents and inference format. Current crop A and physical criteria
++remain unchanged. Training loss near0.12 is not a task accuracy threshold.
++
++Direct commands, schedule, checkpoint numbering, screens and final paired
++comparison: [CAMERA_DATA_FIRST.md](CAMERA_DATA_FIRST.md).
++The400-update-per-arm experiment has not been launched; the user will run it.
++Implementation is being verified; final verification evidence will be recorded
++in the execution ledger and GPU smoke report.
++
++## Previous state: framing A/B complete; kept1798 with current crop
++
++The frozen-policy A/B test did not improve performance:
++
++|256-start cohort | A=current crop | B=full-frame resize |
++| --- | --- | --- |
++| Nominal seed42 | 229/256 (89.45%) | 58/256 (22.66%) |
++| Wide seed45 | 63/256 (24.61%) | 33/256 (12.89%) |
++
++Initial poses and reset provenance matched exactly; command lines differed only
++in focal_scale_range. Checkpoint1798 SHA256 stayed unchanged. No training or
++repository-default change occurred. Keep current crop A for1798. B is not a
++drop-in improvement for this frozen policy; adaptation/training on B was not
++tested, so its eventual trained performance remains unknown. Fresh A differs
++from earlier cached231/256 nominal and54/256 wide; use the fresh paired reference
++for this comparison and keep the small-screen limitation explicit.
++Report:
++[framing A/B](../logs/camera_framing_ab_20261027_155759/REPORT.md).
++
++Next useful training change: investigate teacher-assisted successful-phase
++collection and retention of teacher-labelled examples, keeping1798/A as baseline.
++An alternative is an explicit adaptation experiment on B with an equally trained
++A control. Neither experiment has been implemented or launched.
++
++The user requested improvement after approving this next step. Compare A=current
++64x48 center crop (`focal_scale_range=[1.0,1.0]`) against B=full80x60 render resized
++to64x48 (`[0.8,0.8]`). Both use frozen1798 and identical256-start nominal (seed42)
++and wide (seed45) cohorts, in fresh play processes. No training, repository-default
++change or checkpoint write was part of this test.
++Existing sampler math was verified against exact cropping and bilinear full-frame
++resizing: maximum absolute error0.00000221. Paired input previews and plan:
++`logs/camera_framing_ab_20261027_155759/`. All four task-success screens completed.
++
++## Completed camera/data diagnostic
++
++Retain camera1798; no new training or policy/source changes were made during
++the diagnostic. Report and figure:
++[visibility/coverage diagnostic](../logs/camera_visibility_diagnostic_20261027_153417/REPORT.md).
++
++Validated ordinary paired rollouts (8 episodes each): teacher8/8 and student6/8
++on nominal starts; teacher8/8 and student4/8 on interior starts (configured
++plus/minus6cm XY and90deg yaw; actual sample extent5.94cm and52.9deg).
++Teacher/student initial poses matched exactly. These small rollouts are diagnostic
++examples, not replacement acceptance results.
++
++Two actionable findings:
++
++- Camera framing: a verified home-pose planar projection estimates72.4% of full
++  workspace initial box centers inside the64x48 policy crop, versus87.9% in the
++  raw80x60 render. About27.6% fall below the policy crop. This is geometric center
++  coverage, not occlusion, full-object visibility or episode success. The rendered
++  inputs are valid; teacher-rollout box centers stayed in view, but the box is
++  heavily cropped. This limitation cannot explain all failures by itself.
++- Phase visitation: on corrected interior rollouts the student spent5.6% of
++  control steps after lifting (including placement), versus30.0% for the teacher.
++  The installed trainer only labels student-visited states, trains its latest32
++  steps for4 epochs and resets the buffer; no persistent cross-rollout replay or
++  teacher-controlled demonstration collection is configured. Coverage/forgetting
++  is a supported hypothesis, not a confirmed cause of historical regressions.
++
++Next proposed experiments: validate camera framing against the intended real
++camera calibration, then separately test teacher-assisted collection with retained,
++phase-balanced examples. Keep5381/1798 as frozen teacher/current baseline and
++preserve physical success criteria. Change one mechanism at a time.
++
++Diagnostic provenance: only top-level nominal profiles and `interior_corrected/`
++are valid. The first top-level interior profiles accidentally reused cached nominal
++event-manager parameters; they were excluded and rerun with configuration fixed
++before scene creation plus actual-pose assertions. Selected1798 SHA256 is unchanged.
++
++## Completed400-update experiment
++
++All matched256-start screens completed:
++
++| Checkpoint | Nominal | Wide workspace |
++| --- | --- | --- |
++| 1599 original | 171/256 (66.80%) | 54/256 (21.09%) |
++| 1700 block1 midpoint | 0/256 | 23/256 (8.98%) |
++| **1798 block1 final** | **231/256 (90.23%)** | **54/256 (21.09%)** |
++| 1900 block2 midpoint | 17/256 (6.64%) | 27/256 (10.55%) |
++| 1997 block2 final | 164/256 (64.06%) | 14/256 (5.47%) |
++
++Retain1798. Neither new block2 checkpoint improved it. Exact initial-pose matches
++and checkpoint hashes were verified across all candidates. Both200-update blocks
++completed; no wider-workspace improvement was demonstrated, despite a stronger
++best saved nominal result. Do not select1997 merely because it is latest.
++Final report:
++[completed experiment](../logs/camera_lr1e4_block2_screen_20261027_151453/REPORT.md).
++The ordinary wrist-camera visibility/data-coverage diagnostic above is complete.
++The cause of the large performance swings remains unresolved; edge-case trajectory
++inspection remains deferred.
++
++After the block1 screen, the user said "keep going". The remaining200 updates
++were launched from1798 in this session and completed, preserving optimizer state
++and learning rate0.0001. Run:
++`2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2`.
++Console evidence: `logs/camera_1798_lr1e4_block2_training_20261027.log`.
++All200 iterations (1798 through1997) were recorded; all logged scalars finite.
++Optimizer steps correctly resumed from25,600 to51,200 at0.0001. The planned400
++additional updates across both blocks are complete. Checkpoints1900 and1997
++were screened against1798 on the same256-start nominal/wide cohorts:
++`logs/camera_lr1e4_block2_screen_20261027_151453/`.
++
++The matched256-start checkpoint screens completed:
++
++| Checkpoint | Nominal | Wide workspace |
++| --- | --- | --- |
++| 1599 baseline | 171/256 (66.80%) | 54/256 (21.09%) |
++| 1700 midpoint | 0/256 | 23/256 (8.98%) |
++| 1798 final | 231/256 (90.23%) | 54/256 (21.09%) |
++
++Select1798: wide successes tied1599 and nominal improved by60/256. All initial
++poses match exactly. This is a selection screen, not acceptance; no wide-workspace
++improvement has been demonstrated. The transient midpoint regression remains
++unexplained; teacher weights matched5381 and normalization history was retained.
++Full report and direct command:
++[block1 screen](../logs/camera_lr1e4_block1_screen_20261027_142121/REPORT.md).
++The next block used1798 at0.0001, **preserving its optimizer state**
++(`--resume_optimizer_state`). The optimizer had already been reset for block1.
++Physics, camera, teacher and reset mixture stayed unchanged. Block2 completed
++under the user's explicit continuation request; the current step is checkpoint
++screening and selection; those are now complete.1798 remains selected.
++
++The checkpoint screen selected1599: it tied1400 at54/256 wide successes and
++had171/256 nominal successes versus1400's103/256. The user then launched and
++completed the first200-update continuation at learning rate0.0001:
++
++```text
++logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt
++```
++
++The run logged exactly200 iterations (1599 through1798), all scalars finite.
++The fresh optimizer was verified: original204,800 steps, first saved checkpoint
++256 steps, final25,600 steps; saved learning rate0.0001. Midpoint1700 and final1798
++were compared with the cached1599 baseline on identical256-start nominal
++and256-start wide screens. Evidence:
++`logs/camera_lr1e4_block1_screen_20261027_142121/`.
++Do not launch the remaining200 updates automatically; provide the direct command
++from the report. Preserve1599 as the original comparison baseline.
++
++The user approved screening camera checkpoints1200/1300/1400/1599, then
++continuing the strongest student for400 updates at learning rate0.0001 with a
++fresh optimizer. Teacher5381, cameras, physics and reset distribution stay fixed.
++The screen uses256 identical nominal starts (seed42) and256 identical wide starts
++(seed45) per checkpoint; selection prioritizes wide successes, then nominal,
++then latest iteration. This is checkpoint selection, not acceptance. Evidence:
++`logs/camera_checkpoint_screen_20261027_135850/`. That screen completed and
++selected1599. The approved400-update experiment is split into two200-update
++blocks with evaluation between them; the first block is complete.
++
++The user completed 1,600 camera distillation iterations. Final student:
++
++```text
++logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1599.pt
++```
++
++All logged scalars and student tensors are finite; the embedded frozen teacher
++matches5381 exactly. Mean behavior loss: first50 iterations0.118697;
++last50 iterations0.079409. Independent evaluation completed with full coverage:
++
++| Population | Camera student | Teacher5381 |
++| --- | --- | --- |
++| Grid | 455/3,000 (15.17%) | 2,891/3,000 (96.37%) |
++| Random | 673/3,328 (20.22%) | 3,282/3,328 (98.62%) |
++| Nominal | 2,152/3,072 (70.05%) | 3,072/3,072 (100%) |
++| Case527 | 3/3 | 3/3 |
++
++All initial poses match the corresponding teacher audit starts exactly. The gap
++includes nominal starts. This student has not reproduced the teacher's task
++performance and was not selected for robot transfer. Full report:
++[camera evaluation](../logs/camera_1599_evaluation_20261027_132245/REPORT.md).
++This workspace camera1599 is distinct from the archived nominal camera1599.
++
++The user explicitly accepted the observed 96.37% grid / 98.62% random results
++as sufficient and requested camera distillation. This decision supersedes the
++previous stricter teacher promotion requirement for this step. The measured
++results and original gates below are retained; the physical success contract
++is unchanged. Use teacher5381 to initialize a fresh camera student.
+ 
+ The 400-update Stage F PPO refinement has **finished**. Latest checkpoint:
+ 
+@@ -16,12 +215,42 @@ It resumed teacher 4982 with 512 environments, a fresh optimizer, fixed learning
+ rate 0.00005, full workspace resets and a 20% nominal mixture. All recorded
+ scalars are finite; loss samples cover iterations 4982–5381. The last 50
+ training success estimates averaged 99.14%, including nominal starts and
+-stochastic actions. **No independent acceptance audit of 5381 has run yet.**
++stochastic actions. **Independent acceptance has now run and failed.**
+ 
+-Next: evaluate 5381, compare against 4982, then check the four final acceptance
+-populations. Do not start another PPO run or camera distillation from training
+-metrics alone. Commands and gates are in
+-[BOX_WORKSPACE_TRAINING.md](BOX_WORKSPACE_TRAINING.md).
++Independent results on 2026-10-27:
++
++| Population | Successes | Result |
++| --- | --- | --- |
++| Stage F screen, seeds43/45 | 2,020/2,048 (98.63%) | Fails stricter promotion gates |
++| Grid, groups45/46/47 | 2,891/3,000 (96.37%) | Fail, complete coverage |
++| Random, groups45/46/47 plus predefined supplement | 3,282/3,328 (98.62%) | Fail, complete coverage |
++| Nominal, groups42/43/44 | 3,072/3,072 | Pass |
++| Historical case527 | 3/3 | Pass |
++
++Screen starts match archived4982 starts exactly. Model5381 scored1,008 vs1,009
++on seed43 and1,012 vs1,013 on seed45; these small differences do not establish
++an improvement. Grid cases160 and167 at the far pickup corner each scored0/15.
++The worst grid spatial bin scored62/120 (51.67%); the worst yaw bin322/375
++(85.87%). Grid failures:40 without grasp,24 grasped without lift,45 after lift;
++all109 timed out. Random failures:9 without grasp,24 without lift,13 after lift.
++
++The two approved200-update training blocks and their screens are complete.
++Retain1798; inspect ordinary visual observability/data coverage before planning
++further training. No extra training beyond the approved400 updates was launched.
++Edge-case inspection remains deferred. The completed run
++used128 environments,1,600 iterations, nominal
++physics and the same wider workspace/20% nominal training mixture.
++Keep the physical success contract. Provide direct commands rather than
++creating per-run launch scripts.
++Commands and original audit gates remain in
++[BOX_WORKSPACE_TRAINING.md](BOX_WORKSPACE_TRAINING.md). Full results and provenance:
++[evaluation report](../logs/workspace_5381_acceptance_20261027_122310/REPORT.md).
++
++The random audit exposed a metadata bug: its supplement planned start index256
++but launched index0. The command now propagates the planned index; validation
++was retained. A regression test reproduced the failure before the fix. The
++recovered audit reuses only three validated original batches with recorded hashes
++and reruns the supplement. Original failed-attempt evidence is preserved.
+ 
+ At the latest process check, no training, playback or overnight controller was
+ active. The overnight run ended at Stage F's convergence limit. Its helper
+@@ -31,6 +260,10 @@ requested Windows shutdown at 03:16 on 2026-10-27.
+ 
+ - Supply commands for further long training; the user will launch them.
+   Short diagnostics/evaluations are allowed within the task.
++- Provide direct commands; do not generate a new `.sh` file for each run.
++- Edge-case inspection remains deferred. The user approved checkpoint screening
++  and a subsequent400-update camera continuation at0.0001; provide its command
++  after selection rather than launching the long training run automatically.
+ - The earlier autonomous training/shutdown permission applied to the completed
+   overnight job. Do not revive it or schedule shutdown without a new request.
+ - Preserve the original vial tasks, checkpoints and physical success contract.
+@@ -53,12 +286,17 @@ checkout retains its original upstream remote/history and uncommitted feature
+ files; do not reset it or push to that upstream. Synchronize intended changes
+ between checkouts. The publication checkout has no copied virtual environment.
+ 
++The table above describes the previous PC. The current evaluation ran from
++`E:\issaclab_robotics`, WSL `/mnt/e/issaclab_robotics`, distro `Ubuntu-24.04`,
++on RTX5060 Ti16 GB with driver610.88. Its local Linux `.venv` was installed
++with `uv sync --locked`; box, camera and vial GPU smoke checks passed.
++
+ WSL distro: **`Ubuntu`**, Ubuntu 24.04. GPU: RTX 5070, 12 GB. Python 3.12;
+ Isaac Lab 3.0.0 at `d061bf35a58273ef0cc8aceae76392166f9b7d15`, Torch 2.11+cu130,
+ Newton 1.6.1, Warp 1.17 and RSL-RL 5.5.1. See
+ [LOCAL_PC_SETUP.md](LOCAL_PC_SETUP.md).
+ 
+-Latest full verification: **174 tests passed, 2 optional skips** (`cv2`, `leapp`),
++Latest full verification: **175 tests passed, 2 optional skips** (`cv2`, `leapp`),
+ Ruff clean. Model hashes and fresh remote downloads of teacher 5381 and camera
+ 1599 were verified. This is runtime/code verification, not policy acceptance.
+ 
+@@ -87,10 +325,11 @@ Full paths: [MODEL_INDEX.md](../MODEL_INDEX.md). Hashes:
+ 
+ | Model | Role and evidence |
+ | --- | --- |
+-| **5381** | Latest Stage F refinement; finished, independent acceptance pending |
++| **5381** | User accepted for camera distillation at observed grid96.37% / random98.62%; below original strict gates; nominal and case527 passed |
+ | **4982** | Best observed overnight selection score: 1,009/1,024 (98.54%); additional seed45 screen: 1,013/1,024 (98.93%); below full workspace gates |
+ | **2196** | Accepted nominal state teacher: 3,072/3,072 across seeds42/43/44; not wider-workspace acceptance |
+ | **1599** | Nominal camera student: 2,038/2,048 over two matching-start audits; residual failures; not a wider-workspace student |
++| **Workspace camera1599 (2026-10-27 run)** | Completed1,600 iterations from teacher5381; grid15.17%, random20.22%, nominal70.05%, case5273/3; distinct from nominal camera1599 |
+ 
+ The overnight controller completed 16 blocks of 200 PPO updates and passed A–E.
+ Stage F's eight scores on the same 1,024 seed43 starts were
+@@ -99,7 +338,7 @@ Stage F's eight scores on the same 1,024 seed43 starts were
+ bin was 35/42 (83.33%); many failures were near ±180° yaw. The additional seed45
+ screen's weakest spatial bin was 33/38 (86.84%).
+ 
+-**Wider-workspace camera training has not started.** Generic `population=stage`
++**The full wider-workspace camera run and its evaluation finished; performance remains below the teacher.** Generic `population=stage`
+ status `pass` means ≥95%; Stage F promotion additionally needs ≥99% overall
+ and ≥95% in every spatial/yaw bin. A stage-screen pass is not final acceptance.
+ 
+@@ -129,9 +368,14 @@ smoke checkpoints as trained policies.
+ 
+ ## Remaining camera and transfer work
+ 
+-After wider teacher acceptance, adapt/evaluate sim-to-real physics, then
+-distill/evaluate a matching camera student. Camera1599 embeds its old teacher;
+-loading it does not automatically adopt a new teacher. Initialize new distillation
++Teacher5381 is now accepted by the user for wider-workspace camera distillation.
++The first nominal-physics camera student completed training/evaluation but remains
++below the teacher (including nominal starts). The user approved saved-checkpoint
++screening and a lower-rate continuation; edge-case inspection remains deferred. Before real
++robot transfer, adapt/evaluate sim-to-real physics and use matching teacher/student
++presets. The archived nominal camera1599 embeds its old teacher; the new
++workspace camera1599 was verified to embed5381. Loading a camera checkpoint
++does not automatically adopt a new teacher. Initialize new distillation
+ from the accepted PPO teacher unless a student-warm-start method is verified.
+ 
+ Current variation covers solid colors, camera mount and image formation;
+@@ -153,6 +397,19 @@ action scales, layout and commands must not be copied blindly to box deployment.
+ - `logs/workspace_4982_holdout45_20261027/`: additional 4982 screen.
+ - `logs/box_workspace_F_refine_training_summary.json`: completed refinement.
+ - `logs/workspace_overnight_final_tests.log`: 174-pass runtime suite.
++- `logs/workspace_5381_acceptance_20261027_122310/`: stage/grid, original random attempt, recovered random audit, combined report and failure starts.
++- `logs/workspace_5381_acceptance_20261027_123738/`: nominal and regression audits.
++- `logs/audit_supplement_red.log`: regression test reproducing the metadata bug.
++- `logs/audit_supplement_green_full.log`: 175-pass suite after the fix.
++- `logs/camera_5381_distillation_smoke_20261027.log`: five-iteration camera smoke run.
++- `logs/camera_5381_smoke_verification.json`: exact frozen-teacher match, finite student/loss verification, and smoke checkpoint path.
++- `logs/start_camera_5381.sh`: historical preparation helper; provide direct commands for future runs.
++- `logs/camera_1599_evaluation_20261027_132245/`: final workspace camera1599 training verification, four audits, matched-start teacher comparison and report.
++- `logs/camera_checkpoint_screen_20261027_135850/`: original1200/1300/1400/1599 selection screen; selected1599.
++- `logs/camera_lr1e4_block1_screen_20261027_142121/`: lower-rate block1 verification,1700/1798 screens, baseline comparison, optimizer/normalizer diagnostics, selected1798 and block2 command.
++- `logs/camera_lr1e4_block2_screen_20261027_151453/`: completed400-update experiment report, optimizer-resume verification,1900/1997 screens, all-candidate comparison and retained1798 selection.
++- `logs/camera_visibility_diagnostic_20261027_153417/`: validated nominal/interior camera images, phase coverage, home-frustum estimate, report and figure; use `interior_corrected/` rather than the excluded original interior profiles.
++- `logs/camera_framing_ab_20261027_155759/`: frozen1798 framing A/B plan, transform verification, input previews, matched-start screens and decision to keep current crop A.
+ 
+ New generated outputs remain ignored by default; explicitly stage intended new
+ artifacts when publishing them. Preserve raw evidence and model binaries.
+diff --git a/src/isaaclab_tutorial/tasks/place_box/__init__.py b/src/isaaclab_tutorial/tasks/place_box/__init__.py
+index fc7e07c..2a4ede2 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/__init__.py
++++ b/src/isaaclab_tutorial/tasks/place_box/__init__.py
+@@ -14,6 +14,11 @@ for _suffix, _environment, _agent in (
+         kwargs={
+             "env_cfg_entry_point": f"{_PACKAGE}.env_cfg:{_environment}",
+             "rsl_rl_cfg_entry_point": f"{_PACKAGE}.agents:{_agent}",
++            **(
++                {"rsl_rl_data_first_cfg_entry_point": f"{_PACKAGE}.agents:BoxDataFirstDistillationRunnerCfg"}
++                if _suffix == "-Camera"
++                else {}
++            ),
+             "default_agent": "rsl_rl",
+         },
+     )
+diff --git a/src/isaaclab_tutorial/tasks/place_box/agents.py b/src/isaaclab_tutorial/tasks/place_box/agents.py
+index 54f6539..805d278 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/agents.py
++++ b/src/isaaclab_tutorial/tasks/place_box/agents.py
+@@ -18,3 +18,17 @@ class BoxPPORunnerCfg(SO101StatePPORunnerCfg):
+ class BoxDistillationRunnerCfg(SO101CameraDistillationRunnerCfg):
+     experiment_name = "so101_box_camera_distillation"
+     max_iterations = 1600
++
++
++@configclass
++class BoxDataFirstDistillationRunnerCfg(BoxDistillationRunnerCfg):
++    """Explicit experimental entry point; the normal box/vial agents stay unchanged."""
++
++    seed = 43
++    experiment_name = "so101_box_camera_data_first"
++    max_iterations = 200
++    init_at_random_ep_len = False
++
++    def __post_init__(self):
++        self.algorithm.class_name = "isaaclab_tutorial.tasks.place_box.distillation:DataFirstDistillation"
++        self.algorithm.learning_rate = 1.0e-4
+diff --git a/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py b/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
+index 29bfc53..e1618b6 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
++++ b/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
+@@ -232,6 +232,8 @@ def main(argv=None):
+                 command[:] = [
+                     f"env.events.reset_home.params.sampling_seed={seed}"
+                     if x.startswith("env.events.reset_home.params.sampling_seed=")
++                    else f"env.events.reset_home.params.grid_start_index={extra['start_index']}"
++                    if x.startswith("env.events.reset_home.params.grid_start_index=")
+                     else x
+                     for x in command
+                 ]
+diff --git a/tests/test_box_workspace_audit.py b/tests/test_box_workspace_audit.py
+index bc71580..a9c5637 100644
+--- a/tests/test_box_workspace_audit.py
++++ b/tests/test_box_workspace_audit.py
+@@ -162,3 +162,65 @@ def test_invalid_job_dimensions_are_rejected(tmp_path, kwargs):
+     args.update(kwargs)
+     with pytest.raises(ValueError):
+         build_jobs(**args)
++
++
++def test_random_supplement_preserves_provenance_through_result_validation(tmp_path, monkeypatch):
++    from pathlib import Path
++
++    from isaaclab_tutorial.tasks.place_box import workspace_audit
++
++    checkpoint = tmp_path / "model.pt"
++    checkpoint.write_bytes(b"test checkpoint")
++    output = tmp_path / "audit"
++
++    def simulate_play(command, *, env, stdout, stderr, check):
++        overrides = dict(item.split("=", 1) for item in command if item.startswith("env.events."))
++        size = int(command[command.index("--num_envs") + 1])
++        prefix = "env.events.reset_home.params."
++        data = dict(
++            argv=command[1:],
++            summary={"episodes": size, "success_rate": 1.0},
++            reset_parameters=dict(
++                nominal_fraction=0,
++                reset_mode=overrides[prefix + "reset_mode"],
++                grid_start_index=int(overrides[prefix + "grid_start_index"]),
++                sampling_seed=int(overrides[prefix + "sampling_seed"]),
++            ),
++            episodes=[dict(env_id=i, success=True) for i in range(size)],
++        )
++        Path(env["SO101_EVALUATION_OUTPUT"]).write_text(json.dumps(data))
++
++    def coverage_report(rows, *args, **kwargs):
++        count = 100 if len(rows) > 3 else 99
++        return dict(
++            status="pass",
++            coverage_sufficient=True,
++            episodes=len(rows),
++            spatial_counts=[[count] * 5 for _ in range(5)],
++            yaw_counts=[100] * 8,
++        )
++
++    monkeypatch.setattr(workspace_audit.subprocess, "run", simulate_play)
++    monkeypatch.setattr(workspace_audit, "summarize", coverage_report)
++    assert (
++        workspace_audit.main(
++            [
++                "--checkpoint",
++                str(checkpoint),
++                "--policy",
++                "teacher",
++                "--population",
++                "random",
++                "--episodes",
++                "1",
++                "--batch-size",
++                "1",
++                "--output-dir",
++                str(output),
++            ]
++        )
++        == 0
++    )
++    summary = json.loads((output / "summary.json").read_text())
++    assert summary["completed_jobs"] == summary["planned_jobs"] == 4
++    assert summary["episodes"] == 259

@@ -1,0 +1,125 @@
+{
+  "population": "random",
+  "policy": "teacher",
+  "episodes": 3072,
+  "successes": 3028,
+  "success_rate": 0.9856770833333334,
+  "success_wilson_95": [
+    0.9808278983454373,
+    0.9893131313369226
+  ],
+  "required_success_rate": 0.99,
+  "seed_groups": [
+    45,
+    46,
+    47
+  ],
+  "stage_counts": {
+    "grasped": 3063,
+    "lifted": 3040,
+    "placed": 3028,
+    "success": 3028,
+    "timed_out": 44,
+    "dropped": 0,
+    "out_of_bounds": 0,
+    "unstable_robot": 0
+  },
+  "spatial_counts": [
+    [
+      113,
+      113,
+      119,
+      129,
+      123
+    ],
+    [
+      128,
+      126,
+      131,
+      139,
+      118
+    ],
+    [
+      134,
+      117,
+      109,
+      129,
+      127
+    ],
+    [
+      141,
+      126,
+      138,
+      108,
+      129
+    ],
+    [
+      120,
+      120,
+      115,
+      128,
+      92
+    ]
+  ],
+  "spatial_successes": [
+    [
+      109,
+      111,
+      117,
+      128,
+      112
+    ],
+    [
+      126,
+      125,
+      128,
+      139,
+      116
+    ],
+    [
+      133,
+      114,
+      109,
+      128,
+      127
+    ],
+    [
+      141,
+      125,
+      138,
+      107,
+      128
+    ],
+    [
+      113,
+      120,
+      115,
+      128,
+      91
+    ]
+  ],
+  "yaw_counts": [
+    366,
+    388,
+    375,
+    407,
+    378,
+    402,
+    373,
+    383
+  ],
+  "yaw_successes": [
+    345,
+    388,
+    373,
+    406,
+    377,
+    401,
+    370,
+    368
+  ],
+  "coverage_sufficient": false,
+  "status": "insufficient_coverage",
+  "completed_jobs": 3,
+  "planned_jobs": 4
+}

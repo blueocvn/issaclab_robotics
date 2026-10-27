@@ -1,0 +1,62 @@
+{
+  "1798": {
+    "nominal": {
+      "successes": 225,
+      "episodes": 256,
+      "rate": 0.87890625
+    },
+    "stage": {
+      "successes": 57,
+      "episodes": 256,
+      "rate": 0.22265625
+    }
+  },
+  "2000": {
+    "nominal": {
+      "successes": 3,
+      "episodes": 256,
+      "rate": 0.01171875
+    },
+    "stage": {
+      "successes": 27,
+      "episodes": 256,
+      "rate": 0.10546875
+    }
+  },
+  "2200": {
+    "nominal": {
+      "successes": 229,
+      "episodes": 256,
+      "rate": 0.89453125
+    },
+    "stage": {
+      "successes": 80,
+      "episodes": 256,
+      "rate": 0.3125
+    }
+  },
+  "2400": {
+    "nominal": {
+      "successes": 34,
+      "episodes": 256,
+      "rate": 0.1328125
+    },
+    "stage": {
+      "successes": 62,
+      "episodes": 256,
+      "rate": 0.2421875
+    }
+  },
+  "2597": {
+    "nominal": {
+      "successes": 98,
+      "episodes": 256,
+      "rate": 0.3828125
+    },
+    "stage": {
+      "successes": 48,
+      "episodes": 256,
+      "rate": 0.1875
+    }
+  }
+}

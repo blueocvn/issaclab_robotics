@@ -14,6 +14,11 @@ for _suffix, _environment, _agent in (
         kwargs={
             "env_cfg_entry_point": f"{_PACKAGE}.env_cfg:{_environment}",
             "rsl_rl_cfg_entry_point": f"{_PACKAGE}.agents:{_agent}",
+            **(
+                {"rsl_rl_data_first_cfg_entry_point": f"{_PACKAGE}.agents:BoxDataFirstDistillationRunnerCfg"}
+                if _suffix == "-Camera"
+                else {}
+            ),
             "default_agent": "rsl_rl",
         },
     )

@@ -162,3 +162,65 @@ def test_invalid_job_dimensions_are_rejected(tmp_path, kwargs):
     args.update(kwargs)
     with pytest.raises(ValueError):
         build_jobs(**args)
+
+
+def test_random_supplement_preserves_provenance_through_result_validation(tmp_path, monkeypatch):
+    from pathlib import Path
+
+    from isaaclab_tutorial.tasks.place_box import workspace_audit
+
+    checkpoint = tmp_path / "model.pt"
+    checkpoint.write_bytes(b"test checkpoint")
+    output = tmp_path / "audit"
+
+    def simulate_play(command, *, env, stdout, stderr, check):
+        overrides = dict(item.split("=", 1) for item in command if item.startswith("env.events."))
+        size = int(command[command.index("--num_envs") + 1])
+        prefix = "env.events.reset_home.params."
+        data = dict(
+            argv=command[1:],
+            summary={"episodes": size, "success_rate": 1.0},
+            reset_parameters=dict(
+                nominal_fraction=0,
+                reset_mode=overrides[prefix + "reset_mode"],
+                grid_start_index=int(overrides[prefix + "grid_start_index"]),
+                sampling_seed=int(overrides[prefix + "sampling_seed"]),
+            ),
+            episodes=[dict(env_id=i, success=True) for i in range(size)],
+        )
+        Path(env["SO101_EVALUATION_OUTPUT"]).write_text(json.dumps(data))
+
+    def coverage_report(rows, *args, **kwargs):
+        count = 100 if len(rows) > 3 else 99
+        return dict(
+            status="pass",
+            coverage_sufficient=True,
+            episodes=len(rows),
+            spatial_counts=[[count] * 5 for _ in range(5)],
+            yaw_counts=[100] * 8,
+        )
+
+    monkeypatch.setattr(workspace_audit.subprocess, "run", simulate_play)
+    monkeypatch.setattr(workspace_audit, "summarize", coverage_report)
+    assert (
+        workspace_audit.main(
+            [
+                "--checkpoint",
+                str(checkpoint),
+                "--policy",
+                "teacher",
+                "--population",
+                "random",
+                "--episodes",
+                "1",
+                "--batch-size",
+                "1",
+                "--output-dir",
+                str(output),
+            ]
+        )
+        == 0
+    )
+    summary = json.loads((output / "summary.json").read_text())
+    assert summary["completed_jobs"] == summary["planned_jobs"] == 4
+    assert summary["episodes"] == 259

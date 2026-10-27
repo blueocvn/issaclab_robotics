@@ -1,0 +1,63 @@
+{
+  "screen_only": true,
+  "matched_starts_exact": true,
+  "checkpoints": [
+    {
+      "iteration": 1599,
+      "checkpoint": "logs\\rsl_rl\\so101_box_camera_distillation\\2026-10-27_12-56-22_so101-box-workspace-camera-5381\\model_1599.pt",
+      "sha256": "4982ebd41b447b50909090d707d04ca008b85a3180674693333963d94620b8b5",
+      "nominal": {
+        "successes": 171,
+        "episodes": 256,
+        "rate": 0.66796875
+      },
+      "wide": {
+        "successes": 54,
+        "episodes": 256,
+        "rate": 0.2109375
+      }
+    },
+    {
+      "iteration": 1700,
+      "checkpoint": "logs\\rsl_rl\\so101_box_camera_distillation\\2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1\\model_1700.pt",
+      "sha256": "d6aeaf6d2cc6ebcbc7aa351d30fbe03fde86428ee6963b1bdefbda732fc00920",
+      "nominal": {
+        "successes": 0,
+        "episodes": 256,
+        "rate": 0.0
+      },
+      "wide": {
+        "successes": 23,
+        "episodes": 256,
+        "rate": 0.08984375
+      }
+    },
+    {
+      "iteration": 1798,
+      "checkpoint": "logs\\rsl_rl\\so101_box_camera_distillation\\2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1\\model_1798.pt",
+      "sha256": "92e88f27e5f8e9b5817e42742d779f6c41d96fe50b983e9585212cf5529aebf6",
+      "nominal": {
+        "successes": 231,
+        "episodes": 256,
+        "rate": 0.90234375
+      },
+      "wide": {
+        "successes": 54,
+        "episodes": 256,
+        "rate": 0.2109375
+      }
+    }
+  ],
+  "selected_iteration": 1798,
+  "selected_checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt",
+  "selection_reason": "Wide success tied baseline; nominal success increased by 60/256",
+  "wide_improvement_demonstrated": false,
+  "continuation": {
+    "additional_updates": 200,
+    "learning_rate": 0.0001,
+    "resume_optimizer_state": true,
+    "teacher": 5381,
+    "launched": false,
+    "powershell_command": "wsl -d Ubuntu-24.04 -- bash -lc 'cd /mnt/e/issaclab_robotics && uv run --locked isaaclab train --rl_library rsl_rl --task IsaacTutorial-Pick-Box-SO101-Camera --num_envs 128 --max_iterations 200 --seed 42 --run_name so101-box-workspace-camera-1798-lr1e-4-block2 --device cuda:0 --checkpoint logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt --resume_optimizer_state --visualizer none presets=newton_mjwarp,newton_renderer agent.algorithm.learning_rate=0.0001 agent.save_interval=100 env.events.reset_home.params.position_noise=0.1 env.events.reset_home.params.yaw_noise=3.141592653589793 env.events.reset_home.params.nominal_fraction=0.2'"
+  }
+}

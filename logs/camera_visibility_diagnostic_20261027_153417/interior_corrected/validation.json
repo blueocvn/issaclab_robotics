@@ -1,0 +1,7 @@
+{
+  "verified_intended_interior_distribution": true,
+  "paired_initial_poses_exact": true,
+  "checkpoint_sha256": "92e88f27e5f8e9b5817e42742d779f6c41d96fe50b983e9585212cf5529aebf6",
+  "replaces_mislabeled_profiles_in": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417",
+  "note": "Original interior profiles reused nominal event-manager parameters and must be excluded."
+}

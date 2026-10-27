@@ -1,0 +1,42 @@
+{
+  "1798": {
+    "iteration": 1798,
+    "student_finite": true,
+    "teacher_equal_1798": true,
+    "optimizer_steps": [
+      25600.0
+    ]
+  },
+  "2000": {
+    "iteration": 2000,
+    "student_finite": true,
+    "teacher_equal_1798": true,
+    "optimizer_steps": [
+      51584.0
+    ]
+  },
+  "2200": {
+    "iteration": 2200,
+    "student_finite": true,
+    "teacher_equal_1798": true,
+    "optimizer_steps": [
+      77184.0
+    ]
+  },
+  "2400": {
+    "iteration": 2400,
+    "student_finite": true,
+    "teacher_equal_1798": true,
+    "optimizer_steps": [
+      102784.0
+    ]
+  },
+  "2597": {
+    "iteration": 2597,
+    "student_finite": true,
+    "teacher_equal_1798": true,
+    "optimizer_steps": [
+      128000.0
+    ]
+  }
+}

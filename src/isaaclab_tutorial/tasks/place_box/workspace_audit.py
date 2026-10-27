@@ -232,6 +232,8 @@ def main(argv=None):
                 command[:] = [
                     f"env.events.reset_home.params.sampling_seed={seed}"
                     if x.startswith("env.events.reset_home.params.sampling_seed=")
+                    else f"env.events.reset_home.params.grid_start_index={extra['start_index']}"
+                    if x.startswith("env.events.reset_home.params.grid_start_index=")
                     else x
                     for x in command
                 ]

@@ -1,0 +1,37 @@
+{
+  "bash_syntax_pass": true,
+  "resolved_configs": {
+    "rsl_rl_cfg_entry_point": {
+      "algorithm": "isaaclab_tutorial.tasks.place_vial.config.so101.agents.rsl_rl_distillation_cfg:BoundedTeacherDistillation",
+      "learning_rate": 0.0001,
+      "full_initial_episode": true,
+      "reset_parameters": {
+        "position_noise": 0.1,
+        "yaw_noise": 3.141592653589793,
+        "paper_yaw": 0.0,
+        "nominal_fraction": 0.2,
+        "reset_mode": "random",
+        "sampling_seed": 43,
+        "grid_start_index": 0,
+        "replay_path": ""
+      },
+      "optimizer_steps_per_update": 128
+    },
+    "rsl_rl_data_first_cfg_entry_point": {
+      "algorithm": "isaaclab_tutorial.tasks.place_box.distillation:DataFirstDistillation",
+      "learning_rate": 0.0001,
+      "full_initial_episode": true,
+      "reset_parameters": {
+        "position_noise": 0.1,
+        "yaw_noise": 3.141592653589793,
+        "paper_yaw": 0.0,
+        "nominal_fraction": 0.2,
+        "reset_mode": "random",
+        "sampling_seed": 43,
+        "grid_start_index": 0,
+        "replay_path": ""
+      },
+      "optimizer_steps_per_update": 128
+    }
+  }
+}

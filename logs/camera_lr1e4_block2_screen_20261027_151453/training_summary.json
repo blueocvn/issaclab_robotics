@@ -1,0 +1,14 @@
+{
+  "run": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2",
+  "iterations": 200,
+  "first_iteration": 1798,
+  "last_iteration": 1997,
+  "learning_rate": 0.0001,
+  "parent_optimizer_step": 25600.0,
+  "first_saved_optimizer_step": 25984.0,
+  "final_optimizer_step": 51200.0,
+  "optimizer_resume_verified": true,
+  "all_logged_scalars_finite": true,
+  "loss_first50": 0.13633270516991616,
+  "loss_last50": 0.12443965330719947
+}

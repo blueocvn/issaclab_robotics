@@ -1,0 +1,44 @@
+[
+  {
+    "source": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/nominal_teacher/env0_home_raw.png",
+    "variant": "A",
+    "focal_scale": 1.0,
+    "max_transform_error": 1.9073486328125e-06,
+    "verified": true
+  },
+  {
+    "source": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/nominal_teacher/env0_home_raw.png",
+    "variant": "B",
+    "focal_scale": 0.8,
+    "max_transform_error": 2.086162567138672e-06,
+    "verified": true
+  },
+  {
+    "source": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_corrected/interior_teacher/env3_home_raw.png",
+    "variant": "A",
+    "focal_scale": 1.0,
+    "max_transform_error": 2.086162567138672e-06,
+    "verified": true
+  },
+  {
+    "source": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_corrected/interior_teacher/env3_home_raw.png",
+    "variant": "B",
+    "focal_scale": 0.8,
+    "max_transform_error": 2.205371856689453e-06,
+    "verified": true
+  },
+  {
+    "source": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_corrected/interior_teacher/env7_grasp_raw.png",
+    "variant": "A",
+    "focal_scale": 1.0,
+    "max_transform_error": 1.4901161193847656e-06,
+    "verified": true
+  },
+  {
+    "source": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_corrected/interior_teacher/env7_grasp_raw.png",
+    "variant": "B",
+    "focal_scale": 0.8,
+    "max_transform_error": 1.519918441772461e-06,
+    "verified": true
+  }
+]

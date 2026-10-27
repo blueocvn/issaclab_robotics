@@ -1,0 +1,192 @@
+{
+  "checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt",
+  "profiles": {
+    "nominal_teacher": {
+      "successes": 8,
+      "episodes": 8,
+      "control_steps": 1206,
+      "phase_counts": {
+        "approach": 642,
+        "grasp_without_lift": 220,
+        "lift_without_placement": 232,
+        "placed": 112
+      },
+      "phase_fractions": {
+        "approach": 0.5323383084577115,
+        "grasp_without_lift": 0.1824212271973466,
+        "lift_without_placement": 0.19237147595356552,
+        "placed": 0.09286898839137644
+      },
+      "after_lift_fraction": 0.28524046434494194,
+      "visibility": {
+        "box_center_in_view": 1.0,
+        "box_bbox_intersects_view": 1.0,
+        "box_all_corners_in_view": 0.0,
+        "paper_center_in_view": 0.5596707818930041,
+        "paper_bbox_intersects_view": 1.0
+      },
+      "phase_action_mse": {
+        "approach": 0.10085465792552427,
+        "grasp_without_lift": 0.048409625617137485,
+        "lift_without_placement": 0.17652804743912484,
+        "placed": 0.6481057878421701
+      }
+    },
+    "nominal_student": {
+      "successes": 6,
+      "episodes": 8,
+      "control_steps": 3455,
+      "phase_counts": {
+        "approach": 1069,
+        "grasp_without_lift": 1398,
+        "lift_without_placement": 904,
+        "placed": 84
+      },
+      "phase_fractions": {
+        "approach": 0.3094066570188133,
+        "grasp_without_lift": 0.4046309696092619,
+        "lift_without_placement": 0.26164978292329955,
+        "placed": 0.02431259044862518
+      },
+      "after_lift_fraction": 0.28596237337192476,
+      "visibility": {
+        "box_center_in_view": 0.968299711815562,
+        "box_bbox_intersects_view": 1.0,
+        "box_all_corners_in_view": 0.0,
+        "paper_center_in_view": 0.430835734870317,
+        "paper_bbox_intersects_view": 1.0
+      },
+      "phase_action_mse": {
+        "approach": 0.10942447112035861,
+        "grasp_without_lift": 0.11961812044303584,
+        "lift_without_placement": 0.16135331108752224,
+        "placed": 0.49833523745045943
+      }
+    },
+    "interior_teacher": {
+      "successes": 8,
+      "episodes": 8,
+      "control_steps": 1229,
+      "phase_counts": {
+        "approach": 605,
+        "grasp_without_lift": 255,
+        "lift_without_placement": 257,
+        "placed": 112
+      },
+      "phase_fractions": {
+        "approach": 0.49227013832384053,
+        "grasp_without_lift": 0.20748576078112285,
+        "lift_without_placement": 0.20911310008136696,
+        "placed": 0.09113100081366965
+      },
+      "after_lift_fraction": 0.3002441008950366,
+      "visibility": {
+        "box_center_in_view": 1.0,
+        "box_bbox_intersects_view": 1.0,
+        "box_all_corners_in_view": 0.040160642570281124,
+        "paper_center_in_view": 0.5421686746987951,
+        "paper_bbox_intersects_view": 1.0
+      },
+      "phase_action_mse": {
+        "approach": 0.31160646739105385,
+        "grasp_without_lift": 0.04513828647143852,
+        "lift_without_placement": 0.30913829314065916,
+        "placed": 1.0545350054036016
+      }
+    },
+    "interior_student": {
+      "successes": 4,
+      "episodes": 8,
+      "control_steps": 5478,
+      "phase_counts": {
+        "approach": 2097,
+        "grasp_without_lift": 3075,
+        "lift_without_placement": 250,
+        "placed": 56
+      },
+      "phase_fractions": {
+        "approach": 0.3828039430449069,
+        "grasp_without_lift": 0.5613362541073385,
+        "lift_without_placement": 0.045637093829864916,
+        "placed": 0.01022270901788974
+      },
+      "after_lift_fraction": 0.05585980284775466,
+      "visibility": {
+        "box_center_in_view": 0.9380127620783957,
+        "box_bbox_intersects_view": 1.0,
+        "box_all_corners_in_view": 0.010027347310847767,
+        "paper_center_in_view": 0.5104831358249772,
+        "paper_bbox_intersects_view": 0.8185961713764813
+      },
+      "phase_action_mse": {
+        "approach": 0.18735474522443527,
+        "grasp_without_lift": 0.17981851381911057,
+        "lift_without_placement": 0.15290369441238594,
+        "placed": 0.43035629933530634
+      }
+    }
+  },
+  "validated_paired_start_poses": true,
+  "excluded_original_profiles": [
+    "interior_teacher",
+    "interior_student"
+  ],
+  "exclusion_reason": "Original event-manager parameters remained nominal after mutating cfg at runtime; corrected interior scene initialized with proper parameters and validated actual extent.",
+  "corrected_interior_evidence": "interior_corrected/",
+  "home_workspace_projection": {
+    "method": "Planar home-pose homography fit to8 verified simulator projections; upright box center at fixed height. Geometric center visibility only, no occlusion estimate.",
+    "fit_max_pixel_error": 2.501469717941518e-05,
+    "plane_z": 0.08049999922513962,
+    "home_projection_homography": [
+      [
+        231.75855238176175,
+        -258.65775044447645,
+        -2.2605263396829374
+      ],
+      [
+        -150.79332429621846,
+        -241.60641415973893,
+        68.32512909037071
+      ],
+      [
+        2.3550605238137163,
+        -2.388578020157497,
+        1.0
+      ]
+    ],
+    "samples": 100000,
+    "full_workspace_local_xy_bounds": [
+      [
+        0.07,
+        0.27
+      ],
+      [
+        -0.2,
+        0
+      ]
+    ],
+    "policy_center_inside_fraction": 0.72386,
+    "raw_center_inside_fraction": 0.87895,
+    "policy_exclusions_by_border": {
+      "left": 0.0,
+      "right": 0.0,
+      "top": 0.0,
+      "bottom": 0.27614
+    },
+    "limitations": "Analytic initial-view coverage estimate, not an episode-success evaluation or edge-case trajectory review. It does not measure object occlusion or full-box visibility."
+  },
+  "training_data_facts": {
+    "student_controls_rollouts": true,
+    "teacher_labels_visited_states": true,
+    "rollout_control_steps": 32,
+    "learning_epochs": 4,
+    "persistent_cross_rollout_replay": false
+  },
+  "limitations": [
+    "Eight episodes per actor/distribution are diagnostic only, not a performance benchmark.",
+    "Projection measures geometric camera frustum, not actual occlusion or object identification.",
+    "The full-workspace home projection is a planar analytic estimate, not an episode-success or edge-case trajectory audit.",
+    "Measured phase coverage comes from paired diagnostic rollouts, not recorded historical training batches."
+  ],
+  "no_training_or_source_changes": true
+}

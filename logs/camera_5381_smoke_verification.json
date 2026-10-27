@@ -1,0 +1,55 @@
+{
+  "run": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-51-21_so101-box-workspace-camera-5381-smoke",
+  "checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-51-21_so101-box-workspace-camera-5381-smoke/model_4.pt",
+  "teacher_sha256": "de6789715cdadce05ac77b615c52bb827f02e9964186774fea0e9087e71c4c5d",
+  "embedded_teacher_matches_5381": true,
+  "teacher_unchanged": true,
+  "student_tensors_changed": 16,
+  "student_finite": true,
+  "loss_series": {
+    "Loss/behavior": [
+      {
+        "step": 0,
+        "value": 0.30733853578567505
+      },
+      {
+        "step": 1,
+        "value": 0.25851157307624817
+      },
+      {
+        "step": 2,
+        "value": 0.19528116285800934
+      },
+      {
+        "step": 3,
+        "value": 0.20158030092716217
+      },
+      {
+        "step": 4,
+        "value": 0.24463625252246857
+      }
+    ],
+    "Loss/learning_rate": [
+      {
+        "step": 0,
+        "value": 0.0005000000237487257
+      },
+      {
+        "step": 1,
+        "value": 0.0005000000237487257
+      },
+      {
+        "step": 2,
+        "value": 0.0005000000237487257
+      },
+      {
+        "step": 3,
+        "value": 0.0005000000237487257
+      },
+      {
+        "step": 4,
+        "value": 0.0005000000237487257
+      }
+    ]
+  }
+}

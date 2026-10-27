@@ -1,0 +1,68 @@
+{
+  "checkpoint": "logs\\rsl_rl\\so101_box_camera_distillation\\2026-10-27_12-56-22_so101-box-workspace-camera-5381\\model_1599.pt",
+  "checkpoint_sha256": "4982ebd41b447b50909090d707d04ca008b85a3180674693333963d94620b8b5",
+  "training": {
+    "run": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381",
+    "checkpoint": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1599.pt",
+    "checkpoint_sha256": "4982ebd41b447b50909090d707d04ca008b85a3180674693333963d94620b8b5",
+    "embedded_teacher_matches_5381": true,
+    "student_finite": true,
+    "all_logged_scalars_finite": true,
+    "iterations": 1600,
+    "loss_first50": 0.11869704768061638,
+    "loss_last50": 0.07940909713506698,
+    "metrics_last50": {
+      "Episode_Reward/success": 0.10576389776542783,
+      "Episode_Termination/success": 0.5395166015625,
+      "Metrics/success_rate": 0.0008056640625
+    }
+  },
+  "comparison": {
+    "grid": {
+      "student_successes": 455,
+      "episodes": 3000,
+      "student_rate": 0.15166666666666667,
+      "teacher_successes": 2891,
+      "teacher_rate": 0.9636666666666667,
+      "difference_percentage_points": -81.2,
+      "max_initial_pose_component_delta": 0.0,
+      "coverage_sufficient": true,
+      "original_gate_status": "fail"
+    },
+    "random": {
+      "student_successes": 673,
+      "episodes": 3328,
+      "student_rate": 0.20222355769230768,
+      "teacher_successes": 3282,
+      "teacher_rate": 0.9861778846153846,
+      "difference_percentage_points": -78.3954326923077,
+      "max_initial_pose_component_delta": 0.0,
+      "coverage_sufficient": true,
+      "original_gate_status": "fail"
+    },
+    "nominal": {
+      "student_successes": 2152,
+      "episodes": 3072,
+      "student_rate": 0.7005208333333334,
+      "teacher_successes": 3072,
+      "teacher_rate": 1.0,
+      "difference_percentage_points": -29.947916666666664,
+      "max_initial_pose_component_delta": 0.0,
+      "coverage_sufficient": true,
+      "original_gate_status": "fail"
+    },
+    "regression": {
+      "student_successes": 3,
+      "episodes": 3,
+      "student_rate": 1.0,
+      "teacher_successes": 3,
+      "teacher_rate": 1.0,
+      "difference_percentage_points": 0.0,
+      "max_initial_pose_component_delta": 0.0,
+      "coverage_sufficient": true,
+      "original_gate_status": "pass"
+    }
+  },
+  "further_training_deferred": true,
+  "edge_case_inspection_deferred": true
+}

@@ -1,0 +1,113 @@
+{
+  "screen_only": true,
+  "matched_starts_exact": true,
+  "additional_training_updates_completed": 400,
+  "selected": {
+    "iteration": 1798,
+    "checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt",
+    "sha256": "92e88f27e5f8e9b5817e42742d779f6c41d96fe50b983e9585212cf5529aebf6",
+    "nominal": {
+      "successes": 231,
+      "episodes": 256,
+      "rate": 0.90234375
+    },
+    "wide": {
+      "successes": 54,
+      "episodes": 256,
+      "rate": 0.2109375
+    }
+  },
+  "checkpoint_comparison": [
+    {
+      "iteration": 1599,
+      "checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1599.pt",
+      "sha256": "4982ebd41b447b50909090d707d04ca008b85a3180674693333963d94620b8b5",
+      "nominal": {
+        "successes": 171,
+        "episodes": 256,
+        "rate": 0.66796875
+      },
+      "wide": {
+        "successes": 54,
+        "episodes": 256,
+        "rate": 0.2109375
+      }
+    },
+    {
+      "iteration": 1700,
+      "checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1700.pt",
+      "sha256": "d6aeaf6d2cc6ebcbc7aa351d30fbe03fde86428ee6963b1bdefbda732fc00920",
+      "nominal": {
+        "successes": 0,
+        "episodes": 256,
+        "rate": 0.0
+      },
+      "wide": {
+        "successes": 23,
+        "episodes": 256,
+        "rate": 0.08984375
+      }
+    },
+    {
+      "iteration": 1798,
+      "checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt",
+      "sha256": "92e88f27e5f8e9b5817e42742d779f6c41d96fe50b983e9585212cf5529aebf6",
+      "nominal": {
+        "successes": 231,
+        "episodes": 256,
+        "rate": 0.90234375
+      },
+      "wide": {
+        "successes": 54,
+        "episodes": 256,
+        "rate": 0.2109375
+      }
+    },
+    {
+      "iteration": 1900,
+      "checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2/model_1900.pt",
+      "sha256": "cad1781de91c7c15503bf508ae41a02c4866476e25bb6b47ddafb39e2f1bab1d",
+      "nominal": {
+        "successes": 17,
+        "episodes": 256,
+        "rate": 0.06640625
+      },
+      "wide": {
+        "successes": 27,
+        "episodes": 256,
+        "rate": 0.10546875
+      }
+    },
+    {
+      "iteration": 1997,
+      "checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2/model_1997.pt",
+      "sha256": "2c6a994c99093947d2acd1998aa5b9748a364017ef5f13dd4e0dec35eccaea87",
+      "nominal": {
+        "successes": 164,
+        "episodes": 256,
+        "rate": 0.640625
+      },
+      "wide": {
+        "successes": 14,
+        "episodes": 256,
+        "rate": 0.0546875
+      }
+    }
+  ],
+  "second_block_improved_best": false,
+  "wide_workspace_improvement_demonstrated": false,
+  "training_block2": {
+    "run": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2",
+    "iterations": 200,
+    "first_iteration": 1798,
+    "last_iteration": 1997,
+    "learning_rate": 0.0001,
+    "parent_optimizer_step": 25600.0,
+    "first_saved_optimizer_step": 25984.0,
+    "final_optimizer_step": 51200.0,
+    "optimizer_resume_verified": true,
+    "all_logged_scalars_finite": true,
+    "loss_first50": 0.13633270516991616,
+    "loss_last50": 0.12443965330719947
+  }
+}

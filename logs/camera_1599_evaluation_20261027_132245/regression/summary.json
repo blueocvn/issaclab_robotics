@@ -1,0 +1,29 @@
+{
+  "population": "regression",
+  "policy": "camera",
+  "episodes": 3,
+  "successes": 3,
+  "success_rate": 1.0,
+  "success_wilson_95": [
+    0.4385029682449546,
+    1.0
+  ],
+  "required_success_rate": 1.0,
+  "seed_groups": [
+    42
+  ],
+  "stage_counts": {
+    "grasped": 3,
+    "lifted": 3,
+    "placed": 3,
+    "success": 3,
+    "timed_out": 0,
+    "dropped": 0,
+    "out_of_bounds": 0,
+    "unstable_robot": 0
+  },
+  "coverage_sufficient": true,
+  "status": "pass",
+  "completed_jobs": 1,
+  "planned_jobs": 1
+}

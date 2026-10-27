@@ -1,0 +1,30 @@
+Audit 1/1: group42_batch0, 256 first episodes
+{
+  "population": "nominal",
+  "policy": "camera",
+  "episodes": 256,
+  "successes": 122,
+  "success_rate": 0.4765625,
+  "success_wilson_95": [
+    0.41618039421813385,
+    0.5376375990518288
+  ],
+  "required_success_rate": 0.995,
+  "seed_groups": [
+    42
+  ],
+  "stage_counts": {
+    "grasped": 239,
+    "lifted": 124,
+    "placed": 122,
+    "success": 122,
+    "timed_out": 134,
+    "dropped": 0,
+    "out_of_bounds": 0,
+    "unstable_robot": 0
+  },
+  "coverage_sufficient": false,
+  "status": "insufficient_coverage",
+  "completed_jobs": 1,
+  "planned_jobs": 1
+}

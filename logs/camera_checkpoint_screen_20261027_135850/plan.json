@@ -1,0 +1,14 @@
+{
+  "checkpoints": [
+    1200,
+    1300,
+    1400,
+    1599
+  ],
+  "episodes_per_population": 256,
+  "nominal_seed": 42,
+  "wide_seed": 45,
+  "selection_rule": "Highest wide-workspace successes; break ties by nominal successes, then latest iteration",
+  "purpose": "Checkpoint selection screen only; not acceptance",
+  "teacher": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt"
+}

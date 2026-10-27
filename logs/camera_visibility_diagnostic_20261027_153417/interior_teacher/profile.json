@@ -1,0 +1,1048 @@
+{
+  "distribution": "interior",
+  "actor": "teacher",
+  "num_envs": 8,
+  "position_noise": 0.06,
+  "yaw_noise": 1.5707963267948966,
+  "sampling_seed": 4242,
+  "initial_poses": [
+    [
+      0.17102396488189697,
+      -0.09166431427001953,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      0.006112364586442709,
+      0.9999813437461853
+    ],
+    [
+      0.17258822917938232,
+      -0.09320901334285736,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      0.010774201713502407,
+      0.9999419450759888
+    ],
+    [
+      0.17405986785888672,
+      -0.09019231796264648,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      -0.027361422777175903,
+      0.9996256232261658
+    ],
+    [
+      0.16621823608875275,
+      -0.10725080966949463,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      -0.01626179926097393,
+      0.9998677968978882
+    ],
+    [
+      0.1644890457391739,
+      -0.1012445017695427,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      0.021285928785800934,
+      0.9997734427452087
+    ],
+    [
+      0.17990195751190186,
+      -0.09534978866577148,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      0.00640204967930913,
+      0.9999794960021973
+    ],
+    [
+      0.1620497703552246,
+      -0.09221267700195312,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      0.0081206439062953,
+      0.9999670386314392
+    ],
+    [
+      0.16636502742767334,
+      -0.10723373293876648,
+      0.08049999922513962,
+      0.0,
+      0.0,
+      0.029382945969700813,
+      0.9995682239532471
+    ]
+  ],
+  "terminal": {
+    "2": {
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "step": 142
+    },
+    "0": {
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "step": 143
+    },
+    "1": {
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "step": 143
+    },
+    "5": {
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "step": 143
+    },
+    "6": {
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "step": 148
+    },
+    "4": {
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "step": 162
+    },
+    "7": {
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "step": 163
+    },
+    "3": {
+      "success": true,
+      "grasped": true,
+      "lifted": true,
+      "placed": true,
+      "step": 164
+    }
+  },
+  "phase_control_steps": [
+    {
+      "approach": 78,
+      "grasp_without_lift": 26,
+      "lift_without_placement": 26,
+      "placed": 14
+    },
+    {
+      "approach": 78,
+      "grasp_without_lift": 27,
+      "lift_without_placement": 25,
+      "placed": 14
+    },
+    {
+      "approach": 80,
+      "grasp_without_lift": 24,
+      "lift_without_placement": 25,
+      "placed": 14
+    },
+    {
+      "approach": 87,
+      "grasp_without_lift": 28,
+      "lift_without_placement": 36,
+      "placed": 14
+    },
+    {
+      "approach": 81,
+      "grasp_without_lift": 30,
+      "lift_without_placement": 38,
+      "placed": 14
+    },
+    {
+      "approach": 77,
+      "grasp_without_lift": 24,
+      "lift_without_placement": 29,
+      "placed": 14
+    },
+    {
+      "approach": 80,
+      "grasp_without_lift": 28,
+      "lift_without_placement": 27,
+      "placed": 14
+    },
+    {
+      "approach": 82,
+      "grasp_without_lift": 32,
+      "lift_without_placement": 36,
+      "placed": 14
+    }
+  ],
+  "captures": {
+    "0": {
+      "home": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env0_home.png",
+        "step": 0,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 0,
+          "step": 0,
+          "phase": "approach",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            37.667091369628906,
+            39.885169982910156
+          ],
+          "box_center_depth": 0.24273835122585297,
+          "student_teacher_action_mse": 0.07758864760398865
+        }
+      },
+      "grasp": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env0_grasp.png",
+        "step": 80,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 0,
+          "step": 80,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.71862030029297,
+            33.51093673706055
+          ],
+          "box_center_depth": 0.10712627321481705,
+          "student_teacher_action_mse": 0.03810553997755051
+        }
+      },
+      "approach90": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env0_approach90.png",
+        "step": 90,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 0,
+          "step": 90,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.46379089355469,
+            32.032470703125
+          ],
+          "box_center_depth": 0.10762925446033478,
+          "student_teacher_action_mse": 0.06136126071214676
+        }
+      },
+      "lift": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env0_lift.png",
+        "step": 105,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 0,
+          "step": 105,
+          "phase": "lift_without_placement",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            40.02478790283203,
+            35.15315246582031
+          ],
+          "box_center_depth": 0.10807102918624878,
+          "student_teacher_action_mse": 0.09002429246902466
+        }
+      },
+      "placed": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env0_placed.png",
+        "step": 130,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 0,
+          "step": 130,
+          "phase": "placed",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            40.09508514404297,
+            32.76712417602539
+          ],
+          "box_center_depth": 0.14759281277656555,
+          "student_teacher_action_mse": 0.2721783518791199
+        }
+      }
+    },
+    "1": {
+      "home": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env1_home.png",
+        "step": 0,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 1,
+          "step": 0,
+          "phase": "approach",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            37.964378356933594,
+            39.78892517089844
+          ],
+          "box_center_depth": 0.2438419908285141,
+          "student_teacher_action_mse": 0.07658863067626953
+        }
+      },
+      "grasp": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env1_grasp.png",
+        "step": 80,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 1,
+          "step": 80,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.6395263671875,
+            34.488433837890625
+          ],
+          "box_center_depth": 0.10657612979412079,
+          "student_teacher_action_mse": 0.02525215968489647
+        }
+      },
+      "approach90": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env1_approach90.png",
+        "step": 90,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 1,
+          "step": 90,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.35498809814453,
+            32.7340087890625
+          ],
+          "box_center_depth": 0.10724255442619324,
+          "student_teacher_action_mse": 0.0348639041185379
+        }
+      },
+      "lift": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env1_lift.png",
+        "step": 105,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 1,
+          "step": 105,
+          "phase": "lift_without_placement",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            39.87831115722656,
+            35.87618637084961
+          ],
+          "box_center_depth": 0.10735079646110535,
+          "student_teacher_action_mse": 0.07336685061454773
+        }
+      },
+      "placed": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env1_placed.png",
+        "step": 130,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 1,
+          "step": 130,
+          "phase": "placed",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            40.315372467041016,
+            31.99199676513672
+          ],
+          "box_center_depth": 0.1445356160402298,
+          "student_teacher_action_mse": 0.12906038761138916
+        }
+      }
+    },
+    "2": {
+      "home": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env2_home.png",
+        "step": 0,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 2,
+          "step": 0,
+          "phase": "approach",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            37.781517028808594,
+            39.2955322265625
+          ],
+          "box_center_depth": 0.2432822436094284,
+          "student_teacher_action_mse": 0.07483626902103424
+        }
+      },
+      "grasp": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env2_grasp.png",
+        "step": 80,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 2,
+          "step": 80,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.15454864501953,
+            31.941356658935547
+          ],
+          "box_center_depth": 0.10410946607589722,
+          "student_teacher_action_mse": 0.020144835114479065
+        }
+      },
+      "approach90": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env2_approach90.png",
+        "step": 90,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 2,
+          "step": 90,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.20872497558594,
+            30.33929443359375
+          ],
+          "box_center_depth": 0.10405413061380386,
+          "student_teacher_action_mse": 0.021372413262724876
+        }
+      },
+      "lift": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env2_lift.png",
+        "step": 105,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 2,
+          "step": 105,
+          "phase": "lift_without_placement",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            40.449607849121094,
+            35.89451217651367
+          ],
+          "box_center_depth": 0.10576464980840683,
+          "student_teacher_action_mse": 0.04711630940437317
+        }
+      },
+      "placed": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env2_placed.png",
+        "step": 130,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 2,
+          "step": 130,
+          "phase": "placed",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            38.497005462646484,
+            35.92237091064453
+          ],
+          "box_center_depth": 0.1545467972755432,
+          "student_teacher_action_mse": 0.34952232241630554
+        }
+      }
+    },
+    "3": {
+      "home": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env3_home.png",
+        "step": 0,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 3,
+          "step": 0,
+          "phase": "approach",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            38.845611572265625,
+            41.98333740234375
+          ],
+          "box_center_depth": 0.24661682546138763,
+          "student_teacher_action_mse": 0.17226062715053558
+        }
+      },
+      "approach90": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env3_approach90.png",
+        "step": 90,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 3,
+          "step": 90,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.61015319824219,
+            35.695556640625
+          ],
+          "box_center_depth": 0.10796458274126053,
+          "student_teacher_action_mse": 0.02039751037955284
+        }
+      },
+      "grasp": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env3_grasp.png",
+        "step": 90,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 3,
+          "step": 90,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.61015319824219,
+            35.695556640625
+          ],
+          "box_center_depth": 0.10796458274126053,
+          "student_teacher_action_mse": 0.02039751037955284
+        }
+      },
+      "lift": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env3_lift.png",
+        "step": 115,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 3,
+          "step": 115,
+          "phase": "lift_without_placement",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            39.886573791503906,
+            37.45331573486328
+          ],
+          "box_center_depth": 0.1083153560757637,
+          "student_teacher_action_mse": 0.03914877399802208
+        }
+      },
+      "placed": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env3_placed.png",
+        "step": 155,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 3,
+          "step": 155,
+          "phase": "placed",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            45.65969467163086,
+            31.278736114501953
+          ],
+          "box_center_depth": 0.14587174355983734,
+          "student_teacher_action_mse": 0.4972221851348877
+        }
+      }
+    },
+    "4": {
+      "home": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env4_home.png",
+        "step": 0,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 4,
+          "step": 0,
+          "phase": "approach",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            38.085201263427734,
+            41.727294921875
+          ],
+          "box_center_depth": 0.24385987222194672,
+          "student_teacher_action_mse": 0.0903787836432457
+        }
+      },
+      "grasp": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env4_grasp.png",
+        "step": 85,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 4,
+          "step": 85,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.74256134033203,
+            36.01459884643555
+          ],
+          "box_center_depth": 0.10881180316209793,
+          "student_teacher_action_mse": 0.021956436336040497
+        }
+      },
+      "approach90": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env4_approach90.png",
+        "step": 90,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 4,
+          "step": 90,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.384071350097656,
+            35.272308349609375
+          ],
+          "box_center_depth": 0.10939227044582367,
+          "student_teacher_action_mse": 0.03065626136958599
+        }
+      },
+      "lift": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env4_lift.png",
+        "step": 115,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 4,
+          "step": 115,
+          "phase": "lift_without_placement",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            39.768802642822266,
+            35.528350830078125
+          ],
+          "box_center_depth": 0.11059343069791794,
+          "student_teacher_action_mse": 0.3310650587081909
+        }
+      },
+      "placed": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env4_placed.png",
+        "step": 150,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 4,
+          "step": 150,
+          "phase": "placed",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            44.02684020996094,
+            32.91217041015625
+          ],
+          "box_center_depth": 0.15516147017478943,
+          "student_teacher_action_mse": 0.39207226037979126
+        }
+      }
+    },
+    "5": {
+      "home": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env5_home.png",
+        "step": 0,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 5,
+          "step": 0,
+          "phase": "approach",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            38.81256866455078,
+            38.896141052246094
+          ],
+          "box_center_depth": 0.24718542397022247,
+          "student_teacher_action_mse": 0.08221432566642761
+        }
+      },
+      "grasp": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env5_grasp.png",
+        "step": 80,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 5,
+          "step": 80,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.2791748046875,
+            33.61745071411133
+          ],
+          "box_center_depth": 0.10631348937749863,
+          "student_teacher_action_mse": 0.040882475674152374
+        }
+      },
+      "approach90": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env5_approach90.png",
+        "step": 90,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 5,
+          "step": 90,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.078758239746094,
+            31.842403411865234
+          ],
+          "box_center_depth": 0.10673586279153824,
+          "student_teacher_action_mse": 0.06437777727842331
+        }
+      },
+      "lift": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env5_lift.png",
+        "step": 105,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 5,
+          "step": 105,
+          "phase": "lift_without_placement",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            39.54570007324219,
+            35.339454650878906
+          ],
+          "box_center_depth": 0.10705316066741943,
+          "student_teacher_action_mse": 0.15993760526180267
+        }
+      },
+      "placed": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env5_placed.png",
+        "step": 130,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 5,
+          "step": 130,
+          "phase": "placed",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            39.6870002746582,
+            32.60920333862305
+          ],
+          "box_center_depth": 0.14562776684761047,
+          "student_teacher_action_mse": 0.22486749291419983
+        }
+      }
+    },
+    "6": {
+      "home": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env6_home.png",
+        "step": 0,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 6,
+          "step": 0,
+          "phase": "approach",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            36.92343521118164,
+            41.30628204345703
+          ],
+          "box_center_depth": 0.2397710233926773,
+          "student_teacher_action_mse": 0.07981032133102417
+        }
+      },
+      "grasp": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env6_grasp.png",
+        "step": 80,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 6,
+          "step": 80,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            42.08846664428711,
+            35.774776458740234
+          ],
+          "box_center_depth": 0.10780004411935806,
+          "student_teacher_action_mse": 0.057298313826322556
+        }
+      },
+      "approach90": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env6_approach90.png",
+        "step": 90,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 6,
+          "step": 90,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.55219268798828,
+            34.29729080200195
+          ],
+          "box_center_depth": 0.1087828129529953,
+          "student_teacher_action_mse": 0.022424116730690002
+        }
+      },
+      "lift": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env6_lift.png",
+        "step": 110,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 6,
+          "step": 110,
+          "phase": "lift_without_placement",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            39.89320373535156,
+            36.955650329589844
+          ],
+          "box_center_depth": 0.10888546705245972,
+          "student_teacher_action_mse": 0.1807636022567749
+        }
+      },
+      "placed": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env6_placed.png",
+        "step": 135,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 6,
+          "step": 135,
+          "phase": "placed",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            40.583534240722656,
+            31.48794174194336
+          ],
+          "box_center_depth": 0.15119615197181702,
+          "student_teacher_action_mse": 0.2403479516506195
+        }
+      }
+    },
+    "7": {
+      "home": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env7_home.png",
+        "step": 0,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 7,
+          "step": 0,
+          "phase": "approach",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            38.85638427734375,
+            41.95960235595703
+          ],
+          "box_center_depth": 0.2466624528169632,
+          "student_teacher_action_mse": 0.15218067169189453
+        }
+      },
+      "grasp": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env7_grasp.png",
+        "step": 85,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 7,
+          "step": 85,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.91031265258789,
+            37.63544464111328
+          ],
+          "box_center_depth": 0.10803023725748062,
+          "student_teacher_action_mse": 0.0544990710914135
+        }
+      },
+      "approach90": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env7_approach90.png",
+        "step": 90,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 7,
+          "step": 90,
+          "phase": "grasp_without_lift",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": false,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            41.368927001953125,
+            36.83742904663086
+          ],
+          "box_center_depth": 0.10880522429943085,
+          "student_teacher_action_mse": 0.016943812370300293
+        }
+      },
+      "lift": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env7_lift.png",
+        "step": 115,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 7,
+          "step": 115,
+          "phase": "lift_without_placement",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            39.3333740234375,
+            37.67789077758789
+          ],
+          "box_center_depth": 0.10950461775064468,
+          "student_teacher_action_mse": 0.07107491791248322
+        }
+      },
+      "placed": {
+        "path": "/mnt/e/issaclab_robotics/logs/camera_visibility_diagnostic_20261027_153417/interior_teacher/env7_placed.png",
+        "step": 150,
+        "projection": {
+          "profile": "interior_teacher",
+          "env_id": 7,
+          "step": 150,
+          "phase": "placed",
+          "box_center_in_view": true,
+          "box_bbox_intersects_view": true,
+          "box_all_corners_in_view": false,
+          "paper_center_in_view": true,
+          "paper_bbox_intersects_view": true,
+          "box_center_pixels": [
+            40.83146667480469,
+            31.671497344970703
+          ],
+          "box_center_depth": 0.14872509241104126,
+          "student_teacher_action_mse": 0.2316405475139618
+        }
+      }
+    }
+  }
+}

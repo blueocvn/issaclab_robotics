@@ -1,6 +1,36 @@
 {
   "models": [
     {
+      "path": "logs/rsl_rl/so101_box_camera_data_first/2026-10-27_17-30-00_data-first-smoke-a/model_2200.pt",
+      "bytes": 12997237,
+      "sha256": "8828869878f5898ebf7280efd3424f3721e090cc991ccfdf305801697591d832",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_data_first/2026-10-27_17-30-00_data-first-smoke-a/model_2201.pt",
+      "bytes": 22465141,
+      "sha256": "8e633d4d246d0d6abbfc3355af1ef511fde92caf2f3ccd672b10b8a36dcb50df",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_data_first/2026-10-27_17-30-01_data-first-smoke-b/exported/policy.pt",
+      "bytes": 1036344,
+      "sha256": "16d1d4eb3a651d918046488e7edec29c9091e992f231ca03d17d53c3effdb725",
+      "kind": "exported_policy"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_data_first/2026-10-27_17-30-01_data-first-smoke-b/model_2202.pt",
+      "bytes": 41400949,
+      "sha256": "028d94ae4dfcdb54666115b92c859d2349735fe53ef310d18d21de3d810df4d1",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_data_first/2026-10-27_17-35-00_data-first-phase-smoke/model_2233.pt",
+      "bytes": 288419573,
+      "sha256": "0c8d9857402b2e26785dcb4c8740931bb3669af3d846a431203a8d04bcc1802f",
+      "kind": "training_checkpoint"
+    },
+    {
       "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-26_15-21-58_so101-box-camera-student/exported/policy.pt",
       "bytes": 1036600,
       "sha256": "7d8df50f47786e9158955502e6bd1e1bfb6d105790c5fe4e4f7b7db6c371ed75",
@@ -112,6 +142,252 @@
       "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-26_17-56-35_box-camera-integration-smoke/model_0.pt",
       "bytes": 3511581,
       "sha256": "6c09519e35fa5083770f021baba8bad2bd8fec50bfa87e36b3c66c306d71f539",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-51-21_so101-box-workspace-camera-5381-smoke/model_0.pt",
+      "bytes": 3511581,
+      "sha256": "a984139cdf79cfe0a6b4bd05fb1456577a378dc05d0c04b84840e9fb60f04c09",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-51-21_so101-box-workspace-camera-5381-smoke/model_1.pt",
+      "bytes": 3511581,
+      "sha256": "b883b619f89cc21d2f59f5a94cd7470b67ac122b6935abe1235e75af2465d401",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-51-21_so101-box-workspace-camera-5381-smoke/model_2.pt",
+      "bytes": 3511581,
+      "sha256": "d931bdceaac0a3a57c8d306dd86341ee2031b4496589ddf76ff865d4551159a1",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-51-21_so101-box-workspace-camera-5381-smoke/model_3.pt",
+      "bytes": 3511581,
+      "sha256": "eb30f9934eb10eca2b3022dc682dc74460fcc797ecd63e14a7fd0ccb59501d7b",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-51-21_so101-box-workspace-camera-5381-smoke/model_4.pt",
+      "bytes": 3511581,
+      "sha256": "05f5f5235e0770d7dcb55d72ce88d81330a3ab371bea7b0f06dc3e603b645ed7",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/exported/policy.pt",
+      "bytes": 1036344,
+      "sha256": "88e5cbb8683738a6d82660a6d69be7de9a1ba67840b90657957cea691970bd1d",
+      "kind": "exported_policy"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_0.pt",
+      "bytes": 3511581,
+      "sha256": "4218828cc9d2892a49bce07b15b573696db978f98e993a7f5e6ddce391c3163a",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_100.pt",
+      "bytes": 3511981,
+      "sha256": "2f19e0ef23154e3dee0958410dd35a89917f46166497876b57adb07cd3426226",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1000.pt",
+      "bytes": 3512053,
+      "sha256": "3644fca80ff181a0765fa0d0e0ed33bc0c19822b49cb9916d3bc287b4b6f056a",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1100.pt",
+      "bytes": 3512053,
+      "sha256": "08d8c15e8b82be5ccc01e26af00b0e920f8a86a026ec586c76e844bf72323dba",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1200.pt",
+      "bytes": 3512053,
+      "sha256": "bb52cf23dcc119054a3649bc2ceb792f583b86ce3db8d092d533958651b1f515",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1300.pt",
+      "bytes": 3512053,
+      "sha256": "d7f0e6399e711a030f5c9723864caced439f7eecfb9496ebbf9de77a654ca7e6",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1400.pt",
+      "bytes": 3512053,
+      "sha256": "1cd29fde8a635635e4b10dd36bb84df15f83494497ba6136d1aef2bc86da3c62",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1500.pt",
+      "bytes": 3512053,
+      "sha256": "468726d6bd1a6a05b65366a1c138092d72318effda8b4e7082aa0633694c1257",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1599.pt",
+      "bytes": 3512053,
+      "sha256": "4982ebd41b447b50909090d707d04ca008b85a3180674693333963d94620b8b5",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_200.pt",
+      "bytes": 3511981,
+      "sha256": "28088c49602f9bd285cbfef7bfd751f93da351d7839266eae4b82c674dd799d2",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_300.pt",
+      "bytes": 3511981,
+      "sha256": "c7bef5a7bc0ea4d97bdf3da8882c18f74170521b7f03331bb8f826c5e7f95b6b",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_400.pt",
+      "bytes": 3511981,
+      "sha256": "773bb67302cd002c27471f2892ec4e842958ee82a4c564a476123ca64d3e324d",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_500.pt",
+      "bytes": 3511981,
+      "sha256": "4414c54982966e593303d07ba4ff27df22f0232220d735aca7315bf571a9d989",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_600.pt",
+      "bytes": 3511981,
+      "sha256": "9096cb06d0359a198ac8a7547eeb3ea89f2ec541e1fc34d19531a1b143673b05",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_700.pt",
+      "bytes": 3511981,
+      "sha256": "3815817188cb37a1b8e44e9981c9d777db499d0041706071a5ff2f15665d8534",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_800.pt",
+      "bytes": 3511981,
+      "sha256": "02d616baf21724dcf9be3e89a848338bb40ac49e4d13b234b5cbac151a1e9ae5",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_900.pt",
+      "bytes": 3511981,
+      "sha256": "2a9d8e57b40a5c11434c6388105f6e656cb3a48fd221914549b892c714bdbfd6",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/exported/policy.pt",
+      "bytes": 1036344,
+      "sha256": "92e4e212b04007b132aaaff0fabb3aaa1b5223f1b614c83bb6ee33366310f019",
+      "kind": "exported_policy"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1600.pt",
+      "bytes": 3512053,
+      "sha256": "03f7d36f59da44ade3e9b508264b8bb1c1a0602ed5fde845c30614d67ee05c4e",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1700.pt",
+      "bytes": 3512053,
+      "sha256": "d6aeaf6d2cc6ebcbc7aa351d30fbe03fde86428ee6963b1bdefbda732fc00920",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt",
+      "bytes": 3512053,
+      "sha256": "92e88f27e5f8e9b5817e42742d779f6c41d96fe50b983e9585212cf5529aebf6",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2/exported/policy.pt",
+      "bytes": 1036344,
+      "sha256": "b84c103af02b3eb353e34e14523cdead640368aeb5136bde1c95deff6f1c6067",
+      "kind": "exported_policy"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2/model_1800.pt",
+      "bytes": 3512181,
+      "sha256": "a0b02c50979d1fa7363229e12ee8b2944c463b82712df2d4de02235b976e2c33",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2/model_1900.pt",
+      "bytes": 3512181,
+      "sha256": "cad1781de91c7c15503bf508ae41a02c4866476e25bb6b47ddafb39e2f1bab1d",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2/model_1997.pt",
+      "bytes": 3512181,
+      "sha256": "2c6a994c99093947d2acd1998aa5b9748a364017ef5f13dd4e0dec35eccaea87",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.pt",
+      "bytes": 1036344,
+      "sha256": "c14bb74f52785163b0180e481a9f7eacf8c9c4c83b9baa73ccd4682a4c208885",
+      "kind": "exported_policy"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_1800.pt",
+      "bytes": 3512181,
+      "sha256": "e92be2370c21bbd4cfe9bad4e2c44ca4f3b4ba8b53ad8c161e65855f7224d025",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_1900.pt",
+      "bytes": 3512181,
+      "sha256": "715bb7fe58e2927ac17dc2cbe7b3e1b26f23dcbbe3b04eda5c5c733de1660c43",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2000.pt",
+      "bytes": 3512181,
+      "sha256": "0db31affacb01f01b8583f228cec2246c33eb1464d56ede17e62c2bf1aa54113",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2100.pt",
+      "bytes": 3512181,
+      "sha256": "0c15544b1054a46348bd1283dfa2f3aa026fb49b34eaaf95b878c6a3355fb9e2",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2200.pt",
+      "bytes": 3512181,
+      "sha256": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2300.pt",
+      "bytes": 3512181,
+      "sha256": "41a01b957701941f5ad341eb6d288685327da008cfce1e62a46f3e172ce66c7b",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2400.pt",
+      "bytes": 3512181,
+      "sha256": "13a2801aa873a43d717b5d40c53ba40479edd6d7a8ac3ea3bbb82a915aaf62e2",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2500.pt",
+      "bytes": 3512181,
+      "sha256": "eec67921606c6b222356b8a78af0a01f3a495527cca72271933708f9c7abba0f",
+      "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2597.pt",
+      "bytes": 3512181,
+      "sha256": "69e6b868c1d9134cecd271330f51c07621d8a0f65084df891bae71f3150a1316",
       "kind": "training_checkpoint"
     },
     {
@@ -1049,6 +1325,12 @@
       "bytes": 2742133,
       "sha256": "2defcb0b26960cca1f74e3791cced62f910430a31ad8e1a5a07b4f39d35c639f",
       "kind": "training_checkpoint"
+    },
+    {
+      "path": "logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/exported/policy.pt",
+      "bytes": 470356,
+      "sha256": "b9a91d24327f9b64de58f4325acea34b5b0b1b0e3c7e38c99d91603c7353421a",
+      "kind": "exported_policy"
     },
     {
       "path": "logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5000.pt",

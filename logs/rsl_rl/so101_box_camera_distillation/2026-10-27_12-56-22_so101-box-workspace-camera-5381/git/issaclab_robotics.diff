@@ -1,0 +1,340 @@
+--- git commit ---
+28cb4cefa9ed79b8ca26d5c489dc4981e1d1afa7
+
+
+--- git status ---
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   MODEL_INDEX.md
+	modified:   README.md
+	modified:   docs/BOX_WORKSPACE_TRAINING.md
+	modified:   docs/HANDOFF.md
+	modified:   src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
+	modified:   tests/test_box_workspace_audit.py
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/MODEL_INDEX.md b/MODEL_INDEX.md
+index 348d806..7eb4a61 100644
+--- a/MODEL_INDEX.md
++++ b/MODEL_INDEX.md
+@@ -6,7 +6,7 @@ commands and saved run configs refer to this layout.
+ 
+ | Role | Checkpoint | Validation status |
+ | --- | --- | --- |
+-| Latest expanded-workspace PPO refinement | [model_5381.pt](logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt) | 400-update fixed-rate refinement completed; independent acceptance pending |
++| Latest expanded-workspace PPO refinement | [model_5381.pt](logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt) | User accepted for camera distillation at observed grid2,891/3,000 and random3,282/3,328; below original strict gates; nominal3,072/3,072 and regression3/3 passed; see [report](logs/workspace_5381_acceptance_20261027_122310/REPORT.md) |
+ | Best observed overnight expanded-workspace teacher | [model_4982.pt](logs/rsl_rl/so101_box_state/2026-10-26_19-41-12_overnight_20261027_ppo_camera_ppo_F_block6_try0/model_4982.pt) | 1,009/1,024 on selection seed43; 1,013/1,024 on unused seed45; still below full workspace gates |
+ | Accepted nominal box state teacher | [model_2196.pt](logs/rsl_rl/so101_box_state/2026-10-26_14-59-07_so101-box-release-v3-refine/model_2196.pt) | 3,072/3,072 nominal episodes across three seeds; not broad-workspace acceptance |
+ | Nominal box camera student | [model_1599.pt](logs/rsl_rl/so101_box_camera_distillation/2026-10-26_15-21-58_so101-box-camera-student/model_1599.pt) | 2,038/2,048 over two matching-start nominal audits; residual failures; not an expanded-workspace student |
+@@ -24,8 +24,10 @@ records the source snapshot and copied-file hashes.
+ For the current training workflow, see
+ [HANDOFF.md](docs/HANDOFF.md) and
+ [BOX_WORKSPACE_TRAINING.md](docs/BOX_WORKSPACE_TRAINING.md). The latest completed
+-refinement is not yet approved for camera distillation or real-robot deployment.
+-No expanded-workspace camera distillation has been completed. The camera
++refinement is user-approved for camera distillation; real-robot deployment is not authorized.
++No full expanded-workspace camera distillation has been completed. A five-iteration
++smoke test from5381 passed; its model_4.pt is an initialization check, not a trained
++policy. See `logs/camera_5381_smoke_verification.json`. The camera
+ sim-to-real preset varies solid colors and image/camera parameters; printed
+ logos and texture variation are not implemented in the current task.
+ 
+diff --git a/README.md b/README.md
+index 89a2057..f132ff7 100644
+--- a/README.md
++++ b/README.md
+@@ -13,8 +13,11 @@ The complete saved model archive, run configs and evaluation evidence are
+ included under `logs/`. Model binaries use **Git LFS**. See
+ [MODEL_INDEX.md](MODEL_INDEX.md) for checkpoint roles, validation status and
+ SHA256 inventory. The latest wider-workspace refinement is `model_5381.pt`;
+-its independent acceptance evaluation is still pending. The archived camera
++its independent grid/random acceptance failed; nominal and regression checks passed. The archived camera
+ student covers the earlier nominal task, not the expanded workspace.
++The user accepted teacher5381 at its observed96.37% grid /98.62% random rates
++for camera distillation. A matching128-environment camera smoke test passed;
++the full launch command is in `logs/start_camera_5381.sh`.
+ 
+ ```bash
+ git clone https://github.com/blueocvn/issaclab_robotics.git
+diff --git a/docs/BOX_WORKSPACE_TRAINING.md b/docs/BOX_WORKSPACE_TRAINING.md
+index 2ea01e6..91d173a 100644
+--- a/docs/BOX_WORKSPACE_TRAINING.md
++++ b/docs/BOX_WORKSPACE_TRAINING.md
+@@ -1,15 +1,21 @@
+ # Box workspace evaluation and training
+ 
+-Start with [HANDOFF.md](HANDOFF.md). Latest teacher5381 has finished training
+-but needs independent acceptance. Do not repeat Stage A or the completed
+-refinement before evaluating it. The user launches further long training manually.
++Start with [HANDOFF.md](HANDOFF.md). Teacher5381 finished training and failed
++independent acceptance: grid2,891/3,000; random3,282/3,328. Nominal3,072/3,072
++and historical case5273/3 passed. See the
++[evaluation report](../logs/workspace_5381_acceptance_20261027_122310/REPORT.md).
++The user accepted these observed teacher results as sufficient and requested
++camera distillation from5381. That decision supersedes the stricter teacher
++promotion gate for this step; original audit thresholds/results remain recorded.
++Use a fresh camera student with matching nominal physics. Do not repeat Stage A.
++The user launches further long training manually. Commands below reproduce audits.
+ 
+ ## Evaluate the latest refinement
+ 
+-On this PC, use the existing runtime in WSL distro `Ubuntu`:
++On this PC, use the existing runtime in WSL distro `Ubuntu-24.04`:
+ 
+ ```bash
+-cd /mnt/d/work/robotics/IsaacLabTutorial
++cd /mnt/e/issaclab_robotics
+ CKPT='logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt'
+ uv run --locked python -m isaaclab_tutorial.tasks.place_box.workspace_audit --checkpoint "$CKPT" --policy teacher --population stage --stage F --seeds 43 45 --batch-size 1024 --output-dir logs/workspace_5381_stage_screen_20261027
+ ```
+@@ -88,20 +94,28 @@ is already complete; this table is not an instruction to restart it.
+ 
+ ## Camera and sim-to-real stage
+ 
+-Only after teacher acceptance, initialize distillation from that accepted PPO
+-checkpoint. Camera1599 embeds its old teacher; loading it does not replace that teacher.
++The user accepted teacher5381 at the observed96.37% grid /98.62% random scores.
++Initialize distillation from that PPO checkpoint. Camera1599 embeds its old teacher;
++loading it does not replace that teacher. A ready-to-run full command is also in
++`logs/start_camera_5381.sh` (run from PowerShell with
++`wsl -d Ubuntu-24.04 -- bash /mnt/e/issaclab_robotics/logs/start_camera_5381.sh`).
+ 
+ ```bash
+ uv run --locked isaaclab train --rl_library rsl_rl --task IsaacTutorial-Pick-Box-SO101-Camera --num_envs 128 --max_iterations 1600 --seed 42 --run_name so101-box-workspace-camera --device cuda:0 --checkpoint "$CKPT" --visualizer none presets=newton_mjwarp,newton_renderer env.events.reset_home.params.position_noise=0.1 env.events.reset_home.params.yaw_noise=3.141592653589793 env.events.reset_home.params.nominal_fraction=0.2
+ ```
+ 
+-This is a future user-launched command, not the approved next run. Audit the
++This is the next user-launched long run. Audit the
+ actual student with `--policy camera` on the same four populations. For hardware
+ transfer, first adapt/evaluate the teacher with `sim2real`, then match physics,
+ renderer and transfer presets for the student. Current variation covers solid
+ colors and image/camera parameters; printed patterns/logos need coverage and
+ real-image validation. See [BOX_PICK_PLACE.md](BOX_PICK_PLACE.md).
+ 
++Preparation verified on2026-10-27: five iterations at128 environments completed,
++student parameters updated with finite losses, and the embedded frozen teacher
++matched5381 exactly. Evidence: `logs/camera_5381_smoke_verification.json`.
++The smoke checkpoint is not a trained student; start the full run from5381.
++
+ ## Optional overnight controller
+ 
+ `workspace_pipeline.py` and root `run_workspace_overnight.ps1` remain in the
+diff --git a/docs/HANDOFF.md b/docs/HANDOFF.md
+index be46c71..a8d5311 100644
+--- a/docs/HANDOFF.md
++++ b/docs/HANDOFF.md
+@@ -4,7 +4,13 @@ Updated **2026-10-27, Asia/Saigon**. This is the current continuation document.
+ Completed plans and superseded run reports were consolidated here. Their raw
+ evidence remains under `logs/`; previous documents remain in Git history.
+ 
+-## Current state: evaluate checkpoint 5381 next
++## Current state: user accepted teacher 5381; prepare camera distillation
++
++The user explicitly accepted the observed 96.37% grid / 98.62% random results
++as sufficient and requested camera distillation. This decision supersedes the
++previous stricter teacher promotion requirement for this step. The measured
++results and original gates below are retained; the physical success contract
++is unchanged. Use teacher5381 to initialize a fresh camera student.
+ 
+ The 400-update Stage F PPO refinement has **finished**. Latest checkpoint:
+ 
+@@ -16,12 +22,40 @@ It resumed teacher 4982 with 512 environments, a fresh optimizer, fixed learning
+ rate 0.00005, full workspace resets and a 20% nominal mixture. All recorded
+ scalars are finite; loss samples cover iterations 4982–5381. The last 50
+ training success estimates averaged 99.14%, including nominal starts and
+-stochastic actions. **No independent acceptance audit of 5381 has run yet.**
++stochastic actions. **Independent acceptance has now run and failed.**
++
++Independent results on 2026-10-27:
+ 
+-Next: evaluate 5381, compare against 4982, then check the four final acceptance
+-populations. Do not start another PPO run or camera distillation from training
+-metrics alone. Commands and gates are in
+-[BOX_WORKSPACE_TRAINING.md](BOX_WORKSPACE_TRAINING.md).
++| Population | Successes | Result |
++| --- | --- | --- |
++| Stage F screen, seeds43/45 | 2,020/2,048 (98.63%) | Fails stricter promotion gates |
++| Grid, groups45/46/47 | 2,891/3,000 (96.37%) | Fail, complete coverage |
++| Random, groups45/46/47 plus predefined supplement | 3,282/3,328 (98.62%) | Fail, complete coverage |
++| Nominal, groups42/43/44 | 3,072/3,072 | Pass |
++| Historical case527 | 3/3 | Pass |
++
++Screen starts match archived4982 starts exactly. Model5381 scored1,008 vs1,009
++on seed43 and1,012 vs1,013 on seed45; these small differences do not establish
++an improvement. Grid cases160 and167 at the far pickup corner each scored0/15.
++The worst grid spatial bin scored62/120 (51.67%); the worst yaw bin322/375
++(85.87%). Grid failures:40 without grasp,24 grasped without lift,45 after lift;
++all109 timed out. Random failures:9 without grasp,24 without lift,13 after lift.
++
++Next: camera distillation from teacher5381, with matching nominal physics,
++128 environments, 1,600 iterations and the same wider workspace/20% nominal
++training mixture. The five-iteration, 128-environment smoke test passed: the
++student updated with finite losses and its embedded teacher exactly matches
++5381 and stayed unchanged. The full user-launched command is in
++`logs/start_camera_5381.sh`. Keep the physical success contract.
++Commands and original audit gates remain in
++[BOX_WORKSPACE_TRAINING.md](BOX_WORKSPACE_TRAINING.md). Full results and provenance:
++[evaluation report](../logs/workspace_5381_acceptance_20261027_122310/REPORT.md).
++
++The random audit exposed a metadata bug: its supplement planned start index256
++but launched index0. The command now propagates the planned index; validation
++was retained. A regression test reproduced the failure before the fix. The
++recovered audit reuses only three validated original batches with recorded hashes
++and reruns the supplement. Original failed-attempt evidence is preserved.
+ 
+ At the latest process check, no training, playback or overnight controller was
+ active. The overnight run ended at Stage F's convergence limit. Its helper
+@@ -53,12 +87,17 @@ checkout retains its original upstream remote/history and uncommitted feature
+ files; do not reset it or push to that upstream. Synchronize intended changes
+ between checkouts. The publication checkout has no copied virtual environment.
+ 
++The table above describes the previous PC. The current evaluation ran from
++`E:\issaclab_robotics`, WSL `/mnt/e/issaclab_robotics`, distro `Ubuntu-24.04`,
++on RTX5060 Ti16 GB with driver610.88. Its local Linux `.venv` was installed
++with `uv sync --locked`; box, camera and vial GPU smoke checks passed.
++
+ WSL distro: **`Ubuntu`**, Ubuntu 24.04. GPU: RTX 5070, 12 GB. Python 3.12;
+ Isaac Lab 3.0.0 at `d061bf35a58273ef0cc8aceae76392166f9b7d15`, Torch 2.11+cu130,
+ Newton 1.6.1, Warp 1.17 and RSL-RL 5.5.1. See
+ [LOCAL_PC_SETUP.md](LOCAL_PC_SETUP.md).
+ 
+-Latest full verification: **174 tests passed, 2 optional skips** (`cv2`, `leapp`),
++Latest full verification: **175 tests passed, 2 optional skips** (`cv2`, `leapp`),
+ Ruff clean. Model hashes and fresh remote downloads of teacher 5381 and camera
+ 1599 were verified. This is runtime/code verification, not policy acceptance.
+ 
+@@ -87,7 +126,7 @@ Full paths: [MODEL_INDEX.md](../MODEL_INDEX.md). Hashes:
+ 
+ | Model | Role and evidence |
+ | --- | --- |
+-| **5381** | Latest Stage F refinement; finished, independent acceptance pending |
++| **5381** | User accepted for camera distillation at observed grid96.37% / random98.62%; below original strict gates; nominal and case527 passed |
+ | **4982** | Best observed overnight selection score: 1,009/1,024 (98.54%); additional seed45 screen: 1,013/1,024 (98.93%); below full workspace gates |
+ | **2196** | Accepted nominal state teacher: 3,072/3,072 across seeds42/43/44; not wider-workspace acceptance |
+ | **1599** | Nominal camera student: 2,038/2,048 over two matching-start audits; residual failures; not a wider-workspace student |
+@@ -99,7 +138,7 @@ Stage F's eight scores on the same 1,024 seed43 starts were
+ bin was 35/42 (83.33%); many failures were near ±180° yaw. The additional seed45
+ screen's weakest spatial bin was 33/38 (86.84%).
+ 
+-**Wider-workspace camera training has not started.** Generic `population=stage`
++**The full wider-workspace camera run has not started; its smoke test passed.** Generic `population=stage`
+ status `pass` means ≥95%; Stage F promotion additionally needs ≥99% overall
+ and ≥95% in every spatial/yaw bin. A stage-screen pass is not final acceptance.
+ 
+@@ -129,8 +168,10 @@ smoke checkpoints as trained policies.
+ 
+ ## Remaining camera and transfer work
+ 
+-After wider teacher acceptance, adapt/evaluate sim-to-real physics, then
+-distill/evaluate a matching camera student. Camera1599 embeds its old teacher;
++Teacher5381 is now accepted by the user for wider-workspace camera distillation.
++First distill/evaluate a matching nominal-physics camera student. Before real
++robot transfer, adapt/evaluate sim-to-real physics and use matching teacher/student
++presets. Camera1599 embeds its old teacher;
+ loading it does not automatically adopt a new teacher. Initialize new distillation
+ from the accepted PPO teacher unless a student-warm-start method is verified.
+ 
+@@ -153,6 +194,13 @@ action scales, layout and commands must not be copied blindly to box deployment.
+ - `logs/workspace_4982_holdout45_20261027/`: additional 4982 screen.
+ - `logs/box_workspace_F_refine_training_summary.json`: completed refinement.
+ - `logs/workspace_overnight_final_tests.log`: 174-pass runtime suite.
++- `logs/workspace_5381_acceptance_20261027_122310/`: stage/grid, original random attempt, recovered random audit, combined report and failure starts.
++- `logs/workspace_5381_acceptance_20261027_123738/`: nominal and regression audits.
++- `logs/audit_supplement_red.log`: regression test reproducing the metadata bug.
++- `logs/audit_supplement_green_full.log`: 175-pass suite after the fix.
++- `logs/camera_5381_distillation_smoke_20261027.log`: five-iteration camera smoke run.
++- `logs/camera_5381_smoke_verification.json`: exact frozen-teacher match, finite student/loss verification, and smoke checkpoint path.
++- `logs/start_camera_5381.sh`: full 128-environment, 1,600-iteration camera distillation command.
+ 
+ New generated outputs remain ignored by default; explicitly stage intended new
+ artifacts when publishing them. Preserve raw evidence and model binaries.
+diff --git a/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py b/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
+index 29bfc53..e1618b6 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
++++ b/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
+@@ -232,6 +232,8 @@ def main(argv=None):
+                 command[:] = [
+                     f"env.events.reset_home.params.sampling_seed={seed}"
+                     if x.startswith("env.events.reset_home.params.sampling_seed=")
++                    else f"env.events.reset_home.params.grid_start_index={extra['start_index']}"
++                    if x.startswith("env.events.reset_home.params.grid_start_index=")
+                     else x
+                     for x in command
+                 ]
+diff --git a/tests/test_box_workspace_audit.py b/tests/test_box_workspace_audit.py
+index bc71580..a9c5637 100644
+--- a/tests/test_box_workspace_audit.py
++++ b/tests/test_box_workspace_audit.py
+@@ -162,3 +162,65 @@ def test_invalid_job_dimensions_are_rejected(tmp_path, kwargs):
+     args.update(kwargs)
+     with pytest.raises(ValueError):
+         build_jobs(**args)
++
++
++def test_random_supplement_preserves_provenance_through_result_validation(tmp_path, monkeypatch):
++    from pathlib import Path
++
++    from isaaclab_tutorial.tasks.place_box import workspace_audit
++
++    checkpoint = tmp_path / "model.pt"
++    checkpoint.write_bytes(b"test checkpoint")
++    output = tmp_path / "audit"
++
++    def simulate_play(command, *, env, stdout, stderr, check):
++        overrides = dict(item.split("=", 1) for item in command if item.startswith("env.events."))
++        size = int(command[command.index("--num_envs") + 1])
++        prefix = "env.events.reset_home.params."
++        data = dict(
++            argv=command[1:],
++            summary={"episodes": size, "success_rate": 1.0},
++            reset_parameters=dict(
++                nominal_fraction=0,
++                reset_mode=overrides[prefix + "reset_mode"],
++                grid_start_index=int(overrides[prefix + "grid_start_index"]),
++                sampling_seed=int(overrides[prefix + "sampling_seed"]),
++            ),
++            episodes=[dict(env_id=i, success=True) for i in range(size)],
++        )
++        Path(env["SO101_EVALUATION_OUTPUT"]).write_text(json.dumps(data))
++
++    def coverage_report(rows, *args, **kwargs):
++        count = 100 if len(rows) > 3 else 99
++        return dict(
++            status="pass",
++            coverage_sufficient=True,
++            episodes=len(rows),
++            spatial_counts=[[count] * 5 for _ in range(5)],
++            yaw_counts=[100] * 8,
++        )
++
++    monkeypatch.setattr(workspace_audit.subprocess, "run", simulate_play)
++    monkeypatch.setattr(workspace_audit, "summarize", coverage_report)
++    assert (
++        workspace_audit.main(
++            [
++                "--checkpoint",
++                str(checkpoint),
++                "--policy",
++                "teacher",
++                "--population",
++                "random",
++                "--episodes",
++                "1",
++                "--batch-size",
++                "1",
++                "--output-dir",
++                str(output),
++            ]
++        )
++        == 0
++    )
++    summary = json.loads((output / "summary.json").read_text())
++    assert summary["completed_jobs"] == summary["planned_jobs"] == 4
++    assert summary["episodes"] == 259

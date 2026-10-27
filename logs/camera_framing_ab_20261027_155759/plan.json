@@ -1,0 +1,46 @@
+{
+  "checkpoint": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt",
+  "checkpoint_sha256": "92e88f27e5f8e9b5817e42742d779f6c41d96fe50b983e9585212cf5529aebf6",
+  "variants": {
+    "A": {
+      "focal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "description": "Current64x48 center crop"
+    },
+    "B": {
+      "focal_scale_range": [
+        0.8,
+        0.8
+      ],
+      "description": "Full80x60 frame resized to64x48"
+    }
+  },
+  "cohorts": {
+    "nominal": {
+      "population": "nominal",
+      "seed": 42,
+      "episodes": 256
+    },
+    "wide": {
+      "population": "stage",
+      "stage": "F",
+      "seed": 45,
+      "episodes": 256
+    }
+  },
+  "raw_camera_shape": [
+    60,
+    80
+  ],
+  "policy_shape": [
+    6,
+    48,
+    64
+  ],
+  "frozen_checkpoint": true,
+  "no_training": true,
+  "no_repository_default_changes": true,
+  "purpose": "Framing transfer A/B screen, not acceptance or retraining"
+}

@@ -1,0 +1,59 @@
+{
+  "baseline": "1798",
+  "selected_common_experimental_baseline": "2200",
+  "confirmation_needed": false,
+  "decision": "Implement the opt-in data-first trainer: no candidate met the prespecified screen threshold.",
+  "comparisons": {
+    "1798": {
+      "nominal_drop_pp": 0.0,
+      "wide_gain_pp": 0.0,
+      "nominal_eligible": true,
+      "qualifies_for_confirmation": false,
+      "poses_exact": {
+        "nominal": true,
+        "stage": true
+      }
+    },
+    "2000": {
+      "nominal_drop_pp": 86.71875,
+      "wide_gain_pp": -11.71875,
+      "nominal_eligible": false,
+      "qualifies_for_confirmation": false,
+      "poses_exact": {
+        "nominal": true,
+        "stage": true
+      }
+    },
+    "2200": {
+      "nominal_drop_pp": -1.5625,
+      "wide_gain_pp": 8.984375,
+      "nominal_eligible": true,
+      "qualifies_for_confirmation": false,
+      "poses_exact": {
+        "nominal": true,
+        "stage": true
+      }
+    },
+    "2400": {
+      "nominal_drop_pp": 74.609375,
+      "wide_gain_pp": 1.953125,
+      "nominal_eligible": false,
+      "qualifies_for_confirmation": false,
+      "poses_exact": {
+        "nominal": true,
+        "stage": true
+      }
+    },
+    "2597": {
+      "nominal_drop_pp": 49.609375,
+      "wide_gain_pp": -3.515625,
+      "nominal_eligible": false,
+      "qualifies_for_confirmation": false,
+      "poses_exact": {
+        "nominal": true,
+        "stage": true
+      }
+    }
+  },
+  "checkpoint_hashes_unchanged": true
+}

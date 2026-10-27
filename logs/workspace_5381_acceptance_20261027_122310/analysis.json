@@ -1,0 +1,3209 @@
+{
+  "populations": {
+    "stage": {
+      "status": "pass",
+      "successes": 2020,
+      "episodes": 2048,
+      "rate": 0.986328125,
+      "coverage_sufficient": true,
+      "evidence_directory": "logs\\workspace_5381_acceptance_20261027_122310\\stage",
+      "failure_stages": {
+        "no_grasp": 4,
+        "grasp_without_lift": 12,
+        "incomplete_after_lift": 12
+      },
+      "failed_starts": [
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 34,
+          "initial_box_pose": [
+            0.09272575378417969,
+            -0.005230903625488281,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9920304417610168,
+            0.12599824368953705
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 57,
+          "initial_box_pose": [
+            0.09533309936523438,
+            -0.06297492980957031,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.5206961631774902,
+            0.8537420630455017
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 147,
+          "initial_box_pose": [
+            0.1878824234008789,
+            -0.13302206993103027,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9999839067459106,
+            0.005677506327629089
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 190,
+          "initial_box_pose": [
+            0.20101451873779297,
+            -0.16621875762939453,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.99969881772995,
+            0.024540778249502182
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 202,
+          "initial_box_pose": [
+            0.08286571502685547,
+            -0.028435707092285156,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.44062358140945435,
+            0.8976919651031494
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 445,
+          "initial_box_pose": [
+            0.08636069297790527,
+            -0.12515735626220703,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9986659288406372,
+            0.05163644626736641
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 560,
+          "initial_box_pose": [
+            0.10406672954559326,
+            -0.15051767230033875,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9997036457061768,
+            0.024342592805624008
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 636,
+          "initial_box_pose": [
+            0.19317293167114258,
+            -0.1964702606201172,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9994515180587769,
+            0.03311607986688614
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 672,
+          "initial_box_pose": [
+            0.12405252456665039,
+            -0.1320171356201172,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9985883235931396,
+            0.05311618372797966
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 779,
+          "initial_box_pose": [
+            0.1865215301513672,
+            -0.046189308166503906,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.39712589979171753,
+            0.9177641272544861
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 804,
+          "initial_box_pose": [
+            0.08990001678466797,
+            -0.049060821533203125,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9992616176605225,
+            0.03842202201485634
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 828,
+          "initial_box_pose": [
+            0.2314910888671875,
+            -0.04279327392578125,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9751702547073364,
+            0.22145649790763855
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 918,
+          "initial_box_pose": [
+            0.2370452880859375,
+            -0.15867280960083008,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9999140501022339,
+            0.013110695406794548
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 925,
+          "initial_box_pose": [
+            0.10010051727294922,
+            -0.1364917755126953,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9987586736679077,
+            0.049810249358415604
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 949,
+          "initial_box_pose": [
+            0.23663806915283203,
+            -0.18997573852539062,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9903295040130615,
+            0.13873513042926788
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group43_batch0.json",
+          "env_id": 973,
+          "initial_box_pose": [
+            0.17096614837646484,
+            -0.12308740615844727,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9659256935119629,
+            0.2588195502758026
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": true
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 61,
+          "initial_box_pose": [
+            0.10572433471679688,
+            -0.19113540649414062,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9999960660934448,
+            0.0028092386201024055
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 162,
+          "initial_box_pose": [
+            0.20557689666748047,
+            -0.04005622863769531,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.037337347865104675,
+            0.9993027448654175
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 226,
+          "initial_box_pose": [
+            0.20426082611083984,
+            -0.1848459243774414,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9981316328048706,
+            0.06110038608312607
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 345,
+          "initial_box_pose": [
+            0.2191162109375,
+            -0.09740352630615234,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9992188215255737,
+            0.03951958194375038
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 385,
+          "initial_box_pose": [
+            0.254533052444458,
+            -0.19044876098632812,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.8421844840049744,
+            0.5391894578933716
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 531,
+          "initial_box_pose": [
+            0.09218424558639526,
+            -0.023810625076293945,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9987689256668091,
+            0.0496048666536808
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 696,
+          "initial_box_pose": [
+            0.0722198486328125,
+            -0.007199287414550781,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.4222325086593628,
+            0.9064875841140747
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 743,
+          "initial_box_pose": [
+            0.08351421356201172,
+            -0.08801651000976562,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.4966276288032532,
+            0.8679637312889099
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 837,
+          "initial_box_pose": [
+            0.08599472045898438,
+            -0.03216266632080078,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9970730543136597,
+            0.0764550119638443
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 840,
+          "initial_box_pose": [
+            0.2546072006225586,
+            -0.18631267547607422,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9199252128601074,
+            0.39209386706352234
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 888,
+          "initial_box_pose": [
+            0.26636695861816406,
+            -0.18903732299804688,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9417596459388733,
+            0.3362868130207062
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 954,
+          "initial_box_pose": [
+            0.2531471252441406,
+            -0.19287109375,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.563873827457428,
+            0.8258609771728516
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        }
+      ],
+      "worst_spatial": {
+        "row": 4,
+        "column": 0,
+        "successes": 71,
+        "count": 76,
+        "rate": 0.9342105263157895
+      },
+      "worst_yaw": {
+        "bin": 7,
+        "successes": 215,
+        "count": 225,
+        "rate": 0.9555555555555556
+      },
+      "spatial_below_95": [
+        {
+          "row": 0,
+          "column": 4,
+          "successes": 75,
+          "count": 80,
+          "rate": 0.9375
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "successes": 71,
+          "count": 76,
+          "rate": 0.9342105263157895
+        }
+      ],
+      "yaw_below_95": [],
+      "stage_F_promotion_pass": false
+    },
+    "grid": {
+      "status": "fail",
+      "successes": 2891,
+      "episodes": 3000,
+      "rate": 0.9636666666666667,
+      "coverage_sufficient": true,
+      "evidence_directory": "logs\\workspace_5381_acceptance_20261027_122310\\grid",
+      "failure_stages": {
+        "no_grasp": 40,
+        "grasp_without_lift": 24,
+        "incomplete_after_lift": 45
+      },
+      "failed_starts": [
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 24,
+          "initial_box_pose": [
+            0.06999969482421875,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 37,
+          "initial_box_pose": [
+            0.06999969482421875,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 40,
+          "initial_box_pose": [
+            0.12000083923339844,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 160,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 166,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 167,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 224,
+          "initial_box_pose": [
+            0.06999969482421875,
+            -0.049999237060546875,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 240,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.19999998807907104,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 360,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 361,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 366,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.20000004768371582,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 367,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999998807907104,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 383,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.10000038146972656,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 424,
+          "initial_box_pose": [
+            0.06999993324279785,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 440,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 560,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999998807907104,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 561,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.20000004768371582,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 566,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 567,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 604,
+          "initial_box_pose": [
+            0.06999993324279785,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 624,
+          "initial_box_pose": [
+            0.06999993324279785,
+            -0.050000011920928955,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 637,
+          "initial_box_pose": [
+            0.06999993324279785,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 656,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.09999999403953552,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 704,
+          "initial_box_pose": [
+            0.1700000762939453,
+            -0.049999237060546875,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 760,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 764,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 766,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 767,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 768,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.14999961853027344,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 824,
+          "initial_box_pose": [
+            0.06999969482421875,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 837,
+          "initial_box_pose": [
+            0.06999969482421875,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 840,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 960,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 961,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 964,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 966,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 967,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 984,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 24,
+          "initial_box_pose": [
+            0.06999969482421875,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 64,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.049999237060546875,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 96,
+          "initial_box_pose": [
+            0.1700000762939453,
+            -0.10000038146972656,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 160,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 164,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 167,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 183,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.10000038146972656,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 192,
+          "initial_box_pose": [
+            0.2700004577636719,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 224,
+          "initial_box_pose": [
+            0.06999969482421875,
+            -0.049999237060546875,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 237,
+          "initial_box_pose": [
+            0.06999969482421875,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 240,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.19999998807907104,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 264,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 360,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 365,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.20000004768371582,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 367,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999998807907104,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 384,
+          "initial_box_pose": [
+            0.2700002193450928,
+            -0.049999237060546875,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 424,
+          "initial_box_pose": [
+            0.06999993324279785,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 437,
+          "initial_box_pose": [
+            0.06999993324279785,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 560,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999998807907104,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 566,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 567,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 637,
+          "initial_box_pose": [
+            0.06999993324279785,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 760,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 761,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 766,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 767,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 840,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 960,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 963,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 964,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 967,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 972,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.14999985694885254,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 992,
+          "initial_box_pose": [
+            0.2700004577636719,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 24,
+          "initial_box_pose": [
+            0.06999969482421875,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 37,
+          "initial_box_pose": [
+            0.06999969482421875,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 40,
+          "initial_box_pose": [
+            0.12000083923339844,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 56,
+          "initial_box_pose": [
+            0.12000083923339844,
+            -0.10000038146972656,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 64,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.049999237060546875,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 160,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 161,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 163,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 164,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 166,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 167,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 224,
+          "initial_box_pose": [
+            0.06999969482421875,
+            -0.049999237060546875,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 240,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.19999998807907104,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 320,
+          "initial_box_pose": [
+            0.2199997901916504,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 360,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 367,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999998807907104,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 424,
+          "initial_box_pose": [
+            0.06999993324279785,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 437,
+          "initial_box_pose": [
+            0.06999993324279785,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 440,
+          "initial_box_pose": [
+            0.11999988555908203,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 560,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999998807907104,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 563,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.20000004768371582,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 566,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": true
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 567,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 576,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.10000038146972656,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 760,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 764,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 766,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 767,
+          "initial_box_pose": [
+            0.26999998092651367,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 824,
+          "initial_box_pose": [
+            0.06999969482421875,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 837,
+          "initial_box_pose": [
+            0.06999969482421875,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.3826834559440613,
+            0.9238795638084412
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 960,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 961,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.20000076293945312,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 964,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 966,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.7071068286895752,
+            0.7071067690849304
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 967,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.19999980926513672,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9238795638084412,
+            0.3826834559440613
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 976,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.09999999403953552,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 984,
+          "initial_box_pose": [
+            0.2700004577636719,
+            -0.05000019073486328,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 992,
+          "initial_box_pose": [
+            0.2700004577636719,
+            0.0,
+            0.08049999922513962,
+            0.0,
+            -0.0,
+            -1.0,
+            -4.371138828673793e-08
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        }
+      ],
+      "worst_spatial": {
+        "row": 0,
+        "column": 4,
+        "successes": 62,
+        "count": 120,
+        "rate": 0.5166666666666667
+      },
+      "worst_yaw": {
+        "bin": 0,
+        "successes": 322,
+        "count": 375,
+        "rate": 0.8586666666666667
+      },
+      "spatial_below_95": [
+        {
+          "row": 0,
+          "column": 1,
+          "successes": 111,
+          "count": 120,
+          "rate": 0.925
+        },
+        {
+          "row": 0,
+          "column": 4,
+          "successes": 62,
+          "count": 120,
+          "rate": 0.5166666666666667
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "successes": 108,
+          "count": 120,
+          "rate": 0.9
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "successes": 111,
+          "count": 120,
+          "rate": 0.925
+        }
+      ],
+      "yaw_below_95": [
+        {
+          "bin": 0,
+          "successes": 322,
+          "count": 375,
+          "rate": 0.8586666666666667
+        }
+      ],
+      "worst_cases": [
+        {
+          "case_id": 160,
+          "successes": 0,
+          "count": 15,
+          "rate": 0.0
+        },
+        {
+          "case_id": 167,
+          "successes": 0,
+          "count": 15,
+          "rate": 0.0
+        },
+        {
+          "case_id": 24,
+          "successes": 3,
+          "count": 15,
+          "rate": 0.2
+        },
+        {
+          "case_id": 166,
+          "successes": 4,
+          "count": 15,
+          "rate": 0.26666666666666666
+        },
+        {
+          "case_id": 37,
+          "successes": 6,
+          "count": 15,
+          "rate": 0.4
+        },
+        {
+          "case_id": 40,
+          "successes": 6,
+          "count": 15,
+          "rate": 0.4
+        },
+        {
+          "case_id": 164,
+          "successes": 8,
+          "count": 15,
+          "rate": 0.5333333333333333
+        },
+        {
+          "case_id": 161,
+          "successes": 9,
+          "count": 15,
+          "rate": 0.6
+        },
+        {
+          "case_id": 64,
+          "successes": 12,
+          "count": 15,
+          "rate": 0.8
+        },
+        {
+          "case_id": 163,
+          "successes": 12,
+          "count": 15,
+          "rate": 0.8
+        }
+      ]
+    },
+    "random": {
+      "status": "fail",
+      "successes": 3282,
+      "episodes": 3328,
+      "rate": 0.9861778846153846,
+      "coverage_sufficient": true,
+      "evidence_directory": "logs\\workspace_5381_acceptance_20261027_122310\\random_recovered",
+      "failure_stages": {
+        "no_grasp": 9,
+        "grasp_without_lift": 24,
+        "incomplete_after_lift": 13
+      },
+      "failed_starts": [
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 146,
+          "initial_box_pose": [
+            0.13553237915039062,
+            -0.11200594902038574,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.013822988606989384,
+            0.999904453754425
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 531,
+          "initial_box_pose": [
+            0.09218424558639526,
+            -0.023810625076293945,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9987689256668091,
+            0.0496048666536808
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 743,
+          "initial_box_pose": [
+            0.08351421356201172,
+            -0.08801651000976562,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.4966276288032532,
+            0.8679637312889099
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 758,
+          "initial_box_pose": [
+            0.21562862396240234,
+            -0.0912790298461914,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9963167905807495,
+            0.08574893325567245
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 799,
+          "initial_box_pose": [
+            0.12805938720703125,
+            -0.19765663146972656,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.997037947177887,
+            0.0769110769033432
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 801,
+          "initial_box_pose": [
+            0.2568216323852539,
+            -0.19550323486328125,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9935193657875061,
+            0.11366278678178787
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 821,
+          "initial_box_pose": [
+            0.2694425582885742,
+            -0.045022010803222656,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9998190999031067,
+            0.019019486382603645
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 837,
+          "initial_box_pose": [
+            0.08599472045898438,
+            -0.03216266632080078,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9970730543136597,
+            0.0764550119638443
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 840,
+          "initial_box_pose": [
+            0.2546072006225586,
+            -0.18631267547607422,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9199252128601074,
+            0.39209386706352234
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 867,
+          "initial_box_pose": [
+            0.11485576629638672,
+            -0.05885505676269531,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9999721646308899,
+            0.007462865207344294
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group45_batch0.json",
+          "env_id": 888,
+          "initial_box_pose": [
+            0.26636695861816406,
+            -0.18903732299804688,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9417596459388733,
+            0.3362868130207062
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 51,
+          "initial_box_pose": [
+            0.099212646484375,
+            -0.003953218460083008,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.983870267868042,
+            0.17888334393501282
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 56,
+          "initial_box_pose": [
+            0.09627342224121094,
+            -0.004996299743652344,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9910092949867249,
+            0.13379287719726562
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 351,
+          "initial_box_pose": [
+            0.23028850555419922,
+            -0.15736007690429688,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.5849376320838928,
+            0.8110783100128174
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 379,
+          "initial_box_pose": [
+            0.263822078704834,
+            -0.18483257293701172,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9900890588760376,
+            0.14044107496738434
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 381,
+          "initial_box_pose": [
+            0.07678365707397461,
+            -0.016357421875,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9989033341407776,
+            0.04682016372680664
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 397,
+          "initial_box_pose": [
+            0.18779683113098145,
+            -0.1564626693725586,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9998515248298645,
+            0.017233310267329216
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 439,
+          "initial_box_pose": [
+            0.26161980628967285,
+            -0.19904518127441406,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9944961667060852,
+            0.10477311909198761
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 500,
+          "initial_box_pose": [
+            0.1467609405517578,
+            -0.11375761032104492,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9950838685035706,
+            0.09903568774461746
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 511,
+          "initial_box_pose": [
+            0.2653523087501526,
+            -0.18837738037109375,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.04557809606194496,
+            0.9989607930183411
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 522,
+          "initial_box_pose": [
+            0.09921663999557495,
+            -0.1975541114807129,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9990429878234863,
+            0.04373878613114357
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 548,
+          "initial_box_pose": [
+            0.21246600151062012,
+            -0.16189002990722656,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9999458193778992,
+            0.01041234191507101
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 555,
+          "initial_box_pose": [
+            0.09241437911987305,
+            -0.019661903381347656,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9888113737106323,
+            0.14917144179344177
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 608,
+          "initial_box_pose": [
+            0.15657734870910645,
+            -0.14789772033691406,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9999930262565613,
+            0.0037321520503610373
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 656,
+          "initial_box_pose": [
+            0.07809782028198242,
+            -0.0025595426559448242,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9669826626777649,
+            0.25484225153923035
+          ],
+          "grasped": false,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 727,
+          "initial_box_pose": [
+            0.2265620231628418,
+            -0.061676979064941406,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9770897626876831,
+            0.21282760798931122
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 737,
+          "initial_box_pose": [
+            0.24509525299072266,
+            -0.19890213012695312,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9969689249992371,
+            0.0778011605143547
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 780,
+          "initial_box_pose": [
+            0.2685813903808594,
+            -0.19733691215515137,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.8086075186729431,
+            0.5883484482765198
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 870,
+          "initial_box_pose": [
+            0.26651954650878906,
+            -0.18273067474365234,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.8623698949813843,
+            0.5062787532806396
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 921,
+          "initial_box_pose": [
+            0.10000133514404297,
+            -0.14176368713378906,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9995338320732117,
+            0.030530672520399094
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch0.json",
+          "env_id": 975,
+          "initial_box_pose": [
+            0.1345224380493164,
+            -0.12841397523880005,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9972745180130005,
+            0.07378062605857849
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch1.json",
+          "env_id": 37,
+          "initial_box_pose": [
+            0.09194517135620117,
+            -0.04445028305053711,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9993462562561035,
+            0.03615337982773781
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group46_batch1.json",
+          "env_id": 184,
+          "initial_box_pose": [
+            0.09642648696899414,
+            -0.19363054633140564,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9990590214729309,
+            0.043371256440877914
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 223,
+          "initial_box_pose": [
+            0.07652759552001953,
+            -0.19028663635253906,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.6097328066825867,
+            0.7926070690155029
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 300,
+          "initial_box_pose": [
+            0.23332977294921875,
+            -0.00920248031616211,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9666202068328857,
+            0.256213515996933
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 396,
+          "initial_box_pose": [
+            0.18742680549621582,
+            -0.1440269947052002,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9999601244926453,
+            0.008932785131037235
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 421,
+          "initial_box_pose": [
+            0.10334157943725586,
+            -0.13814926147460938,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.99872887134552,
+            0.05040518939495087
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 439,
+          "initial_box_pose": [
+            0.08735918998718262,
+            -0.1978750228881836,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9998690485954285,
+            0.016184654086828232
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 454,
+          "initial_box_pose": [
+            0.08475017547607422,
+            -0.19433212280273438,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9999501705169678,
+            0.009985714219510555
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 521,
+          "initial_box_pose": [
+            0.11857831478118896,
+            -0.11539125442504883,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9844922423362732,
+            0.17542827129364014
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 593,
+          "initial_box_pose": [
+            0.16293978691101074,
+            -0.18401718139648438,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            -0.9953069686889648,
+            0.09676818549633026
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 598,
+          "initial_box_pose": [
+            0.23184871673583984,
+            -0.15294122695922852,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9999393820762634,
+            0.011013241484761238
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 633,
+          "initial_box_pose": [
+            0.2637064456939697,
+            -0.1954355239868164,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9478806853294373,
+            0.31862547993659973
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 660,
+          "initial_box_pose": [
+            0.23501014709472656,
+            -0.19869661331176758,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9993597269058228,
+            0.03577966243028641
+          ],
+          "grasped": true,
+          "lifted": true,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 776,
+          "initial_box_pose": [
+            0.1807861328125,
+            -0.17143726348876953,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9999614357948303,
+            0.00878366082906723
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        },
+        {
+          "result_file": "group47_batch0.json",
+          "env_id": 856,
+          "initial_box_pose": [
+            0.13276386260986328,
+            -0.163604736328125,
+            0.08049999922513962,
+            0.0,
+            0.0,
+            0.9999989867210388,
+            0.0014345204690471292
+          ],
+          "grasped": true,
+          "lifted": false,
+          "placed": false
+        }
+      ],
+      "worst_spatial": {
+        "row": 0,
+        "column": 4,
+        "successes": 128,
+        "count": 139,
+        "rate": 0.920863309352518
+      },
+      "worst_yaw": {
+        "bin": 0,
+        "successes": 370,
+        "count": 393,
+        "rate": 0.9414758269720102
+      },
+      "spatial_below_95": [
+        {
+          "row": 0,
+          "column": 4,
+          "successes": 128,
+          "count": 139,
+          "rate": 0.920863309352518
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "successes": 122,
+          "count": 129,
+          "rate": 0.9457364341085271
+        }
+      ],
+      "yaw_below_95": [
+        {
+          "bin": 0,
+          "successes": 370,
+          "count": 393,
+          "rate": 0.9414758269720102
+        }
+      ]
+    },
+    "nominal": {
+      "status": "pass",
+      "successes": 3072,
+      "episodes": 3072,
+      "rate": 1.0,
+      "coverage_sufficient": true,
+      "evidence_directory": "logs\\workspace_5381_acceptance_20261027_123738\\nominal",
+      "failure_stages": {
+        "no_grasp": 0,
+        "grasp_without_lift": 0,
+        "incomplete_after_lift": 0
+      },
+      "failed_starts": []
+    },
+    "regression": {
+      "status": "pass",
+      "successes": 3,
+      "episodes": 3,
+      "rate": 1.0,
+      "coverage_sufficient": true,
+      "evidence_directory": "logs\\workspace_5381_acceptance_20261027_123738\\regression",
+      "failure_stages": {
+        "no_grasp": 0,
+        "grasp_without_lift": 0,
+        "incomplete_after_lift": 0
+      },
+      "failed_starts": []
+    }
+  },
+  "historical_4982_comparison": {
+    "43": {
+      "episodes": 1024,
+      "baseline_successes": 1009,
+      "current_successes": 1008,
+      "max_initial_pose_component_delta": 0.0,
+      "matching_starts_within_1e_6": true,
+      "recovered_failures": 14,
+      "new_failures": 15
+    },
+    "45": {
+      "episodes": 1024,
+      "baseline_successes": 1013,
+      "current_successes": 1012,
+      "max_initial_pose_component_delta": 0.0,
+      "matching_starts_within_1e_6": true,
+      "recovered_failures": 6,
+      "new_failures": 7
+    }
+  },
+  "teacher_accepted": false,
+  "acceptance_basis": "Original strict automated gates; physical success unchanged",
+  "user_approved_for_distillation": true
+}

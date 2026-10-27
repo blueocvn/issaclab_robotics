@@ -1,15 +1,26 @@
 # Box workspace evaluation and training
 
-Start with [HANDOFF.md](HANDOFF.md). Latest teacher5381 has finished training
-but needs independent acceptance. Do not repeat Stage A or the completed
-refinement before evaluating it. The user launches further long training manually.
+Current camera experiment: [CAMERA_DATA_FIRST.md](CAMERA_DATA_FIRST.md) contains
+the completed800-update checkpoint screen and direct user-run commands for the
+opt-in data-first trainer versus the unchanged-trainer control. Use2200 as the
+common experimental baseline; keep all historical results below as provenance.
+
+Start with [HANDOFF.md](HANDOFF.md). Teacher5381 finished training and failed
+independent acceptance: grid2,891/3,000; random3,282/3,328. Nominal3,072/3,072
+and historical case5273/3 passed. See the
+[evaluation report](../logs/workspace_5381_acceptance_20261027_122310/REPORT.md).
+The user accepted these observed teacher results as sufficient and requested
+camera distillation from5381. That decision supersedes the stricter teacher
+promotion gate for this step; original audit thresholds/results remain recorded.
+Use a fresh camera student with matching nominal physics. Do not repeat Stage A.
+The user launches further long training manually. Commands below reproduce audits.
 
 ## Evaluate the latest refinement
 
-On this PC, use the existing runtime in WSL distro `Ubuntu`:
+On this PC, use the existing runtime in WSL distro `Ubuntu-24.04`:
 
 ```bash
-cd /mnt/d/work/robotics/IsaacLabTutorial
+cd /mnt/e/issaclab_robotics
 CKPT='logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt'
 uv run --locked python -m isaaclab_tutorial.tasks.place_box.workspace_audit --checkpoint "$CKPT" --policy teacher --population stage --stage F --seeds 43 45 --batch-size 1024 --output-dir logs/workspace_5381_stage_screen_20261027
 ```
@@ -88,19 +99,41 @@ is already complete; this table is not an instruction to restart it.
 
 ## Camera and sim-to-real stage
 
-Only after teacher acceptance, initialize distillation from that accepted PPO
-checkpoint. Camera1599 embeds its old teacher; loading it does not replace that teacher.
+The user accepted teacher5381 at the observed96.37% grid /98.62% random scores.
+Initialize distillation from that PPO checkpoint. Camera1599 embeds its old teacher;
+loading it does not replace that teacher. This refers to the archived nominal
+camera1599; the new2026-10-27 workspace camera1599 embeds5381 exactly.
+Provide direct commands for future runs rather than creating per-run launch scripts.
 
 ```bash
 uv run --locked isaaclab train --rl_library rsl_rl --task IsaacTutorial-Pick-Box-SO101-Camera --num_envs 128 --max_iterations 1600 --seed 42 --run_name so101-box-workspace-camera --device cuda:0 --checkpoint "$CKPT" --visualizer none presets=newton_mjwarp,newton_renderer env.events.reset_home.params.position_noise=0.1 env.events.reset_home.params.yaw_noise=3.141592653589793 env.events.reset_home.params.nominal_fraction=0.2
 ```
 
-This is a future user-launched command, not the approved next run. Audit the
+The1,600-iteration run above completed. Its final workspace camera1599 scored
+455/3,000 grid (15.17%),673/3,328 random (20.22%),2,152/3,072 nominal (70.05%)
+and3/3 case527. All starts matched the teacher comparison exactly. See the
+[camera evaluation report](../logs/camera_1599_evaluation_20261027_132245/REPORT.md).
+Further training and edge-case inspection are deferred by the user. Audit any
 actual student with `--policy camera` on the same four populations. For hardware
 transfer, first adapt/evaluate the teacher with `sim2real`, then match physics,
 renderer and transfer presets for the student. Current variation covers solid
 colors and image/camera parameters; printed patterns/logos need coverage and
 real-image validation. See [BOX_PICK_PLACE.md](BOX_PICK_PLACE.md).
+
+Preparation verified on2026-10-27: five iterations at128 environments completed,
+student parameters updated with finite losses, and the embedded frozen teacher
+matched5381 exactly. Evidence: `logs/camera_5381_smoke_verification.json`.
+The smoke checkpoint is not a trained student; start the full run from5381.
+
+The subsequent400-update lower-rate experiment retained camera1798: matched
+256-start screens showed90.23% nominal and21.09% wide success. Later1900/1997
+regressed. Ordinary camera/data diagnostics found limited initial view coverage
+(estimated72.4% of full-workspace box centers inside the policy crop) and sparse
+post-lift phase visitation in student interior rollouts (5.6% of control steps,
+versus30.0% for the teacher). These are diagnostic findings with limitations, not
+confirmed causes. See the
+[diagnostic report](../logs/camera_visibility_diagnostic_20261027_153417/REPORT.md)
+before planning further training. No framing or replay changes have been implemented.
 
 ## Optional overnight controller
 

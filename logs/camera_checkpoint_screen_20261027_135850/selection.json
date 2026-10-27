@@ -1,0 +1,7 @@
+{
+  "selected_iteration": 1599,
+  "checkpoint": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1599.pt",
+  "sha256": "4982ebd41b447b50909090d707d04ca008b85a3180674693333963d94620b8b5",
+  "rule": "Highest wide-workspace successes; break ties by nominal successes, then latest iteration",
+  "screen_only": true
+}

@@ -1,0 +1,90 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_random_supplement_preserves_provenance_through_result_validation _____
+
+tmp_path = PosixPath('/tmp/pytest-of-apc/pytest-1/test_random_supplement_preserv0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x78777909cec0>
+
+    def test_random_supplement_preserves_provenance_through_result_validation(tmp_path, monkeypatch):
+        from pathlib import Path
+    
+        from isaaclab_tutorial.tasks.place_box import workspace_audit
+    
+        checkpoint = tmp_path / "model.pt"
+        checkpoint.write_bytes(b"test checkpoint")
+        output = tmp_path / "audit"
+    
+        def simulate_play(command, *, env, stdout, stderr, check):
+            overrides = dict(item.split("=", 1) for item in command if item.startswith("env.events."))
+            size = int(command[command.index("--num_envs") + 1])
+            prefix = "env.events.reset_home.params."
+            data = dict(
+                argv=command[1:],
+                summary={"episodes": size, "success_rate": 1.0},
+                reset_parameters=dict(
+                    nominal_fraction=0,
+                    reset_mode=overrides[prefix + "reset_mode"],
+                    grid_start_index=int(overrides[prefix + "grid_start_index"]),
+                    sampling_seed=int(overrides[prefix + "sampling_seed"]),
+                ),
+                episodes=[dict(env_id=i, success=True) for i in range(size)],
+            )
+            Path(env["SO101_EVALUATION_OUTPUT"]).write_text(json.dumps(data))
+    
+        def coverage_report(rows, *args, **kwargs):
+            count = 100 if len(rows) > 3 else 99
+            return dict(
+                status="pass", coverage_sufficient=True, episodes=len(rows),
+                spatial_counts=[[count] * 5 for _ in range(5)], yaw_counts=[100] * 8,
+            )
+    
+        monkeypatch.setattr(workspace_audit.subprocess, "run", simulate_play)
+        monkeypatch.setattr(workspace_audit, "summarize", coverage_report)
+>       assert workspace_audit.main([
+            "--checkpoint", str(checkpoint), "--policy", "teacher", "--population", "random",
+            "--episodes", "1", "--batch-size", "1", "--output-dir", str(output),
+        ]) == 0
+
+tests/test_box_workspace_audit.py:202: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/isaaclab_tutorial/tasks/place_box/workspace_audit.py:215: in main
+    rows.extend(read_result(result_path, job))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/pytest-of-apc/pytest-1/test_random_supplement_preserv0/audit/group46_batch1.json')
+job = {'seed_group': 46, 'batch': 1, 'start_index': 256, 'count': 256, ...}
+
+    def read_result(path, job):
+        data = json.loads(path.read_text())
+        rows = data["episodes"]
+        if (
+            len(rows) != job["count"]
+            or data["summary"]["episodes"] != job["count"]
+            or {row["env_id"] for row in rows} != set(range(job["count"]))
+        ):
+            raise ValueError(f"Missing/duplicate first episodes in {path}")
+        for key, value in data["summary"].items():
+            if key.endswith("_rate") and abs(sum(row[key[:-5]] for row in rows) / len(rows) - value) > 1e-12:
+                raise ValueError(f"Summary mismatch in {path}: {key}")
+        if data["reset_parameters"]["nominal_fraction"] != 0:
+            raise ValueError("Training mixture is forbidden in acceptance audits")
+        parameters = data["reset_parameters"]
+        if (
+            parameters["sampling_seed"] != job["sampling_seed"]
+            or parameters["grid_start_index"] != job["start_index"]
+            or parameters["reset_mode"] != job["reset_mode"]
+            or data["argv"] != job["command"][1:]
+        ):
+>           raise ValueError("Returned audit configuration does not match the planned job")
+E           ValueError: Returned audit configuration does not match the planned job
+
+src/isaaclab_tutorial/tasks/place_box/workspace_audit.py:123: ValueError
+----------------------------- Captured stdout call -----------------------------
+Audit 1/3: group45_batch0, 1 first episodes
+Audit 2/3: group46_batch0, 1 first episodes
+Audit 3/3: group47_batch0, 1 first episodes
+Audit 4/4: group46_batch1, 256 first episodes
+=========================== short test summary info ============================
+FAILED tests/test_box_workspace_audit.py::test_random_supplement_preserves_provenance_through_result_validation
+1 failed, 17 deselected in 25.85s

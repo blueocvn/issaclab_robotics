@@ -1,0 +1,211 @@
+[INFO]: Parsing configuration from: isaaclab_tutorial.tasks.place_box.env_cfg:BoxCameraEnvCfg
+[INFO]: Parsing configuration from: isaaclab_tutorial.tasks.place_box.agents:BoxDistillationRunnerCfg
+
+╭─ Isaac Lab · play ─────────────────────────────╮      [0m
+│ Task          IsaacTutorial-Pick-Box-SO101-Cam │      [0m
+│               era                              │      [0m          [38;2;118;185;0m\[0m   [38;2;118;185;0m/[0m
+│ Workflow      manager-based                    │      [0m        [38;2;232;228;214m.-------.[0m
+│ RL library    rsl_rl                           │      [0m        [38;2;232;228;214m|[0m [38;2;77;217;232mo[0m   [38;2;77;217;232mo[0m [38;2;232;228;214m|[0m
+│ Physics       newton_mjwarp                    │      [0m        [38;2;232;228;214m|[0m   [38;2;232;228;214m_[0m   [38;2;232;228;214m|[0m
+│ Renderer      newton_renderer                  │      [0m        [38;2;232;228;214m'-------'[0m
+│ Visualizer    none (headless)                  │      [0m
+│ Device        cuda:0                           │      [0m[38;2;150;154;160mWelcome[0m [38;2;150;154;160mto[0m [38;2;150;154;160mIsaac[0m [38;2;150;154;160mLab[0m [38;2;150;154;160m3![0m
+│ Environments  256                              │      [0m
+╰────────────────────────────────────────────────╯      [0m
+                                                        [0m
+
+[1/3] Launching simulation
+[INFO] Loading experiment from directory: /mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation
+[2/3] Creating environment
+I: Initializing Version 2.74.0-release.7316+gl.ec99a64b
+I: Client ID: NA0DWRLL
+I: ThreadId(02) hub_client::client::Client::new Launching client mode=Shared with_cleaner=false cache_path=None cache_size=None
+I: ThreadId(03) launch self=Launcher { discovery_lock: RwLock { lock: RwLock { inner: File { fd: 26, path: "/tmp/hub-apc.lock", read: false, write: true } } }, mode: Shared, with_cleaner: false, config_file: "/tmp/hub-apc-831629B3.config.json" } cmd="hub" "--mode=shared" "--write-config" "/tmp/hub-apc-831629B3.config.json" "--"
+I: Not using Hub: Hub not found
+I: Successfully created S3 provider for https://omniverse-content-production.s3-us-west-2.amazonaws.com
+I: Using CloudFront http://dcb18d6mfegct.cloudfront.net/, List = No
+Serving remote assets from the local cache under '/tmp'. Each copy is checked against the server before use; delete the directory to force a full re-download.
+/mnt/e/issaclab_robotics/.venv/lib/python3.12/site-packages/isaaclab_newton/cloner/newton_clone_utils.py:165: FutureWarning: Newton shape color replacement is enabled; this workaround will be deprecated in a future release.
+  replace_newton_builder_shape_colors(builder, stage)
+Failed to get root com velocity. If the articulation is fixed, this is expected. Setting root com velocity to zeros.
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 42
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.03333333333333333
+	Environment step-size : 0.03333333333333333
+[INFO]: Time taken for scene creation Last: 5.480086 s, Mean: 5.480086 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 256
+	Environment spacing   : 1.1
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+Finalize builder took: Last: 0.449303 s, Mean: 0.449303 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.002503 s, Mean: 0.002503 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.001035 s, Mean: 0.001769 s, Std: 0.001038 s, N: 2
+Contact sensor construction took: Last: 0.000931 s, Mean: 0.001489 s, Std: 0.000879 s, N: 3
+Initialize solver took: Last: 1.980748 s, Mean: 1.980748 s, Std: 0.000000 s, N: 1
+[INFO]: Time taken for simulation start Last: 2.988005 s, Mean: 2.988005 s, Std: 0.000000 s, N: 1
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++----------------------+
+| Active Command Terms |
++-------+------+-------+
+| Index | Name |  Type |
++-------+------+-------+
++-------+------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 2 active terms.
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++------------+--------------------------+
+|   Index    | Name                     |
++------------+--------------------------+
+|     0      | box_material             |
++------------+--------------------------+
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++------------+------------------------+
+|   Index    | Name                   |
++------------+------------------------+
+|     0      | reset_home             |
++------------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++-----------------------+
+| Active Recorder Terms |
++------------+----------+
+|   Index    | Name     |
++------------+----------+
++------------+----------+
+
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 6)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         5 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 4 groups.
++---------------------------------------------------------------------+
+| Active Observation Terms in Group: 'wrist_rgb' (shape: (6, 48, 64)) |
++----------------+----------------+-----------------------------------+
+|     Index      | Name           |               Shape               |
++----------------+----------------+-----------------------------------+
+|       0        | image          |            (6, 48, 64)            |
++----------------+----------------+-----------------------------------+
++--------------------------------------------------------------------+
+| Active Observation Terms in Group: 'proprioception' (shape: (24,)) |
++--------------+--------------------------------------+--------------+
+|    Index     | Name                                 |    Shape     |
++--------------+--------------------------------------+--------------+
+|      0       | joint_pos                            |     (6,)     |
+|      1       | joint_vel                            |     (6,)     |
+|      2       | joint_target                         |     (6,)     |
+|      3       | previous_action                      |     (6,)     |
++--------------+--------------------------------------+--------------+
++-------------------------------------------------------------------+
+| Active Observation Terms in Group: 'teacher_state' (shape: (54,)) |
++---------------------+---------------------+-----------------------+
+|        Index        | Name                |         Shape         |
++---------------------+---------------------+-----------------------+
+|          0          | state               |         (54,)         |
++---------------------+---------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (54,)) |
++-------------------+-------------------+--------------------+
+|       Index       | Name              |       Shape        |
++-------------------+-------------------+--------------------+
+|         0         | state             |       (54,)        |
++-------------------+-------------------+--------------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 5 active terms.
++--------------------------------------+
+|       Active Termination Terms       |
++-------+-------------------+----------+
+| Index | Name              | Time Out |
++-------+-------------------+----------+
+|   0   | success           |  False   |
+|   1   | box_dropped       |  False   |
+|   2   | box_out_of_bounds |  False   |
+|   3   | unstable_robot    |  False   |
+|   4   | time_out          |   True   |
++-------+-------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 10 active terms.
++----------------------------------+
+|       Active Reward Terms        |
++-------+----------------+---------+
+| Index | Name           |  Weight |
++-------+----------------+---------+
+|   0   | approach       |     1.0 |
+|   1   | transport      |     2.0 |
+|   2   | table_pressure |    -2.0 |
+|   3   | release        |    10.0 |
+|   4   | milestones     |    10.0 |
+|   5   | success        |   200.0 |
+|   6   | lost           |   -50.0 |
+|   7   | action_rate    |  -0.002 |
+|   8   | joint_velocity | -0.0002 |
+|   9   | joint_limits   |    -1.0 |
++-------+----------------+---------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++-------------------------+
+| Active Curriculum Terms |
++-------------+-----------+
+|    Index    | Name      |
++-------------+-----------+
++-------------+-----------+
+
+[INFO]: Completed setting up the environment...
+[3/3] Loading policy
+/usr/lib/python3.12/copyreg.py:99: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+[INFO]: Loading model checkpoint from: /mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1400.pt
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 student :  ['wrist_rgb', 'proprioception']
+	 teacher :  ['teacher_state']
+--------------------------------------------------------------------------------
+Student Model: CNNModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (distribution): GaussianDistribution()
+  (mlp): MLP(
+    (0): Linear(in_features=792, out_features=256, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=256, out_features=128, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=128, out_features=6, bias=True)
+  )
+  (cnns): ModuleDict(
+    (wrist_rgb): CNN(
+      (0): Conv2d(6, 16, kernel_size=(5, 5), stride=(2, 2))
+      (1): ELU(alpha=1.0)
+      (2): Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2))
+      (3): ELU(alpha=1.0)
+      (4): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2))
+      (5): ELU(alpha=1.0)
+      (6): Flatten(start_dim=1, end_dim=-1)
+    )
+  )
+)
+Teacher Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (distribution): GaussianDistribution()
+  (mlp): MLP(
+    (0): Linear(in_features=54, out_features=256, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=256, out_features=256, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=128, out_features=6, bias=True)
+  )
+)
+[INFO] Policy playback is running, press Ctrl+C to exit...
+CUDA graph took: Last: 0.549119 s, Mean: 0.549119 s, Std: 0.000000 s, N: 1
+SO101_BOX_EVAL_RESULT={"dropped_rate": 0.0, "episodes": 256, "grasped_rate": 0.8515625, "lifted_rate": 0.4140625, "on_target_rate": 0.59765625, "out_of_bounds_rate": 0.0, "placed_rate": 0.40625, "released_rate": 0.5625, "success_rate": 0.40234375, "timed_out_rate": 0.59765625, "unstable_robot_rate": 0.0, "upright_rate": 0.55859375, "withdrawn_rate": 0.48046875}

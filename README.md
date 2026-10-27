@@ -9,12 +9,23 @@ checkpoint roles, remaining validation and next action. Operational guides in
 `docs/` are maintained; completed run reports/plans remain in Git history and
 their raw evidence remains in `logs/`.
 
+Current summary: [completed work and next action](docs/SUMMARY_NEXT_ACTION.md).
+Camera2200 is the common experimental baseline (256-start screens:89.45%
+nominal,31.25% wide). The opt-in data-first trainer is implemented and verified;
+the user-run controlled experiment is next. Direct commands are in
+[CAMERA_DATA_FIRST.md](docs/CAMERA_DATA_FIRST.md).
+
 The complete saved model archive, run configs and evaluation evidence are
 included under `logs/`. Model binaries use **Git LFS**. See
 [MODEL_INDEX.md](MODEL_INDEX.md) for checkpoint roles, validation status and
 SHA256 inventory. The latest wider-workspace refinement is `model_5381.pt`;
-its independent acceptance evaluation is still pending. The archived camera
+its independent grid/random acceptance failed; nominal and regression checks passed. The archived camera
 student covers the earlier nominal task, not the expanded workspace.
+The user accepted teacher5381 at its observed96.37% grid /98.62% random rates
+for camera distillation. The new workspace camera student completed1,600
+iterations; independent success was15.17% grid,20.22% random,70.05% nominal
+and3/3 on historical case527. See the
+[camera evaluation report](logs/camera_1599_evaluation_20261027_132245/REPORT.md).
 
 ```bash
 git clone https://github.com/blueocvn/issaclab_robotics.git

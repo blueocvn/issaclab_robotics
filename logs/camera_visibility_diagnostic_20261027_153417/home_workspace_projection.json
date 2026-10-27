@@ -1,0 +1,42 @@
+{
+  "method": "Planar home-pose homography fit to8 verified simulator projections; upright box center at fixed height. Geometric center visibility only, no occlusion estimate.",
+  "fit_max_pixel_error": 2.501469717941518e-05,
+  "plane_z": 0.08049999922513962,
+  "home_projection_homography": [
+    [
+      231.75855238176175,
+      -258.65775044447645,
+      -2.2605263396829374
+    ],
+    [
+      -150.79332429621846,
+      -241.60641415973893,
+      68.32512909037071
+    ],
+    [
+      2.3550605238137163,
+      -2.388578020157497,
+      1.0
+    ]
+  ],
+  "samples": 100000,
+  "full_workspace_local_xy_bounds": [
+    [
+      0.07,
+      0.27
+    ],
+    [
+      -0.2,
+      0
+    ]
+  ],
+  "policy_center_inside_fraction": 0.72386,
+  "raw_center_inside_fraction": 0.87895,
+  "policy_exclusions_by_border": {
+    "left": 0.0,
+    "right": 0.0,
+    "top": 0.0,
+    "bottom": 0.27614
+  },
+  "limitations": "Analytic initial-view coverage estimate, not an episode-success evaluation or edge-case trajectory review. It does not measure object occlusion or full-box visibility."
+}

@@ -18,3 +18,17 @@ class BoxPPORunnerCfg(SO101StatePPORunnerCfg):
 class BoxDistillationRunnerCfg(SO101CameraDistillationRunnerCfg):
     experiment_name = "so101_box_camera_distillation"
     max_iterations = 1600
+
+
+@configclass
+class BoxDataFirstDistillationRunnerCfg(BoxDistillationRunnerCfg):
+    """Explicit experimental entry point; the normal box/vial agents stay unchanged."""
+
+    seed = 43
+    experiment_name = "so101_box_camera_data_first"
+    max_iterations = 200
+    init_at_random_ep_len = False
+
+    def __post_init__(self):
+        self.algorithm.class_name = "isaaclab_tutorial.tasks.place_box.distillation:DataFirstDistillation"
+        self.algorithm.learning_rate = 1.0e-4

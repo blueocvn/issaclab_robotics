@@ -1,0 +1,46 @@
+{
+  "first": {
+    "path": "logs/rsl_rl/so101_box_camera_data_first/2026-10-27_17-30-00_data-first-smoke-a/model_2201.pt",
+    "relative_updates": 2,
+    "optimizer_steps": [
+      77440.0
+    ],
+    "replay_sizes": [
+      512,
+      0,
+      0,
+      0
+    ],
+    "normalizer_counts": {
+      "obs_normalizer.count": {
+        "baseline": 9023488.0,
+        "smoke": 9024000.0
+      }
+    },
+    "frozen_teacher_equal": true,
+    "student_finite": true,
+    "sha256": "8e633d4d246d0d6abbfc3355af1ef511fde92caf2f3ccd672b10b8a36dcb50df"
+  },
+  "resumed": {
+    "path": "logs/rsl_rl/so101_box_camera_data_first/2026-10-27_17-30-01_data-first-smoke-b/model_2202.pt",
+    "relative_updates": 4,
+    "optimizer_steps": [
+      77696.0
+    ],
+    "replay_sizes": [
+      1024,
+      0,
+      0,
+      0
+    ],
+    "normalizer_counts": {
+      "obs_normalizer.count": {
+        "baseline": 9023488.0,
+        "smoke": 9024512.0
+      }
+    },
+    "frozen_teacher_equal": true,
+    "student_finite": true,
+    "sha256": "028d94ae4dfcdb54666115b92c859d2349735fe53ef310d18d21de3d810df4d1"
+  }
+}

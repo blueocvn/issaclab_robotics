@@ -1,0 +1,16 @@
+{
+  "run": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381",
+  "checkpoint": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1599.pt",
+  "checkpoint_sha256": "4982ebd41b447b50909090d707d04ca008b85a3180674693333963d94620b8b5",
+  "embedded_teacher_matches_5381": true,
+  "student_finite": true,
+  "all_logged_scalars_finite": true,
+  "iterations": 1600,
+  "loss_first50": 0.11869704768061638,
+  "loss_last50": 0.07940909713506698,
+  "metrics_last50": {
+    "Episode_Reward/success": 0.10576389776542783,
+    "Episode_Termination/success": 0.5395166015625,
+    "Metrics/success_rate": 0.0008056640625
+  }
+}

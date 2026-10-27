@@ -1,0 +1,26 @@
+{
+  "Loss/behavior": {
+    "events": 800,
+    "first_step": 1798,
+    "last_step": 2597,
+    "minimum": 0.09417635202407837,
+    "last100_mean": 0.12259716287255287,
+    "all_finite": true
+  },
+  "Episode_Termination/success": {
+    "events": 800,
+    "first_step": 1798,
+    "last_step": 2597,
+    "minimum": 0.0,
+    "last100_mean": 0.507294921875,
+    "all_finite": true
+  },
+  "Episode_Termination/time_out": {
+    "events": 800,
+    "first_step": 1798,
+    "last_step": 2597,
+    "minimum": 0.022705078125,
+    "last100_mean": 0.49490234375,
+    "all_finite": true
+  }
+}

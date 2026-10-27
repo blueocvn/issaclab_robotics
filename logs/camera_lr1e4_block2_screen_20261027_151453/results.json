@@ -1,0 +1,336 @@
+{
+  "1900": {
+    "checkpoint": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2/model_1900.pt",
+    "sha256": "cad1781de91c7c15503bf508ae41a02c4866476e25bb6b47ddafb39e2f1bab1d",
+    "teacher_matches_5381": true,
+    "populations": {
+      "nominal": {
+        "returncode": 2,
+        "summary": {
+          "population": "nominal",
+          "policy": "camera",
+          "episodes": 256,
+          "successes": 17,
+          "success_rate": 0.06640625,
+          "success_wilson_95": [
+            0.04187072285916844,
+            0.10376215263514196
+          ],
+          "required_success_rate": 0.995,
+          "seed_groups": [
+            42
+          ],
+          "stage_counts": {
+            "grasped": 256,
+            "lifted": 28,
+            "placed": 27,
+            "success": 17,
+            "timed_out": 239,
+            "dropped": 0,
+            "out_of_bounds": 0,
+            "unstable_robot": 0
+          },
+          "coverage_sufficient": false,
+          "status": "insufficient_coverage",
+          "completed_jobs": 1,
+          "planned_jobs": 1
+        },
+        "max_initial_pose_component_delta": 0.0
+      },
+      "wide": {
+        "returncode": 2,
+        "summary": {
+          "population": "stage",
+          "policy": "camera",
+          "episodes": 256,
+          "successes": 27,
+          "success_rate": 0.10546875,
+          "success_wilson_95": [
+            0.07350191137657121,
+            0.14910097533446798
+          ],
+          "required_success_rate": 0.95,
+          "seed_groups": [
+            45
+          ],
+          "stage_counts": {
+            "grasped": 149,
+            "lifted": 49,
+            "placed": 39,
+            "success": 27,
+            "timed_out": 229,
+            "dropped": 0,
+            "out_of_bounds": 0,
+            "unstable_robot": 0
+          },
+          "spatial_counts": [
+            [
+              11,
+              10,
+              8,
+              11,
+              6
+            ],
+            [
+              8,
+              9,
+              16,
+              10,
+              16
+            ],
+            [
+              6,
+              15,
+              7,
+              13,
+              11
+            ],
+            [
+              16,
+              13,
+              9,
+              11,
+              12
+            ],
+            [
+              7,
+              11,
+              6,
+              7,
+              7
+            ]
+          ],
+          "spatial_successes": [
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              0,
+              2,
+              1
+            ],
+            [
+              4,
+              3,
+              1,
+              2,
+              1
+            ],
+            [
+              0,
+              2,
+              1,
+              2,
+              1
+            ]
+          ],
+          "yaw_counts": [
+            36,
+            32,
+            26,
+            38,
+            36,
+            26,
+            34,
+            28
+          ],
+          "yaw_successes": [
+            4,
+            3,
+            2,
+            4,
+            6,
+            4,
+            2,
+            2
+          ],
+          "coverage_sufficient": true,
+          "status": "fail",
+          "completed_jobs": 1,
+          "planned_jobs": 1
+        },
+        "max_initial_pose_component_delta": 0.0
+      }
+    }
+  },
+  "1997": {
+    "checkpoint": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2/model_1997.pt",
+    "sha256": "2c6a994c99093947d2acd1998aa5b9748a364017ef5f13dd4e0dec35eccaea87",
+    "teacher_matches_5381": true,
+    "populations": {
+      "nominal": {
+        "returncode": 2,
+        "summary": {
+          "population": "nominal",
+          "policy": "camera",
+          "episodes": 256,
+          "successes": 164,
+          "success_rate": 0.640625,
+          "success_wilson_95": [
+            0.5801685439877934,
+            0.6969234963924303
+          ],
+          "required_success_rate": 0.995,
+          "seed_groups": [
+            42
+          ],
+          "stage_counts": {
+            "grasped": 256,
+            "lifted": 169,
+            "placed": 164,
+            "success": 164,
+            "timed_out": 92,
+            "dropped": 0,
+            "out_of_bounds": 0,
+            "unstable_robot": 0
+          },
+          "coverage_sufficient": false,
+          "status": "insufficient_coverage",
+          "completed_jobs": 1,
+          "planned_jobs": 1
+        },
+        "max_initial_pose_component_delta": 0.0
+      },
+      "wide": {
+        "returncode": 2,
+        "summary": {
+          "population": "stage",
+          "policy": "camera",
+          "episodes": 256,
+          "successes": 14,
+          "success_rate": 0.0546875,
+          "success_wilson_95": [
+            0.03285229140400938,
+            0.08968958072528235
+          ],
+          "required_success_rate": 0.95,
+          "seed_groups": [
+            45
+          ],
+          "stage_counts": {
+            "grasped": 129,
+            "lifted": 33,
+            "placed": 15,
+            "success": 14,
+            "timed_out": 242,
+            "dropped": 0,
+            "out_of_bounds": 0,
+            "unstable_robot": 0
+          },
+          "spatial_counts": [
+            [
+              11,
+              10,
+              8,
+              11,
+              6
+            ],
+            [
+              8,
+              9,
+              16,
+              10,
+              16
+            ],
+            [
+              6,
+              15,
+              7,
+              13,
+              11
+            ],
+            [
+              16,
+              13,
+              9,
+              11,
+              12
+            ],
+            [
+              7,
+              11,
+              6,
+              7,
+              7
+            ]
+          ],
+          "spatial_successes": [
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "yaw_counts": [
+            36,
+            32,
+            26,
+            38,
+            36,
+            26,
+            34,
+            28
+          ],
+          "yaw_successes": [
+            2,
+            1,
+            3,
+            5,
+            2,
+            1,
+            0,
+            0
+          ],
+          "coverage_sufficient": true,
+          "status": "fail",
+          "completed_jobs": 1,
+          "planned_jobs": 1
+        },
+        "max_initial_pose_component_delta": 0.0
+      }
+    }
+  }
+}
