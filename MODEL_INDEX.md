@@ -22,6 +22,7 @@ or an exported policy. [publication_manifest.json](publication_manifest.json)
 records the source snapshot and copied-file hashes.
 
 For the current training workflow, see
+[HANDOFF.md](docs/HANDOFF.md) and
 [BOX_WORKSPACE_TRAINING.md](docs/BOX_WORKSPACE_TRAINING.md). The latest completed
 refinement is not yet approved for camera distillation or real-robot deployment.
 No expanded-workspace camera distillation has been completed. The camera

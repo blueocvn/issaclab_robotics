@@ -1,4 +1,9 @@
-# SO-101 sim-to-real
+# SO-101 vial task sim-to-real reference
+
+For the current box project, start with [HANDOFF.md](HANDOFF.md) and
+[BOX_WORKSPACE_TRAINING.md](BOX_WORKSPACE_TRAINING.md). The guide below applies
+to the original **vial/rack** task. Its task IDs, scene layout, action scales
+and physical setup are not a ready-to-use box deployment configuration.
 
 How to train a camera policy for the real WowRobo SO-101 follower and run it on the robot. The deployed
 policy sees only wrist RGB and joint feedback, never the vial or rack state.

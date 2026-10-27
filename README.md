@@ -4,6 +4,11 @@ This repository contains the SO-101 box-to-A4-paper task and the original vial
 placement tutorial, with state PPO teachers, wrist-camera distillation,
 workspace evaluation, sim-to-real preparation and trained checkpoints.
 
+**Start here:** [docs/HANDOFF.md](docs/HANDOFF.md) records the current state,
+checkpoint roles, remaining validation and next action. Operational guides in
+`docs/` are maintained; completed run reports/plans remain in Git history and
+their raw evidence remains in `logs/`.
+
 The complete saved model archive, run configs and evaluation evidence are
 included under `logs/`. Model binaries use **Git LFS**. See
 [MODEL_INDEX.md](MODEL_INDEX.md) for checkpoint roles, validation status and

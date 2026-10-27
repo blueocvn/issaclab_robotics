@@ -3,7 +3,7 @@
   "source_repository": "https://github.com/isaac-sim/IsaacLabTutorial.git",
   "source_base_commit": "7efef771fa0bfbcb9683193ff100ce9f015fb17e",
   "destination_repository": "https://github.com/blueocvn/issaclab_robotics",
-  "note": "Working-tree snapshot including uncommitted code and explicit training archive; existing destination history retained.",
+  "note": "Current tracked snapshot inventory after documentation consolidation; model and raw evidence archive unchanged. The two root manifests are excluded from files to avoid circular hashing.",
   "files": [
     {
       "path": ".gitattributes",
@@ -21,11 +21,6 @@
       "sha256": "734aaeca809a8e63800a7fef07c2cfc442e8bd2fc721ed47f8279dd18a93518d"
     },
     {
-      "path": "HANDOFF_BOX_RELEASE_V3.md",
-      "bytes": 13145,
-      "sha256": "88e97a6bf06c736578f773038255fcf3eda37e23a1e18ee155a7c881f2374cb5"
-    },
-    {
       "path": "Image.jpg",
       "bytes": 4220015,
       "sha256": "6c5846ee1d123fc4801b56d4ff816cd15bbba57bcacd7651c95dcaf2d86b5b0b"
@@ -37,13 +32,13 @@
     },
     {
       "path": "MODEL_INDEX.md",
-      "bytes": 3007,
-      "sha256": "25fab1acb78c4b128e313534591a165d3a702d597165f01471d788f2ca17f358"
+      "bytes": 3041,
+      "sha256": "64220e989f837b62bbb0b9ee352844e25216ef75a4f9ad8903c299e3ef41eaa7"
     },
     {
       "path": "README.md",
-      "bytes": 7981,
-      "sha256": "c4175b9c469eb80732e8bd4b0ebb2fa55e183791efcf1b0c5bd22197dd994ddc"
+      "bytes": 8255,
+      "sha256": "c37a86f185474b80995264e93934adbd74ab7f7ae4e83070eaef9ba57850c1de"
     },
     {
       "path": "config/so101_joint_map.example.json",
@@ -57,78 +52,28 @@
     },
     {
       "path": "docs/BOX_PICK_PLACE.md",
-      "bytes": 16193,
-      "sha256": "165d798b664fec075848f306a9c6e46baf0c3539030215baaa6ef65d3b7907ec"
-    },
-    {
-      "path": "docs/BOX_TASK_PROGRESS.md",
-      "bytes": 12014,
-      "sha256": "6490cf1f949241a6b73246f57aefd05e8e7352827f75a769e0e0729fff869dd6"
+      "bytes": 4695,
+      "sha256": "bc0867fd9be0de73c30f68b606fae1ebfebc2a8bc6fb36db01fa8a221d2757aa"
     },
     {
       "path": "docs/BOX_WORKSPACE_TRAINING.md",
-      "bytes": 11946,
-      "sha256": "e136c460c91918f02413afa2e57ba4aafa7cc1e99df0a2390c9f80ff3e728b4e"
+      "bytes": 6855,
+      "sha256": "1d2c94a19ef70abac60f7406e557b0a72a0f67680ac5b1e48cd5c6101e2e9827"
     },
     {
-      "path": "docs/CAMERA_DISTILLATION_RESULTS.md",
-      "bytes": 3253,
-      "sha256": "993f5dcfca79d9b3313eb9c755bf29c031e4eec0ec37edf215ae7037320addf7"
+      "path": "docs/HANDOFF.md",
+      "bytes": 8558,
+      "sha256": "0f3d476ceb5fd68a14a8907c8b3651c2a9e62295f75f9a2d01b13bd16045d2e4"
     },
     {
       "path": "docs/LOCAL_PC_SETUP.md",
-      "bytes": 6628,
-      "sha256": "f2d51007eb02c1c843f53fb21f3b00696b2851b94602bf7d9dda2858c5c87d51"
-    },
-    {
-      "path": "docs/OVERNIGHT_WORKSPACE_RESULTS.md",
-      "bytes": 5538,
-      "sha256": "b8f38442507a523b85d9a5d99a831e661b0ea8b780b736739b22a037aa53d972"
-    },
-    {
-      "path": "docs/RELEASE_V3_FAILURE_527.md",
-      "bytes": 3878,
-      "sha256": "d33b6857dcf5068b458123c4f086ea5350ca29878f6508c5c1c28982c6b7269c"
-    },
-    {
-      "path": "docs/RELEASE_V3_REFINEMENT_RESULTS.md",
-      "bytes": 5053,
-      "sha256": "5beb2f1a2f3e569d4000279d4b36c0a8faa0114e090ebf381ad828c34b3147b3"
-    },
-    {
-      "path": "docs/RELEASE_V3_RESULTS.md",
-      "bytes": 5672,
-      "sha256": "5601e024cfa033600b5c53156d3340c9adecbb12c24aa755d0f77277c0918c68"
-    },
-    {
-      "path": "docs/RELEASE_V3_REVIEW.md",
-      "bytes": 4364,
-      "sha256": "9e51d8a4c55a2f8202b5cd9006dfdadfbab16f9aec6ed4fdb86294542ef6075b"
+      "bytes": 3007,
+      "sha256": "f4ee904ac7bfe9ed03fded2a6b800d1df52610f90f4c54b25be4928a583b3edf"
     },
     {
       "path": "docs/SIM2REAL.md",
-      "bytes": 13277,
-      "sha256": "b0756a12997c91fe31729357f9212416b71ddab172f875a1e07a837d22038605"
-    },
-    {
-      "path": "docs/WORKSPACE_F_REFINEMENT_PROGRESS.md",
-      "bytes": 2315,
-      "sha256": "77aa6a6057cd7d3c1dc7495a7dd5d9928d25bfb57a5d99182af71fc8b778db92"
-    },
-    {
-      "path": "docs/WORKSPACE_SCREENING_RESULTS.md",
-      "bytes": 3758,
-      "sha256": "5fa163805de35abd251bde48abfb3d80271e1d9e500793563e9f26478a3f900b"
-    },
-    {
-      "path": "docs/superpowers/plans/2026-10-26-box-workspace.md",
-      "bytes": 10871,
-      "sha256": "2378da4eada90ff4c758067ca23e7c515962e7284da3f9f2c6f92e90f63184f3"
-    },
-    {
-      "path": "docs/superpowers/specs/2026-10-26-box-workspace-design.md",
-      "bytes": 8460,
-      "sha256": "47c0000ff49366474158e869b76de223e857b7162cbb7210f526f2e6d380acbb"
+      "bytes": 13597,
+      "sha256": "4f463730798edc336c60d935daa3045c7e81ccf93f5e09c2f09b9fe0f6ba6e82"
     },
     {
       "path": "logs/analyze_box_workspace.py",
@@ -321,6 +266,11 @@
       "sha256": "3d0e5b990d7edaa434265ff079f31cacdb720a6ecd81dab2c65bbffea1d9a248"
     },
     {
+      "path": "logs/box_playback_frames.log",
+      "bytes": 6687,
+      "sha256": "709253e830868866fd82c08bc5aa7ddeba88389d8d1a64cc9ed6a2b33a956340"
+    },
+    {
       "path": "logs/box_playback_frames/step_0001.png",
       "bytes": 73510,
       "sha256": "d71f31e491b9626871c34ea6a7339c3e230c87590e99c34a977b5f58dbb20deb"
@@ -334,11 +284,6 @@
       "path": "logs/box_playback_frames/step_0301.png",
       "bytes": 61284,
       "sha256": "8e7f1c2fa0f2e7f21fd59c190e6c672b966d42ce74ece58325d17bdcbd2109e7"
-    },
-    {
-      "path": "logs/box_playback_frames.log",
-      "bytes": 6687,
-      "sha256": "709253e830868866fd82c08bc5aa7ddeba88389d8d1a64cc9ed6a2b33a956340"
     },
     {
       "path": "logs/box_playback_terminal_check.json",
@@ -3830,5 +3775,7 @@
       "bytes": 231034,
       "sha256": "091f66e3efceaf389f52f85b16f4ed549747493bc70c695f9ac872b8c7c5da00"
     }
-  ]
+  ],
+  "updated_at": "2026-10-27T04:12:45.779196+00:00",
+  "previous_publication_commit": "f90cdf87e519c21c02fd107e9ac0443c9d74e588"
 }
