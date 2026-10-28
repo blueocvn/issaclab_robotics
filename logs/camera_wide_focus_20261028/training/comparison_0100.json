@@ -1,0 +1,47 @@
+{
+  "method": "offline-baseline-action-preservation",
+  "optimizer_updates": 100,
+  "populations": {
+    "nominal": {
+      "episodes": 256,
+      "baseline_successes": 229,
+      "candidate_successes": 161,
+      "candidate_only_successes": 6,
+      "baseline_only_successes": 74,
+      "both_successes": 155,
+      "both_failures": 21,
+      "gain_pp": -26.5625,
+      "gain_paired_bootstrap_95_pp": [
+        -32.421875,
+        -20.703125
+      ]
+    },
+    "wide": {
+      "episodes": 256,
+      "baseline_successes": 80,
+      "candidate_successes": 79,
+      "candidate_only_successes": 18,
+      "baseline_only_successes": 19,
+      "both_successes": 61,
+      "both_failures": 158,
+      "gain_pp": -0.390625,
+      "gain_paired_bootstrap_95_pp": [
+        -5.078125,
+        4.296875
+      ]
+    }
+  },
+  "checkpoint_sha256": {
+    "nominal": {
+      "baseline": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+      "candidate": "1c116c3056d762b5b9a0b17fc2ff9a3514af2e3bb9affde884c2638f84530108"
+    },
+    "wide": {
+      "baseline": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+      "candidate": "1c116c3056d762b5b9a0b17fc2ff9a3514af2e3bb9affde884c2638f84530108"
+    }
+  },
+  "paired_protocols_and_poses_verified": true,
+  "selected": "baseline2200",
+  "decision": "Stop: Nominal loss exceeds3pp and Wide does not improve. No continuation or1024-start confirmation."
+}

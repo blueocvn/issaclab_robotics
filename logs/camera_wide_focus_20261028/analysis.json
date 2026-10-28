@@ -1,0 +1,447 @@
+{
+  "limitations": [
+    "256-start selection screens, not final acceptance.",
+    "Historical home-plane center projection; not actual rollout visibility or occlusion.",
+    "Bins are descriptive, small and confounded; no causal conclusion.",
+    "Audit poses stay evaluation-only; training collection must use fresh seeds."
+  ],
+  "sources": {
+    "wide": {
+      "path": "logs/camera_800_gate_20261027_170933/2200_stage.json",
+      "sha256": "fa7ec49ed9054d903ae0eb53f0b84e230cc71039f18dcb7c2cc81ff1db82f514",
+      "reset_parameters": {
+        "position_noise": 0.1,
+        "yaw_noise": 3.141592653589793,
+        "nominal_fraction": 0.0,
+        "reset_mode": "random",
+        "sampling_seed": 45,
+        "grid_start_index": 0,
+        "replay_path": ""
+      }
+    },
+    "nominal": {
+      "path": "logs/camera_800_gate_20261027_170933/2200_nominal.json",
+      "sha256": "77e44e58dcaef483d3ec53a8bc3bb04ef68ff18c4602251922fee584113294b9",
+      "reset_parameters": {
+        "position_noise": 0.01,
+        "yaw_noise": 0.1,
+        "nominal_fraction": 0.0,
+        "reset_mode": "random",
+        "sampling_seed": 42,
+        "grid_start_index": 0,
+        "replay_path": ""
+      }
+    }
+  },
+  "wide": {
+    "overall": {
+      "n": 256,
+      "counts": {
+        "success": 80,
+        "no_grasp": 88,
+        "grasp_no_lift": 79,
+        "lift_no_success": 9
+      },
+      "success_rate": 0.3125
+    },
+    "by_home_projection": {
+      "True": {
+        "n": 187,
+        "counts": {
+          "success": 71,
+          "no_grasp": 46,
+          "grasp_no_lift": 61,
+          "lift_no_success": 9
+        },
+        "success_rate": 0.37967914438502676
+      },
+      "False": {
+        "n": 69,
+        "counts": {
+          "success": 9,
+          "no_grasp": 42,
+          "grasp_no_lift": 18
+        },
+        "success_rate": 0.13043478260869565
+      }
+    },
+    "by_absolute_yaw": {
+      "0-45": {
+        "n": 74,
+        "counts": {
+          "success": 27,
+          "no_grasp": 28,
+          "grasp_no_lift": 16,
+          "lift_no_success": 3
+        },
+        "success_rate": 0.36486486486486486
+      },
+      "45-90": {
+        "n": 52,
+        "counts": {
+          "success": 11,
+          "grasp_no_lift": 22,
+          "no_grasp": 17,
+          "lift_no_success": 2
+        },
+        "success_rate": 0.21153846153846154
+      },
+      "90-135": {
+        "n": 66,
+        "counts": {
+          "success": 20,
+          "no_grasp": 20,
+          "grasp_no_lift": 23,
+          "lift_no_success": 3
+        },
+        "success_rate": 0.30303030303030304
+      },
+      "135-180": {
+        "n": 64,
+        "counts": {
+          "success": 22,
+          "grasp_no_lift": 18,
+          "no_grasp": 23,
+          "lift_no_success": 1
+        },
+        "success_rate": 0.34375
+      }
+    },
+    "xy_cells": [
+      {
+        "x_range": [
+          0.07,
+          0.12000000000000001
+        ],
+        "y_range": [
+          -0.2,
+          -0.15000000000000002
+        ],
+        "n": 18,
+        "counts": {
+          "no_grasp": 13,
+          "grasp_no_lift": 5
+        },
+        "success_rate": 0.0
+      },
+      {
+        "x_range": [
+          0.12000000000000001,
+          0.17
+        ],
+        "y_range": [
+          -0.2,
+          -0.15000000000000002
+        ],
+        "n": 18,
+        "counts": {
+          "success": 2,
+          "grasp_no_lift": 9,
+          "no_grasp": 7
+        },
+        "success_rate": 0.1111111111111111
+      },
+      {
+        "x_range": [
+          0.17,
+          0.22000000000000003
+        ],
+        "y_range": [
+          -0.2,
+          -0.15000000000000002
+        ],
+        "n": 17,
+        "counts": {
+          "success": 1,
+          "grasp_no_lift": 12,
+          "no_grasp": 4
+        },
+        "success_rate": 0.058823529411764705
+      },
+      {
+        "x_range": [
+          0.22000000000000003,
+          0.27
+        ],
+        "y_range": [
+          -0.2,
+          -0.15000000000000002
+        ],
+        "n": 8,
+        "counts": {
+          "success": 1,
+          "grasp_no_lift": 3,
+          "no_grasp": 4
+        },
+        "success_rate": 0.125
+      },
+      {
+        "x_range": [
+          0.07,
+          0.12000000000000001
+        ],
+        "y_range": [
+          -0.15000000000000002,
+          -0.1
+        ],
+        "n": 10,
+        "counts": {
+          "success": 3,
+          "no_grasp": 5,
+          "grasp_no_lift": 2
+        },
+        "success_rate": 0.3
+      },
+      {
+        "x_range": [
+          0.12000000000000001,
+          0.17
+        ],
+        "y_range": [
+          -0.15000000000000002,
+          -0.1
+        ],
+        "n": 19,
+        "counts": {
+          "success": 8,
+          "no_grasp": 7,
+          "grasp_no_lift": 3,
+          "lift_no_success": 1
+        },
+        "success_rate": 0.42105263157894735
+      },
+      {
+        "x_range": [
+          0.17,
+          0.22000000000000003
+        ],
+        "y_range": [
+          -0.15000000000000002,
+          -0.1
+        ],
+        "n": 18,
+        "counts": {
+          "success": 5,
+          "grasp_no_lift": 5,
+          "no_grasp": 6,
+          "lift_no_success": 2
+        },
+        "success_rate": 0.2777777777777778
+      },
+      {
+        "x_range": [
+          0.22000000000000003,
+          0.27
+        ],
+        "y_range": [
+          -0.15000000000000002,
+          -0.1
+        ],
+        "n": 28,
+        "counts": {
+          "success": 7,
+          "no_grasp": 13,
+          "lift_no_success": 2,
+          "grasp_no_lift": 6
+        },
+        "success_rate": 0.25
+      },
+      {
+        "x_range": [
+          0.07,
+          0.12000000000000001
+        ],
+        "y_range": [
+          -0.1,
+          -0.04999999999999999
+        ],
+        "n": 24,
+        "counts": {
+          "success": 4,
+          "no_grasp": 13,
+          "lift_no_success": 1,
+          "grasp_no_lift": 6
+        },
+        "success_rate": 0.16666666666666666
+      },
+      {
+        "x_range": [
+          0.12000000000000001,
+          0.17
+        ],
+        "y_range": [
+          -0.1,
+          -0.04999999999999999
+        ],
+        "n": 12,
+        "counts": {
+          "success": 7,
+          "grasp_no_lift": 3,
+          "no_grasp": 2
+        },
+        "success_rate": 0.5833333333333334
+      },
+      {
+        "x_range": [
+          0.17,
+          0.22000000000000003
+        ],
+        "y_range": [
+          -0.1,
+          -0.04999999999999999
+        ],
+        "n": 17,
+        "counts": {
+          "success": 9,
+          "no_grasp": 1,
+          "lift_no_success": 1,
+          "grasp_no_lift": 6
+        },
+        "success_rate": 0.5294117647058824
+      },
+      {
+        "x_range": [
+          0.22000000000000003,
+          0.27
+        ],
+        "y_range": [
+          -0.1,
+          -0.04999999999999999
+        ],
+        "n": 15,
+        "counts": {
+          "success": 5,
+          "grasp_no_lift": 4,
+          "lift_no_success": 1,
+          "no_grasp": 5
+        },
+        "success_rate": 0.3333333333333333
+      },
+      {
+        "x_range": [
+          0.07,
+          0.12000000000000001
+        ],
+        "y_range": [
+          -0.04999999999999999,
+          0.0
+        ],
+        "n": 15,
+        "counts": {
+          "success": 9,
+          "grasp_no_lift": 3,
+          "no_grasp": 3
+        },
+        "success_rate": 0.6
+      },
+      {
+        "x_range": [
+          0.12000000000000001,
+          0.17
+        ],
+        "y_range": [
+          -0.04999999999999999,
+          0.0
+        ],
+        "n": 11,
+        "counts": {
+          "success": 9,
+          "grasp_no_lift": 2
+        },
+        "success_rate": 0.8181818181818182
+      },
+      {
+        "x_range": [
+          0.17,
+          0.22000000000000003
+        ],
+        "y_range": [
+          -0.04999999999999999,
+          0.0
+        ],
+        "n": 14,
+        "counts": {
+          "success": 8,
+          "grasp_no_lift": 4,
+          "no_grasp": 1,
+          "lift_no_success": 1
+        },
+        "success_rate": 0.5714285714285714
+      },
+      {
+        "x_range": [
+          0.22000000000000003,
+          0.27
+        ],
+        "y_range": [
+          -0.04999999999999999,
+          0.0
+        ],
+        "n": 12,
+        "counts": {
+          "success": 2,
+          "no_grasp": 4,
+          "grasp_no_lift": 6
+        },
+        "success_rate": 0.16666666666666666
+      }
+    ]
+  },
+  "nominal": {
+    "overall": {
+      "n": 256,
+      "counts": {
+        "success": 229,
+        "grasp_no_lift": 26,
+        "lift_no_success": 1
+      },
+      "success_rate": 0.89453125
+    },
+    "by_home_projection": {
+      "True": {
+        "n": 256,
+        "counts": {
+          "success": 229,
+          "grasp_no_lift": 26,
+          "lift_no_success": 1
+        },
+        "success_rate": 0.89453125
+      },
+      "False": {
+        "n": 0,
+        "counts": {},
+        "success_rate": null
+      }
+    },
+    "by_absolute_yaw": {
+      "0-45": {
+        "n": 256,
+        "counts": {
+          "success": 229,
+          "grasp_no_lift": 26,
+          "lift_no_success": 1
+        },
+        "success_rate": 0.89453125
+      },
+      "45-90": {
+        "n": 0,
+        "counts": {},
+        "success_rate": null
+      },
+      "90-135": {
+        "n": 0,
+        "counts": {},
+        "success_rate": null
+      },
+      "135-180": {
+        "n": 0,
+        "counts": {},
+        "success_rate": null
+      }
+    }
+  },
+  "projection_source": {
+    "path": "logs/camera_visibility_diagnostic_20261027_153417/home_workspace_projection.json",
+    "sha256": "8e08fce26283b9dd38ce6ca0d78028eac580781d510d0ca5663bc27e6c23d83c"
+  }
+}

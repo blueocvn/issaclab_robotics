@@ -1,0 +1,426 @@
+--- git commit ---
+ad30e62e53e779ab2eb61d0cf59c4ffd23bf6c66
+
+
+--- git status ---
+On branch camera-data-first
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   docs/CAMERA_DATA_FIRST.md
+	modified:   docs/HANDOFF.md
+	modified:   docs/SUMMARY_NEXT_ACTION.md
+	modified:   logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx
+	modified:   logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx.data
+	modified:   logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.pt
+	modified:   src/isaaclab_tutorial/tasks/place_box/__init__.py
+	modified:   src/isaaclab_tutorial/tasks/place_box/agents.py
+	modified:   src/isaaclab_tutorial/tasks/place_box/distillation.py
+	modified:   src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	docs/CAMERA_PROTECTED_REFERENCE.md
+	docs/plans/2026-10-28-camera-ppo.md
+	docs/plans/2026-10-28-final-clean-preservation.md
+	docs/plans/2026-10-28-protected-reference.md
+	docs/plans/2026-10-28-wide-preservation.md
+	src/isaaclab_tutorial/tasks/place_box/camera_ppo.py
+	src/isaaclab_tutorial/tasks/place_box/reference_collection.py
+	src/isaaclab_tutorial/tasks/place_box/reference_replay.py
+	tests/test_box_camera_ppo.py
+	tests/test_box_reference_replay.py
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/docs/CAMERA_DATA_FIRST.md b/docs/CAMERA_DATA_FIRST.md
+index 9a071d1..4832952 100644
+--- a/docs/CAMERA_DATA_FIRST.md
++++ b/docs/CAMERA_DATA_FIRST.md
+@@ -1,5 +1,10 @@
+ # Camera data-first experiment
+ 
++Completed on2026-10-28: both arms ran400 updates, but all +200/+400 endpoints
++failed nominal eligibility. Retain2200; no1024-start confirmation or automatic
++extension was run. [Results and verification](../logs/camera_controlled_20261028_111754/REPORT.md).
++Commands below document the completed protocol; do not rerun it automatically.
++
+ The completed800-update run was screened first. Checkpoint2200 was strongest:
+ 229/256 nominal (89.45%) and80/256 wide (31.25%), compared with1798 at225/256
+ (87.89%) and57/256 (22.27%). Its wide gain was8.98 percentage points, below
+diff --git a/docs/HANDOFF.md b/docs/HANDOFF.md
+index 2068a0a..940952d 100644
+--- a/docs/HANDOFF.md
++++ b/docs/HANDOFF.md
+@@ -1,5 +1,97 @@
+ # SO-101 box task handoff
+ 
++## Final attempt completed — 2026-10-28
++
++User authorized one final change. Changed only preservation collection to clean
++observations at the same seed63 poses; unchanged teacher data, objective, LR,
++sampling and100-step budget. Candidate:Nominal167/256 (65.23%),Wide81/256 (31.64%)
++versus recorded2200 at229/256 and80/256. Nominal loses24.22pp; Wide gains only
++one episode (paired95% interval -5.08 to+5.86pp). It fails selection.
++Retain2200 and stop. No further training attempts, continuation or1024-start
++confirmation. All observation corruption flags false, collection poses identical,
++improvement hashes unchanged, teacher/normalizer frozen, Adam77184->77284;
++paired screen protocols/poses/checkpoint hashes validated. Clean preservation
++alone was insufficient. No training is queued.
++[Final report](../logs/camera_wide_focus_20261028/final_clean/REPORT.md).
++
++## Offline Wide preservation screen — 2026-10-28
++
++Expanded preservation collection completed:75 successful Nominal+24 successful
++Wide episodes;63+15 used for training,12+9 held out. Offline100-step experiment
++from2200+Adam, LR1e-5, teacher and normalizer frozen:Nominal161/256 (62.89%),
++Wide79/256 (30.86%), versus recorded2200 at229/256 and80/256. Stop and retain2200;
++no200/300-step continuation or1024-start confirmation. All gradients finite,
++Adam77184->77284, standard student-only playback loads the checkpoint.
++An additional gap was found:standalone collection keeps observation corruption
++enabled, while playback audits disable it. Thus preservation checks cover
++augmented inputs without directly protecting the clean audit distribution.
++This may contribute; it is not a proven explanation of the full regression.
++Next experiment requires explicit clean-input preservation coverage alongside
++augmented coverage before training. No training is queued.
++[Results and evidence](../logs/camera_wide_focus_20261028/training/REPORT.md).
++
++## Wide failure map and fresh collection — 2026-10-28
++
++Completed2200 failure mapping and matched48-start baseline/teacher collection.
++Wide audit:88 never grasp,79 grasp without lift,9 fail after lift,80 successes.
++Lowest-Y strip succeeds4/61; estimated out-of-crop centers9/69 versus in-crop71/187.
++The projection is geometric, not measured visibility or a causal explanation.
++Fresh seed61 collection:32 Wide+16 Nominal, biased to weak regions, separate
++from audit poses. Baseline succeeds6/32 Wide and5/16 Nominal; teacher32/32 and16/16.
++These small collection scores do not replace256-start selection screens.
++Both action sources are retained on student and teacher trajectories;11 successful
++baseline episodes provide pilot preservation targets. Broader preservation
++coverage is needed before a bounded training experiment. No optimizer updates;
++2200 remains selected. Matched starts, finite/bounded samples and hashes verified.
++[Report](../logs/camera_wide_focus_20261028/REPORT.md).
++
++## Action-drift diagnostic — 2026-10-28
++
++Read-only baseline-trajectory comparisons and a matched32-start nominal
++wrist-flex substitution completed. Successes:baseline19,candidate18,hybrid17.
++No wrist-only fix supported. Teacher-labelled fixed references do not directly
++constrain prior successful2200 actions. Next proposed experiment is preservation
++of baseline action targets on its successful nominal/wide trajectories, with
++teacher improvement data separate. No new training ran;2200 remains selected.
++[Evidence](../logs/camera_reference_20261028/ACTION_DRIFT.md).
++
++## Latest screen — 2026-10-28
++
++Protected-reference50-update block completed:181/256 nominal,20/256 wide,
++versus2200 at229/256 and80/256. Retain2200; no training extension or1024-start
++confirmation. Fixed references stayed identical and their fitting error fell in
++every phase/population, but task behavior regressed. Next diagnostic is action
++drift on fixed baseline-generated trajectories before planning more training.
++[Screen evidence](../logs/camera_reference_20261028/screen50/REPORT.md).
++
++## Protected reference implementation — 2026-10-28
++
++`rsl_rl_anchored_cfg_entry_point` now adds64/32/32 fresh/rolling/fixed-reference
++training. References come from32 successful nominal and32 successful wide teacher
++episodes, cover all phases and are embedded in checkpoints. Independent review's
++missing-external-file resume defect was reproduced and fixed.214 tests passed,
++2 optional skips; changed-file Ruff clean.8-env two-update initialization plus
++two-update resume verified immutable examples, frozen teacher, fresh normalization
++and restored private RNGs. Long training has not run for this method;2200 remains
++selected. See [protected reference guide](CAMERA_PROTECTED_REFERENCE.md).
++
++## Latest outcome — 2026-10-28
++
++The user authorized autonomous completion of the controlled experiment.
++Both arms finished400 updates; every +200/+400 endpoint failed the nominal
++eligibility gate. Retain2200. Final screens: control45/256 nominal,29/256 wide;
++data-first4/256 nominal,11/256 wide. Baseline229/256 nominal,80/256 wide.
++Checkpoint state and exact matched-pose/protocol comparisons were verified.
++No eligible endpoint remained for1024-start confirmation; no training extension
++was launched. Diagnose regression before another training experiment.
++[Report and evidence](../logs/camera_controlled_20261028_111754/REPORT.md).
++Read-only diagnosis found predominantly grasp-to-lift failures, complete turnover
++of earlier phase replay, and measured forgetting on fixed earlier samples.
++Normalization drift is small; a complete task-level cause or fix is not established.
++[Diagnostic findings](../logs/camera_controlled_20261028_111754/DIAGNOSIS.md).
++Older user-launch instructions below describe the previous execution split;
++the user's latest authorization allowed these runs without further approval.
++
+ Updated **2026-10-27, Asia/Saigon**. This is the current continuation document.
+ Concise summary and immediate next action:
+ [SUMMARY_NEXT_ACTION.md](SUMMARY_NEXT_ACTION.md).
+diff --git a/docs/SUMMARY_NEXT_ACTION.md b/docs/SUMMARY_NEXT_ACTION.md
+index c85c4b7..13056e1 100644
+--- a/docs/SUMMARY_NEXT_ACTION.md
++++ b/docs/SUMMARY_NEXT_ACTION.md
+@@ -1,5 +1,104 @@
+ # Work summary and next action
+ 
++## Final attempt completed — 2026-10-28
++
++User authorized one final change. Changed only preservation collection to clean
++observations at the same seed63 poses; unchanged teacher data, objective, LR,
++sampling and100-step budget. Candidate:Nominal167/256 (65.23%),Wide81/256 (31.64%)
++versus recorded2200 at229/256 and80/256. Nominal loses24.22pp; Wide gains only
++one episode (paired95% interval -5.08 to+5.86pp). It fails selection.
++Retain2200 and stop. No further training attempts, continuation or1024-start
++confirmation. All observation corruption flags false, collection poses identical,
++improvement hashes unchanged, teacher/normalizer frozen, Adam77184->77284;
++paired screen protocols/poses/checkpoint hashes validated. Clean preservation
++alone was insufficient. No training is queued.
++[Final report](../logs/camera_wide_focus_20261028/final_clean/REPORT.md).
++
++## Offline Wide preservation screen — 2026-10-28
++
++Expanded preservation collection completed:75 successful Nominal+24 successful
++Wide episodes;63+15 used for training,12+9 held out. Offline100-step experiment
++from2200+Adam, LR1e-5, teacher and normalizer frozen:Nominal161/256 (62.89%),
++Wide79/256 (30.86%), versus recorded2200 at229/256 and80/256. Stop and retain2200;
++no200/300-step continuation or1024-start confirmation. All gradients finite,
++Adam77184->77284, standard student-only playback loads the checkpoint.
++An additional gap was found:standalone collection keeps observation corruption
++enabled, while playback audits disable it. Thus preservation checks cover
++augmented inputs without directly protecting the clean audit distribution.
++This may contribute; it is not a proven explanation of the full regression.
++Next experiment requires explicit clean-input preservation coverage alongside
++augmented coverage before training. No training is queued.
++[Results and evidence](../logs/camera_wide_focus_20261028/training/REPORT.md).
++
++## Wide failure map and fresh collection — 2026-10-28
++
++Completed2200 failure mapping and matched48-start baseline/teacher collection.
++Wide audit:88 never grasp,79 grasp without lift,9 fail after lift,80 successes.
++Lowest-Y strip succeeds4/61; estimated out-of-crop centers9/69 versus in-crop71/187.
++The projection is geometric, not measured visibility or a causal explanation.
++Fresh seed61 collection:32 Wide+16 Nominal, biased to weak regions, separate
++from audit poses. Baseline succeeds6/32 Wide and5/16 Nominal; teacher32/32 and16/16.
++These small collection scores do not replace256-start selection screens.
++Both action sources are retained on student and teacher trajectories;11 successful
++baseline episodes provide pilot preservation targets. Broader preservation
++coverage is needed before a bounded training experiment. No optimizer updates;
++2200 remains selected. Matched starts, finite/bounded samples and hashes verified.
++[Report](../logs/camera_wide_focus_20261028/REPORT.md).
++
++## Action-drift diagnostic — 2026-10-28
++
++Completed paired predictions on baseline-generated nominal/wide trajectories.
++Anchored50 has higher teacher error during grasp-to-lift on successful baseline
++nominal episodes, despite fitting its own teacher reference bank. A focused
++wrist-only substitution failed to improve a matched32-start cohort:baseline19,
++anchored18,hybrid17 successes. No single-joint remedy is established.
++Next experiment should explicitly preserve2200's actions on its successful
++trajectories, alongside separately labelled teacher improvement data. It is a
++proposal, not implemented or trained. Retain2200; no training queued.
++[Action-drift evidence](../logs/camera_reference_20261028/ACTION_DRIFT.md).
++
++## Latest screen — 2026-10-28
++
++The protected-reference50-update experiment completed and failed:181/256
++nominal(70.70%),20/256 wide(7.81%) versus2200 at229/256 and80/256.
++Stop; retain2200. No continuation or1024-start confirmation was run.
++Protected examples remained exactly unchanged and reference fitting improved in
++every phase/population, so this mechanism alone did not preserve task behavior.
++The next diagnostic is action drift on fixed baseline-generated trajectories,
++not extending training. [Full report](../logs/camera_reference_20261028/screen50/REPORT.md).
++
++## Protected reference implementation — 2026-10-28
++
++The opt-in anchored trainer is implemented:64 fresh/32 rolling/32 protected
++examples, with fixed successful teacher references balanced by phase and
++nominal/wide population. Collected32 successful teacher episodes per population.
++Tests:214 passed,2 optional skips; changed-file Ruff passed. GPU initialization
++and resume verified unchanged reference tensors, frozen teacher, correct sampling,
++optimizer steps and fresh-only normalization, including resume with a missing
++original bank path. These are mechanics checks, not demonstrated accuracy gains.
++Camera2200 remains selected. The subsequent training test was a bounded50-update screen
++from2200, documented in [CAMERA_PROTECTED_REFERENCE.md](CAMERA_PROTECTED_REFERENCE.md);
++its results are recorded above. [Smoke evidence](../logs/camera_reference_20261028/smoke/verification.json).
++
++## Current outcome — 2026-10-28
++
++Both controlled arms completed400 updates. Retain camera2200: no screened
++endpoint was nominal-eligible. Control +400 scored45/256 nominal and29/256
++wide; data-first +400 scored4/256 nominal and11/256 wide, versus baseline
++229/256 and80/256. The +200 endpoints also failed the nominal gate.
++All screens passed paired provenance/pose validation. No eligible candidate
++remained for1024-start confirmation; it was not run. No extension is queued.
++Initial diagnosis locates the collapse mainly between grasp and lift. Data-first
++replaced every older replay row and more than doubled error on fixed earlier
++examples, while fitting newer replay. Normalizer drift is small and swapping
++baseline statistics barely changes offline errors. These findings support
++forgetting but do not establish the full task-level cause. Next diagnostic:
++compare per-joint errors on fixed reference grasp-to-lift trajectories before
++further training. [Diagnosis](../logs/camera_controlled_20261028_111754/DIAGNOSIS.md).
++Full evidence: [experiment report](../logs/camera_controlled_20261028_111754/REPORT.md).
++
++The snapshot below records the preparation before this completed experiment.
++
+ Updated 2026-10-27. This snapshot includes the implementation, saved training
+ checkpoints, run configurations and evaluation evidence. The work is on local
+ branch `camera-data-first`.
+@@ -64,7 +163,7 @@ accuracy threshold.
+ - The documented Bash commands passed syntax checks; both real agent configs
+   resolved to matching experiment settings.
+ 
+-## Next action
++## Previous next action (completed through selection screens)
+ 
+ **Run the controlled experiment yourself, starting with the first200-update
+ block for each arm.** Use the setup and direct commands in
+diff --git a/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx b/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx
+index 82ecb6f..3488193 100644
+Binary files a/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx and b/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx differ
+diff --git a/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx.data b/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx.data
+index 9aba8b9..e5de54c 100644
+Binary files a/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx.data and b/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.onnx.data differ
+diff --git a/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.pt b/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.pt
+index 0bbecf3..bc232e6 100644
+Binary files a/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.pt and b/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/exported/policy.pt differ
+diff --git a/src/isaaclab_tutorial/tasks/place_box/__init__.py b/src/isaaclab_tutorial/tasks/place_box/__init__.py
+index 2a4ede2..1cfad77 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/__init__.py
++++ b/src/isaaclab_tutorial/tasks/place_box/__init__.py
+@@ -15,7 +15,11 @@ for _suffix, _environment, _agent in (
+             "env_cfg_entry_point": f"{_PACKAGE}.env_cfg:{_environment}",
+             "rsl_rl_cfg_entry_point": f"{_PACKAGE}.agents:{_agent}",
+             **(
+-                {"rsl_rl_data_first_cfg_entry_point": f"{_PACKAGE}.agents:BoxDataFirstDistillationRunnerCfg"}
++                {
++                    "rsl_rl_data_first_cfg_entry_point": f"{_PACKAGE}.agents:BoxDataFirstDistillationRunnerCfg",
++                    "rsl_rl_camera_ppo_cfg_entry_point": f"{_PACKAGE}.agents:BoxCameraPPORunnerCfg",
++                    "rsl_rl_anchored_cfg_entry_point": f"{_PACKAGE}.agents:BoxAnchoredDistillationRunnerCfg",
++                }
+                 if _suffix == "-Camera"
+                 else {}
+             ),
+diff --git a/src/isaaclab_tutorial/tasks/place_box/agents.py b/src/isaaclab_tutorial/tasks/place_box/agents.py
+index 805d278..dcab5cb 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/agents.py
++++ b/src/isaaclab_tutorial/tasks/place_box/agents.py
+@@ -5,7 +5,10 @@ from isaaclab.utils import configclass
+ from isaaclab_tutorial.tasks.place_vial.config.so101.agents.rsl_rl_distillation_cfg import (
+     SO101CameraDistillationRunnerCfg,
+ )
+-from isaaclab_tutorial.tasks.place_vial.config.so101.agents.rsl_rl_ppo_cfg import SO101StatePPORunnerCfg
++from isaaclab_tutorial.tasks.place_vial.config.so101.agents.rsl_rl_ppo_cfg import (
++    SO101CameraPPORunnerCfg,
++    SO101StatePPORunnerCfg,
++)
+ 
+ 
+ @configclass
+@@ -32,3 +35,36 @@ class BoxDataFirstDistillationRunnerCfg(BoxDistillationRunnerCfg):
+     def __post_init__(self):
+         self.algorithm.class_name = "isaaclab_tutorial.tasks.place_box.distillation:DataFirstDistillation"
+         self.algorithm.learning_rate = 1.0e-4
++
++
++@configclass
++class BoxAnchoredDistillationRunnerCfg(BoxDataFirstDistillationRunnerCfg):
++    """Protected-reference experiment, separate from the original data-first arm."""
++
++    experiment_name = "so101_box_camera_anchored"
++
++    def __post_init__(self):
++        super().__post_init__()
++        self.algorithm.class_name = "isaaclab_tutorial.tasks.place_box.reference_replay:AnchoredDistillation"
++        self.algorithm.reference_path = None
++
++
++@configclass
++class BoxCameraPPORunnerCfg(SO101CameraPPORunnerCfg):
++    """Conservative reward-based fine-tuning of the camera2200 actor."""
++
++    seed = 67
++    experiment_name = "so101_box_camera_ppo"
++    max_iterations = 50
++    save_interval = 25
++    init_at_random_ep_len = False
++
++    def __post_init__(self):
++        self.algorithm.learning_rate = 1e-5
++        self.algorithm.schedule = "fixed"
++        self.algorithm.clip_param = 0.1
++        self.algorithm.entropy_coef = 0.0
++        self.algorithm.num_learning_epochs = 4
++        self.algorithm.num_mini_batches = 4
++        self.actor.distribution_cfg.init_std = 0.05
++        self.actor.distribution_cfg.std_range = (0.01, 0.15)
+diff --git a/src/isaaclab_tutorial/tasks/place_box/distillation.py b/src/isaaclab_tutorial/tasks/place_box/distillation.py
+index 5f0f8ec..cb1b9ff 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/distillation.py
++++ b/src/isaaclab_tutorial/tasks/place_box/distillation.py
+@@ -191,8 +191,8 @@ class DataFirstDistillation(Distillation):
+         losses, fresh_losses, replay_losses = [], [], []
+         replay_counts = torch.zeros(4, dtype=torch.long)
+         for _ in range(self.num_learning_epochs * self.storage.num_transitions_per_env):
+-            replay = self.replay.sample(64, self.device)
+-            fresh_count = 64 if replay is not None else 128
++            replay = self.sample_retained()
++            fresh_count = 128 - len(replay[1]) if replay is not None else 128
+             indices = torch.randint(len(fresh), (fresh_count,), generator=self.fresh_rng).to(self.device)
+             batch = TensorDict({key: fresh[key][indices] for key in STUDENT_KEYS}, [fresh_count], device=self.device)
+             target = labels[indices]
+@@ -240,6 +240,10 @@ class DataFirstDistillation(Distillation):
+         self._reset_metrics()
+         return metrics
+ 
++    def sample_retained(self):
++        """Sample earlier rollouts; subclasses may add protected references."""
++        return self.replay.sample(64, self.device)
++
+     def train_mode(self):
+         super().train_mode()
+         self.collecting = True
+diff --git a/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py b/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
+index e1618b6..3bad969 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
++++ b/src/isaaclab_tutorial/tasks/place_box/workspace_audit.py
+@@ -32,7 +32,7 @@ def finalize_report(result, completed, planned):
+     return result
+ 
+ 
+-def build_jobs(checkpoint, policy, population, stage, seeds, batch_size, episodes=1024, grid_repeats=5):
++def build_jobs(checkpoint, policy, population, stage, seeds, batch_size, episodes=1024, grid_repeats=5, agent=None):
+     """Return reproducible play commands; indices remain global across batches."""
+     if (
+         batch_size <= 0
+@@ -85,6 +85,8 @@ def build_jobs(checkpoint, policy, population, stage, seeds, batch_size, episode
+                 grid_start_index=start,
+             )
+             command.extend(f"env.events.reset_home.params.{key}={value}" for key, value in overrides.items())
++            if agent:
++                command.extend(["--agent", agent])
+             jobs.append(
+                 dict(
+                     seed_group=group,
+@@ -131,6 +133,7 @@ def read_result(path, job):
+ def main(argv=None):
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--checkpoint", type=Path, required=True)
++    parser.add_argument("--agent", help="Optional explicit RSL-RL agent entry point")
+     parser.add_argument("--policy", choices=("teacher", "camera"), required=True)
+     parser.add_argument("--population", choices=("grid", "random", "stage", "nominal", "regression"), required=True)
+     parser.add_argument("--stage", choices=STAGES, default="F")
+@@ -162,6 +165,7 @@ def main(argv=None):
+             args.batch_size,
+             args.episodes,
+             args.grid_repeats,
++            agent=args.agent,
+         )
+     except ValueError as error:
+         parser.error(str(error))
+@@ -224,7 +228,9 @@ def main(argv=None):
+             if not enough:
+                 group = seeds[(index + 1) % len(seeds)]
+                 batch = 1 + max(j["batch"] for j in jobs if j["seed_group"] == group)
+-                extra = build_jobs(args.checkpoint, args.policy, "random", args.stage, [group], 256, episodes=256)[0]
++                extra = build_jobs(
++                    args.checkpoint, args.policy, "random", args.stage, [group], 256, episodes=256, agent=args.agent
++                )[0]
+                 seed = reserve_seed(group, batch, {j["sampling_seed"] for j in jobs})
+                 extra.update(batch=batch, sampling_seed=seed, start_index=batch * 256)
+                 command = extra["command"]

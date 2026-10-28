@@ -1,0 +1,45 @@
+{
+  "baseline": {
+    "sha256": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+    "optimizer_steps": [
+      77184
+    ]
+  },
+  "control_200": {
+    "path": "logs/rsl_rl/so101_box_camera_distillation/20261028_111754_control_b1/model_2399.pt",
+    "iter": 2399,
+    "teacher_exact": true,
+    "student_finite": true,
+    "optimizer_steps": [
+      102784
+    ],
+    "learning_rates": [
+      0.0001
+    ]
+  },
+  "control_400": {
+    "path": "logs/rsl_rl/so101_box_camera_distillation/20261028_111754_control_b2/model_2598.pt",
+    "iter": 2598,
+    "teacher_exact": true,
+    "student_finite": true,
+    "optimizer_steps": [
+      128384
+    ],
+    "learning_rates": [
+      0.0001
+    ]
+  },
+  "data_200": {
+    "path": "logs/rsl_rl/so101_box_camera_data_first/20261028_111754_data_b1/model_2399.pt",
+    "iter": 2399,
+    "teacher_exact": true,
+    "student_finite": true,
+    "optimizer_steps": [
+      102784
+    ],
+    "learning_rates": [
+      0.0001
+    ],
+    "relative_updates": 200
+  }
+}

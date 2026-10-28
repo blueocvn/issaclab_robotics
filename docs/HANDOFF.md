@@ -1,425 +1,72 @@
 # SO-101 box task handoff
 
-Updated **2026-10-27, Asia/Saigon**. This is the current continuation document.
-Concise summary and immediate next action:
-[SUMMARY_NEXT_ACTION.md](SUMMARY_NEXT_ACTION.md).
-Completed plans and superseded run reports were consolidated here. Their raw
-evidence remains under `logs/`; previous documents remain in Git history.
-
-## Current state: data-first trainer implemented; controlled training is user-launched
-
-The completed800-update seed43 run was screened against1798 on matched256
-nominal/wide starts. Best eligible checkpoint2200 scored229/256 nominal
-(89.45%) and80/256 wide (31.25%); fresh1798 scored225/256 (87.89%) and57/256
-(22.27%). The8.98-point wide gain missed the agreed10-point gate. Other tested
-checkpoints2000/2400/2597 failed the nominal gate. No1024 confirmation triggered.
-[Gate evidence](../logs/camera_800_gate_20261027_170933/REPORT.md).
-
-Common experimental baseline is now2200 from
-`2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43`.
-The opt-in `rsl_rl_data_first_cfg_entry_point` adds episode-level teacher
-collection and persistent phase-balanced replay while preserving the default
-box/vial agents and inference format. Current crop A and physical criteria
-remain unchanged. Training loss near0.12 is not a task accuracy threshold.
-
-Direct commands, schedule, checkpoint numbering, screens and final paired
-comparison: [CAMERA_DATA_FIRST.md](CAMERA_DATA_FIRST.md).
-The400-update-per-arm experiment has not been launched; the user will run it.
-Verification complete:203 tests passed,2 optional-dependency skips; changed-file
-lint passed. The8-env GPU smoke verified save/resume, full-horizon collection
-across all four replay phases and standard student-only playback compatibility.
-An independent review found one comparison identity issue; regression tests
-reproduced it and the fix now rejects mixed-checkpoint nominal/wide audits.
-[GPU evidence](../logs/camera_data_first_smoke_20261027/REPORT.md) and
-[execution ledger](plans/2026-10-27-camera-data-first-progress.md).
-The user requested committing all completed work, including raw results and
-checkpoints. This snapshot is saved locally on branch `camera-data-first`;
-inspect `git log -1` for its commit. No push or merge is part of this request.
-
-## Previous state: framing A/B complete; kept1798 with current crop
-
-The frozen-policy A/B test did not improve performance:
-
-|256-start cohort | A=current crop | B=full-frame resize |
-| --- | --- | --- |
-| Nominal seed42 | 229/256 (89.45%) | 58/256 (22.66%) |
-| Wide seed45 | 63/256 (24.61%) | 33/256 (12.89%) |
-
-Initial poses and reset provenance matched exactly; command lines differed only
-in focal_scale_range. Checkpoint1798 SHA256 stayed unchanged. No training or
-repository-default change occurred. Keep current crop A for1798. B is not a
-drop-in improvement for this frozen policy; adaptation/training on B was not
-tested, so its eventual trained performance remains unknown. Fresh A differs
-from earlier cached231/256 nominal and54/256 wide; use the fresh paired reference
-for this comparison and keep the small-screen limitation explicit.
-Report:
-[framing A/B](../logs/camera_framing_ab_20261027_155759/REPORT.md).
-
-Next useful training change: investigate teacher-assisted successful-phase
-collection and retention of teacher-labelled examples, keeping1798/A as baseline.
-An alternative is an explicit adaptation experiment on B with an equally trained
-A control. Neither experiment has been implemented or launched.
-
-The user requested improvement after approving this next step. Compare A=current
-64x48 center crop (`focal_scale_range=[1.0,1.0]`) against B=full80x60 render resized
-to64x48 (`[0.8,0.8]`). Both use frozen1798 and identical256-start nominal (seed42)
-and wide (seed45) cohorts, in fresh play processes. No training, repository-default
-change or checkpoint write was part of this test.
-Existing sampler math was verified against exact cropping and bilinear full-frame
-resizing: maximum absolute error0.00000221. Paired input previews and plan:
-`logs/camera_framing_ab_20261027_155759/`. All four task-success screens completed.
-
-## Completed camera/data diagnostic
-
-Retain camera1798; no new training or policy/source changes were made during
-the diagnostic. Report and figure:
-[visibility/coverage diagnostic](../logs/camera_visibility_diagnostic_20261027_153417/REPORT.md).
-
-Validated ordinary paired rollouts (8 episodes each): teacher8/8 and student6/8
-on nominal starts; teacher8/8 and student4/8 on interior starts (configured
-plus/minus6cm XY and90deg yaw; actual sample extent5.94cm and52.9deg).
-Teacher/student initial poses matched exactly. These small rollouts are diagnostic
-examples, not replacement acceptance results.
-
-Two actionable findings:
-
-- Camera framing: a verified home-pose planar projection estimates72.4% of full
-  workspace initial box centers inside the64x48 policy crop, versus87.9% in the
-  raw80x60 render. About27.6% fall below the policy crop. This is geometric center
-  coverage, not occlusion, full-object visibility or episode success. The rendered
-  inputs are valid; teacher-rollout box centers stayed in view, but the box is
-  heavily cropped. This limitation cannot explain all failures by itself.
-- Phase visitation: on corrected interior rollouts the student spent5.6% of
-  control steps after lifting (including placement), versus30.0% for the teacher.
-  The installed trainer only labels student-visited states, trains its latest32
-  steps for4 epochs and resets the buffer; no persistent cross-rollout replay or
-  teacher-controlled demonstration collection is configured. Coverage/forgetting
-  is a supported hypothesis, not a confirmed cause of historical regressions.
-
-Next proposed experiments: validate camera framing against the intended real
-camera calibration, then separately test teacher-assisted collection with retained,
-phase-balanced examples. Keep5381/1798 as frozen teacher/current baseline and
-preserve physical success criteria. Change one mechanism at a time.
-
-Diagnostic provenance: only top-level nominal profiles and `interior_corrected/`
-are valid. The first top-level interior profiles accidentally reused cached nominal
-event-manager parameters; they were excluded and rerun with configuration fixed
-before scene creation plus actual-pose assertions. Selected1798 SHA256 is unchanged.
-
-## Completed400-update experiment
-
-All matched256-start screens completed:
-
-| Checkpoint | Nominal | Wide workspace |
-| --- | --- | --- |
-| 1599 original | 171/256 (66.80%) | 54/256 (21.09%) |
-| 1700 block1 midpoint | 0/256 | 23/256 (8.98%) |
-| **1798 block1 final** | **231/256 (90.23%)** | **54/256 (21.09%)** |
-| 1900 block2 midpoint | 17/256 (6.64%) | 27/256 (10.55%) |
-| 1997 block2 final | 164/256 (64.06%) | 14/256 (5.47%) |
-
-Retain1798. Neither new block2 checkpoint improved it. Exact initial-pose matches
-and checkpoint hashes were verified across all candidates. Both200-update blocks
-completed; no wider-workspace improvement was demonstrated, despite a stronger
-best saved nominal result. Do not select1997 merely because it is latest.
-Final report:
-[completed experiment](../logs/camera_lr1e4_block2_screen_20261027_151453/REPORT.md).
-The ordinary wrist-camera visibility/data-coverage diagnostic above is complete.
-The cause of the large performance swings remains unresolved; edge-case trajectory
-inspection remains deferred.
-
-After the block1 screen, the user said "keep going". The remaining200 updates
-were launched from1798 in this session and completed, preserving optimizer state
-and learning rate0.0001. Run:
-`2026-10-27_15-10-21_so101-box-workspace-camera-1798-lr1e-4-block2`.
-Console evidence: `logs/camera_1798_lr1e4_block2_training_20261027.log`.
-All200 iterations (1798 through1997) were recorded; all logged scalars finite.
-Optimizer steps correctly resumed from25,600 to51,200 at0.0001. The planned400
-additional updates across both blocks are complete. Checkpoints1900 and1997
-were screened against1798 on the same256-start nominal/wide cohorts:
-`logs/camera_lr1e4_block2_screen_20261027_151453/`.
-
-The matched256-start checkpoint screens completed:
-
-| Checkpoint | Nominal | Wide workspace |
-| --- | --- | --- |
-| 1599 baseline | 171/256 (66.80%) | 54/256 (21.09%) |
-| 1700 midpoint | 0/256 | 23/256 (8.98%) |
-| 1798 final | 231/256 (90.23%) | 54/256 (21.09%) |
-
-Select1798: wide successes tied1599 and nominal improved by60/256. All initial
-poses match exactly. This is a selection screen, not acceptance; no wide-workspace
-improvement has been demonstrated. The transient midpoint regression remains
-unexplained; teacher weights matched5381 and normalization history was retained.
-Full report and direct command:
-[block1 screen](../logs/camera_lr1e4_block1_screen_20261027_142121/REPORT.md).
-The next block used1798 at0.0001, **preserving its optimizer state**
-(`--resume_optimizer_state`). The optimizer had already been reset for block1.
-Physics, camera, teacher and reset mixture stayed unchanged. Block2 completed
-under the user's explicit continuation request; the current step is checkpoint
-screening and selection; those are now complete.1798 remains selected.
-
-The checkpoint screen selected1599: it tied1400 at54/256 wide successes and
-had171/256 nominal successes versus1400's103/256. The user then launched and
-completed the first200-update continuation at learning rate0.0001:
-
-```text
-logs/rsl_rl/so101_box_camera_distillation/2026-10-27_14-16-20_so101-box-workspace-camera-1599-lr1e-4-block1/model_1798.pt
-```
-
-The run logged exactly200 iterations (1599 through1798), all scalars finite.
-The fresh optimizer was verified: original204,800 steps, first saved checkpoint
-256 steps, final25,600 steps; saved learning rate0.0001. Midpoint1700 and final1798
-were compared with the cached1599 baseline on identical256-start nominal
-and256-start wide screens. Evidence:
-`logs/camera_lr1e4_block1_screen_20261027_142121/`.
-Do not launch the remaining200 updates automatically; provide the direct command
-from the report. Preserve1599 as the original comparison baseline.
-
-The user approved screening camera checkpoints1200/1300/1400/1599, then
-continuing the strongest student for400 updates at learning rate0.0001 with a
-fresh optimizer. Teacher5381, cameras, physics and reset distribution stay fixed.
-The screen uses256 identical nominal starts (seed42) and256 identical wide starts
-(seed45) per checkpoint; selection prioritizes wide successes, then nominal,
-then latest iteration. This is checkpoint selection, not acceptance. Evidence:
-`logs/camera_checkpoint_screen_20261027_135850/`. That screen completed and
-selected1599. The approved400-update experiment is split into two200-update
-blocks with evaluation between them; the first block is complete.
-
-The user completed 1,600 camera distillation iterations. Final student:
-
-```text
-logs/rsl_rl/so101_box_camera_distillation/2026-10-27_12-56-22_so101-box-workspace-camera-5381/model_1599.pt
-```
-
-All logged scalars and student tensors are finite; the embedded frozen teacher
-matches5381 exactly. Mean behavior loss: first50 iterations0.118697;
-last50 iterations0.079409. Independent evaluation completed with full coverage:
-
-| Population | Camera student | Teacher5381 |
-| --- | --- | --- |
-| Grid | 455/3,000 (15.17%) | 2,891/3,000 (96.37%) |
-| Random | 673/3,328 (20.22%) | 3,282/3,328 (98.62%) |
-| Nominal | 2,152/3,072 (70.05%) | 3,072/3,072 (100%) |
-| Case527 | 3/3 | 3/3 |
-
-All initial poses match the corresponding teacher audit starts exactly. The gap
-includes nominal starts. This student has not reproduced the teacher's task
-performance and was not selected for robot transfer. Full report:
-[camera evaluation](../logs/camera_1599_evaluation_20261027_132245/REPORT.md).
-This workspace camera1599 is distinct from the archived nominal camera1599.
-
-The user explicitly accepted the observed 96.37% grid / 98.62% random results
-as sufficient and requested camera distillation. This decision supersedes the
-previous stricter teacher promotion requirement for this step. The measured
-results and original gates below are retained; the physical success contract
-is unchanged. Use teacher5381 to initialize a fresh camera student.
-
-The 400-update Stage F PPO refinement has **finished**. Latest checkpoint:
-
-```text
-logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt
-```
-
-It resumed teacher 4982 with 512 environments, a fresh optimizer, fixed learning
-rate 0.00005, full workspace resets and a 20% nominal mixture. All recorded
-scalars are finite; loss samples cover iterations 4982–5381. The last 50
-training success estimates averaged 99.14%, including nominal starts and
-stochastic actions. **Independent acceptance has now run and failed.**
-
-Independent results on 2026-10-27:
-
-| Population | Successes | Result |
-| --- | --- | --- |
-| Stage F screen, seeds43/45 | 2,020/2,048 (98.63%) | Fails stricter promotion gates |
-| Grid, groups45/46/47 | 2,891/3,000 (96.37%) | Fail, complete coverage |
-| Random, groups45/46/47 plus predefined supplement | 3,282/3,328 (98.62%) | Fail, complete coverage |
-| Nominal, groups42/43/44 | 3,072/3,072 | Pass |
-| Historical case527 | 3/3 | Pass |
-
-Screen starts match archived4982 starts exactly. Model5381 scored1,008 vs1,009
-on seed43 and1,012 vs1,013 on seed45; these small differences do not establish
-an improvement. Grid cases160 and167 at the far pickup corner each scored0/15.
-The worst grid spatial bin scored62/120 (51.67%); the worst yaw bin322/375
-(85.87%). Grid failures:40 without grasp,24 grasped without lift,45 after lift;
-all109 timed out. Random failures:9 without grasp,24 without lift,13 after lift.
-
-The two approved200-update training blocks and their screens are complete.
-Retain1798; inspect ordinary visual observability/data coverage before planning
-further training. No extra training beyond the approved400 updates was launched.
-Edge-case inspection remains deferred. The completed run
-used128 environments,1,600 iterations, nominal
-physics and the same wider workspace/20% nominal training mixture.
-Keep the physical success contract. Provide direct commands rather than
-creating per-run launch scripts.
-Commands and original audit gates remain in
-[BOX_WORKSPACE_TRAINING.md](BOX_WORKSPACE_TRAINING.md). Full results and provenance:
-[evaluation report](../logs/workspace_5381_acceptance_20261027_122310/REPORT.md).
-
-The random audit exposed a metadata bug: its supplement planned start index256
-but launched index0. The command now propagates the planned index; validation
-was retained. A regression test reproduced the failure before the fix. The
-recovered audit reuses only three validated original batches with recorded hashes
-and reruns the supplement. Original failed-attempt evidence is preserved.
-
-At the latest process check, no training, playback or overnight controller was
-active. The overnight run ended at Stage F's convergence limit. Its helper
-requested Windows shutdown at 03:16 on 2026-10-27.
-
-## User instructions
-
-- Supply commands for further long training; the user will launch them.
-  Short diagnostics/evaluations are allowed within the task.
-- Provide direct commands; do not generate a new `.sh` file for each run.
-- Edge-case inspection remains deferred. The user approved checkpoint screening
-  and a subsequent400-update camera continuation at0.0001; provide its command
-  after selection rather than launching the long training run automatically.
-- The earlier autonomous training/shutdown permission applied to the completed
-  overnight job. Do not revive it or schedule shutdown without a new request.
-- Preserve the original vial tasks, checkpoints and physical success contract.
-- No hardware operation has been authorized. Do not deploy or move the robot.
-- Use **WSL Git** for this private GitHub repository; the user confirmed access.
-
-## Repository and runtime
-
-Repository: [blueocvn/issaclab_robotics](https://github.com/blueocvn/issaclab_robotics),
-private, branch `main`. The publication includes code, 179 training checkpoints,
-exported policies, run configs and evaluation evidence. Model binaries use Git LFS.
-
-| Purpose | Windows | WSL |
-| --- | --- | --- |
-| Git publication checkout | `D:\work\robotics\issaclab_robotics` | `/mnt/d/work/robotics/issaclab_robotics` |
-| Existing runtime with working `.venv` | `D:\work\robotics\IsaacLabTutorial` | `/mnt/d/work/robotics/IsaacLabTutorial` |
-
-These are separate checkouts. **Push from the publication checkout.** The runtime
-checkout retains its original upstream remote/history and uncommitted feature
-files; do not reset it or push to that upstream. Synchronize intended changes
-between checkouts. The publication checkout has no copied virtual environment.
-
-The table above describes the previous PC. The current evaluation ran from
-`E:\issaclab_robotics`, WSL `/mnt/e/issaclab_robotics`, distro `Ubuntu-24.04`,
-on RTX5060 Ti16 GB with driver610.88. Its local Linux `.venv` was installed
-with `uv sync --locked`; box, camera and vial GPU smoke checks passed.
-
-WSL distro: **`Ubuntu`**, Ubuntu 24.04. GPU: RTX 5070, 12 GB. Python 3.12;
-Isaac Lab 3.0.0 at `d061bf35a58273ef0cc8aceae76392166f9b7d15`, Torch 2.11+cu130,
-Newton 1.6.1, Warp 1.17 and RSL-RL 5.5.1. See
-[LOCAL_PC_SETUP.md](LOCAL_PC_SETUP.md).
-
-Latest full verification: **175 tests passed, 2 optional skips** (`cv2`, `leapp`),
-Ruff clean. Model hashes and fresh remote downloads of teacher 5381 and camera
-1599 were verified. This is runtime/code verification, not policy acceptance.
-
-## Task and goal
-
-Pick an upright **13 × 4.5 × 9 cm** box and place it upright inside a fixed A4
-zone. Pinch across the 4.5 cm thickness. Nominal starts vary by ±1 cm XY and
-±0.1 rad yaw. Current goal: **±10 cm XY and full upright yaw**, paper fixed.
-Starting on a side or upside down is outside this task.
-
-World-parallel workcell axes are anchored at robot-base XY=(-0.05, 0). Pickup
-A=(0.22,-0.10), paper B=(0.22,+0.10), tabletop Z=0.035 metres. Requested box-center
-bounds: X=[0.12,0.32], Y=[-0.20,0.00]. Subtract 0.05 m from workcell X for the
-single-environment scene coordinate. These are center bounds, not footprint bounds.
-
-Success requires sustained bilateral grasp, a real 3 cm lift, all projected
-corners at least 5 mm inside the paper, tilt≤10°, actual table support with
-bottom within 3 mm, no jaw contacts, jaw gap>50 mm, pad midpoint>80 mm from
-the box, speeds<0.03 m/s and<0.3 rad/s, held for 15 control steps. Control is
-30 Hz, physics 120 Hz; timeout 30 seconds. Do not relax these requirements.
-
-## Model roles and observed results
-
-Full paths: [MODEL_INDEX.md](../MODEL_INDEX.md). Hashes:
-[checkpoint_manifest.json](../checkpoint_manifest.json).
-
-| Model | Role and evidence |
-| --- | --- |
-| **5381** | User accepted for camera distillation at observed grid96.37% / random98.62%; below original strict gates; nominal and case527 passed |
-| **4982** | Best observed overnight selection score: 1,009/1,024 (98.54%); additional seed45 screen: 1,013/1,024 (98.93%); below full workspace gates |
-| **2196** | Accepted nominal state teacher: 3,072/3,072 across seeds42/43/44; not wider-workspace acceptance |
-| **1599** | Nominal camera student: 2,038/2,048 over two matching-start audits; residual failures; not a wider-workspace student |
-| **Workspace camera1599 (2026-10-27 run)** | Completed1,600 iterations from teacher5381; grid15.17%, random20.22%, nominal70.05%, case5273/3; distinct from nominal camera1599 |
-
-The overnight controller completed 16 blocks of 200 PPO updates and passed A–E.
-Stage F's eight scores on the same 1,024 seed43 starts were
-845, 960, 982, 987, 1002, 1009, 1004, 1006. Model 4982 had 15 timeouts:
-4 no grasp, 3 grasped without lift, 8 incomplete after lift. Its weakest spatial
-bin was 35/42 (83.33%); many failures were near ±180° yaw. The additional seed45
-screen's weakest spatial bin was 33/38 (86.84%).
-
-**The full wider-workspace camera run and its evaluation finished; performance remains below the teacher.** Generic `population=stage`
-status `pass` means ≥95%; Stage F promotion additionally needs ≥99% overall
-and ≥95% in every spatial/yaw bin. A stage-screen pass is not final acceptance.
-
-## Code and known constraints
-
-Package: `src/isaaclab_tutorial/tasks/place_box/`.
-
-- `env_cfg.py`, `env.py`: shared configuration/physics, layout overrides and
-  preservation of pre-reset metric snapshots.
-- `mdp.py`, `geometry.py`, `progress.py`: 54D state, 6D actions, physical
-  rewards/success, footprint geometry and partial-reset-safe history.
-- `workspace.py`: curriculum, nominal mixture, independent reset RNG,
-  controlled 200-case grid and saved-pose replay.
-- `evaluation.py`: exact first episode per environment; starts and provenance
-  captured before automatic reset.
-- `workspace_audit.py`, `workspace_report.py`: separate grid/random/nominal/
-  regression populations, hash/provenance checks and coverage gates.
-- `workspace_pipeline.py`, root `run_workspace_overnight.ps1`: optional bounded
-  automation and Windows power control; currently inactive, not the next workflow.
-- `check.py`, `inspect_policy.py`: feasibility/camera/trajectory diagnostics.
-  Scripted or assisted release is not learned-policy success evidence.
-
-Do not add `--deterministic`: playback actions already are deterministic; that
-flag changes physics and triggers a known collision-buffer issue on this pin.
-Use matching task/presets for training, evaluation and export. Do not select
-smoke checkpoints as trained policies.
-
-## Remaining camera and transfer work
-
-Teacher5381 is now accepted by the user for wider-workspace camera distillation.
-The first nominal-physics camera student completed training/evaluation but remains
-below the teacher (including nominal starts). The user approved saved-checkpoint
-screening and a lower-rate continuation; edge-case inspection remains deferred. Before real
-robot transfer, adapt/evaluate sim-to-real physics and use matching teacher/student
-presets. The archived nominal camera1599 embeds its old teacher; the new
-workspace camera1599 was verified to embed5381. Loading a camera checkpoint
-does not automatically adopt a new teacher. Initialize new distillation
-from the accepted PPO teacher unless a student-warm-start method is verified.
-
-Current variation covers solid colors, camera mount and image formation;
-**printed patterns/logos/textures are not randomized**. The user's real box has
-patterns and small mesh differences. Add/validate appearance coverage during
-camera preparation, confirming what actually renders in wrist images.
-Matching dimensions alone does not establish transfer. Mass 0.10 kg is
-provisional; measure the box and calibrate camera/A/B before hardware use.
-The A4 stays fixed; arbitrary paper detection is not implemented.
-
-[SIM2REAL.md](SIM2REAL.md) is the original vial reference. Its vial-specific
-action scales, layout and commands must not be copied blindly to box deployment.
-
-## Evidence
-
-- `logs/overnight_20261027_ppo_camera/`: outcome, journal and per-block audits.
-- `logs/overnight_workspace_analysis.json`: recomputed counts, matched starts,
-  failure classification and finite-scalar checks.
-- `logs/workspace_4982_holdout45_20261027/`: additional 4982 screen.
-- `logs/box_workspace_F_refine_training_summary.json`: completed refinement.
-- `logs/workspace_overnight_final_tests.log`: 174-pass runtime suite.
-- `logs/workspace_5381_acceptance_20261027_122310/`: stage/grid, original random attempt, recovered random audit, combined report and failure starts.
-- `logs/workspace_5381_acceptance_20261027_123738/`: nominal and regression audits.
-- `logs/audit_supplement_red.log`: regression test reproducing the metadata bug.
-- `logs/audit_supplement_green_full.log`: 175-pass suite after the fix.
-- `logs/camera_5381_distillation_smoke_20261027.log`: five-iteration camera smoke run.
-- `logs/camera_5381_smoke_verification.json`: exact frozen-teacher match, finite student/loss verification, and smoke checkpoint path.
-- `logs/start_camera_5381.sh`: historical preparation helper; provide direct commands for future runs.
-- `logs/camera_1599_evaluation_20261027_132245/`: final workspace camera1599 training verification, four audits, matched-start teacher comparison and report.
-- `logs/camera_checkpoint_screen_20261027_135850/`: original1200/1300/1400/1599 selection screen; selected1599.
-- `logs/camera_lr1e4_block1_screen_20261027_142121/`: lower-rate block1 verification,1700/1798 screens, baseline comparison, optimizer/normalizer diagnostics, selected1798 and block2 command.
-- `logs/camera_lr1e4_block2_screen_20261027_151453/`: completed400-update experiment report, optimizer-resume verification,1900/1997 screens, all-candidate comparison and retained1798 selection.
-- `logs/camera_visibility_diagnostic_20261027_153417/`: validated nominal/interior camera images, phase coverage, home-frustum estimate, report and figure; use `interior_corrected/` rather than the excluded original interior profiles.
-- `logs/camera_framing_ab_20261027_155759/`: frozen1798 framing A/B plan, transform verification, input previews, matched-start screens and decision to keep current crop A.
-
-New generated outputs remain ignored by default; explicitly stage intended new
-artifacts when publishing them. Preserve raw evidence and model binaries.
+All training and evaluation processes are stopped. Work is on `camera-data-first`.
+Models are now consolidated under `checkpoints/` and use Git LFS.
+
+## Current results
+
+The latest Camera PPO checkpoint is`checkpoints/camera_ppo/60s_500/model_1547.pt`.
+It completed 500 additional PPO iterations from model 1048 with 60-second episodes.
+Matched 256-start screens:Nominal 254/256 (99.22%),Wide 101/256 (39.45%).
+The same-horizon source scored 253/256 Nominal and 101/256 Wide:there was no Wide
+gain. Full evidence,hashes,limits and playback commands are in
+[CAMERA_PPO_RESULTS.md](CAMERA_PPO_RESULTS.md).
+
+At 30 seconds,model 1048 scored 255/256 Nominal (99.61%) and 94/256 Wide (36.72%).
+The original camera distillation reference 2200 scored 229/256 Nominal (89.45%)
+and 80/256 Wide (31.25%) on its historical selection screens. These different
+horizons/runs are not a controlled before/after comparison.
+
+## Checkpoint locations
+
+|Role|Current path|
+|---|---|
+|Distillation reference|`checkpoints/2200.pt`|
+|Camera PPO,30-second1000-iteration continuation|`checkpoints/camera_ppo/30s_1000/model_1048.pt`|
+|Latest Camera PPO,60-second500-iteration continuation|`checkpoints/camera_ppo/60s_500/model_1547.pt`|
+|Initial PPO trial and exact transferred actor|`checkpoints/camera_ppo/trial_50/`|
+|Previously published training models|`checkpoints/archive/`|
+|Previously published exported policies|`checkpoints/exports/`|
+
+All Camera PPO saves and the previous published archive are retained. Nineteen
+unselected replay-heavy experimental checkpoints are preserved locally under
+`checkpoints/local_experiments/` and excluded from publication. Raw collection
+bundles and regenerated exports remain local when not already published.
+`checkpoint_manifest.json ` inventories published PT files;`checkpoint_relocations.json `
+maps every moved original path to its new location and records verified hashes.
+Historical run configs/audit JSON retain original paths as provenance.
+
+## Runtime and implementation
+
+Use WSL Ubuntu-24.04,repository `/mnt/e/issaclab_robotics`,existing `.venv`.
+Invoke `.venv/bin/python ` or`.venv/bin/isaaclab` directly;uv is unavailable here.
+The camera task defaults to distillation. Native Camera PPO requires
+`--agent rsl_rl_camera_ppo_cfg_entry_point`. PPO actor uses wrist RGB and
+proprioception;only the training critic receives simulator state. PPO checkpoints
+contain actor,critic and PPO optimizer state;do not load them as distillation.
+
+The opt-in camera_ppo initializer strictly transfers every 2200 student tensor,
+including normalization,into a fresh PPO actor. Critic and Adam start fresh;
+actual simulator action parity was exactly 0.0 before the first update. Normal
+PPO continuations restore actor/critic/Adam. The installed-version migration and
+standard runner factory are required and covered by regression tests.
+See [CAMERA_PPO.md](CAMERA_PPO.md)for native checkpoint commands.
+
+For 60-second audits,use `--episode-length-s 60` on workspace_audit for both source
+and candidate. For playback,use `env.episode_length_s=60.0`. The default task
+horizon is still 30 seconds. Physical success conditions were never relaxed.
+
+## Other completed work
+
+Protected-reference replay,reference collection and resume behavior are
+implemented and tested. Teacher-only replay,data-first continuations and
+baseline-action preservation experiments did not achieve the agreed Wide gain.
+Their reports/scripts/raw audit evidence are preserved under logs;large failed
+checkpoint payloads remain local. See [CAMERA_PROTECTED_REFERENCE.md](CAMERA_PROTECTED_REFERENCE.md),
+[CAMERA_DATA_FIRST.md](CAMERA_DATA_FIRST.md),and the archived
+[handoff history](archive/HANDOFF_2026-10-28_history.md).
+
+Full verification:227 tests passed,2 optional dependency skips,35 upstream
+TorchScript warnings;Ruff passed. Source checkpoints and moved files were
+hash-verified. No hardware deployment,merge or further training is authorized
+by this publication. User requested commit and push of the current branch.

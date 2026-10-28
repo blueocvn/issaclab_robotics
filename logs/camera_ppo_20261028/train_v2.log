@@ -1,0 +1,2400 @@
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 67
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.03333333333333333
+	Environment step-size : 0.03333333333333333
+I: Initializing Version 2.74.0-release.7316+gl.ec99a64b
+I: Client ID: 1OY87FYM
+I: ThreadId(02) hub_client::client::Client::new Launching client mode=Shared with_cleaner=false cache_path=None cache_size=None
+I: ThreadId(03) launch self=Launcher { discovery_lock: RwLock { lock: RwLock { inner: File { fd: 27, path: "/tmp/hub-omniverse.lock", read: false, write: true } } }, mode: Shared, with_cleaner: false, config_file: "/tmp/hub-omniverse-E81AADC.config.json" } cmd="hub" "--mode=shared" "--write-config" "/tmp/hub-omniverse-E81AADC.config.json" "--"
+I: Not using Hub: Hub not found
+I: Successfully created S3 provider for https://omniverse-content-production.s3-us-west-2.amazonaws.com
+I: Using CloudFront http://dcb18d6mfegct.cloudfront.net/, List = No
+Serving remote assets from the local cache under '/tmp'. Each copy is checked against the server before use; delete the directory to force a full re-download.
+/mnt/e/issaclab_robotics/.venv/lib/python3.12/site-packages/isaaclab_newton/cloner/newton_clone_utils.py:165: FutureWarning: Newton shape color replacement is enabled; this workaround will be deprecated in a future release.
+  replace_newton_builder_shape_colors(builder, stage)
+[INFO]: Time taken for scene creation Last: 5.631903 s, Mean: 5.631903 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 128
+	Environment spacing   : 1.1
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+Finalize builder took: Last: 0.428791 s, Mean: 0.428791 s, Std: 0.000000 s, N: 1
+Failed to get root com velocity. If the articulation is fixed, this is expected. Setting root com velocity to zeros.
+Contact sensor construction took: Last: 0.004431 s, Mean: 0.004431 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.000687 s, Mean: 0.002559 s, Std: 0.002647 s, N: 2
+Contact sensor construction took: Last: 0.000751 s, Mean: 0.001957 s, Std: 0.002143 s, N: 3
+Initialize solver took: Last: 2.097443 s, Mean: 2.097443 s, Std: 0.000000 s, N: 1
+[INFO]: Time taken for simulation start Last: 3.191853 s, Mean: 3.191853 s, Std: 0.000000 s, N: 1
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++----------------------+
+| Active Command Terms |
++-------+------+-------+
+| Index | Name |  Type |
++-------+------+-------+
++-------+------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 2 active terms.
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++------------+--------------------------+
+|   Index    | Name                     |
++------------+--------------------------+
+|     0      | box_material             |
++------------+--------------------------+
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++------------+------------------------+
+|   Index    | Name                   |
++------------+------------------------+
+|     0      | reset_home             |
++------------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++-----------------------+
+| Active Recorder Terms |
++------------+----------+
+|   Index    | Name     |
++------------+----------+
++------------+----------+
+
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 6)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         5 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 4 groups.
++---------------------------------------------------------------------+
+| Active Observation Terms in Group: 'wrist_rgb' (shape: (6, 48, 64)) |
++----------------+----------------+-----------------------------------+
+|     Index      | Name           |               Shape               |
++----------------+----------------+-----------------------------------+
+|       0        | image          |            (6, 48, 64)            |
++----------------+----------------+-----------------------------------+
++--------------------------------------------------------------------+
+| Active Observation Terms in Group: 'proprioception' (shape: (24,)) |
++--------------+--------------------------------------+--------------+
+|    Index     | Name                                 |    Shape     |
++--------------+--------------------------------------+--------------+
+|      0       | joint_pos                            |     (6,)     |
+|      1       | joint_vel                            |     (6,)     |
+|      2       | joint_target                         |     (6,)     |
+|      3       | previous_action                      |     (6,)     |
++--------------+--------------------------------------+--------------+
++-------------------------------------------------------------------+
+| Active Observation Terms in Group: 'teacher_state' (shape: (54,)) |
++---------------------+---------------------+-----------------------+
+|        Index        | Name                |         Shape         |
++---------------------+---------------------+-----------------------+
+|          0          | state               |         (54,)         |
++---------------------+---------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (54,)) |
++-------------------+-------------------+--------------------+
+|       Index       | Name              |       Shape        |
++-------------------+-------------------+--------------------+
+|         0         | state             |       (54,)        |
++-------------------+-------------------+--------------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 5 active terms.
++--------------------------------------+
+|       Active Termination Terms       |
++-------+-------------------+----------+
+| Index | Name              | Time Out |
++-------+-------------------+----------+
+|   0   | success           |  False   |
+|   1   | box_dropped       |  False   |
+|   2   | box_out_of_bounds |  False   |
+|   3   | unstable_robot    |  False   |
+|   4   | time_out          |   True   |
++-------+-------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 10 active terms.
++----------------------------------+
+|       Active Reward Terms        |
++-------+----------------+---------+
+| Index | Name           |  Weight |
++-------+----------------+---------+
+|   0   | approach       |     1.0 |
+|   1   | transport      |     2.0 |
+|   2   | table_pressure |    -2.0 |
+|   3   | release        |    10.0 |
+|   4   | milestones     |    10.0 |
+|   5   | success        |   200.0 |
+|   6   | lost           |   -50.0 |
+|   7   | action_rate    |  -0.002 |
+|   8   | joint_velocity | -0.0002 |
+|   9   | joint_limits   |    -1.0 |
++-------+----------------+---------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++-------------------------+
+| Active Curriculum Terms |
++-------------+-----------+
+|    Index    | Name      |
++-------------+-----------+
++-------------+-----------+
+
+[INFO]: Completed setting up the environment...
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ['wrist_rgb', 'proprioception']
+	 critic :  ['critic']
+--------------------------------------------------------------------------------
+Actor Model: CNNModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (distribution): GaussianDistribution()
+  (mlp): MLP(
+    (0): Linear(in_features=792, out_features=256, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=256, out_features=128, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=128, out_features=6, bias=True)
+  )
+  (cnns): ModuleDict(
+    (wrist_rgb): CNN(
+      (0): Conv2d(6, 16, kernel_size=(5, 5), stride=(2, 2))
+      (1): ELU(alpha=1.0)
+      (2): Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2))
+      (3): ELU(alpha=1.0)
+      (4): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2))
+      (5): ELU(alpha=1.0)
+      (6): Flatten(start_dim=1, end_dim=-1)
+    )
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=54, out_features=256, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=256, out_features=256, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+Storing git diff for 'issaclab_robotics' in: logs/camera_ppo_20261028/trial_v2/training/git/issaclab_robotics.diff
+CUDA graph took: Last: 0.494884 s, Mean: 0.494884 s, Std: 0.000000 s, N: 1
+################################################################################
+[1m                            Learning iteration 0/50                             [0m 
+
+                            Total steps: 8192 
+                       Steps per second: 2323 
+                        Collection time: 2.389s 
+                          Learning time: 1.137s 
+                        Mean value loss: 0.0043
+                    Mean surrogate loss: 0.0168
+                      Mean entropy loss: -9.4607
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0000
+               Episode_Reward/transport: 0.0000
+          Episode_Reward/table_pressure: 0.0000
+                 Episode_Reward/release: 0.0000
+              Episode_Reward/milestones: 0.0000
+                 Episode_Reward/success: 0.0000
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: 0.0000
+          Episode_Reward/joint_velocity: 0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.0000
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.0000
+                      Metrics/lift_rate: 0.0000
+                 Metrics/placement_rate: 0.0000
+                   Metrics/success_rate: 0.0000
+                 Metrics/on_target_rate: 0.0000
+                  Metrics/released_rate: 0.0000
+                 Metrics/withdrawn_rate: 0.0000
+                   Metrics/upright_rate: 0.0000
+           Metrics/current_contact_rate: 0.0000
+            Metrics/box_bottom_height_m: -0.0000
+              Metrics/box_table_force_n: 1.0349
+--------------------------------------------------------------------------------
+                         Iteration time: 3.53s
+                           Time elapsed: 0:00:03
+                                    ETA: 0:02:52
+
+################################################################################
+[1m                            Learning iteration 1/50                             [0m 
+
+                            Total steps: 16384 
+                       Steps per second: 5351 
+                        Collection time: 1.326s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.0381
+                    Mean surrogate loss: -0.0019
+                      Mean entropy loss: -9.4607
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0000
+               Episode_Reward/transport: 0.0000
+          Episode_Reward/table_pressure: 0.0000
+                 Episode_Reward/release: 0.0000
+              Episode_Reward/milestones: 0.0000
+                 Episode_Reward/success: 0.0000
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: 0.0000
+          Episode_Reward/joint_velocity: 0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.0000
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.0549
+                      Metrics/lift_rate: 0.0005
+                 Metrics/placement_rate: 0.0000
+                   Metrics/success_rate: 0.0000
+                 Metrics/on_target_rate: 0.0000
+                  Metrics/released_rate: 0.0000
+                 Metrics/withdrawn_rate: 0.0000
+                   Metrics/upright_rate: 0.0000
+           Metrics/current_contact_rate: 0.0476
+            Metrics/box_bottom_height_m: 0.0002
+              Metrics/box_table_force_n: 1.4636
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:00:05
+                                    ETA: 0:02:01
+
+################################################################################
+[1m                            Learning iteration 2/50                             [0m 
+
+                            Total steps: 24576 
+                       Steps per second: 5249 
+                        Collection time: 1.357s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.0355
+                    Mean surrogate loss: -0.0041
+                      Mean entropy loss: -9.4607
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0000
+               Episode_Reward/transport: 0.0000
+          Episode_Reward/table_pressure: 0.0000
+                 Episode_Reward/release: 0.0000
+              Episode_Reward/milestones: 0.0000
+                 Episode_Reward/success: 0.0000
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: 0.0000
+          Episode_Reward/joint_velocity: 0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.0000
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.2423
+                      Metrics/lift_rate: 0.0623
+                 Metrics/placement_rate: 0.0159
+                   Metrics/success_rate: 0.0000
+                 Metrics/on_target_rate: 0.0228
+                  Metrics/released_rate: 0.0200
+                 Metrics/withdrawn_rate: 0.0048
+                   Metrics/upright_rate: 0.0189
+           Metrics/current_contact_rate: 0.1449
+            Metrics/box_bottom_height_m: 0.0024
+              Metrics/box_table_force_n: 1.6694
+--------------------------------------------------------------------------------
+                         Iteration time: 1.56s
+                           Time elapsed: 0:00:06
+                                    ETA: 0:01:43
+
+################################################################################
+[1m                            Learning iteration 3/50                             [0m 
+
+                            Total steps: 32768 
+                       Steps per second: 5036 
+                        Collection time: 1.423s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.1227
+                    Mean surrogate loss: -0.0013
+                      Mean entropy loss: -9.4610
+                            Mean reward: 9.42
+                    Mean episode length: 234.50
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0062
+               Episode_Reward/transport: -0.0001
+          Episode_Reward/table_pressure: -0.0039
+                 Episode_Reward/release: 0.0030
+              Episode_Reward/milestones: 0.0292
+                 Episode_Reward/success: 0.0833
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0000
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.0055
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3149
+                      Metrics/lift_rate: 0.1223
+                 Metrics/placement_rate: 0.0717
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0900
+                  Metrics/released_rate: 0.0782
+                 Metrics/withdrawn_rate: 0.0155
+                   Metrics/upright_rate: 0.0793
+           Metrics/current_contact_rate: 0.1084
+            Metrics/box_bottom_height_m: 0.0019
+              Metrics/box_table_force_n: 1.6631
+--------------------------------------------------------------------------------
+                         Iteration time: 1.63s
+                           Time elapsed: 0:00:08
+                                    ETA: 0:01:34
+
+################################################################################
+[1m                            Learning iteration 4/50                             [0m 
+
+                            Total steps: 40960 
+                       Steps per second: 5199 
+                        Collection time: 1.372s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.4386
+                    Mean surrogate loss: -0.0016
+                      Mean entropy loss: -9.4614
+                            Mean reward: 9.52
+                    Mean episode length: 276.08
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0181
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0091
+                 Episode_Reward/release: 0.0084
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.0603
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3236
+                      Metrics/lift_rate: 0.0934
+                 Metrics/placement_rate: 0.0669
+                   Metrics/success_rate: 0.0012
+                 Metrics/on_target_rate: 0.0935
+                  Metrics/released_rate: 0.0835
+                 Metrics/withdrawn_rate: 0.0334
+                   Metrics/upright_rate: 0.0879
+           Metrics/current_contact_rate: 0.1063
+            Metrics/box_bottom_height_m: 0.0013
+              Metrics/box_table_force_n: 1.4906
+--------------------------------------------------------------------------------
+                         Iteration time: 1.58s
+                           Time elapsed: 0:00:09
+                                    ETA: 0:01:28
+
+################################################################################
+[1m                            Learning iteration 5/50                             [0m 
+
+                            Total steps: 49152 
+                       Steps per second: 5358 
+                        Collection time: 1.326s 
+                          Learning time: 0.203s 
+                        Mean value loss: 0.2902
+                    Mean surrogate loss: -0.0025
+                      Mean entropy loss: -9.4616
+                            Mean reward: 9.34
+                    Mean episode length: 302.72
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0179
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0183
+                 Episode_Reward/release: 0.0078
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0001
+            Episode_Termination/success: 0.1150
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.2904
+                      Metrics/lift_rate: 0.0645
+                 Metrics/placement_rate: 0.0350
+                   Metrics/success_rate: 0.0007
+                 Metrics/on_target_rate: 0.0948
+                  Metrics/released_rate: 0.0756
+                 Metrics/withdrawn_rate: 0.0197
+                   Metrics/upright_rate: 0.0830
+           Metrics/current_contact_rate: 0.0858
+            Metrics/box_bottom_height_m: 0.0009
+              Metrics/box_table_force_n: 1.3929
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:00:11
+                                    ETA: 0:01:23
+
+################################################################################
+[1m                            Learning iteration 6/50                             [0m 
+
+                            Total steps: 57344 
+                       Steps per second: 5338 
+                        Collection time: 1.331s 
+                          Learning time: 0.203s 
+                        Mean value loss: 0.3017
+                    Mean surrogate loss: -0.0023
+                      Mean entropy loss: -9.4619
+                            Mean reward: 9.35
+                    Mean episode length: 332.76
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0196
+               Episode_Reward/transport: -0.0006
+          Episode_Reward/table_pressure: -0.0125
+                 Episode_Reward/release: 0.0078
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.1740
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.2714
+                      Metrics/lift_rate: 0.0437
+                 Metrics/placement_rate: 0.0221
+                   Metrics/success_rate: 0.0009
+                 Metrics/on_target_rate: 0.0779
+                  Metrics/released_rate: 0.0620
+                 Metrics/withdrawn_rate: 0.0267
+                   Metrics/upright_rate: 0.0695
+           Metrics/current_contact_rate: 0.0846
+            Metrics/box_bottom_height_m: 0.0012
+              Metrics/box_table_force_n: 1.3210
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:00:12
+                                    ETA: 0:01:19
+
+################################################################################
+[1m                            Learning iteration 7/50                             [0m 
+
+                            Total steps: 65536 
+                       Steps per second: 5356 
+                        Collection time: 1.324s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.1810
+                    Mean surrogate loss: -0.0020
+                      Mean entropy loss: -9.4620
+                            Mean reward: 9.30
+                    Mean episode length: 344.62
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0167
+               Episode_Reward/transport: -0.0005
+          Episode_Reward/table_pressure: -0.0197
+                 Episode_Reward/release: 0.0095
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.2070
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3010
+                      Metrics/lift_rate: 0.0526
+                 Metrics/placement_rate: 0.0228
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0704
+                  Metrics/released_rate: 0.0591
+                 Metrics/withdrawn_rate: 0.0249
+                   Metrics/upright_rate: 0.0663
+           Metrics/current_contact_rate: 0.0930
+            Metrics/box_bottom_height_m: 0.0013
+              Metrics/box_table_force_n: 1.2763
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:00:14
+                                    ETA: 0:01:15
+
+################################################################################
+[1m                            Learning iteration 8/50                             [0m 
+
+                            Total steps: 73728 
+                       Steps per second: 5177 
+                        Collection time: 1.374s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.1822
+                    Mean surrogate loss: -0.0020
+                      Mean entropy loss: -9.4623
+                            Mean reward: 9.23
+                    Mean episode length: 364.69
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0171
+               Episode_Reward/transport: -0.0006
+          Episode_Reward/table_pressure: -0.0579
+                 Episode_Reward/release: 0.0092
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0006
+            Episode_Termination/success: 0.2255
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3269
+                      Metrics/lift_rate: 0.0669
+                 Metrics/placement_rate: 0.0388
+                   Metrics/success_rate: 0.0004
+                 Metrics/on_target_rate: 0.0848
+                  Metrics/released_rate: 0.0665
+                 Metrics/withdrawn_rate: 0.0165
+                   Metrics/upright_rate: 0.0764
+           Metrics/current_contact_rate: 0.0997
+            Metrics/box_bottom_height_m: 0.0014
+              Metrics/box_table_force_n: 1.2505
+--------------------------------------------------------------------------------
+                         Iteration time: 1.58s
+                           Time elapsed: 0:00:15
+                                    ETA: 0:01:12
+
+################################################################################
+[1m                            Learning iteration 9/50                             [0m 
+
+                            Total steps: 81920 
+                       Steps per second: 5243 
+                        Collection time: 1.356s 
+                          Learning time: 0.206s 
+                        Mean value loss: 0.1772
+                    Mean surrogate loss: -0.0014
+                      Mean entropy loss: -9.4626
+                            Mean reward: 9.18
+                    Mean episode length: 376.14
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0157
+               Episode_Reward/transport: -0.0006
+          Episode_Reward/table_pressure: -0.0272
+                 Episode_Reward/release: 0.0089
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0005
+            Episode_Termination/success: 0.2509
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3292
+                      Metrics/lift_rate: 0.0803
+                 Metrics/placement_rate: 0.0479
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0840
+                  Metrics/released_rate: 0.0519
+                 Metrics/withdrawn_rate: 0.0178
+                   Metrics/upright_rate: 0.0751
+           Metrics/current_contact_rate: 0.0803
+            Metrics/box_bottom_height_m: 0.0008
+              Metrics/box_table_force_n: 1.2856
+--------------------------------------------------------------------------------
+                         Iteration time: 1.56s
+                           Time elapsed: 0:00:17
+                                    ETA: 0:01:10
+
+################################################################################
+[1m                            Learning iteration 10/50                            [0m 
+
+                            Total steps: 90112 
+                       Steps per second: 5394 
+                        Collection time: 1.314s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.1745
+                    Mean surrogate loss: -0.0016
+                      Mean entropy loss: -9.4627
+                            Mean reward: 9.18
+                    Mean episode length: 375.32
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0165
+               Episode_Reward/transport: -0.0006
+          Episode_Reward/table_pressure: -0.0174
+                 Episode_Reward/release: 0.0089
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.2628
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3179
+                      Metrics/lift_rate: 0.0745
+                 Metrics/placement_rate: 0.0482
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0665
+                  Metrics/released_rate: 0.0570
+                 Metrics/withdrawn_rate: 0.0258
+                   Metrics/upright_rate: 0.0580
+           Metrics/current_contact_rate: 0.0671
+            Metrics/box_bottom_height_m: 0.0009
+              Metrics/box_table_force_n: 1.2590
+--------------------------------------------------------------------------------
+                         Iteration time: 1.52s
+                           Time elapsed: 0:00:19
+                                    ETA: 0:01:07
+
+################################################################################
+[1m                            Learning iteration 11/50                            [0m 
+
+                            Total steps: 98304 
+                       Steps per second: 5438 
+                        Collection time: 1.303s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.1788
+                    Mean surrogate loss: -0.0028
+                      Mean entropy loss: -9.4627
+                            Mean reward: 9.12
+                    Mean episode length: 391.45
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0167
+               Episode_Reward/transport: -0.0006
+          Episode_Reward/table_pressure: -0.0340
+                 Episode_Reward/release: 0.0083
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0005
+            Episode_Termination/success: 0.2717
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3049
+                      Metrics/lift_rate: 0.0795
+                 Metrics/placement_rate: 0.0348
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0632
+                  Metrics/released_rate: 0.0547
+                 Metrics/withdrawn_rate: 0.0286
+                   Metrics/upright_rate: 0.0553
+           Metrics/current_contact_rate: 0.0603
+            Metrics/box_bottom_height_m: 0.0007
+              Metrics/box_table_force_n: 1.3017
+--------------------------------------------------------------------------------
+                         Iteration time: 1.51s
+                           Time elapsed: 0:00:20
+                                    ETA: 0:01:05
+
+################################################################################
+[1m                            Learning iteration 12/50                            [0m 
+
+                            Total steps: 106496 
+                       Steps per second: 5341 
+                        Collection time: 1.329s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.1175
+                    Mean surrogate loss: -0.0033
+                      Mean entropy loss: -9.4627
+                            Mean reward: 9.04
+                    Mean episode length: 401.77
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0137
+               Episode_Reward/transport: -0.0005
+          Episode_Reward/table_pressure: -0.0866
+                 Episode_Reward/release: 0.0088
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0041
+            Episode_Termination/success: 0.2874
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3160
+                      Metrics/lift_rate: 0.0729
+                 Metrics/placement_rate: 0.0288
+                   Metrics/success_rate: 0.0004
+                 Metrics/on_target_rate: 0.0430
+                  Metrics/released_rate: 0.0382
+                 Metrics/withdrawn_rate: 0.0193
+                   Metrics/upright_rate: 0.0364
+           Metrics/current_contact_rate: 0.0708
+            Metrics/box_bottom_height_m: 0.0007
+              Metrics/box_table_force_n: 1.2854
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:00:22
+                                    ETA: 0:01:02
+
+################################################################################
+[1m                            Learning iteration 13/50                            [0m 
+
+                            Total steps: 114688 
+                       Steps per second: 5447 
+                        Collection time: 1.299s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.1016
+                    Mean surrogate loss: -0.0026
+                      Mean entropy loss: -9.4628
+                            Mean reward: 9.03
+                    Mean episode length: 421.14
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0157
+               Episode_Reward/transport: -0.0008
+          Episode_Reward/table_pressure: -0.0250
+                 Episode_Reward/release: 0.0093
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.2941
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3197
+                      Metrics/lift_rate: 0.0920
+                 Metrics/placement_rate: 0.0271
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0392
+                  Metrics/released_rate: 0.0316
+                 Metrics/withdrawn_rate: 0.0184
+                   Metrics/upright_rate: 0.0314
+           Metrics/current_contact_rate: 0.0654
+            Metrics/box_bottom_height_m: 0.0010
+              Metrics/box_table_force_n: 1.2693
+--------------------------------------------------------------------------------
+                         Iteration time: 1.50s
+                           Time elapsed: 0:00:23
+                                    ETA: 0:01:00
+
+################################################################################
+[1m                            Learning iteration 14/50                            [0m 
+
+                            Total steps: 122880 
+                       Steps per second: 5156 
+                        Collection time: 1.382s 
+                          Learning time: 0.207s 
+                        Mean value loss: 0.0510
+                    Mean surrogate loss: -0.0020
+                      Mean entropy loss: -9.4628
+                            Mean reward: -0.20
+                    Mean episode length: 862.48
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0152
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0228
+                 Episode_Reward/release: 0.0061
+              Episode_Reward/milestones: 0.0551
+                 Episode_Reward/success: 0.1528
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0033
+            Episode_Termination/success: 0.3047
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.6627
+                     Metrics/grasp_rate: 0.1099
+                      Metrics/lift_rate: 0.0601
+                 Metrics/placement_rate: 0.0303
+                   Metrics/success_rate: 0.0001
+                 Metrics/on_target_rate: 0.0317
+                  Metrics/released_rate: 0.0261
+                 Metrics/withdrawn_rate: 0.0088
+                   Metrics/upright_rate: 0.0245
+           Metrics/current_contact_rate: 0.0238
+            Metrics/box_bottom_height_m: 0.0003
+              Metrics/box_table_force_n: 1.1190
+--------------------------------------------------------------------------------
+                         Iteration time: 1.59s
+                           Time elapsed: 0:00:25
+                                    ETA: 0:00:58
+
+################################################################################
+[1m                            Learning iteration 15/50                            [0m 
+
+                            Total steps: 131072 
+                       Steps per second: 5426 
+                        Collection time: 1.305s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.0570
+                    Mean surrogate loss: -0.0024
+                      Mean entropy loss: -9.4627
+                            Mean reward: -0.20
+                    Mean episode length: 863.44
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0192
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0145
+                 Episode_Reward/release: 0.0091
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.3047
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.6953
+                     Metrics/grasp_rate: 0.1252
+                      Metrics/lift_rate: 0.0507
+                 Metrics/placement_rate: 0.0409
+                   Metrics/success_rate: 0.0001
+                 Metrics/on_target_rate: 0.0245
+                  Metrics/released_rate: 0.0181
+                 Metrics/withdrawn_rate: 0.0093
+                   Metrics/upright_rate: 0.0217
+           Metrics/current_contact_rate: 0.0492
+            Metrics/box_bottom_height_m: 0.0003
+              Metrics/box_table_force_n: 1.3204
+--------------------------------------------------------------------------------
+                         Iteration time: 1.51s
+                           Time elapsed: 0:00:26
+                                    ETA: 0:00:56
+
+################################################################################
+[1m                            Learning iteration 16/50                            [0m 
+
+                            Total steps: 139264 
+                       Steps per second: 5211 
+                        Collection time: 1.366s 
+                          Learning time: 0.206s 
+                        Mean value loss: 0.1197
+                    Mean surrogate loss: -0.0008
+                      Mean entropy loss: -9.4625
+                            Mean reward: -0.17
+                    Mean episode length: 861.81
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0178
+               Episode_Reward/transport: -0.0005
+          Episode_Reward/table_pressure: -0.0215
+                 Episode_Reward/release: 0.0023
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.3060
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.6940
+                     Metrics/grasp_rate: 0.3123
+                      Metrics/lift_rate: 0.0956
+                 Metrics/placement_rate: 0.0421
+                   Metrics/success_rate: 0.0004
+                 Metrics/on_target_rate: 0.0410
+                  Metrics/released_rate: 0.0336
+                 Metrics/withdrawn_rate: 0.0093
+                   Metrics/upright_rate: 0.0342
+           Metrics/current_contact_rate: 0.1367
+            Metrics/box_bottom_height_m: 0.0020
+              Metrics/box_table_force_n: 1.5073
+--------------------------------------------------------------------------------
+                         Iteration time: 1.57s
+                           Time elapsed: 0:00:28
+                                    ETA: 0:00:54
+
+################################################################################
+[1m                            Learning iteration 17/50                            [0m 
+
+                            Total steps: 147456 
+                       Steps per second: 5226 
+                        Collection time: 1.364s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.2157
+                    Mean surrogate loss: -0.0020
+                      Mean entropy loss: -9.4624
+                            Mean reward: -0.20
+                    Mean episode length: 840.75
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0170
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0085
+                 Episode_Reward/release: 0.0080
+              Episode_Reward/milestones: 0.0757
+                 Episode_Reward/success: 0.2153
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.3228
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.6772
+                     Metrics/grasp_rate: 0.3649
+                      Metrics/lift_rate: 0.1021
+                 Metrics/placement_rate: 0.0677
+                   Metrics/success_rate: 0.0006
+                 Metrics/on_target_rate: 0.0704
+                  Metrics/released_rate: 0.0616
+                 Metrics/withdrawn_rate: 0.0247
+                   Metrics/upright_rate: 0.0608
+           Metrics/current_contact_rate: 0.0995
+            Metrics/box_bottom_height_m: 0.0010
+              Metrics/box_table_force_n: 1.5882
+--------------------------------------------------------------------------------
+                         Iteration time: 1.57s
+                           Time elapsed: 0:00:29
+                                    ETA: 0:00:53
+
+################################################################################
+[1m                            Learning iteration 18/50                            [0m 
+
+                            Total steps: 155648 
+                       Steps per second: 5272 
+                        Collection time: 1.347s 
+                          Learning time: 0.207s 
+                        Mean value loss: 0.0586
+                    Mean surrogate loss: -0.0035
+                      Mean entropy loss: -9.4624
+                            Mean reward: -0.01
+                    Mean episode length: 828.11
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0108
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0355
+                 Episode_Reward/release: 0.0038
+              Episode_Reward/milestones: 0.0462
+                 Episode_Reward/success: 0.1007
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0099
+            Episode_Termination/success: 0.3387
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.6613
+                     Metrics/grasp_rate: 0.3883
+                      Metrics/lift_rate: 0.0873
+                 Metrics/placement_rate: 0.0458
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0656
+                  Metrics/released_rate: 0.0562
+                 Metrics/withdrawn_rate: 0.0247
+                   Metrics/upright_rate: 0.0592
+           Metrics/current_contact_rate: 0.0878
+            Metrics/box_bottom_height_m: 0.0015
+              Metrics/box_table_force_n: 1.3804
+--------------------------------------------------------------------------------
+                         Iteration time: 1.55s
+                           Time elapsed: 0:00:31
+                                    ETA: 0:00:51
+
+################################################################################
+[1m                            Learning iteration 19/50                            [0m 
+
+                            Total steps: 163840 
+                       Steps per second: 5201 
+                        Collection time: 1.369s 
+                          Learning time: 0.206s 
+                        Mean value loss: 0.2039
+                    Mean surrogate loss: -0.0025
+                      Mean entropy loss: -9.4625
+                            Mean reward: 0.67
+                    Mean episode length: 797.99
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0189
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0167
+                 Episode_Reward/release: 0.0041
+              Episode_Reward/milestones: 0.0486
+                 Episode_Reward/success: 0.1250
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0088
+            Episode_Termination/success: 0.3135
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.6865
+                     Metrics/grasp_rate: 0.3966
+                      Metrics/lift_rate: 0.0870
+                 Metrics/placement_rate: 0.0580
+                   Metrics/success_rate: 0.0007
+                 Metrics/on_target_rate: 0.0729
+                  Metrics/released_rate: 0.0647
+                 Metrics/withdrawn_rate: 0.0282
+                   Metrics/upright_rate: 0.0707
+           Metrics/current_contact_rate: 0.0675
+            Metrics/box_bottom_height_m: 0.0009
+              Metrics/box_table_force_n: 1.3655
+--------------------------------------------------------------------------------
+                         Iteration time: 1.57s
+                           Time elapsed: 0:00:32
+                                    ETA: 0:00:49
+
+################################################################################
+[1m                            Learning iteration 20/50                            [0m 
+
+                            Total steps: 172032 
+                       Steps per second: 5267 
+                        Collection time: 1.351s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.1470
+                    Mean surrogate loss: -0.0030
+                      Mean entropy loss: -9.4626
+                            Mean reward: 1.10
+                    Mean episode length: 778.89
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0153
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0134
+                 Episode_Reward/release: 0.0045
+              Episode_Reward/milestones: 0.0486
+                 Episode_Reward/success: 0.1389
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0112
+            Episode_Termination/success: 0.3176
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.6824
+                     Metrics/grasp_rate: 0.4307
+                      Metrics/lift_rate: 0.0808
+                 Metrics/placement_rate: 0.0330
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0588
+                  Metrics/released_rate: 0.0452
+                 Metrics/withdrawn_rate: 0.0200
+                   Metrics/upright_rate: 0.0587
+           Metrics/current_contact_rate: 0.1132
+            Metrics/box_bottom_height_m: 0.0017
+              Metrics/box_table_force_n: 1.3900
+--------------------------------------------------------------------------------
+                         Iteration time: 1.56s
+                           Time elapsed: 0:00:34
+                                    ETA: 0:00:47
+
+################################################################################
+[1m                            Learning iteration 21/50                            [0m 
+
+                            Total steps: 180224 
+                       Steps per second: 5293 
+                        Collection time: 1.342s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.1376
+                    Mean surrogate loss: -0.0019
+                      Mean entropy loss: -9.4626
+                            Mean reward: 1.56
+                    Mean episode length: 753.60
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0164
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0150
+                 Episode_Reward/release: 0.0044
+              Episode_Reward/milestones: 0.0438
+                 Episode_Reward/success: 0.1198
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0162
+            Episode_Termination/success: 0.3102
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.6898
+                     Metrics/grasp_rate: 0.4408
+                      Metrics/lift_rate: 0.0988
+                 Metrics/placement_rate: 0.0205
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0508
+                  Metrics/released_rate: 0.0452
+                 Metrics/withdrawn_rate: 0.0162
+                   Metrics/upright_rate: 0.0398
+           Metrics/current_contact_rate: 0.0770
+            Metrics/box_bottom_height_m: 0.0014
+              Metrics/box_table_force_n: 1.4295
+--------------------------------------------------------------------------------
+                         Iteration time: 1.55s
+                           Time elapsed: 0:00:36
+                                    ETA: 0:00:45
+
+################################################################################
+[1m                            Learning iteration 22/50                            [0m 
+
+                            Total steps: 188416 
+                       Steps per second: 5339 
+                        Collection time: 1.329s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.1116
+                    Mean surrogate loss: -0.0044
+                      Mean entropy loss: -9.4627
+                            Mean reward: 1.92
+                    Mean episode length: 743.68
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0186
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0241
+                 Episode_Reward/release: 0.0070
+              Episode_Reward/milestones: 0.0720
+                 Episode_Reward/success: 0.1771
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0005
+            Episode_Termination/success: 0.2961
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7039
+                     Metrics/grasp_rate: 0.4352
+                      Metrics/lift_rate: 0.0790
+                 Metrics/placement_rate: 0.0140
+                   Metrics/success_rate: 0.0004
+                 Metrics/on_target_rate: 0.0480
+                  Metrics/released_rate: 0.0427
+                 Metrics/withdrawn_rate: 0.0181
+                   Metrics/upright_rate: 0.0404
+           Metrics/current_contact_rate: 0.0641
+            Metrics/box_bottom_height_m: 0.0006
+              Metrics/box_table_force_n: 1.4253
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:00:37
+                                    ETA: 0:00:44
+
+################################################################################
+[1m                            Learning iteration 23/50                            [0m 
+
+                            Total steps: 196608 
+                       Steps per second: 5373 
+                        Collection time: 1.320s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.0963
+                    Mean surrogate loss: -0.0032
+                      Mean entropy loss: -9.4629
+                            Mean reward: 2.10
+                    Mean episode length: 735.19
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0169
+               Episode_Reward/transport: -0.0005
+          Episode_Reward/table_pressure: -0.0241
+                 Episode_Reward/release: 0.0070
+              Episode_Reward/milestones: 0.0620
+                 Episode_Reward/success: 0.1701
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0056
+            Episode_Termination/success: 0.2825
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7175
+                     Metrics/grasp_rate: 0.4321
+                      Metrics/lift_rate: 0.0781
+                 Metrics/placement_rate: 0.0255
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0522
+                  Metrics/released_rate: 0.0413
+                 Metrics/withdrawn_rate: 0.0111
+                   Metrics/upright_rate: 0.0442
+           Metrics/current_contact_rate: 0.0632
+            Metrics/box_bottom_height_m: 0.0008
+              Metrics/box_table_force_n: 1.4129
+--------------------------------------------------------------------------------
+                         Iteration time: 1.52s
+                           Time elapsed: 0:00:39
+                                    ETA: 0:00:42
+
+################################################################################
+[1m                            Learning iteration 24/50                            [0m 
+
+                            Total steps: 204800 
+                       Steps per second: 5255 
+                        Collection time: 1.354s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.1180
+                    Mean surrogate loss: -0.0027
+                      Mean entropy loss: -9.4630
+                            Mean reward: 2.43
+                    Mean episode length: 720.32
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0164
+               Episode_Reward/transport: -0.0005
+          Episode_Reward/table_pressure: -0.0291
+                 Episode_Reward/release: 0.0068
+              Episode_Reward/milestones: 0.0649
+                 Episode_Reward/success: 0.1840
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0037
+            Episode_Termination/success: 0.2869
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7131
+                     Metrics/grasp_rate: 0.4421
+                      Metrics/lift_rate: 0.0748
+                 Metrics/placement_rate: 0.0287
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0481
+                  Metrics/released_rate: 0.0413
+                 Metrics/withdrawn_rate: 0.0212
+                   Metrics/upright_rate: 0.0391
+           Metrics/current_contact_rate: 0.0573
+            Metrics/box_bottom_height_m: 0.0007
+              Metrics/box_table_force_n: 1.4632
+--------------------------------------------------------------------------------
+                         Iteration time: 1.56s
+                           Time elapsed: 0:00:40
+                                    ETA: 0:00:40
+
+################################################################################
+[1m                            Learning iteration 25/50                            [0m 
+
+                            Total steps: 212992 
+                       Steps per second: 4978 
+                        Collection time: 1.412s 
+                          Learning time: 0.233s 
+                        Mean value loss: 0.0690
+                    Mean surrogate loss: -0.0025
+                      Mean entropy loss: -9.4632
+                            Mean reward: 2.79
+                    Mean episode length: 706.25
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0170
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0485
+                 Episode_Reward/release: 0.0056
+              Episode_Reward/milestones: 0.0582
+                 Episode_Reward/success: 0.1597
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0003
+            Episode_Termination/success: 0.2921
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7079
+                     Metrics/grasp_rate: 0.4406
+                      Metrics/lift_rate: 0.0590
+                 Metrics/placement_rate: 0.0122
+                   Metrics/success_rate: 0.0004
+                 Metrics/on_target_rate: 0.0333
+                  Metrics/released_rate: 0.0277
+                 Metrics/withdrawn_rate: 0.0132
+                   Metrics/upright_rate: 0.0242
+           Metrics/current_contact_rate: 0.0426
+            Metrics/box_bottom_height_m: 0.0004
+              Metrics/box_table_force_n: 1.3846
+--------------------------------------------------------------------------------
+                         Iteration time: 1.65s
+                           Time elapsed: 0:00:42
+                                    ETA: 0:00:39
+
+################################################################################
+[1m                            Learning iteration 26/50                            [0m 
+
+                            Total steps: 221184 
+                       Steps per second: 5441 
+                        Collection time: 1.301s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.0267
+                    Mean surrogate loss: -0.0050
+                      Mean entropy loss: -9.4632
+                            Mean reward: 2.80
+                    Mean episode length: 706.25
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0060
+               Episode_Reward/transport: -0.0000
+          Episode_Reward/table_pressure: -0.0612
+                 Episode_Reward/release: 0.0000
+              Episode_Reward/milestones: 0.0031
+                 Episode_Reward/success: 0.0000
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0005
+            Episode_Termination/success: 0.2777
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7223
+                     Metrics/grasp_rate: 0.4424
+                      Metrics/lift_rate: 0.0496
+                 Metrics/placement_rate: 0.0087
+                   Metrics/success_rate: 0.0000
+                 Metrics/on_target_rate: 0.0343
+                  Metrics/released_rate: 0.0238
+                 Metrics/withdrawn_rate: 0.0063
+                   Metrics/upright_rate: 0.0259
+           Metrics/current_contact_rate: 0.0471
+            Metrics/box_bottom_height_m: 0.0005
+              Metrics/box_table_force_n: 1.3834
+--------------------------------------------------------------------------------
+                         Iteration time: 1.51s
+                           Time elapsed: 0:00:43
+                                    ETA: 0:00:37
+
+################################################################################
+[1m                            Learning iteration 27/50                            [0m 
+
+                            Total steps: 229376 
+                       Steps per second: 5467 
+                        Collection time: 1.294s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.0676
+                    Mean surrogate loss: -0.0028
+                      Mean entropy loss: -9.4633
+                            Mean reward: 3.00
+                    Mean episode length: 700.42
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0103
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0342
+                 Episode_Reward/release: 0.0028
+              Episode_Reward/milestones: 0.0328
+                 Episode_Reward/success: 0.0938
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0020
+            Episode_Termination/success: 0.2719
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7281
+                     Metrics/grasp_rate: 0.4553
+                      Metrics/lift_rate: 0.0524
+                 Metrics/placement_rate: 0.0228
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0409
+                  Metrics/released_rate: 0.0330
+                 Metrics/withdrawn_rate: 0.0154
+                   Metrics/upright_rate: 0.0281
+           Metrics/current_contact_rate: 0.0614
+            Metrics/box_bottom_height_m: 0.0005
+              Metrics/box_table_force_n: 1.3541
+--------------------------------------------------------------------------------
+                         Iteration time: 1.50s
+                           Time elapsed: 0:00:45
+                                    ETA: 0:00:35
+
+################################################################################
+[1m                            Learning iteration 28/50                            [0m 
+
+                            Total steps: 237568 
+                       Steps per second: 5475 
+                        Collection time: 1.291s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.0573
+                    Mean surrogate loss: -0.0035
+                      Mean entropy loss: -9.4634
+                            Mean reward: 0.66
+                    Mean episode length: 823.81
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0111
+               Episode_Reward/transport: -0.0001
+          Episode_Reward/table_pressure: -0.0928
+                 Episode_Reward/release: 0.0020
+              Episode_Reward/milestones: 0.0204
+                 Episode_Reward/success: 0.0486
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0023
+            Episode_Termination/success: 0.2612
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7388
+                     Metrics/grasp_rate: 0.2296
+                      Metrics/lift_rate: 0.0493
+                 Metrics/placement_rate: 0.0117
+                   Metrics/success_rate: 0.0001
+                 Metrics/on_target_rate: 0.0360
+                  Metrics/released_rate: 0.0288
+                 Metrics/withdrawn_rate: 0.0137
+                   Metrics/upright_rate: 0.0278
+           Metrics/current_contact_rate: 0.0537
+            Metrics/box_bottom_height_m: 0.0006
+              Metrics/box_table_force_n: 1.1603
+--------------------------------------------------------------------------------
+                         Iteration time: 1.50s
+                           Time elapsed: 0:00:46
+                                    ETA: 0:00:33
+
+################################################################################
+[1m                            Learning iteration 29/50                            [0m 
+
+                            Total steps: 245760 
+                       Steps per second: 5449 
+                        Collection time: 1.299s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.0351
+                    Mean surrogate loss: -0.0041
+                      Mean entropy loss: -9.4637
+                            Mean reward: 0.64
+                    Mean episode length: 823.90
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0159
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0435
+                 Episode_Reward/release: 0.0039
+              Episode_Reward/milestones: 0.0569
+                 Episode_Reward/success: 0.1181
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0004
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0075
+            Episode_Termination/success: 0.2542
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7458
+                     Metrics/grasp_rate: 0.2124
+                      Metrics/lift_rate: 0.0526
+                 Metrics/placement_rate: 0.0111
+                   Metrics/success_rate: 0.0001
+                 Metrics/on_target_rate: 0.0413
+                  Metrics/released_rate: 0.0336
+                 Metrics/withdrawn_rate: 0.0154
+                   Metrics/upright_rate: 0.0331
+           Metrics/current_contact_rate: 0.0551
+            Metrics/box_bottom_height_m: 0.0006
+              Metrics/box_table_force_n: 1.3626
+--------------------------------------------------------------------------------
+                         Iteration time: 1.50s
+                           Time elapsed: 0:00:48
+                                    ETA: 0:00:32
+
+################################################################################
+[1m                            Learning iteration 30/50                            [0m 
+
+                            Total steps: 253952 
+                       Steps per second: 5409 
+                        Collection time: 1.311s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.1513
+                    Mean surrogate loss: -0.0035
+                      Mean entropy loss: -9.4639
+                            Mean reward: 0.59
+                    Mean episode length: 825.73
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0064
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0249
+                 Episode_Reward/release: 0.0039
+              Episode_Reward/milestones: 0.0458
+                 Episode_Reward/success: 0.1111
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0004
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0057
+            Episode_Termination/success: 0.2423
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7577
+                     Metrics/grasp_rate: 0.3115
+                      Metrics/lift_rate: 0.0878
+                 Metrics/placement_rate: 0.0222
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0483
+                  Metrics/released_rate: 0.0393
+                 Metrics/withdrawn_rate: 0.0197
+                   Metrics/upright_rate: 0.0402
+           Metrics/current_contact_rate: 0.1101
+            Metrics/box_bottom_height_m: 0.0015
+              Metrics/box_table_force_n: 1.4383
+--------------------------------------------------------------------------------
+                         Iteration time: 1.51s
+                           Time elapsed: 0:00:49
+                                    ETA: 0:00:30
+
+################################################################################
+[1m                            Learning iteration 31/50                            [0m 
+
+                            Total steps: 262144 
+                       Steps per second: 5399 
+                        Collection time: 1.314s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.1267
+                    Mean surrogate loss: -0.0041
+                      Mean entropy loss: -9.4641
+                            Mean reward: 0.62
+                    Mean episode length: 829.22
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0155
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0339
+                 Episode_Reward/release: 0.0064
+              Episode_Reward/milestones: 0.0547
+                 Episode_Reward/success: 0.1563
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0028
+            Episode_Termination/success: 0.2451
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7549
+                     Metrics/grasp_rate: 0.3489
+                      Metrics/lift_rate: 0.1250
+                 Metrics/placement_rate: 0.0255
+                   Metrics/success_rate: 0.0004
+                 Metrics/on_target_rate: 0.0750
+                  Metrics/released_rate: 0.0624
+                 Metrics/withdrawn_rate: 0.0197
+                   Metrics/upright_rate: 0.0602
+           Metrics/current_contact_rate: 0.0953
+            Metrics/box_bottom_height_m: 0.0017
+              Metrics/box_table_force_n: 1.5136
+--------------------------------------------------------------------------------
+                         Iteration time: 1.52s
+                           Time elapsed: 0:00:51
+                                    ETA: 0:00:28
+
+################################################################################
+[1m                            Learning iteration 32/50                            [0m 
+
+                            Total steps: 270336 
+                       Steps per second: 5354 
+                        Collection time: 1.327s 
+                          Learning time: 0.203s 
+                        Mean value loss: 0.1708
+                    Mean surrogate loss: -0.0024
+                      Mean entropy loss: -9.4642
+                            Mean reward: 0.68
+                    Mean episode length: 818.23
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0115
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0479
+                 Episode_Reward/release: 0.0027
+              Episode_Reward/milestones: 0.0321
+                 Episode_Reward/success: 0.0816
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0024
+            Episode_Termination/success: 0.2545
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7455
+                     Metrics/grasp_rate: 0.3706
+                      Metrics/lift_rate: 0.1140
+                 Metrics/placement_rate: 0.0626
+                   Metrics/success_rate: 0.0009
+                 Metrics/on_target_rate: 0.0824
+                  Metrics/released_rate: 0.0718
+                 Metrics/withdrawn_rate: 0.0341
+                   Metrics/upright_rate: 0.0638
+           Metrics/current_contact_rate: 0.0876
+            Metrics/box_bottom_height_m: 0.0010
+              Metrics/box_table_force_n: 1.4252
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:00:52
+                                    ETA: 0:00:27
+
+################################################################################
+[1m                            Learning iteration 33/50                            [0m 
+
+                            Total steps: 278528 
+                       Steps per second: 5368 
+                        Collection time: 1.323s 
+                          Learning time: 0.203s 
+                        Mean value loss: 0.1119
+                    Mean surrogate loss: -0.0031
+                      Mean entropy loss: -9.4642
+                            Mean reward: 1.13
+                    Mean episode length: 795.24
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0100
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0287
+                 Episode_Reward/release: 0.0036
+              Episode_Reward/milestones: 0.0383
+                 Episode_Reward/success: 0.1024
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0030
+            Episode_Termination/success: 0.2969
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7031
+                     Metrics/grasp_rate: 0.3127
+                      Metrics/lift_rate: 0.0664
+                 Metrics/placement_rate: 0.0387
+                   Metrics/success_rate: 0.0007
+                 Metrics/on_target_rate: 0.0660
+                  Metrics/released_rate: 0.0531
+                 Metrics/withdrawn_rate: 0.0183
+                   Metrics/upright_rate: 0.0631
+           Metrics/current_contact_rate: 0.0620
+            Metrics/box_bottom_height_m: 0.0008
+              Metrics/box_table_force_n: 1.2885
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:00:54
+                                    ETA: 0:00:25
+
+################################################################################
+[1m                            Learning iteration 34/50                            [0m 
+
+                            Total steps: 286720 
+                       Steps per second: 5381 
+                        Collection time: 1.317s 
+                          Learning time: 0.205s 
+                        Mean value loss: 0.0853
+                    Mean surrogate loss: -0.0041
+                      Mean entropy loss: -9.4642
+                            Mean reward: 1.35
+                    Mean episode length: 786.49
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0164
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0328
+                 Episode_Reward/release: 0.0034
+              Episode_Reward/milestones: 0.0429
+                 Episode_Reward/success: 0.0903
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0060
+            Episode_Termination/success: 0.2970
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7030
+                     Metrics/grasp_rate: 0.2855
+                      Metrics/lift_rate: 0.0443
+                 Metrics/placement_rate: 0.0271
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0496
+                  Metrics/released_rate: 0.0377
+                 Metrics/withdrawn_rate: 0.0167
+                   Metrics/upright_rate: 0.0485
+           Metrics/current_contact_rate: 0.0677
+            Metrics/box_bottom_height_m: 0.0005
+              Metrics/box_table_force_n: 1.3968
+--------------------------------------------------------------------------------
+                         Iteration time: 1.52s
+                           Time elapsed: 0:00:55
+                                    ETA: 0:00:23
+
+################################################################################
+[1m                            Learning iteration 35/50                            [0m 
+
+                            Total steps: 294912 
+                       Steps per second: 5403 
+                        Collection time: 1.313s 
+                          Learning time: 0.203s 
+                        Mean value loss: 0.0885
+                    Mean surrogate loss: -0.0043
+                      Mean entropy loss: -9.4641
+                            Mean reward: 1.54
+                    Mean episode length: 778.73
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0106
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0487
+                 Episode_Reward/release: 0.0023
+              Episode_Reward/milestones: 0.0319
+                 Episode_Reward/success: 0.0729
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0012
+            Episode_Termination/success: 0.2858
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7142
+                     Metrics/grasp_rate: 0.3376
+                      Metrics/lift_rate: 0.0546
+                 Metrics/placement_rate: 0.0212
+                   Metrics/success_rate: 0.0004
+                 Metrics/on_target_rate: 0.0573
+                  Metrics/released_rate: 0.0476
+                 Metrics/withdrawn_rate: 0.0137
+                   Metrics/upright_rate: 0.0472
+           Metrics/current_contact_rate: 0.0702
+            Metrics/box_bottom_height_m: 0.0009
+              Metrics/box_table_force_n: 1.4332
+--------------------------------------------------------------------------------
+                         Iteration time: 1.52s
+                           Time elapsed: 0:00:57
+                                    ETA: 0:00:22
+
+################################################################################
+[1m                            Learning iteration 36/50                            [0m 
+
+                            Total steps: 303104 
+                       Steps per second: 5510 
+                        Collection time: 1.289s 
+                          Learning time: 0.198s 
+                        Mean value loss: 0.0415
+                    Mean surrogate loss: -0.0049
+                      Mean entropy loss: -9.4639
+                            Mean reward: 1.49
+                    Mean episode length: 778.73
+                        Mean action std: 0.05
+                Episode_Reward/approach: -0.0180
+               Episode_Reward/transport: -0.0001
+          Episode_Reward/table_pressure: -0.0439
+                 Episode_Reward/release: 0.0000
+              Episode_Reward/milestones: 0.0017
+                 Episode_Reward/success: 0.0000
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0063
+            Episode_Termination/success: 0.2781
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7219
+                     Metrics/grasp_rate: 0.3698
+                      Metrics/lift_rate: 0.0603
+                 Metrics/placement_rate: 0.0110
+                   Metrics/success_rate: 0.0000
+                 Metrics/on_target_rate: 0.0635
+                  Metrics/released_rate: 0.0533
+                 Metrics/withdrawn_rate: 0.0199
+                   Metrics/upright_rate: 0.0536
+           Metrics/current_contact_rate: 0.0698
+            Metrics/box_bottom_height_m: 0.0005
+              Metrics/box_table_force_n: 1.5439
+--------------------------------------------------------------------------------
+                         Iteration time: 1.49s
+                           Time elapsed: 0:00:58
+                                    ETA: 0:00:20
+
+################################################################################
+[1m                            Learning iteration 37/50                            [0m 
+
+                            Total steps: 311296 
+                       Steps per second: 5605 
+                        Collection time: 1.264s 
+                          Learning time: 0.197s 
+                        Mean value loss: 0.1046
+                    Mean surrogate loss: -0.0044
+                      Mean entropy loss: -9.4640
+                            Mean reward: 1.68
+                    Mean episode length: 767.71
+                        Mean action std: 0.05
+                Episode_Reward/approach: -0.0019
+               Episode_Reward/transport: -0.0000
+          Episode_Reward/table_pressure: -0.0115
+                 Episode_Reward/release: 0.0005
+              Episode_Reward/milestones: 0.0049
+                 Episode_Reward/success: 0.0139
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0185
+            Episode_Termination/success: 0.2738
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7262
+                     Metrics/grasp_rate: 0.4255
+                      Metrics/lift_rate: 0.0742
+                 Metrics/placement_rate: 0.0212
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0702
+                  Metrics/released_rate: 0.0526
+                 Metrics/withdrawn_rate: 0.0166
+                   Metrics/upright_rate: 0.0558
+           Metrics/current_contact_rate: 0.0948
+            Metrics/box_bottom_height_m: 0.0010
+              Metrics/box_table_force_n: 1.4774
+--------------------------------------------------------------------------------
+                         Iteration time: 1.46s
+                           Time elapsed: 0:01:00
+                                    ETA: 0:00:19
+
+################################################################################
+[1m                            Learning iteration 38/50                            [0m 
+
+                            Total steps: 319488 
+                       Steps per second: 5494 
+                        Collection time: 1.291s 
+                          Learning time: 0.200s 
+                        Mean value loss: 0.1129
+                    Mean surrogate loss: -0.0035
+                      Mean entropy loss: -9.4642
+                            Mean reward: 2.14
+                    Mean episode length: 750.39
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0125
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0355
+                 Episode_Reward/release: 0.0022
+              Episode_Reward/milestones: 0.0234
+                 Episode_Reward/success: 0.0625
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0070
+            Episode_Termination/success: 0.2681
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7319
+                     Metrics/grasp_rate: 0.4370
+                      Metrics/lift_rate: 0.0825
+                 Metrics/placement_rate: 0.0229
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0830
+                  Metrics/released_rate: 0.0677
+                 Metrics/withdrawn_rate: 0.0347
+                   Metrics/upright_rate: 0.0576
+           Metrics/current_contact_rate: 0.0754
+            Metrics/box_bottom_height_m: 0.0008
+              Metrics/box_table_force_n: 1.4022
+--------------------------------------------------------------------------------
+                         Iteration time: 1.49s
+                           Time elapsed: 0:01:01
+                                    ETA: 0:00:17
+
+################################################################################
+[1m                            Learning iteration 39/50                            [0m 
+
+                            Total steps: 327680 
+                       Steps per second: 5515 
+                        Collection time: 1.284s 
+                          Learning time: 0.201s 
+                        Mean value loss: 0.0897
+                    Mean surrogate loss: -0.0039
+                      Mean entropy loss: -9.4642
+                            Mean reward: 2.40
+                    Mean episode length: 743.17
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0113
+               Episode_Reward/transport: -0.0004
+          Episode_Reward/table_pressure: -0.0418
+                 Episode_Reward/release: 0.0050
+              Episode_Reward/milestones: 0.0450
+                 Episode_Reward/success: 0.1285
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0062
+            Episode_Termination/success: 0.2659
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7341
+                     Metrics/grasp_rate: 0.4105
+                      Metrics/lift_rate: 0.0662
+                 Metrics/placement_rate: 0.0203
+                   Metrics/success_rate: 0.0004
+                 Metrics/on_target_rate: 0.0907
+                  Metrics/released_rate: 0.0732
+                 Metrics/withdrawn_rate: 0.0287
+                   Metrics/upright_rate: 0.0636
+           Metrics/current_contact_rate: 0.0497
+            Metrics/box_bottom_height_m: 0.0004
+              Metrics/box_table_force_n: 1.3186
+--------------------------------------------------------------------------------
+                         Iteration time: 1.49s
+                           Time elapsed: 0:01:03
+                                    ETA: 0:00:15
+
+################################################################################
+[1m                            Learning iteration 40/50                            [0m 
+
+                            Total steps: 335872 
+                       Steps per second: 5588 
+                        Collection time: 1.263s 
+                          Learning time: 0.203s 
+                        Mean value loss: 0.0479
+                    Mean surrogate loss: -0.0053
+                      Mean entropy loss: -9.4644
+                            Mean reward: 2.61
+                    Mean episode length: 732.44
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0153
+               Episode_Reward/transport: -0.0006
+          Episode_Reward/table_pressure: -0.0194
+                 Episode_Reward/release: 0.0077
+              Episode_Reward/milestones: 0.0766
+                 Episode_Reward/success: 0.2188
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0005
+            Episode_Termination/success: 0.2720
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7280
+                     Metrics/grasp_rate: 0.4053
+                      Metrics/lift_rate: 0.0549
+                 Metrics/placement_rate: 0.0109
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0712
+                  Metrics/released_rate: 0.0443
+                 Metrics/withdrawn_rate: 0.0135
+                   Metrics/upright_rate: 0.0416
+           Metrics/current_contact_rate: 0.0548
+            Metrics/box_bottom_height_m: 0.0005
+              Metrics/box_table_force_n: 1.3414
+--------------------------------------------------------------------------------
+                         Iteration time: 1.47s
+                           Time elapsed: 0:01:04
+                                    ETA: 0:00:14
+
+################################################################################
+[1m                            Learning iteration 41/50                            [0m 
+
+                            Total steps: 344064 
+                       Steps per second: 5520 
+                        Collection time: 1.283s 
+                          Learning time: 0.201s 
+                        Mean value loss: 0.0495
+                    Mean surrogate loss: -0.0042
+                      Mean entropy loss: -9.4645
+                            Mean reward: 2.85
+                    Mean episode length: 727.97
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0130
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0209
+                 Episode_Reward/release: 0.0048
+              Episode_Reward/milestones: 0.0413
+                 Episode_Reward/success: 0.1181
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0016
+            Episode_Termination/success: 0.2749
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7251
+                     Metrics/grasp_rate: 0.4133
+                      Metrics/lift_rate: 0.0687
+                 Metrics/placement_rate: 0.0255
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0707
+                  Metrics/released_rate: 0.0499
+                 Metrics/withdrawn_rate: 0.0179
+                   Metrics/upright_rate: 0.0436
+           Metrics/current_contact_rate: 0.0531
+            Metrics/box_bottom_height_m: 0.0005
+              Metrics/box_table_force_n: 1.2976
+--------------------------------------------------------------------------------
+                         Iteration time: 1.48s
+                           Time elapsed: 0:01:06
+                                    ETA: 0:00:12
+
+################################################################################
+[1m                            Learning iteration 42/50                            [0m 
+
+                            Total steps: 352256 
+                       Steps per second: 5573 
+                        Collection time: 1.270s 
+                          Learning time: 0.200s 
+                        Mean value loss: 0.0656
+                    Mean surrogate loss: -0.0029
+                      Mean entropy loss: -9.4648
+                            Mean reward: 0.78
+                    Mean episode length: 820.57
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0131
+               Episode_Reward/transport: -0.0001
+          Episode_Reward/table_pressure: -0.0344
+                 Episode_Reward/release: 0.0019
+              Episode_Reward/milestones: 0.0252
+                 Episode_Reward/success: 0.0556
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0124
+            Episode_Termination/success: 0.2657
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7343
+                     Metrics/grasp_rate: 0.2638
+                      Metrics/lift_rate: 0.0468
+                 Metrics/placement_rate: 0.0098
+                   Metrics/success_rate: 0.0002
+                 Metrics/on_target_rate: 0.0657
+                  Metrics/released_rate: 0.0566
+                 Metrics/withdrawn_rate: 0.0208
+                   Metrics/upright_rate: 0.0580
+           Metrics/current_contact_rate: 0.0342
+            Metrics/box_bottom_height_m: 0.0003
+              Metrics/box_table_force_n: 1.2174
+--------------------------------------------------------------------------------
+                         Iteration time: 1.47s
+                           Time elapsed: 0:01:07
+                                    ETA: 0:00:11
+
+################################################################################
+[1m                            Learning iteration 43/50                            [0m 
+
+                            Total steps: 360448 
+                       Steps per second: 5535 
+                        Collection time: 1.278s 
+                          Learning time: 0.202s 
+                        Mean value loss: 0.1518
+                    Mean surrogate loss: -0.0035
+                      Mean entropy loss: -9.4652
+                            Mean reward: 0.88
+                    Mean episode length: 818.82
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0157
+               Episode_Reward/transport: -0.0006
+          Episode_Reward/table_pressure: -0.0160
+                 Episode_Reward/release: 0.0070
+              Episode_Reward/milestones: 0.0592
+                 Episode_Reward/success: 0.1632
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0055
+            Episode_Termination/success: 0.2588
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7412
+                     Metrics/grasp_rate: 0.2301
+                      Metrics/lift_rate: 0.0471
+                 Metrics/placement_rate: 0.0138
+                   Metrics/success_rate: 0.0005
+                 Metrics/on_target_rate: 0.0355
+                  Metrics/released_rate: 0.0291
+                 Metrics/withdrawn_rate: 0.0161
+                   Metrics/upright_rate: 0.0354
+           Metrics/current_contact_rate: 0.0593
+            Metrics/box_bottom_height_m: 0.0007
+              Metrics/box_table_force_n: 1.2473
+--------------------------------------------------------------------------------
+                         Iteration time: 1.48s
+                           Time elapsed: 0:01:09
+                                    ETA: 0:00:09
+
+################################################################################
+[1m                            Learning iteration 44/50                            [0m 
+
+                            Total steps: 368640 
+                       Steps per second: 5524 
+                        Collection time: 1.280s 
+                          Learning time: 0.203s 
+                        Mean value loss: 0.0557
+                    Mean surrogate loss: -0.0042
+                      Mean entropy loss: -9.4655
+                            Mean reward: 0.99
+                    Mean episode length: 812.31
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0062
+               Episode_Reward/transport: -0.0001
+          Episode_Reward/table_pressure: -0.0164
+                 Episode_Reward/release: 0.0011
+              Episode_Reward/milestones: 0.0097
+                 Episode_Reward/success: 0.0278
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0083
+            Episode_Termination/success: 0.2542
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7458
+                     Metrics/grasp_rate: 0.2957
+                      Metrics/lift_rate: 0.0728
+                 Metrics/placement_rate: 0.0122
+                   Metrics/success_rate: 0.0001
+                 Metrics/on_target_rate: 0.0310
+                  Metrics/released_rate: 0.0249
+                 Metrics/withdrawn_rate: 0.0098
+                   Metrics/upright_rate: 0.0283
+           Metrics/current_contact_rate: 0.1239
+            Metrics/box_bottom_height_m: 0.0026
+              Metrics/box_table_force_n: 1.3694
+--------------------------------------------------------------------------------
+                         Iteration time: 1.48s
+                           Time elapsed: 0:01:10
+                                    ETA: 0:00:07
+
+################################################################################
+[1m                            Learning iteration 45/50                            [0m 
+
+                            Total steps: 376832 
+                       Steps per second: 5490 
+                        Collection time: 1.288s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.0638
+                    Mean surrogate loss: -0.0044
+                      Mean entropy loss: -9.4657
+                            Mean reward: 0.70
+                    Mean episode length: 820.07
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0082
+               Episode_Reward/transport: -0.0000
+          Episode_Reward/table_pressure: -0.0288
+                 Episode_Reward/release: 0.0000
+              Episode_Reward/milestones: 0.0033
+                 Episode_Reward/success: 0.0000
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0235
+            Episode_Termination/success: 0.2389
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7611
+                     Metrics/grasp_rate: 0.3394
+                      Metrics/lift_rate: 0.0977
+                 Metrics/placement_rate: 0.0696
+                   Metrics/success_rate: 0.0000
+                 Metrics/on_target_rate: 0.0887
+                  Metrics/released_rate: 0.0757
+                 Metrics/withdrawn_rate: 0.0132
+                   Metrics/upright_rate: 0.0778
+           Metrics/current_contact_rate: 0.0968
+            Metrics/box_bottom_height_m: 0.0011
+              Metrics/box_table_force_n: 1.3124
+--------------------------------------------------------------------------------
+                         Iteration time: 1.49s
+                           Time elapsed: 0:01:12
+                                    ETA: 0:00:06
+
+################################################################################
+[1m                            Learning iteration 46/50                            [0m 
+
+                            Total steps: 385024 
+                       Steps per second: 5337 
+                        Collection time: 1.329s 
+                          Learning time: 0.206s 
+                        Mean value loss: 0.2064
+                    Mean surrogate loss: -0.0038
+                      Mean entropy loss: -9.4659
+                            Mean reward: 1.21
+                    Mean episode length: 796.00
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0151
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0216
+                 Episode_Reward/release: 0.0052
+              Episode_Reward/milestones: 0.0516
+                 Episode_Reward/success: 0.1458
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0069
+            Episode_Termination/success: 0.2526
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7474
+                     Metrics/grasp_rate: 0.3505
+                      Metrics/lift_rate: 0.1169
+                 Metrics/placement_rate: 0.0669
+                   Metrics/success_rate: 0.0012
+                 Metrics/on_target_rate: 0.0839
+                  Metrics/released_rate: 0.0736
+                 Metrics/withdrawn_rate: 0.0278
+                   Metrics/upright_rate: 0.0717
+           Metrics/current_contact_rate: 0.1058
+            Metrics/box_bottom_height_m: 0.0017
+              Metrics/box_table_force_n: 1.2876
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:01:13
+                                    ETA: 0:00:04
+
+################################################################################
+[1m                            Learning iteration 47/50                            [0m 
+
+                            Total steps: 393216 
+                       Steps per second: 5327 
+                        Collection time: 1.335s 
+                          Learning time: 0.203s 
+                        Mean value loss: 0.1350
+                    Mean surrogate loss: -0.0036
+                      Mean entropy loss: -9.4659
+                            Mean reward: 0.92
+                    Mean episode length: 799.83
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0107
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.1332
+                 Episode_Reward/release: 0.0011
+              Episode_Reward/milestones: 0.0228
+                 Episode_Reward/success: 0.0365
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0043
+            Episode_Termination/success: 0.2537
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7463
+                     Metrics/grasp_rate: 0.3429
+                      Metrics/lift_rate: 0.0890
+                 Metrics/placement_rate: 0.0509
+                   Metrics/success_rate: 0.0006
+                 Metrics/on_target_rate: 0.0839
+                  Metrics/released_rate: 0.0659
+                 Metrics/withdrawn_rate: 0.0214
+                   Metrics/upright_rate: 0.0647
+           Metrics/current_contact_rate: 0.0879
+            Metrics/box_bottom_height_m: 0.0010
+              Metrics/box_table_force_n: 1.3181
+--------------------------------------------------------------------------------
+                         Iteration time: 1.54s
+                           Time elapsed: 0:01:15
+                                    ETA: 0:00:03
+
+################################################################################
+[1m                            Learning iteration 48/50                            [0m 
+
+                            Total steps: 401408 
+                       Steps per second: 5353 
+                        Collection time: 1.327s 
+                          Learning time: 0.203s 
+                        Mean value loss: 0.2062
+                    Mean surrogate loss: -0.0034
+                      Mean entropy loss: -9.4660
+                            Mean reward: 1.76
+                    Mean episode length: 761.99
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0162
+               Episode_Reward/transport: -0.0001
+          Episode_Reward/table_pressure: -0.0329
+                 Episode_Reward/release: 0.0021
+              Episode_Reward/milestones: 0.0247
+                 Episode_Reward/success: 0.0608
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0132
+            Episode_Termination/success: 0.2642
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.7358
+                     Metrics/grasp_rate: 0.3030
+                      Metrics/lift_rate: 0.0781
+                 Metrics/placement_rate: 0.0359
+                   Metrics/success_rate: 0.0010
+                 Metrics/on_target_rate: 0.0559
+                  Metrics/released_rate: 0.0461
+                 Metrics/withdrawn_rate: 0.0184
+                   Metrics/upright_rate: 0.0479
+           Metrics/current_contact_rate: 0.0958
+            Metrics/box_bottom_height_m: 0.0016
+              Metrics/box_table_force_n: 1.2329
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:01:16
+                                    ETA: 0:00:01
+
+################################################################################
+[1m                            Learning iteration 49/50                            [0m 
+
+                            Total steps: 409600 
+                       Steps per second: 5319 
+                        Collection time: 1.336s 
+                          Learning time: 0.204s 
+                        Mean value loss: 0.1624
+                    Mean surrogate loss: -0.0044
+                      Mean entropy loss: -9.4662
+                            Mean reward: 2.23
+                    Mean episode length: 738.34
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0066
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.1028
+                 Episode_Reward/release: 0.0056
+              Episode_Reward/milestones: 0.0559
+                 Episode_Reward/success: 0.1493
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0003
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0033
+            Episode_Termination/success: 0.3087
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.6913
+                     Metrics/grasp_rate: 0.2975
+                      Metrics/lift_rate: 0.0874
+                 Metrics/placement_rate: 0.0201
+                   Metrics/success_rate: 0.0007
+                 Metrics/on_target_rate: 0.0476
+                  Metrics/released_rate: 0.0400
+                 Metrics/withdrawn_rate: 0.0149
+                   Metrics/upright_rate: 0.0374
+           Metrics/current_contact_rate: 0.0886
+            Metrics/box_bottom_height_m: 0.0015
+              Metrics/box_table_force_n: 1.2937
+--------------------------------------------------------------------------------
+                         Iteration time: 1.54s
+                           Time elapsed: 0:01:18
+                                    ETA: 0:00:00
+
+{
+  "source_sha256": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+  "checkpoint": "logs/camera_ppo_20261028/trial_v2/training/model_49.pt",
+  "checkpoint_sha256": "89c47f8c837f54d5259a769695dc987b321fb753b155fca6cfa862853ebd749a",
+  "iterations": 50,
+  "optimizer_steps": [
+    800
+  ],
+  "finite_actor_and_critic": true,
+  "actor_normalizer_count": 9433088,
+  "initial_normalizer_count": 9023488,
+  "algorithm": "PPO",
+  "actor_inputs": [
+    "wrist_rgb",
+    "proprioception"
+  ],
+  "critic_inputs": [
+    "critic"
+  ]
+}

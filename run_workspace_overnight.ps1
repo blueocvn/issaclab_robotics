@@ -31,7 +31,7 @@ if ($awake -eq 0) { throw 'Could not prevent system sleep; training was not laun
 try {
     "Started $(Get-Date -Format o); automatic shutdown authorized for success or unresolved failure." |
         Set-Content -LiteralPath $launcherLog
-    $bashCommand = "cd /mnt/d/work/robotics/IsaacLabTutorial && .venv/bin/python -u -m isaaclab_tutorial.tasks.place_box.workspace_pipeline --teacher logs/rsl_rl/so101_box_state/2026-10-26_14-59-07_so101-box-release-v3-refine/model_2196.pt --output-dir '$linuxRun' --max-blocks 8 --camera-blocks 3 --max-hours 10"
+    $bashCommand = "cd /mnt/d/work/robotics/IsaacLabTutorial && .venv/bin/python -u -m isaaclab_tutorial.tasks.place_box.workspace_pipeline --teacher checkpoints/archive/so101_box_state/2026-10-26_14-59-07_so101-box-release-v3-refine/model_2196.pt --output-dir '$linuxRun' --max-blocks 8 --camera-blocks 3 --max-hours 10"
     $nativeArgs = '-d Ubuntu -- bash -lc "' + $bashCommand + '"'
     $child = Start-Process -FilePath 'wsl.exe' -ArgumentList $nativeArgs -WindowStyle Hidden -PassThru -Wait `
         -RedirectStandardOutput (Join-Path $launcherDirectory 'pipeline_stdout.log') `

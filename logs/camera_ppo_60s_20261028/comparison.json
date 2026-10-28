@@ -1,0 +1,49 @@
+{
+  "method": "500 additional Camera PPO iterations with60-second episodes",
+  "populations": {
+    "nominal": {
+      "episodes": 256,
+      "baseline_successes": 253,
+      "candidate_successes": 254,
+      "candidate_only_successes": 3,
+      "baseline_only_successes": 2,
+      "both_successes": 251,
+      "both_failures": 0,
+      "gain_pp": 0.390625,
+      "gain_paired_bootstrap_95_pp": [
+        -1.171875,
+        1.953125
+      ]
+    },
+    "wide": {
+      "episodes": 256,
+      "baseline_successes": 101,
+      "candidate_successes": 101,
+      "candidate_only_successes": 25,
+      "baseline_only_successes": 25,
+      "both_successes": 76,
+      "both_failures": 130,
+      "gain_pp": 0.0,
+      "gain_paired_bootstrap_95_pp": [
+        -5.46875,
+        5.46875
+      ]
+    }
+  },
+  "checkpoint_sha256": {
+    "nominal": {
+      "source": "32952d1e6783603d81cf9b72b4c13ecbb4f2c329577d3bfa5151a7bf7990b0d2",
+      "endpoint": "9f1ddb9fe6e19df5555435295b9f5840539495ae1c6805626e6210db400f85bc"
+    },
+    "wide": {
+      "source": "32952d1e6783603d81cf9b72b4c13ecbb4f2c329577d3bfa5151a7bf7990b0d2",
+      "endpoint": "9f1ddb9fe6e19df5555435295b9f5840539495ae1c6805626e6210db400f85bc"
+    }
+  },
+  "same_episode_horizon_seconds": 60.0,
+  "limitations": [
+    "256-start selection screens, not deployment acceptance.",
+    "30-second historical scores cannot be treated as a matched baseline for60-second success."
+  ],
+  "qualifies_on_same_horizon": false
+}

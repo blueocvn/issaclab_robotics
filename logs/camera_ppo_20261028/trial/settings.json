@@ -1,0 +1,129 @@
+{
+  "agent": {
+    "seed": 67,
+    "device": "cuda:0",
+    "num_steps_per_env": 64,
+    "init_at_random_ep_len": false,
+    "max_iterations": 50,
+    "empirical_normalization": {},
+    "obs_groups": {
+      "actor": [
+        "wrist_rgb",
+        "proprioception"
+      ],
+      "critic": [
+        "critic"
+      ]
+    },
+    "clip_actions": 1.0,
+    "check_for_nan": true,
+    "save_interval": 25,
+    "experiment_name": "so101_box_camera_ppo",
+    "run_name": "",
+    "logger": "tensorboard",
+    "neptune_project": "isaaclab",
+    "wandb_project": "isaaclab",
+    "resume": false,
+    "load_run": ".*",
+    "load_checkpoint": "model_.*.pt",
+    "class_name": "OnPolicyRunner",
+    "actor": {
+      "class_name": "CNNModel",
+      "hidden_dims": [
+        256,
+        128
+      ],
+      "activation": "elu",
+      "obs_normalization": true,
+      "distribution_cfg": {
+        "class_name": "GaussianDistribution",
+        "init_std": 0.05,
+        "std_type": "log",
+        "std_range": [
+          0.01,
+          0.15
+        ]
+      },
+      "stochastic": {},
+      "init_noise_std": {},
+      "noise_std_type": "scalar",
+      "state_dependent_std": false,
+      "cnn_cfg": {
+        "output_channels": [
+          16,
+          32,
+          32
+        ],
+        "kernel_size": [
+          5,
+          3,
+          3
+        ],
+        "stride": [
+          2,
+          2,
+          2
+        ],
+        "dilation": 1,
+        "padding": "none",
+        "norm": "none",
+        "activation": "elu",
+        "max_pool": false,
+        "global_pool": "none",
+        "flatten": true
+      }
+    },
+    "critic": {
+      "class_name": "MLPModel",
+      "hidden_dims": [
+        256,
+        256,
+        128
+      ],
+      "activation": "elu",
+      "obs_normalization": true,
+      "distribution_cfg": null,
+      "stochastic": {},
+      "init_noise_std": {},
+      "noise_std_type": "scalar",
+      "state_dependent_std": false
+    },
+    "algorithm": {
+      "class_name": "PPO",
+      "num_learning_epochs": 4,
+      "num_mini_batches": 4,
+      "learning_rate": 1e-05,
+      "schedule": "fixed",
+      "gamma": 0.995,
+      "lam": 0.95,
+      "entropy_coef": 0.0,
+      "desired_kl": 0.01,
+      "max_grad_norm": 1.0,
+      "optimizer": "adam",
+      "value_loss_coef": 1.0,
+      "use_clipped_value_loss": true,
+      "clip_param": 0.1,
+      "normalize_advantage_per_mini_batch": false,
+      "share_cnn_encoders": false,
+      "use_mixed_precision": false,
+      "rnd_cfg": null,
+      "symmetry_cfg": null
+    },
+    "torch_compile_mode": null,
+    "policy": {}
+  },
+  "resets": {
+    "position_noise": 0.1,
+    "yaw_noise": 3.141592653589793,
+    "paper_yaw": 0.0,
+    "nominal_fraction": 0.2,
+    "reset_mode": "random",
+    "sampling_seed": 67,
+    "grid_start_index": 0,
+    "replay_path": ""
+  },
+  "source_checkpoint": "logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2200.pt",
+  "source_sha256": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+  "iterations": 50,
+  "num_envs": 128
+}

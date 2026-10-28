@@ -1,0 +1,20 @@
+{
+  "source_sha256": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+  "checkpoint": "logs/camera_ppo_20261028/trial_v2/training/model_49.pt",
+  "checkpoint_sha256": "89c47f8c837f54d5259a769695dc987b321fb753b155fca6cfa862853ebd749a",
+  "iterations": 50,
+  "optimizer_steps": [
+    800
+  ],
+  "finite_actor_and_critic": true,
+  "actor_normalizer_count": 9433088,
+  "initial_normalizer_count": 9023488,
+  "algorithm": "PPO",
+  "actor_inputs": [
+    "wrist_rgb",
+    "proprioception"
+  ],
+  "critic_inputs": [
+    "critic"
+  ]
+}

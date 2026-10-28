@@ -75,7 +75,7 @@ Add `--sim2real` to inspect that preset.
 Example for latest state refinement 5381:
 
 ```bash
-CKPT='logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt'
+CKPT='checkpoints/archive/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt'
 export GALLIUM_DRIVER=d3d12
 export MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA
 uv run --locked isaaclab play --rl_library rsl_rl --task IsaacTutorial-Pick-Box-SO101 --num_envs 1 --device cuda:0 --checkpoint "$CKPT" --visualizer newton presets=newton_mjwarp env.events.reset_home.params.position_noise=0.1 env.events.reset_home.params.yaw_noise=3.141592653589793

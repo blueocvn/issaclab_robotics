@@ -1,0 +1,124 @@
+Audit 1/1: group45_batch0, 256 first episodes
+{
+  "population": "stage",
+  "policy": "camera",
+  "episodes": 256,
+  "successes": 11,
+  "success_rate": 0.04296875,
+  "success_wilson_95": [
+    0.024159813300607562,
+    0.07529105546366555
+  ],
+  "required_success_rate": 0.95,
+  "seed_groups": [
+    45
+  ],
+  "stage_counts": {
+    "grasped": 87,
+    "lifted": 20,
+    "placed": 13,
+    "success": 11,
+    "timed_out": 245,
+    "dropped": 0,
+    "out_of_bounds": 0,
+    "unstable_robot": 0
+  },
+  "spatial_counts": [
+    [
+      11,
+      10,
+      8,
+      11,
+      6
+    ],
+    [
+      8,
+      9,
+      16,
+      10,
+      16
+    ],
+    [
+      6,
+      15,
+      7,
+      13,
+      11
+    ],
+    [
+      16,
+      13,
+      9,
+      11,
+      12
+    ],
+    [
+      7,
+      11,
+      6,
+      7,
+      7
+    ]
+  ],
+  "spatial_successes": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      1
+    ]
+  ],
+  "yaw_counts": [
+    36,
+    32,
+    26,
+    38,
+    36,
+    26,
+    34,
+    28
+  ],
+  "yaw_successes": [
+    1,
+    0,
+    0,
+    5,
+    2,
+    1,
+    1,
+    1
+  ],
+  "coverage_sufficient": true,
+  "status": "fail",
+  "completed_jobs": 1,
+  "planned_jobs": 1
+}

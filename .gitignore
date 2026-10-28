@@ -102,3 +102,10 @@ benchmark_*.json
 *.onnx.data
 *.jit
 !src/isaaclab_tutorial/assets/reset_poses.pt
+
+# Published model archives live here; bulky failed experiments stay local.
+!/checkpoints/**/*.pt
+!/checkpoints/**/*.onnx
+!/checkpoints/**/*.onnx.data
+!/checkpoints/**/*.jit
+/checkpoints/local_experiments/

@@ -191,8 +191,8 @@ class DataFirstDistillation(Distillation):
         losses, fresh_losses, replay_losses = [], [], []
         replay_counts = torch.zeros(4, dtype=torch.long)
         for _ in range(self.num_learning_epochs * self.storage.num_transitions_per_env):
-            replay = self.replay.sample(64, self.device)
-            fresh_count = 64 if replay is not None else 128
+            replay = self.sample_retained()
+            fresh_count = 128 - len(replay[1]) if replay is not None else 128
             indices = torch.randint(len(fresh), (fresh_count,), generator=self.fresh_rng).to(self.device)
             batch = TensorDict({key: fresh[key][indices] for key in STUDENT_KEYS}, [fresh_count], device=self.device)
             target = labels[indices]
@@ -239,6 +239,10 @@ class DataFirstDistillation(Distillation):
         self.storage.clear()
         self._reset_metrics()
         return metrics
+
+    def sample_retained(self):
+        """Sample earlier rollouts; subclasses may add protected references."""
+        return self.replay.sample(64, self.device)
 
     def train_mode(self):
         super().train_mode()

@@ -224,3 +224,30 @@ def test_random_supplement_preserves_provenance_through_result_validation(tmp_pa
     summary = json.loads((output / "summary.json").read_text())
     assert summary["completed_jobs"] == summary["planned_jobs"] == 4
     assert summary["episodes"] == 259
+
+
+def test_custom_episode_horizon_changes_only_requested_audit_override():
+    from isaaclab_tutorial.tasks.place_box.workspace_audit import build_jobs
+
+    kwargs = dict(
+        checkpoint="model.pt",
+        policy="camera",
+        population="nominal",
+        stage="F",
+        seeds=[42],
+        batch_size=256,
+        episodes=256,
+        agent="rsl_rl_camera_ppo_cfg_entry_point",
+    )
+    normal = build_jobs(**kwargs)[0]["command"]
+    longer = build_jobs(**kwargs, episode_length_s=60.0)[0]["command"]
+    assert longer[:-1] == normal
+    assert longer[-1] == "env.episode_length_s=60.0"
+
+
+@pytest.mark.parametrize("duration", [0, -1, float("nan"), float("inf")])
+def test_invalid_audit_episode_horizon_is_rejected(duration):
+    from isaaclab_tutorial.tasks.place_box.workspace_audit import build_jobs
+
+    with pytest.raises(ValueError, match="duration"):
+        build_jobs("model.pt", "camera", "nominal", "F", [42], 256, episode_length_s=duration)

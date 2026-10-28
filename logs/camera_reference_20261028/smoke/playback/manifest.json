@@ -1,0 +1,49 @@
+{
+  "checkpoint": "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_anchored/20261028_reference_smoke_b2/model_2202.pt",
+  "checkpoint_sha256": "c8a421669081dc5531c41e354e6b460be97dc8251fed3dd7262ac81562bb4dee",
+  "policy": "camera",
+  "population": "nominal",
+  "stage": "F",
+  "seed_groups": [
+    42
+  ],
+  "jobs": [
+    {
+      "seed_group": 42,
+      "batch": 0,
+      "start_index": 0,
+      "count": 8,
+      "sampling_seed": 42,
+      "reset_mode": "random",
+      "command": [
+        "/mnt/e/issaclab_robotics/.venv/bin/isaaclab",
+        "play",
+        "--rl_library",
+        "rsl_rl",
+        "--task",
+        "IsaacTutorial-Pick-Box-SO101-Camera",
+        "--num_envs",
+        "8",
+        "--seed",
+        "42",
+        "--device",
+        "cuda:0",
+        "--checkpoint",
+        "/mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_anchored/20261028_reference_smoke_b2/model_2202.pt",
+        "--visualizer",
+        "none",
+        "--external_callback",
+        "isaaclab_tutorial.tasks.place_box.evaluation.install_episode_counter",
+        "presets=newton_mjwarp,newton_renderer",
+        "env.events.reset_home.params.position_noise=0.01",
+        "env.events.reset_home.params.yaw_noise=0.1",
+        "env.events.reset_home.params.nominal_fraction=0.0",
+        "env.events.reset_home.params.reset_mode=random",
+        "env.events.reset_home.params.sampling_seed=42",
+        "env.events.reset_home.params.grid_start_index=0"
+      ]
+    }
+  ],
+  "started_job": 0,
+  "completed_jobs": 1
+}

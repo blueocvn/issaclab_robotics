@@ -1,0 +1,83 @@
+seed: 43
+device: cuda:0
+num_steps_per_env: 32
+init_at_random_ep_len: false
+max_iterations: 50
+empirical_normalization: {}
+obs_groups:
+  student:
+  - wrist_rgb
+  - proprioception
+  teacher:
+  - teacher_state
+clip_actions: 1.0
+check_for_nan: true
+save_interval: 100
+experiment_name: so101_box_camera_anchored
+run_name: b1
+logger: tensorboard
+neptune_project: isaaclab
+wandb_project: isaaclab
+resume: false
+load_run: .*
+load_checkpoint: logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2200.pt
+class_name: DistillationRunner
+student:
+  class_name: CNNModel
+  hidden_dims:
+  - 256
+  - 128
+  activation: elu
+  obs_normalization: true
+  distribution_cfg:
+    class_name: GaussianDistribution
+    init_std: 0.05
+    std_type: log
+    std_range: !!python/tuple
+    - 1.0e-06
+    - 1000000.0
+  cnn_cfg:
+    output_channels:
+    - 16
+    - 32
+    - 32
+    kernel_size:
+    - 5
+    - 3
+    - 3
+    stride:
+    - 2
+    - 2
+    - 2
+    dilation: 1
+    padding: none
+    norm: none
+    activation: elu
+    max_pool: false
+    global_pool: none
+    flatten: true
+teacher:
+  class_name: MLPModel
+  hidden_dims:
+  - 256
+  - 256
+  - 128
+  activation: elu
+  obs_normalization: true
+  distribution_cfg:
+    class_name: GaussianDistribution
+    init_std: 0.2
+    std_type: log
+    std_range: !!python/tuple
+    - 0.05
+    - 0.3
+algorithm:
+  class_name: isaaclab_tutorial.tasks.place_box.reference_replay:AnchoredDistillation
+  num_learning_epochs: 4
+  learning_rate: 0.0001
+  gradient_length: 1
+  max_grad_norm: 1.0
+  optimizer: adam
+  loss_type: mse
+  reference_path: logs/camera_reference_20261028/reference.pt
+policy: {}

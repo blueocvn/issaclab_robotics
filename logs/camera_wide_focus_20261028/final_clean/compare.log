@@ -1,0 +1,54 @@
+{
+  "method": "final-clean-preservation",
+  "optimizer_updates": 100,
+  "single_experimental_change": "Clean preservation observations at identical collection poses",
+  "unchanged_improvement_dataset_hashes": {
+    "/mnt/e/issaclab_robotics/logs/camera_wide_focus_20261028/baseline_collection.pt": "ca501f9142636b37ab0039698176d45a5dd16ce301bab10b4d2810e20d05a6a9",
+    "/mnt/e/issaclab_robotics/logs/camera_wide_focus_20261028/teacher_collection.pt": "e75a49d11204e4d0d27b518a6f12f49e67a211fa001540ca6d9c6cec581535a3"
+  },
+  "all_corruption_disabled": true,
+  "identical_preservation_poses": true,
+  "optimizer_settings_match_previous": true,
+  "populations": {
+    "nominal": {
+      "episodes": 256,
+      "baseline_successes": 229,
+      "candidate_successes": 167,
+      "candidate_only_successes": 9,
+      "baseline_only_successes": 71,
+      "both_successes": 158,
+      "both_failures": 18,
+      "gain_pp": -24.21875,
+      "gain_paired_bootstrap_95_pp": [
+        -30.46875,
+        -17.96875
+      ]
+    },
+    "wide": {
+      "episodes": 256,
+      "baseline_successes": 80,
+      "candidate_successes": 81,
+      "candidate_only_successes": 25,
+      "baseline_only_successes": 24,
+      "both_successes": 56,
+      "both_failures": 151,
+      "gain_pp": 0.390625,
+      "gain_paired_bootstrap_95_pp": [
+        -5.078125,
+        5.859375
+      ]
+    }
+  },
+  "checkpoint_sha256": {
+    "nominal": {
+      "baseline": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+      "candidate": "a8ac6e9f0370343c6b585a7af7f696678a3f6e2c4ef092b34705b01666e712c7"
+    },
+    "wide": {
+      "baseline": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+      "candidate": "a8ac6e9f0370343c6b585a7af7f696678a3f6e2c4ef092b34705b01666e712c7"
+    }
+  },
+  "eligible_for_confirmation": false,
+  "decision": "Final attempt failed selection; retain2200 and stop. No continuation or further training attempt."
+}

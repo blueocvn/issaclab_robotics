@@ -1,0 +1,29 @@
+{
+  "run": "logs/rsl_rl/so101_box_camera_ppo/20261028_60s_trial_camera_ppo_60s_plus500",
+  "source": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_1048.pt",
+  "endpoint": "logs/rsl_rl/so101_box_camera_ppo/20261028_60s_trial_camera_ppo_60s_plus500/model_1547.pt",
+  "source_sha256": "32952d1e6783603d81cf9b72b4c13ecbb4f2c329577d3bfa5151a7bf7990b0d2",
+  "endpoint_sha256": "9f1ddb9fe6e19df5555435295b9f5840539495ae1c6805626e6210db400f85bc",
+  "additional_iterations": 500,
+  "iteration_labels": [
+    1048,
+    1547
+  ],
+  "optimizer_steps": [
+    24800
+  ],
+  "normalizer_counts": {
+    "actor_state_dict": {
+      "before": 17625088,
+      "after": 21721088
+    },
+    "critic_state_dict": {
+      "before": 8601600,
+      "after": 12697600
+    }
+  },
+  "episode_length_s": 60.0,
+  "episode_control_steps": 1800,
+  "finite_actor_critic": true,
+  "learning_rate": 1e-05
+}

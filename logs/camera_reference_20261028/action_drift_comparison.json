@@ -1,0 +1,40 @@
+{
+  "initial_poses_exact": true,
+  "episodes_per_condition": 32,
+  "conditions": {
+    "baseline": 19,
+    "candidate": 18,
+    "candidate_baseline_wrist": 17
+  },
+  "paired": {
+    "candidate_vs_baseline": {
+      "episodes": 32,
+      "baseline_successes": 19,
+      "candidate_successes": 18,
+      "candidate_only_successes": 6,
+      "baseline_only_successes": 7,
+      "both_successes": 12,
+      "both_failures": 7,
+      "gain_pp": -3.125,
+      "gain_paired_bootstrap_95_pp": [
+        -25.0,
+        18.75
+      ]
+    },
+    "wrist_vs_candidate": {
+      "episodes": 32,
+      "baseline_successes": 18,
+      "candidate_successes": 17,
+      "candidate_only_successes": 7,
+      "baseline_only_successes": 8,
+      "both_successes": 10,
+      "both_failures": 7,
+      "gain_pp": -3.125,
+      "gain_paired_bootstrap_95_pp": [
+        -28.125,
+        21.875
+      ]
+    }
+  },
+  "interpretation": "Small diagnostic intervention, not acceptance or proof of a single cause. No training or checkpoint modification."
+}

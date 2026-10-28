@@ -15,7 +15,11 @@ for _suffix, _environment, _agent in (
             "env_cfg_entry_point": f"{_PACKAGE}.env_cfg:{_environment}",
             "rsl_rl_cfg_entry_point": f"{_PACKAGE}.agents:{_agent}",
             **(
-                {"rsl_rl_data_first_cfg_entry_point": f"{_PACKAGE}.agents:BoxDataFirstDistillationRunnerCfg"}
+                {
+                    "rsl_rl_data_first_cfg_entry_point": f"{_PACKAGE}.agents:BoxDataFirstDistillationRunnerCfg",
+                    "rsl_rl_camera_ppo_cfg_entry_point": f"{_PACKAGE}.agents:BoxCameraPPORunnerCfg",
+                    "rsl_rl_anchored_cfg_entry_point": f"{_PACKAGE}.agents:BoxAnchoredDistillationRunnerCfg",
+                }
                 if _suffix == "-Camera"
                 else {}
             ),

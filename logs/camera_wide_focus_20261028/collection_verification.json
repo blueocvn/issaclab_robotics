@@ -1,0 +1,98 @@
+{
+  "matched_initial_poses": true,
+  "optimizer_updates": 0,
+  "collections": {
+    "baseline": {
+      "snapshots": 4786,
+      "successful_nominal": 5,
+      "successful_wide": 6,
+      "strata": {
+        "low_y": {
+          "n": 16,
+          "stages": [
+            7,
+            4,
+            4,
+            3
+          ]
+        },
+        "other_estimated_outside": {
+          "n": 8,
+          "stages": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        "other_estimated_inside": {
+          "n": 8,
+          "stages": [
+            6,
+            2,
+            2,
+            2
+          ]
+        },
+        "nominal": {
+          "n": 16,
+          "stages": [
+            12,
+            6,
+            6,
+            5
+          ]
+        }
+      },
+      "sha256": "ca501f9142636b37ab0039698176d45a5dd16ce301bab10b4d2810e20d05a6a9"
+    },
+    "teacher": {
+      "snapshots": 1459,
+      "successful_nominal": 16,
+      "successful_wide": 32,
+      "strata": {
+        "low_y": {
+          "n": 16,
+          "stages": [
+            16,
+            16,
+            16,
+            16
+          ]
+        },
+        "other_estimated_outside": {
+          "n": 8,
+          "stages": [
+            8,
+            8,
+            8,
+            8
+          ]
+        },
+        "other_estimated_inside": {
+          "n": 8,
+          "stages": [
+            8,
+            8,
+            8,
+            8
+          ]
+        },
+        "nominal": {
+          "n": 16,
+          "stages": [
+            16,
+            16,
+            16,
+            16
+          ]
+        }
+      },
+      "sha256": "e75a49d11204e4d0d27b518a6f12f49e67a211fa001540ca6d9c6cec581535a3"
+    }
+  },
+  "label_sources": {
+    "baseline_actions": "camera2200 preservation targets on its successful episodes",
+    "teacher_actions": "frozen privileged teacher5381 labels"
+  }
+}

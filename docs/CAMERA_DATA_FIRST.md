@@ -1,5 +1,10 @@
 # Camera data-first experiment
 
+Completed on2026-10-28: both arms ran400 updates, but all +200/+400 endpoints
+failed nominal eligibility. Retain2200; no1024-start confirmation or automatic
+extension was run. [Results and verification](../logs/camera_controlled_20261028_111754/REPORT.md).
+Commands below document the completed protocol; do not rerun it automatically.
+
 The completed800-update run was screened first. Checkpoint2200 was strongest:
 229/256 nominal (89.45%) and80/256 wide (31.25%), compared with1798 at225/256
 (87.89%) and57/256 (22.27%). Its wide gain was8.98 percentage points, below
@@ -34,7 +39,7 @@ Use the Ubuntu terminal in WSL. Paste this setup once; it creates no script:
 
 ```bash
 cd /mnt/e/issaclab_robotics
-BASE='logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2200.pt'
+BASE='checkpoints/2200.pt'
 TAG=$(date +%Y%m%d_%H%M%S)
 COMMON=(--rl_library rsl_rl --task IsaacTutorial-Pick-Box-SO101-Camera --num_envs 128 --seed 43 --device cuda:0 --max_iterations 200 --resume_optimizer_state --visualizer none)
 OVERRIDES=(presets=newton_mjwarp,newton_renderer agent.algorithm.learning_rate=0.0001 agent.init_at_random_ep_len=false env.events.reset_home.params.position_noise=0.1 env.events.reset_home.params.yaw_noise=3.141592653589793 env.events.reset_home.params.nominal_fraction=0.2 env.events.reset_home.params.sampling_seed=43)

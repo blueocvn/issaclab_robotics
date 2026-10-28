@@ -7,6 +7,7 @@ Example: python -m isaaclab_tutorial.tasks.place_box.workspace_audit
 import argparse
 import hashlib
 import json
+import math
 import os
 import subprocess
 import sys
@@ -32,8 +33,21 @@ def finalize_report(result, completed, planned):
     return result
 
 
-def build_jobs(checkpoint, policy, population, stage, seeds, batch_size, episodes=1024, grid_repeats=5):
+def build_jobs(
+    checkpoint,
+    policy,
+    population,
+    stage,
+    seeds,
+    batch_size,
+    episodes=1024,
+    grid_repeats=5,
+    agent=None,
+    episode_length_s=None,
+):
     """Return reproducible play commands; indices remain global across batches."""
+    if episode_length_s is not None and (not math.isfinite(episode_length_s) or episode_length_s <= 0):
+        raise ValueError("Episode duration must be finite and positive")
     if (
         batch_size <= 0
         or grid_repeats <= 0
@@ -85,6 +99,10 @@ def build_jobs(checkpoint, policy, population, stage, seeds, batch_size, episode
                 grid_start_index=start,
             )
             command.extend(f"env.events.reset_home.params.{key}={value}" for key, value in overrides.items())
+            if agent:
+                command.extend(["--agent", agent])
+            if episode_length_s is not None:
+                command.append(f"env.episode_length_s={float(episode_length_s)}")
             jobs.append(
                 dict(
                     seed_group=group,
@@ -131,6 +149,8 @@ def read_result(path, job):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--agent", help="Optional explicit RSL-RL agent entry point")
+    parser.add_argument("--episode-length-s", type=float, help="Optional episode duration override for matched audits")
     parser.add_argument("--policy", choices=("teacher", "camera"), required=True)
     parser.add_argument("--population", choices=("grid", "random", "stage", "nominal", "regression"), required=True)
     parser.add_argument("--stage", choices=STAGES, default="F")
@@ -162,6 +182,8 @@ def main(argv=None):
             args.batch_size,
             args.episodes,
             args.grid_repeats,
+            agent=args.agent,
+            episode_length_s=args.episode_length_s,
         )
     except ValueError as error:
         parser.error(str(error))
@@ -224,7 +246,17 @@ def main(argv=None):
             if not enough:
                 group = seeds[(index + 1) % len(seeds)]
                 batch = 1 + max(j["batch"] for j in jobs if j["seed_group"] == group)
-                extra = build_jobs(args.checkpoint, args.policy, "random", args.stage, [group], 256, episodes=256)[0]
+                extra = build_jobs(
+                    args.checkpoint,
+                    args.policy,
+                    "random",
+                    args.stage,
+                    [group],
+                    256,
+                    episodes=256,
+                    agent=args.agent,
+                    episode_length_s=args.episode_length_s,
+                )[0]
                 seed = reserve_seed(group, batch, {j["sampling_seed"] for j in jobs})
                 extra.update(batch=batch, sampling_seed=seed, start_index=batch * 256)
                 command = extra["command"]

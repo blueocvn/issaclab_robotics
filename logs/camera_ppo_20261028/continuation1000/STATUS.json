@@ -1,0 +1,30 @@
+﻿{
+    "status":  "interrupted_by_user_steering",
+    "reason":  "Stop remaining screens to train60-second PPO for500 additional iterations",
+    "completed_screens":  [
+                              {
+                                  "audit":  "c1048_nominal",
+                                  "episodes":  256,
+                                  "successes":  255,
+                                  "success_rate":  0.99609375
+                              },
+                              {
+                                  "audit":  "c1048_wide",
+                                  "episodes":  256,
+                                  "successes":  94,
+                                  "success_rate":  0.3671875
+                              },
+                              {
+                                  "audit":  "c700_nominal",
+                                  "episodes":  256,
+                                  "successes":  256,
+                                  "success_rate":  1.0
+                              },
+                              {
+                                  "audit":  "c700_wide",
+                                  "episodes":  256,
+                                  "successes":  78,
+                                  "success_rate":  0.3046875
+                              }
+                          ]
+}

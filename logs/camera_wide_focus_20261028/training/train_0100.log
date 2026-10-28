@@ -1,0 +1,34 @@
+{
+  "checkpoint": "/mnt/e/issaclab_robotics/logs/camera_wide_focus_20261028/training/model_offline_0100.pt",
+  "checkpoint_sha256": "1c116c3056d762b5b9a0b17fc2ff9a3514af2e3bb9affde884c2638f84530108",
+  "dataset_sha256": {
+    "/mnt/e/issaclab_robotics/logs/camera_wide_focus_20261028/expanded/baseline_collection.pt": "de2632f69612f94e7a0cf76c3c01d2e43bb9d9edd42d5732ab7edda616316043",
+    "/mnt/e/issaclab_robotics/logs/camera_wide_focus_20261028/baseline_collection.pt": "ca501f9142636b37ab0039698176d45a5dd16ce301bab10b4d2810e20d05a6a9",
+    "/mnt/e/issaclab_robotics/logs/camera_wide_focus_20261028/teacher_collection.pt": "e75a49d11204e4d0d27b518a6f12f49e67a211fa001540ca6d9c6cec581535a3"
+  },
+  "optimizer_updates": 100,
+  "optimizer_steps_before": [
+    77184
+  ],
+  "optimizer_steps_after": [
+    77284
+  ],
+  "normalizer_unchanged": true,
+  "teacher_unchanged": true,
+  "finite_gradients": true,
+  "successful_preservation_episodes": {
+    "nominal": 63,
+    "wide": 15
+  },
+  "heldout_action_preservation": {
+    "nominal": {
+      "episodes": 12,
+      "mse": 0.0021939564030617476
+    },
+    "wide": {
+      "episodes": 9,
+      "mse": 0.003502774517983198
+    }
+  },
+  "interpretation": "Offline error is not closed-loop success; screen with default student-only playback."
+}

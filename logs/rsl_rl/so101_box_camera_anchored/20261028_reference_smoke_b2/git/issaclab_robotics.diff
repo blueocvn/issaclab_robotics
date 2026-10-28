@@ -1,0 +1,170 @@
+--- git commit ---
+ad30e62e53e779ab2eb61d0cf59c4ffd23bf6c66
+
+
+--- git status ---
+On branch camera-data-first
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   docs/CAMERA_DATA_FIRST.md
+	modified:   docs/HANDOFF.md
+	modified:   docs/SUMMARY_NEXT_ACTION.md
+	modified:   src/isaaclab_tutorial/tasks/place_box/__init__.py
+	modified:   src/isaaclab_tutorial/tasks/place_box/agents.py
+	modified:   src/isaaclab_tutorial/tasks/place_box/distillation.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	docs/CAMERA_PROTECTED_REFERENCE.md
+	docs/plans/2026-10-28-protected-reference.md
+	src/isaaclab_tutorial/tasks/place_box/reference_collection.py
+	src/isaaclab_tutorial/tasks/place_box/reference_replay.py
+	tests/test_box_reference_replay.py
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/docs/CAMERA_DATA_FIRST.md b/docs/CAMERA_DATA_FIRST.md
+index 9a071d1..4832952 100644
+--- a/docs/CAMERA_DATA_FIRST.md
++++ b/docs/CAMERA_DATA_FIRST.md
+@@ -1,5 +1,10 @@
+ # Camera data-first experiment
+ 
++Completed on2026-10-28: both arms ran400 updates, but all +200/+400 endpoints
++failed nominal eligibility. Retain2200; no1024-start confirmation or automatic
++extension was run. [Results and verification](../logs/camera_controlled_20261028_111754/REPORT.md).
++Commands below document the completed protocol; do not rerun it automatically.
++
+ The completed800-update run was screened first. Checkpoint2200 was strongest:
+ 229/256 nominal (89.45%) and80/256 wide (31.25%), compared with1798 at225/256
+ (87.89%) and57/256 (22.27%). Its wide gain was8.98 percentage points, below
+diff --git a/docs/HANDOFF.md b/docs/HANDOFF.md
+index 2068a0a..12642b0 100644
+--- a/docs/HANDOFF.md
++++ b/docs/HANDOFF.md
+@@ -1,5 +1,22 @@
+ # SO-101 box task handoff
+ 
++## Latest outcome — 2026-10-28
++
++The user authorized autonomous completion of the controlled experiment.
++Both arms finished400 updates; every +200/+400 endpoint failed the nominal
++eligibility gate. Retain2200. Final screens: control45/256 nominal,29/256 wide;
++data-first4/256 nominal,11/256 wide. Baseline229/256 nominal,80/256 wide.
++Checkpoint state and exact matched-pose/protocol comparisons were verified.
++No eligible endpoint remained for1024-start confirmation; no training extension
++was launched. Diagnose regression before another training experiment.
++[Report and evidence](../logs/camera_controlled_20261028_111754/REPORT.md).
++Read-only diagnosis found predominantly grasp-to-lift failures, complete turnover
++of earlier phase replay, and measured forgetting on fixed earlier samples.
++Normalization drift is small; a complete task-level cause or fix is not established.
++[Diagnostic findings](../logs/camera_controlled_20261028_111754/DIAGNOSIS.md).
++Older user-launch instructions below describe the previous execution split;
++the user's latest authorization allowed these runs without further approval.
++
+ Updated **2026-10-27, Asia/Saigon**. This is the current continuation document.
+ Concise summary and immediate next action:
+ [SUMMARY_NEXT_ACTION.md](SUMMARY_NEXT_ACTION.md).
+diff --git a/docs/SUMMARY_NEXT_ACTION.md b/docs/SUMMARY_NEXT_ACTION.md
+index c85c4b7..6925ffa 100644
+--- a/docs/SUMMARY_NEXT_ACTION.md
++++ b/docs/SUMMARY_NEXT_ACTION.md
+@@ -1,5 +1,24 @@
+ # Work summary and next action
+ 
++## Current outcome — 2026-10-28
++
++Both controlled arms completed400 updates. Retain camera2200: no screened
++endpoint was nominal-eligible. Control +400 scored45/256 nominal and29/256
++wide; data-first +400 scored4/256 nominal and11/256 wide, versus baseline
++229/256 and80/256. The +200 endpoints also failed the nominal gate.
++All screens passed paired provenance/pose validation. No eligible candidate
++remained for1024-start confirmation; it was not run. No extension is queued.
++Initial diagnosis locates the collapse mainly between grasp and lift. Data-first
++replaced every older replay row and more than doubled error on fixed earlier
++examples, while fitting newer replay. Normalizer drift is small and swapping
++baseline statistics barely changes offline errors. These findings support
++forgetting but do not establish the full task-level cause. Next diagnostic:
++compare per-joint errors on fixed reference grasp-to-lift trajectories before
++further training. [Diagnosis](../logs/camera_controlled_20261028_111754/DIAGNOSIS.md).
++Full evidence: [experiment report](../logs/camera_controlled_20261028_111754/REPORT.md).
++
++The snapshot below records the preparation before this completed experiment.
++
+ Updated 2026-10-27. This snapshot includes the implementation, saved training
+ checkpoints, run configurations and evaluation evidence. The work is on local
+ branch `camera-data-first`.
+@@ -64,7 +83,7 @@ accuracy threshold.
+ - The documented Bash commands passed syntax checks; both real agent configs
+   resolved to matching experiment settings.
+ 
+-## Next action
++## Previous next action (completed through selection screens)
+ 
+ **Run the controlled experiment yourself, starting with the first200-update
+ block for each arm.** Use the setup and direct commands in
+diff --git a/src/isaaclab_tutorial/tasks/place_box/__init__.py b/src/isaaclab_tutorial/tasks/place_box/__init__.py
+index 2a4ede2..b142a0a 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/__init__.py
++++ b/src/isaaclab_tutorial/tasks/place_box/__init__.py
+@@ -15,7 +15,10 @@ for _suffix, _environment, _agent in (
+             "env_cfg_entry_point": f"{_PACKAGE}.env_cfg:{_environment}",
+             "rsl_rl_cfg_entry_point": f"{_PACKAGE}.agents:{_agent}",
+             **(
+-                {"rsl_rl_data_first_cfg_entry_point": f"{_PACKAGE}.agents:BoxDataFirstDistillationRunnerCfg"}
++                {
++                    "rsl_rl_data_first_cfg_entry_point": f"{_PACKAGE}.agents:BoxDataFirstDistillationRunnerCfg",
++                    "rsl_rl_anchored_cfg_entry_point": f"{_PACKAGE}.agents:BoxAnchoredDistillationRunnerCfg",
++                }
+                 if _suffix == "-Camera"
+                 else {}
+             ),
+diff --git a/src/isaaclab_tutorial/tasks/place_box/agents.py b/src/isaaclab_tutorial/tasks/place_box/agents.py
+index 805d278..d3a3457 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/agents.py
++++ b/src/isaaclab_tutorial/tasks/place_box/agents.py
+@@ -32,3 +32,15 @@ class BoxDataFirstDistillationRunnerCfg(BoxDistillationRunnerCfg):
+     def __post_init__(self):
+         self.algorithm.class_name = "isaaclab_tutorial.tasks.place_box.distillation:DataFirstDistillation"
+         self.algorithm.learning_rate = 1.0e-4
++
++
++@configclass
++class BoxAnchoredDistillationRunnerCfg(BoxDataFirstDistillationRunnerCfg):
++    """Protected-reference experiment, separate from the original data-first arm."""
++
++    experiment_name = "so101_box_camera_anchored"
++
++    def __post_init__(self):
++        super().__post_init__()
++        self.algorithm.class_name = "isaaclab_tutorial.tasks.place_box.reference_replay:AnchoredDistillation"
++        self.algorithm.reference_path = None
+diff --git a/src/isaaclab_tutorial/tasks/place_box/distillation.py b/src/isaaclab_tutorial/tasks/place_box/distillation.py
+index 5f0f8ec..cb1b9ff 100644
+--- a/src/isaaclab_tutorial/tasks/place_box/distillation.py
++++ b/src/isaaclab_tutorial/tasks/place_box/distillation.py
+@@ -191,8 +191,8 @@ class DataFirstDistillation(Distillation):
+         losses, fresh_losses, replay_losses = [], [], []
+         replay_counts = torch.zeros(4, dtype=torch.long)
+         for _ in range(self.num_learning_epochs * self.storage.num_transitions_per_env):
+-            replay = self.replay.sample(64, self.device)
+-            fresh_count = 64 if replay is not None else 128
++            replay = self.sample_retained()
++            fresh_count = 128 - len(replay[1]) if replay is not None else 128
+             indices = torch.randint(len(fresh), (fresh_count,), generator=self.fresh_rng).to(self.device)
+             batch = TensorDict({key: fresh[key][indices] for key in STUDENT_KEYS}, [fresh_count], device=self.device)
+             target = labels[indices]
+@@ -240,6 +240,10 @@ class DataFirstDistillation(Distillation):
+         self._reset_metrics()
+         return metrics
+ 
++    def sample_retained(self):
++        """Sample earlier rollouts; subclasses may add protected references."""
++        return self.replay.sample(64, self.device)
++
+     def train_mode(self):
+         super().train_mode()
+         self.collecting = True

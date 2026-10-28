@@ -1,0 +1,3703 @@
+[INFO]: Parsing configuration from: isaaclab_tutorial.tasks.place_box.env_cfg:BoxCameraEnvCfg
+[INFO]: Parsing configuration from: isaaclab_tutorial.tasks.place_box.agents:BoxAnchoredDistillationRunnerCfg
+
+╭─ Isaac Lab · train ────────────────────────────╮      [0m         [0m[38;2;118;185;0m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[0m
+│ Task          IsaacTutorial-Pick-Box-SO101-Cam │      [0m      [0m[38;2;118;185;0m▄▄▄▛▀[0m[38;2;118;185;0m[48;2;118;185;0m             [0m
+│               era                              │      [0m  [0m[38;2;118;185;0m▗▄[0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▀▀▜[0m[38;2;118;185;0m[48;2;118;185;0m   [0m[38;2;118;185;0m▄▄▀▜[0m[38;2;118;185;0m[48;2;118;185;0m        [0m
+│ Workflow      manager-based                    │      [0m[38;2;118;185;0m▄[0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▀▚▄[0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▀▙▖[0m [0m[38;2;118;185;0m▀[0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▄[0m [0m[38;2;118;185;0m▀[0m[38;2;118;185;0m[48;2;118;185;0m      [0m
+│ RL library    rsl_rl                           │      [0m[38;2;118;185;0m▝[0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▖▝[0m[38;2;118;185;0m[48;2;118;185;0m [0m[38;2;118;185;0m▙[0m  [0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▙▟[0m[38;2;118;185;0m[48;2;118;185;0m [0m[38;2;118;185;0m▛▘▄[0m[38;2;118;185;0m[48;2;118;185;0m       [0m
+│ Physics       newton_mjwarp                    │      [0m [0m[38;2;118;185;0m▝[0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▄▝▜[0m[38;2;118;185;0m[48;2;118;185;0m [0m[38;2;118;185;0m▄[0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▛▀▚▄[0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▛▘[0m [0m[38;2;118;185;0m▝▜[0m[38;2;118;185;0m[48;2;118;185;0m  [0m
+│ Renderer      newton_renderer                  │      [0m   [0m[38;2;118;185;0m▀[0m[38;2;118;185;0m[48;2;118;185;0m  [0m[38;2;118;185;0m▄▄[0m[38;2;118;185;0m[48;2;118;185;0m     [0m[38;2;118;185;0m▛▀▀▗▄▄▟[0m[38;2;118;185;0m[48;2;118;185;0m    [0m
+│ Visualizer    none (headless)                  │      [0m      [0m[38;2;118;185;0m▀▀▀▙▄▄▄▟[0m[38;2;118;185;0m[48;2;118;185;0m          [0m
+│ Device        cuda:0                           │      [0m         [0m[38;2;118;185;0m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[0m
+│ Environments  128                              │
+╰────────────────────────────────────────────────╯
+
+[1/3] Launching simulation
+[INFO] Logging experiment in directory: /mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_anchored
+Exact experiment name requested from command line: 20261028_anchored_50
+[2/3] Creating environment
+I: Initializing Version 2.74.0-release.7316+gl.ec99a64b
+I: Client ID: 9BWWB88P
+I: ThreadId(02) hub_client::client::Client::new Launching client mode=Shared with_cleaner=false cache_path=None cache_size=None
+I: ThreadId(03) launch self=Launcher { discovery_lock: RwLock { lock: RwLock { inner: File { fd: 26, path: "/tmp/hub-omniverse.lock", read: false, write: true } } }, mode: Shared, with_cleaner: false, config_file: "/tmp/hub-omniverse-1DF015FB.config.json" } cmd="hub" "--mode=shared" "--write-config" "/tmp/hub-omniverse-1DF015FB.config.json" "--"
+I: Not using Hub: Hub not found
+I: Successfully created S3 provider for https://omniverse-content-production.s3-us-west-2.amazonaws.com
+I: Using CloudFront http://dcb18d6mfegct.cloudfront.net/, List = No
+Serving remote assets from the local cache under '/tmp'. Each copy is checked against the server before use; delete the directory to force a full re-download.
+/mnt/e/issaclab_robotics/.venv/lib/python3.12/site-packages/isaaclab_newton/cloner/newton_clone_utils.py:165: FutureWarning: Newton shape color replacement is enabled; this workaround will be deprecated in a future release.
+  replace_newton_builder_shape_colors(builder, stage)
+Failed to get root com velocity. If the articulation is fixed, this is expected. Setting root com velocity to zeros.
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 43
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.03333333333333333
+	Environment step-size : 0.03333333333333333
+[INFO]: Time taken for scene creation Last: 8.034143 s, Mean: 8.034143 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 128
+	Environment spacing   : 1.1
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+Finalize builder took: Last: 0.511242 s, Mean: 0.511242 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.004808 s, Mean: 0.004808 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.000712 s, Mean: 0.002760 s, Std: 0.002896 s, N: 2
+Contact sensor construction took: Last: 0.000757 s, Mean: 0.002092 s, Std: 0.002352 s, N: 3
+Initialize solver took: Last: 2.050436 s, Mean: 2.050436 s, Std: 0.000000 s, N: 1
+[INFO]: Time taken for simulation start Last: 3.183627 s, Mean: 3.183627 s, Std: 0.000000 s, N: 1
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++----------------------+
+| Active Command Terms |
++-------+------+-------+
+| Index | Name |  Type |
++-------+------+-------+
++-------+------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 2 active terms.
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++------------+--------------------------+
+|   Index    | Name                     |
++------------+--------------------------+
+|     0      | box_material             |
++------------+--------------------------+
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++------------+------------------------+
+|   Index    | Name                   |
++------------+------------------------+
+|     0      | reset_home             |
++------------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++-----------------------+
+| Active Recorder Terms |
++------------+----------+
+|   Index    | Name     |
++------------+----------+
++------------+----------+
+
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 6)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         5 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 4 groups.
++---------------------------------------------------------------------+
+| Active Observation Terms in Group: 'wrist_rgb' (shape: (6, 48, 64)) |
++----------------+----------------+-----------------------------------+
+|     Index      | Name           |               Shape               |
++----------------+----------------+-----------------------------------+
+|       0        | image          |            (6, 48, 64)            |
++----------------+----------------+-----------------------------------+
++--------------------------------------------------------------------+
+| Active Observation Terms in Group: 'proprioception' (shape: (24,)) |
++--------------+--------------------------------------+--------------+
+|    Index     | Name                                 |    Shape     |
++--------------+--------------------------------------+--------------+
+|      0       | joint_pos                            |     (6,)     |
+|      1       | joint_vel                            |     (6,)     |
+|      2       | joint_target                         |     (6,)     |
+|      3       | previous_action                      |     (6,)     |
++--------------+--------------------------------------+--------------+
++-------------------------------------------------------------------+
+| Active Observation Terms in Group: 'teacher_state' (shape: (54,)) |
++---------------------+---------------------+-----------------------+
+|        Index        | Name                |         Shape         |
++---------------------+---------------------+-----------------------+
+|          0          | state               |         (54,)         |
++---------------------+---------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (54,)) |
++-------------------+-------------------+--------------------+
+|       Index       | Name              |       Shape        |
++-------------------+-------------------+--------------------+
+|         0         | state             |       (54,)        |
++-------------------+-------------------+--------------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 5 active terms.
++--------------------------------------+
+|       Active Termination Terms       |
++-------+-------------------+----------+
+| Index | Name              | Time Out |
++-------+-------------------+----------+
+|   0   | success           |  False   |
+|   1   | box_dropped       |  False   |
+|   2   | box_out_of_bounds |  False   |
+|   3   | unstable_robot    |  False   |
+|   4   | time_out          |   True   |
++-------+-------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 10 active terms.
++----------------------------------+
+|       Active Reward Terms        |
++-------+----------------+---------+
+| Index | Name           |  Weight |
++-------+----------------+---------+
+|   0   | approach       |     1.0 |
+|   1   | transport      |     2.0 |
+|   2   | table_pressure |    -2.0 |
+|   3   | release        |    10.0 |
+|   4   | milestones     |    10.0 |
+|   5   | success        |   200.0 |
+|   6   | lost           |   -50.0 |
+|   7   | action_rate    |  -0.002 |
+|   8   | joint_velocity | -0.0002 |
+|   9   | joint_limits   |    -1.0 |
++-------+----------------+---------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++-------------------------+
+| Active Curriculum Terms |
++-------------+-----------+
+|    Index    | Name      |
++-------------+-----------+
++-------------+-----------+
+
+[INFO]: Completed setting up the environment...
+[3/3] Preparing agent
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 student :  ['wrist_rgb', 'proprioception']
+	 teacher :  ['teacher_state']
+--------------------------------------------------------------------------------
+Student Model: CNNModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (distribution): GaussianDistribution()
+  (mlp): MLP(
+    (0): Linear(in_features=792, out_features=256, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=256, out_features=128, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=128, out_features=6, bias=True)
+  )
+  (cnns): ModuleDict(
+    (wrist_rgb): CNN(
+      (0): Conv2d(6, 16, kernel_size=(5, 5), stride=(2, 2))
+      (1): ELU(alpha=1.0)
+      (2): Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2))
+      (3): ELU(alpha=1.0)
+      (4): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2))
+      (5): ELU(alpha=1.0)
+      (6): Flatten(start_dim=1, end_dim=-1)
+    )
+  )
+)
+Teacher Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (distribution): GaussianDistribution()
+  (mlp): MLP(
+    (0): Linear(in_features=54, out_features=256, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=256, out_features=256, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=128, out_features=6, bias=True)
+  )
+)
+[INFO]: Loading model checkpoint from: /mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_distillation/2026-10-27_16-26-29_so101-box-workspace-camera-1798-lr1e-4-seed43/model_2200.pt
+Storing git diff for 'issaclab_robotics' in: /mnt/e/issaclab_robotics/logs/rsl_rl/so101_box_camera_anchored/20261028_anchored_50_b1/git/issaclab_robotics.diff
+CUDA graph took: Last: 0.479564 s, Mean: 0.479564 s, Std: 0.000000 s, N: 1
+################################################################################
+[1m                          Learning iteration 2200/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 4096 
+                       Steps per second: 1143 
+                        Collection time: 2.350s 
+                          Learning time: 1.232s 
+                     Mean behavior loss: 0.2139
+               Mean fresh_behavior loss: 0.2303
+              Mean replay_behavior loss: 0.1647
+               Mean replay_samples loss: 4096.0000
+              Mean relative_update loss: 0.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 0.0000
+            Mean teacher_successes loss: 0.0000
+         Mean teacher_success_rate loss: 0.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 4096.0000
+        Mean replay_phase_approach loss: 1024.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 0.0000
+           Mean replay_phase_grasp loss: 1024.0000
+       Mean replay_occupancy_grasp loss: 0.0000
+             Mean fresh_phase_lift loss: 0.0000
+            Mean replay_phase_lift loss: 1024.0000
+        Mean replay_occupancy_lift loss: 0.0000
+           Mean fresh_phase_placed loss: 0.0000
+          Mean replay_phase_placed loss: 1024.0000
+      Mean replay_occupancy_placed loss: 0.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 0.0000
+                Mean fresh_samples loss: 12288.0000
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0000
+               Episode_Reward/transport: 0.0000
+          Episode_Reward/table_pressure: 0.0000
+                 Episode_Reward/release: 0.0000
+              Episode_Reward/milestones: 0.0000
+                 Episode_Reward/success: 0.0000
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: 0.0000
+          Episode_Reward/joint_velocity: 0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.0000
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.0000
+                      Metrics/lift_rate: 0.0000
+                 Metrics/placement_rate: 0.0000
+                   Metrics/success_rate: 0.0000
+                 Metrics/on_target_rate: 0.0000
+                  Metrics/released_rate: 0.0000
+                 Metrics/withdrawn_rate: 0.0000
+                   Metrics/upright_rate: 0.0000
+           Metrics/current_contact_rate: 0.0000
+            Metrics/box_bottom_height_m: -0.0000
+              Metrics/box_table_force_n: 0.9928
+--------------------------------------------------------------------------------
+                         Iteration time: 3.58s
+                           Time elapsed: 0:00:03
+                                    ETA: 0:02:55
+
+################################################################################
+[1m                          Learning iteration 2201/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 8192 
+                       Steps per second: 2866 
+                        Collection time: 0.605s 
+                          Learning time: 0.824s 
+                     Mean behavior loss: 0.0693
+               Mean fresh_behavior loss: 0.0646
+              Mean replay_behavior loss: 0.0740
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 1.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 0.0000
+            Mean teacher_successes loss: 0.0000
+         Mean teacher_success_rate loss: 0.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 4069.0000
+        Mean replay_phase_approach loss: 5120.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 27.0000
+           Mean replay_phase_grasp loss: 1024.0000
+       Mean replay_occupancy_grasp loss: 27.0000
+             Mean fresh_phase_lift loss: 0.0000
+            Mean replay_phase_lift loss: 1024.0000
+        Mean replay_occupancy_lift loss: 0.0000
+           Mean fresh_phase_placed loss: 0.0000
+          Mean replay_phase_placed loss: 1024.0000
+      Mean replay_occupancy_placed loss: 0.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0000
+               Episode_Reward/transport: 0.0000
+          Episode_Reward/table_pressure: 0.0000
+                 Episode_Reward/release: 0.0000
+              Episode_Reward/milestones: 0.0000
+                 Episode_Reward/success: 0.0000
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: 0.0000
+          Episode_Reward/joint_velocity: 0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.0000
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.0073
+                      Metrics/lift_rate: 0.0000
+                 Metrics/placement_rate: 0.0000
+                   Metrics/success_rate: 0.0000
+                 Metrics/on_target_rate: 0.0000
+                  Metrics/released_rate: 0.0000
+                 Metrics/withdrawn_rate: 0.0000
+                   Metrics/upright_rate: 0.0000
+           Metrics/current_contact_rate: 0.0083
+            Metrics/box_bottom_height_m: 0.0000
+              Metrics/box_table_force_n: 1.0532
+--------------------------------------------------------------------------------
+                         Iteration time: 1.43s
+                           Time elapsed: 0:00:05
+                                    ETA: 0:02:00
+
+################################################################################
+[1m                          Learning iteration 2202/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 12288 
+                       Steps per second: 3100 
+                        Collection time: 0.643s 
+                          Learning time: 0.678s 
+                     Mean behavior loss: 0.0416
+               Mean fresh_behavior loss: 0.0404
+              Mean replay_behavior loss: 0.0427
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 2.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 0.0000
+            Mean teacher_successes loss: 0.0000
+         Mean teacher_success_rate loss: 0.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 3364.0000
+        Mean replay_phase_approach loss: 3072.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 697.0000
+           Mean replay_phase_grasp loss: 3072.0000
+       Mean replay_occupancy_grasp loss: 724.0000
+             Mean fresh_phase_lift loss: 29.0000
+            Mean replay_phase_lift loss: 1024.0000
+        Mean replay_occupancy_lift loss: 29.0000
+           Mean fresh_phase_placed loss: 6.0000
+          Mean replay_phase_placed loss: 1024.0000
+      Mean replay_occupancy_placed loss: 6.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0000
+               Episode_Reward/transport: 0.0000
+          Episode_Reward/table_pressure: 0.0000
+                 Episode_Reward/release: 0.0000
+              Episode_Reward/milestones: 0.0000
+                 Episode_Reward/success: 0.0000
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: 0.0000
+          Episode_Reward/joint_velocity: 0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.0000
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.1895
+                      Metrics/lift_rate: 0.0093
+                 Metrics/placement_rate: 0.0017
+                   Metrics/success_rate: 0.0000
+                 Metrics/on_target_rate: 0.0022
+                  Metrics/released_rate: 0.0022
+                 Metrics/withdrawn_rate: 0.0020
+                   Metrics/upright_rate: 0.0022
+           Metrics/current_contact_rate: 0.1929
+            Metrics/box_bottom_height_m: 0.0007
+              Metrics/box_table_force_n: 1.0364
+--------------------------------------------------------------------------------
+                         Iteration time: 1.32s
+                           Time elapsed: 0:00:06
+                                    ETA: 0:01:39
+
+################################################################################
+[1m                          Learning iteration 2203/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 16384 
+                       Steps per second: 2210 
+                        Collection time: 0.736s 
+                          Learning time: 1.117s 
+                     Mean behavior loss: 0.0443
+               Mean fresh_behavior loss: 0.0479
+              Mean replay_behavior loss: 0.0408
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 3.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 4.0000
+            Mean teacher_successes loss: 4.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2333.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 994.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 1718.0000
+             Mean fresh_phase_lift loss: 719.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 748.0000
+           Mean fresh_phase_placed loss: 50.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 56.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.59
+                    Mean episode length: 117.00
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0106
+               Episode_Reward/transport: -0.0001
+          Episode_Reward/table_pressure: -0.0025
+                 Episode_Reward/release: 0.0075
+              Episode_Reward/milestones: 0.0608
+                 Episode_Reward/success: 0.1736
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.0117
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4363
+                      Metrics/lift_rate: 0.1973
+                 Metrics/placement_rate: 0.0132
+                   Metrics/success_rate: 0.0010
+                 Metrics/on_target_rate: 0.0164
+                  Metrics/released_rate: 0.0164
+                 Metrics/withdrawn_rate: 0.0149
+                   Metrics/upright_rate: 0.0149
+           Metrics/current_contact_rate: 0.3984
+            Metrics/box_bottom_height_m: 0.0060
+              Metrics/box_table_force_n: 0.9573
+--------------------------------------------------------------------------------
+                         Iteration time: 1.85s
+                           Time elapsed: 0:00:08
+                                    ETA: 0:01:34
+
+################################################################################
+[1m                          Learning iteration 2204/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 20480 
+                       Steps per second: 2088 
+                        Collection time: 0.820s 
+                          Learning time: 1.141s 
+                     Mean behavior loss: 0.0470
+               Mean fresh_behavior loss: 0.0581
+              Mean replay_behavior loss: 0.0360
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 4.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 32.0000
+            Mean teacher_successes loss: 32.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 1889.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1082.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 2800.0000
+             Mean fresh_phase_lift loss: 614.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 1362.0000
+           Mean fresh_phase_placed loss: 511.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 567.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.66
+                    Mean episode length: 147.61
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0151
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0049
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0000
+            Episode_Termination/success: 0.1060
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.5444
+                      Metrics/lift_rate: 0.2778
+                 Metrics/placement_rate: 0.1340
+                   Metrics/success_rate: 0.0078
+                 Metrics/on_target_rate: 0.1589
+                  Metrics/released_rate: 0.1577
+                 Metrics/withdrawn_rate: 0.1436
+                   Metrics/upright_rate: 0.1462
+           Metrics/current_contact_rate: 0.3054
+            Metrics/box_bottom_height_m: 0.0028
+              Metrics/box_table_force_n: 1.1675
+--------------------------------------------------------------------------------
+                         Iteration time: 1.96s
+                           Time elapsed: 0:00:10
+                                    ETA: 0:01:31
+
+################################################################################
+[1m                          Learning iteration 2205/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 24576 
+                       Steps per second: 2557 
+                        Collection time: 0.719s 
+                          Learning time: 0.883s 
+                     Mean behavior loss: 0.0446
+               Mean fresh_behavior loss: 0.0473
+              Mean replay_behavior loss: 0.0418
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 5.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 10.0000
+            Mean teacher_successes loss: 10.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2105.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1298.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 555.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 1917.0000
+           Mean fresh_phase_placed loss: 138.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 705.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.66
+                    Mean episode length: 152.89
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0175
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0047
+                 Episode_Reward/release: 0.0095
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: 0.0000
+            Episode_Termination/success: 0.3328
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4917
+                      Metrics/lift_rate: 0.1738
+                 Metrics/placement_rate: 0.0359
+                   Metrics/success_rate: 0.0024
+                 Metrics/on_target_rate: 0.0488
+                  Metrics/released_rate: 0.0479
+                 Metrics/withdrawn_rate: 0.0364
+                   Metrics/upright_rate: 0.0393
+           Metrics/current_contact_rate: 0.3689
+            Metrics/box_bottom_height_m: 0.0048
+              Metrics/box_table_force_n: 1.0049
+--------------------------------------------------------------------------------
+                         Iteration time: 1.60s
+                           Time elapsed: 0:00:11
+                                    ETA: 0:01:26
+
+################################################################################
+[1m                          Learning iteration 2206/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 28672 
+                       Steps per second: 2636 
+                        Collection time: 0.732s 
+                          Learning time: 0.822s 
+                     Mean behavior loss: 0.0429
+               Mean fresh_behavior loss: 0.0470
+              Mean replay_behavior loss: 0.0388
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 6.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 17.0000
+            Mean teacher_successes loss: 17.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 1886.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1271.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 723.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 2640.0000
+           Mean fresh_phase_placed loss: 216.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 921.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.66
+                    Mean episode length: 168.11
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0195
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0054
+                 Episode_Reward/release: 0.0098
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0001
+            Episode_Termination/success: 0.4246
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.5422
+                      Metrics/lift_rate: 0.2341
+                 Metrics/placement_rate: 0.0576
+                   Metrics/success_rate: 0.0042
+                 Metrics/on_target_rate: 0.0754
+                  Metrics/released_rate: 0.0750
+                 Metrics/withdrawn_rate: 0.0642
+                   Metrics/upright_rate: 0.0637
+           Metrics/current_contact_rate: 0.3684
+            Metrics/box_bottom_height_m: 0.0059
+              Metrics/box_table_force_n: 0.9289
+--------------------------------------------------------------------------------
+                         Iteration time: 1.55s
+                           Time elapsed: 0:00:13
+                                    ETA: 0:01:21
+
+################################################################################
+[1m                          Learning iteration 2207/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 32768 
+                       Steps per second: 2520 
+                        Collection time: 0.725s 
+                          Learning time: 0.900s 
+                     Mean behavior loss: 0.0443
+               Mean fresh_behavior loss: 0.0506
+              Mean replay_behavior loss: 0.0379
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 7.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 16.0000
+            Mean teacher_successes loss: 16.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 1945.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1114.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 797.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 3437.0000
+           Mean fresh_phase_placed loss: 240.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 1161.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.63
+                    Mean episode length: 179.46
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0176
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0091
+                 Episode_Reward/release: 0.0098
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0005
+            Episode_Termination/success: 0.5496
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.5295
+                      Metrics/lift_rate: 0.2588
+                 Metrics/placement_rate: 0.0630
+                   Metrics/success_rate: 0.0039
+                 Metrics/on_target_rate: 0.0803
+                  Metrics/released_rate: 0.0771
+                 Metrics/withdrawn_rate: 0.0657
+                   Metrics/upright_rate: 0.0681
+           Metrics/current_contact_rate: 0.3838
+            Metrics/box_bottom_height_m: 0.0067
+              Metrics/box_table_force_n: 0.9106
+--------------------------------------------------------------------------------
+                         Iteration time: 1.62s
+                           Time elapsed: 0:00:14
+                                    ETA: 0:01:18
+
+################################################################################
+[1m                          Learning iteration 2208/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 36864 
+                       Steps per second: 2870 
+                        Collection time: 0.724s 
+                          Learning time: 0.703s 
+                     Mean behavior loss: 0.0426
+               Mean fresh_behavior loss: 0.0469
+              Mean replay_behavior loss: 0.0383
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 8.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 24.0000
+            Mean teacher_successes loss: 24.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2172.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 743.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 813.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 368.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 1529.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.62
+                    Mean episode length: 201.39
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0203
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0104
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0003
+            Episode_Termination/success: 0.6887
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4722
+                      Metrics/lift_rate: 0.2937
+                 Metrics/placement_rate: 0.0962
+                   Metrics/success_rate: 0.0059
+                 Metrics/on_target_rate: 0.1082
+                  Metrics/released_rate: 0.1079
+                 Metrics/withdrawn_rate: 0.1013
+                   Metrics/upright_rate: 0.1047
+           Metrics/current_contact_rate: 0.3105
+            Metrics/box_bottom_height_m: 0.0069
+              Metrics/box_table_force_n: 0.9298
+--------------------------------------------------------------------------------
+                         Iteration time: 1.43s
+                           Time elapsed: 0:00:16
+                                    ETA: 0:01:14
+
+################################################################################
+[1m                          Learning iteration 2209/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 40960 
+                       Steps per second: 2209 
+                        Collection time: 0.746s 
+                          Learning time: 1.108s 
+                     Mean behavior loss: 0.0435
+               Mean fresh_behavior loss: 0.0499
+              Mean replay_behavior loss: 0.0371
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 9.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 24.0000
+            Mean teacher_successes loss: 24.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2570.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 621.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 610.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 295.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 1824.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.61
+                    Mean episode length: 224.75
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0194
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0068
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0003
+            Episode_Termination/success: 0.8354
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3762
+                      Metrics/lift_rate: 0.2236
+                 Metrics/placement_rate: 0.0762
+                   Metrics/success_rate: 0.0059
+                 Metrics/on_target_rate: 0.0957
+                  Metrics/released_rate: 0.0945
+                 Metrics/withdrawn_rate: 0.0803
+                   Metrics/upright_rate: 0.0818
+           Metrics/current_contact_rate: 0.2139
+            Metrics/box_bottom_height_m: 0.0036
+              Metrics/box_table_force_n: 1.1252
+--------------------------------------------------------------------------------
+                         Iteration time: 1.85s
+                           Time elapsed: 0:00:18
+                                    ETA: 0:01:12
+
+################################################################################
+[1m                          Learning iteration 2210/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 45056 
+                       Steps per second: 2894 
+                        Collection time: 0.720s 
+                          Learning time: 0.695s 
+                     Mean behavior loss: 0.0417
+               Mean fresh_behavior loss: 0.0444
+              Mean replay_behavior loss: 0.0390
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 10.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 13.0000
+            Mean teacher_successes loss: 13.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2664.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 664.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 569.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 199.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 2023.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.59
+                    Mean episode length: 234.13
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0181
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0093
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0003
+            Episode_Termination/success: 0.9116
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3533
+                      Metrics/lift_rate: 0.1912
+                 Metrics/placement_rate: 0.0520
+                   Metrics/success_rate: 0.0032
+                 Metrics/on_target_rate: 0.0730
+                  Metrics/released_rate: 0.0708
+                 Metrics/withdrawn_rate: 0.0579
+                   Metrics/upright_rate: 0.0635
+           Metrics/current_contact_rate: 0.2051
+            Metrics/box_bottom_height_m: 0.0033
+              Metrics/box_table_force_n: 1.1039
+--------------------------------------------------------------------------------
+                         Iteration time: 1.42s
+                           Time elapsed: 0:00:19
+                                    ETA: 0:01:09
+
+################################################################################
+[1m                          Learning iteration 2211/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 49152 
+                       Steps per second: 2478 
+                        Collection time: 0.768s 
+                          Learning time: 0.884s 
+                     Mean behavior loss: 0.0363
+               Mean fresh_behavior loss: 0.0363
+              Mean replay_behavior loss: 0.0362
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 11.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 17.0000
+            Mean teacher_successes loss: 17.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2504.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 887.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 480.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 225.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 2248.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.58
+                    Mean episode length: 237.84
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0204
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0059
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0008
+            Episode_Termination/success: 0.9485
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.3943
+                      Metrics/lift_rate: 0.1750
+                 Metrics/placement_rate: 0.0586
+                   Metrics/success_rate: 0.0042
+                 Metrics/on_target_rate: 0.0703
+                  Metrics/released_rate: 0.0679
+                 Metrics/withdrawn_rate: 0.0608
+                   Metrics/upright_rate: 0.0669
+           Metrics/current_contact_rate: 0.2634
+            Metrics/box_bottom_height_m: 0.0033
+              Metrics/box_table_force_n: 1.1041
+--------------------------------------------------------------------------------
+                         Iteration time: 1.65s
+                           Time elapsed: 0:00:21
+                                    ETA: 0:01:07
+
+################################################################################
+[1m                          Learning iteration 2212/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 53248 
+                       Steps per second: 2190 
+                        Collection time: 0.735s 
+                          Learning time: 1.135s 
+                     Mean behavior loss: 0.0333
+               Mean fresh_behavior loss: 0.0319
+              Mean replay_behavior loss: 0.0346
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 12.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 13.0000
+            Mean teacher_successes loss: 13.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2297.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1077.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 531.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 191.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 2439.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.56
+                    Mean episode length: 237.97
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0167
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0094
+                 Episode_Reward/release: 0.0095
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0004
+            Episode_Termination/success: 0.9597
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4443
+                      Metrics/lift_rate: 0.1812
+                 Metrics/placement_rate: 0.0510
+                   Metrics/success_rate: 0.0032
+                 Metrics/on_target_rate: 0.0618
+                  Metrics/released_rate: 0.0608
+                 Metrics/withdrawn_rate: 0.0540
+                   Metrics/upright_rate: 0.0608
+           Metrics/current_contact_rate: 0.3215
+            Metrics/box_bottom_height_m: 0.0042
+              Metrics/box_table_force_n: 0.9643
+--------------------------------------------------------------------------------
+                         Iteration time: 1.87s
+                           Time elapsed: 0:00:23
+                                    ETA: 0:01:05
+
+################################################################################
+[1m                          Learning iteration 2213/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 57344 
+                       Steps per second: 2286 
+                        Collection time: 0.762s 
+                          Learning time: 1.029s 
+                     Mean behavior loss: 0.0399
+               Mean fresh_behavior loss: 0.0433
+              Mean replay_behavior loss: 0.0364
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 13.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 16.0000
+            Mean teacher_successes loss: 16.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2199.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1000.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 662.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 235.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 2674.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.58
+                    Mean episode length: 231.36
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0172
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0057
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0001
+            Episode_Termination/success: 0.9688
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4675
+                      Metrics/lift_rate: 0.2239
+                 Metrics/placement_rate: 0.0610
+                   Metrics/success_rate: 0.0039
+                 Metrics/on_target_rate: 0.0764
+                  Metrics/released_rate: 0.0698
+                 Metrics/withdrawn_rate: 0.0637
+                   Metrics/upright_rate: 0.0730
+           Metrics/current_contact_rate: 0.3054
+            Metrics/box_bottom_height_m: 0.0050
+              Metrics/box_table_force_n: 1.0625
+--------------------------------------------------------------------------------
+                         Iteration time: 1.79s
+                           Time elapsed: 0:00:24
+                                    ETA: 0:01:04
+
+################################################################################
+[1m                          Learning iteration 2214/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 61440 
+                       Steps per second: 2525 
+                        Collection time: 0.749s 
+                          Learning time: 0.872s 
+                     Mean behavior loss: 0.0379
+               Mean fresh_behavior loss: 0.0408
+              Mean replay_behavior loss: 0.0351
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 14.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 19.0000
+            Mean teacher_successes loss: 19.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2119.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1178.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 537.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 262.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 2936.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.59
+                    Mean episode length: 221.01
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0189
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0057
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0002
+            Episode_Termination/success: 0.9688
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4878
+                      Metrics/lift_rate: 0.1973
+                 Metrics/placement_rate: 0.0684
+                   Metrics/success_rate: 0.0046
+                 Metrics/on_target_rate: 0.0918
+                  Metrics/released_rate: 0.0894
+                 Metrics/withdrawn_rate: 0.0725
+                   Metrics/upright_rate: 0.0828
+           Metrics/current_contact_rate: 0.3154
+            Metrics/box_bottom_height_m: 0.0040
+              Metrics/box_table_force_n: 1.0582
+--------------------------------------------------------------------------------
+                         Iteration time: 1.62s
+                           Time elapsed: 0:00:26
+                                    ETA: 0:01:01
+
+################################################################################
+[1m                          Learning iteration 2215/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 65536 
+                       Steps per second: 2199 
+                        Collection time: 0.737s 
+                          Learning time: 1.126s 
+                     Mean behavior loss: 0.0372
+               Mean fresh_behavior loss: 0.0401
+              Mean replay_behavior loss: 0.0344
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 15.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 15.0000
+            Mean teacher_successes loss: 15.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 1972.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1230.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 698.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 196.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 3132.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.60
+                    Mean episode length: 216.76
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0185
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0064
+                 Episode_Reward/release: 0.0095
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0003
+            Episode_Termination/success: 0.9688
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.5232
+                      Metrics/lift_rate: 0.2241
+                 Metrics/placement_rate: 0.0510
+                   Metrics/success_rate: 0.0037
+                 Metrics/on_target_rate: 0.0732
+                  Metrics/released_rate: 0.0686
+                 Metrics/withdrawn_rate: 0.0552
+                   Metrics/upright_rate: 0.0603
+           Metrics/current_contact_rate: 0.3408
+            Metrics/box_bottom_height_m: 0.0049
+              Metrics/box_table_force_n: 0.9665
+--------------------------------------------------------------------------------
+                         Iteration time: 1.86s
+                           Time elapsed: 0:00:28
+                                    ETA: 0:01:00
+
+################################################################################
+[1m                          Learning iteration 2216/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 69632 
+                       Steps per second: 1797 
+                        Collection time: 0.697s 
+                          Learning time: 1.582s 
+                     Mean behavior loss: 0.0347
+               Mean fresh_behavior loss: 0.0364
+              Mean replay_behavior loss: 0.0329
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 16.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 21.0000
+            Mean teacher_successes loss: 21.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 1952.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1124.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 691.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 329.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 3461.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.56
+                    Mean episode length: 213.36
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0189
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0113
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0004
+            Episode_Termination/success: 0.9688
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.5269
+                      Metrics/lift_rate: 0.2539
+                 Metrics/placement_rate: 0.0869
+                   Metrics/success_rate: 0.0051
+                 Metrics/on_target_rate: 0.1118
+                  Metrics/released_rate: 0.1108
+                 Metrics/withdrawn_rate: 0.0986
+                   Metrics/upright_rate: 0.0981
+           Metrics/current_contact_rate: 0.3452
+            Metrics/box_bottom_height_m: 0.0055
+              Metrics/box_table_force_n: 0.8499
+--------------------------------------------------------------------------------
+                         Iteration time: 2.28s
+                           Time elapsed: 0:00:30
+                                    ETA: 0:00:59
+
+################################################################################
+[1m                          Learning iteration 2217/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 73728 
+                       Steps per second: 1767 
+                        Collection time: 0.812s 
+                          Learning time: 1.505s 
+                     Mean behavior loss: 0.0333
+               Mean fresh_behavior loss: 0.0340
+              Mean replay_behavior loss: 0.0325
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 17.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 22.0000
+            Mean teacher_successes loss: 22.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2361.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 858.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 634.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 243.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 3704.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.52
+                    Mean episode length: 223.10
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0174
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0127
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0012
+            Episode_Termination/success: 0.9714
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4270
+                      Metrics/lift_rate: 0.2197
+                 Metrics/placement_rate: 0.0623
+                   Metrics/success_rate: 0.0054
+                 Metrics/on_target_rate: 0.0769
+                  Metrics/released_rate: 0.0769
+                 Metrics/withdrawn_rate: 0.0728
+                   Metrics/upright_rate: 0.0676
+           Metrics/current_contact_rate: 0.3032
+            Metrics/box_bottom_height_m: 0.0060
+              Metrics/box_table_force_n: 0.8870
+--------------------------------------------------------------------------------
+                         Iteration time: 2.32s
+                           Time elapsed: 0:00:33
+                                    ETA: 0:00:58
+
+################################################################################
+[1m                          Learning iteration 2218/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 77824 
+                       Steps per second: 2341 
+                        Collection time: 0.724s 
+                          Learning time: 1.026s 
+                     Mean behavior loss: 0.0357
+               Mean fresh_behavior loss: 0.0396
+              Mean replay_behavior loss: 0.0318
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 18.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 12.0000
+            Mean teacher_successes loss: 12.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2339.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 770.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 765.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 222.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 3926.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.53
+                    Mean episode length: 222.76
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0182
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0064
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0002
+            Episode_Termination/success: 0.9766
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4331
+                      Metrics/lift_rate: 0.2441
+                 Metrics/placement_rate: 0.0586
+                   Metrics/success_rate: 0.0029
+                 Metrics/on_target_rate: 0.0776
+                  Metrics/released_rate: 0.0754
+                 Metrics/withdrawn_rate: 0.0691
+                   Metrics/upright_rate: 0.0635
+           Metrics/current_contact_rate: 0.2610
+            Metrics/box_bottom_height_m: 0.0049
+              Metrics/box_table_force_n: 1.0251
+--------------------------------------------------------------------------------
+                         Iteration time: 1.75s
+                           Time elapsed: 0:00:34
+                                    ETA: 0:00:56
+
+################################################################################
+[1m                          Learning iteration 2219/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 81920 
+                       Steps per second: 2301 
+                        Collection time: 0.724s 
+                          Learning time: 1.056s 
+                     Mean behavior loss: 0.0328
+               Mean fresh_behavior loss: 0.0340
+              Mean replay_behavior loss: 0.0316
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 19.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 19.0000
+            Mean teacher_successes loss: 19.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2121.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 987.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 737.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 251.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.49
+                    Mean episode length: 237.91
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0197
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0103
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0015
+            Episode_Termination/success: 0.9771
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4880
+                      Metrics/lift_rate: 0.2454
+                 Metrics/placement_rate: 0.0659
+                   Metrics/success_rate: 0.0046
+                 Metrics/on_target_rate: 0.0901
+                  Metrics/released_rate: 0.0886
+                 Metrics/withdrawn_rate: 0.0754
+                   Metrics/upright_rate: 0.0715
+           Metrics/current_contact_rate: 0.2993
+            Metrics/box_bottom_height_m: 0.0049
+              Metrics/box_table_force_n: 0.9674
+--------------------------------------------------------------------------------
+                         Iteration time: 1.78s
+                           Time elapsed: 0:00:36
+                                    ETA: 0:00:54
+
+################################################################################
+[1m                          Learning iteration 2220/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 86016 
+                       Steps per second: 2199 
+                        Collection time: 0.749s 
+                          Learning time: 1.114s 
+                     Mean behavior loss: 0.0320
+               Mean fresh_behavior loss: 0.0347
+              Mean replay_behavior loss: 0.0293
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 20.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 17.0000
+            Mean teacher_successes loss: 17.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2126.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1071.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 686.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 213.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.49
+                    Mean episode length: 237.09
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0194
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0076
+                 Episode_Reward/release: 0.0098
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0001
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4841
+                      Metrics/lift_rate: 0.2241
+                 Metrics/placement_rate: 0.0557
+                   Metrics/success_rate: 0.0042
+                 Metrics/on_target_rate: 0.0840
+                  Metrics/released_rate: 0.0830
+                 Metrics/withdrawn_rate: 0.0703
+                   Metrics/upright_rate: 0.0593
+           Metrics/current_contact_rate: 0.3320
+            Metrics/box_bottom_height_m: 0.0047
+              Metrics/box_table_force_n: 0.9007
+--------------------------------------------------------------------------------
+                         Iteration time: 1.86s
+                           Time elapsed: 0:00:38
+                                    ETA: 0:00:53
+
+################################################################################
+[1m                          Learning iteration 2221/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 90112 
+                       Steps per second: 2428 
+                        Collection time: 0.739s 
+                          Learning time: 0.948s 
+                     Mean behavior loss: 0.0360
+               Mean fresh_behavior loss: 0.0413
+              Mean replay_behavior loss: 0.0307
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 21.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 15.0000
+            Mean teacher_successes loss: 15.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2188.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 774.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 865.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 269.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.49
+                    Mean episode length: 238.28
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0171
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0082
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0006
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4690
+                      Metrics/lift_rate: 0.2820
+                 Metrics/placement_rate: 0.0715
+                   Metrics/success_rate: 0.0037
+                 Metrics/on_target_rate: 0.1143
+                  Metrics/released_rate: 0.1104
+                 Metrics/withdrawn_rate: 0.0903
+                   Metrics/upright_rate: 0.0820
+           Metrics/current_contact_rate: 0.2600
+            Metrics/box_bottom_height_m: 0.0049
+              Metrics/box_table_force_n: 1.0623
+--------------------------------------------------------------------------------
+                         Iteration time: 1.69s
+                           Time elapsed: 0:00:40
+                                    ETA: 0:00:51
+
+################################################################################
+[1m                          Learning iteration 2222/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 94208 
+                       Steps per second: 2347 
+                        Collection time: 0.754s 
+                          Learning time: 0.991s 
+                     Mean behavior loss: 0.0325
+               Mean fresh_behavior loss: 0.0329
+              Mean replay_behavior loss: 0.0322
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 22.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 23.0000
+            Mean teacher_successes loss: 23.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2360.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 815.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 629.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 292.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.53
+                    Mean episode length: 232.46
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0186
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0104
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0003
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4297
+                      Metrics/lift_rate: 0.2273
+                 Metrics/placement_rate: 0.0750
+                   Metrics/success_rate: 0.0056
+                 Metrics/on_target_rate: 0.1052
+                  Metrics/released_rate: 0.1042
+                 Metrics/withdrawn_rate: 0.0942
+                   Metrics/upright_rate: 0.0798
+           Metrics/current_contact_rate: 0.2297
+            Metrics/box_bottom_height_m: 0.0032
+              Metrics/box_table_force_n: 1.0381
+--------------------------------------------------------------------------------
+                         Iteration time: 1.74s
+                           Time elapsed: 0:00:41
+                                    ETA: 0:00:49
+
+################################################################################
+[1m                          Learning iteration 2223/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 98304 
+                       Steps per second: 2557 
+                        Collection time: 0.722s 
+                          Learning time: 0.880s 
+                     Mean behavior loss: 0.0300
+               Mean fresh_behavior loss: 0.0289
+              Mean replay_behavior loss: 0.0310
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 23.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 15.0000
+            Mean teacher_successes loss: 15.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2339.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1061.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 483.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 213.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.54
+                    Mean episode length: 231.60
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0183
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0117
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0009
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4326
+                      Metrics/lift_rate: 0.1736
+                 Metrics/placement_rate: 0.0559
+                   Metrics/success_rate: 0.0037
+                 Metrics/on_target_rate: 0.0776
+                  Metrics/released_rate: 0.0769
+                 Metrics/withdrawn_rate: 0.0701
+                   Metrics/upright_rate: 0.0610
+           Metrics/current_contact_rate: 0.2563
+            Metrics/box_bottom_height_m: 0.0029
+              Metrics/box_table_force_n: 1.0372
+--------------------------------------------------------------------------------
+                         Iteration time: 1.60s
+                           Time elapsed: 0:00:43
+                                    ETA: 0:00:47
+
+################################################################################
+[1m                          Learning iteration 2224/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 102400 
+                       Steps per second: 2514 
+                        Collection time: 0.707s 
+                          Learning time: 0.922s 
+                     Mean behavior loss: 0.0303
+               Mean fresh_behavior loss: 0.0297
+              Mean replay_behavior loss: 0.0310
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 24.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 16.0000
+            Mean teacher_successes loss: 16.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2234.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1104.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 555.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 203.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.56
+                    Mean episode length: 221.96
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0175
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0082
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0004
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4595
+                      Metrics/lift_rate: 0.1899
+                 Metrics/placement_rate: 0.0532
+                   Metrics/success_rate: 0.0039
+                 Metrics/on_target_rate: 0.0728
+                  Metrics/released_rate: 0.0725
+                 Metrics/withdrawn_rate: 0.0652
+                   Metrics/upright_rate: 0.0608
+           Metrics/current_contact_rate: 0.3066
+            Metrics/box_bottom_height_m: 0.0038
+              Metrics/box_table_force_n: 0.9803
+--------------------------------------------------------------------------------
+                         Iteration time: 1.63s
+                           Time elapsed: 0:00:45
+                                    ETA: 0:00:45
+
+################################################################################
+[1m                          Learning iteration 2225/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 106496 
+                       Steps per second: 2346 
+                        Collection time: 0.747s 
+                          Learning time: 0.999s 
+                     Mean behavior loss: 0.0308
+               Mean fresh_behavior loss: 0.0315
+              Mean replay_behavior loss: 0.0302
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 25.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 20.0000
+            Mean teacher_successes loss: 20.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2189.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1000.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 619.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 288.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.56
+                    Mean episode length: 219.08
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0182
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0075
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0005
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4690
+                      Metrics/lift_rate: 0.2256
+                 Metrics/placement_rate: 0.0754
+                   Metrics/success_rate: 0.0049
+                 Metrics/on_target_rate: 0.0940
+                  Metrics/released_rate: 0.0938
+                 Metrics/withdrawn_rate: 0.0869
+                   Metrics/upright_rate: 0.0808
+           Metrics/current_contact_rate: 0.2639
+            Metrics/box_bottom_height_m: 0.0040
+              Metrics/box_table_force_n: 1.0594
+--------------------------------------------------------------------------------
+                         Iteration time: 1.75s
+                           Time elapsed: 0:00:46
+                                    ETA: 0:00:43
+
+################################################################################
+[1m                          Learning iteration 2226/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 110592 
+                       Steps per second: 2465 
+                        Collection time: 0.711s 
+                          Learning time: 0.951s 
+                     Mean behavior loss: 0.0323
+               Mean fresh_behavior loss: 0.0342
+              Mean replay_behavior loss: 0.0303
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 26.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 13.0000
+            Mean teacher_successes loss: 13.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2263.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1095.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 508.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 230.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.56
+                    Mean episode length: 212.93
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0186
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0056
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0006
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4524
+                      Metrics/lift_rate: 0.1846
+                 Metrics/placement_rate: 0.0601
+                   Metrics/success_rate: 0.0032
+                 Metrics/on_target_rate: 0.0786
+                  Metrics/released_rate: 0.0781
+                 Metrics/withdrawn_rate: 0.0723
+                   Metrics/upright_rate: 0.0662
+           Metrics/current_contact_rate: 0.2766
+            Metrics/box_bottom_height_m: 0.0038
+              Metrics/box_table_force_n: 1.0944
+--------------------------------------------------------------------------------
+                         Iteration time: 1.66s
+                           Time elapsed: 0:00:48
+                                    ETA: 0:00:41
+
+################################################################################
+[1m                          Learning iteration 2227/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 114688 
+                       Steps per second: 2246 
+                        Collection time: 0.803s 
+                          Learning time: 1.021s 
+                     Mean behavior loss: 0.0295
+               Mean fresh_behavior loss: 0.0297
+              Mean replay_behavior loss: 0.0292
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 27.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 22.0000
+            Mean teacher_successes loss: 22.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2375.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 937.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 529.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 255.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.55
+                    Mean episode length: 223.79
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0200
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0111
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0004
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4221
+                      Metrics/lift_rate: 0.1953
+                 Metrics/placement_rate: 0.0669
+                   Metrics/success_rate: 0.0054
+                 Metrics/on_target_rate: 0.0835
+                  Metrics/released_rate: 0.0835
+                 Metrics/withdrawn_rate: 0.0784
+                   Metrics/upright_rate: 0.0745
+           Metrics/current_contact_rate: 0.2410
+            Metrics/box_bottom_height_m: 0.0041
+              Metrics/box_table_force_n: 1.0340
+--------------------------------------------------------------------------------
+                         Iteration time: 1.82s
+                           Time elapsed: 0:00:50
+                                    ETA: 0:00:39
+
+################################################################################
+[1m                          Learning iteration 2228/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 118784 
+                       Steps per second: 2565 
+                        Collection time: 0.717s 
+                          Learning time: 0.880s 
+                     Mean behavior loss: 0.0278
+               Mean fresh_behavior loss: 0.0261
+              Mean replay_behavior loss: 0.0295
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 28.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 18.0000
+            Mean teacher_successes loss: 16.0000
+         Mean teacher_success_rate loss: 0.8889
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2421.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1073.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 385.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 217.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.27
+                    Mean episode length: 238.29
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0186
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0174
+                 Episode_Reward/release: 0.0090
+              Episode_Reward/milestones: 0.0733
+                 Episode_Reward/success: 0.2083
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0019
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0142
+                     Metrics/grasp_rate: 0.4148
+                      Metrics/lift_rate: 0.1494
+                 Metrics/placement_rate: 0.0559
+                   Metrics/success_rate: 0.0039
+                 Metrics/on_target_rate: 0.0720
+                  Metrics/released_rate: 0.0720
+                 Metrics/withdrawn_rate: 0.0659
+                   Metrics/upright_rate: 0.0598
+           Metrics/current_contact_rate: 0.2678
+            Metrics/box_bottom_height_m: 0.0024
+              Metrics/box_table_force_n: 1.0607
+--------------------------------------------------------------------------------
+                         Iteration time: 1.60s
+                           Time elapsed: 0:00:51
+                                    ETA: 0:00:37
+
+################################################################################
+[1m                          Learning iteration 2229/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 122880 
+                       Steps per second: 2832 
+                        Collection time: 0.730s 
+                          Learning time: 0.716s 
+                     Mean behavior loss: 0.0278
+               Mean fresh_behavior loss: 0.0276
+              Mean replay_behavior loss: 0.0279
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 29.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 13.0000
+            Mean teacher_successes loss: 13.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2230.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1193.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 467.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 206.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.29
+                    Mean episode length: 230.76
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0186
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0062
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0001
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0156
+                     Metrics/grasp_rate: 0.4595
+                      Metrics/lift_rate: 0.1687
+                 Metrics/placement_rate: 0.0544
+                   Metrics/success_rate: 0.0032
+                 Metrics/on_target_rate: 0.0762
+                  Metrics/released_rate: 0.0762
+                 Metrics/withdrawn_rate: 0.0667
+                   Metrics/upright_rate: 0.0605
+           Metrics/current_contact_rate: 0.2959
+            Metrics/box_bottom_height_m: 0.0033
+              Metrics/box_table_force_n: 1.0158
+--------------------------------------------------------------------------------
+                         Iteration time: 1.45s
+                           Time elapsed: 0:00:53
+                                    ETA: 0:00:35
+
+################################################################################
+[1m                          Learning iteration 2230/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 126976 
+                       Steps per second: 2553 
+                        Collection time: 0.729s 
+                          Learning time: 0.875s 
+                     Mean behavior loss: 0.0274
+               Mean fresh_behavior loss: 0.0264
+              Mean replay_behavior loss: 0.0283
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 30.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 11.0000
+            Mean teacher_successes loss: 11.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2071.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1147.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 705.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 173.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.29
+                    Mean episode length: 231.64
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0188
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0061
+                 Episode_Reward/release: 0.0099
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0004
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0156
+                     Metrics/grasp_rate: 0.5002
+                      Metrics/lift_rate: 0.2202
+                 Metrics/placement_rate: 0.0452
+                   Metrics/success_rate: 0.0027
+                 Metrics/on_target_rate: 0.0632
+                  Metrics/released_rate: 0.0630
+                 Metrics/withdrawn_rate: 0.0552
+                   Metrics/upright_rate: 0.0503
+           Metrics/current_contact_rate: 0.3523
+            Metrics/box_bottom_height_m: 0.0050
+              Metrics/box_table_force_n: 0.9257
+--------------------------------------------------------------------------------
+                         Iteration time: 1.60s
+                           Time elapsed: 0:00:54
+                                    ETA: 0:00:33
+
+################################################################################
+[1m                          Learning iteration 2231/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 131072 
+                       Steps per second: 2367 
+                        Collection time: 0.781s 
+                          Learning time: 0.949s 
+                     Mean behavior loss: 0.0287
+               Mean fresh_behavior loss: 0.0317
+              Mean replay_behavior loss: 0.0257
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 31.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 22.0000
+            Mean teacher_successes loss: 22.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 1959.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1017.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 820.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 300.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.26
+                    Mean episode length: 236.73
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0185
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0099
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0004
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0156
+                     Metrics/grasp_rate: 0.5247
+                      Metrics/lift_rate: 0.2791
+                 Metrics/placement_rate: 0.0791
+                   Metrics/success_rate: 0.0054
+                 Metrics/on_target_rate: 0.1116
+                  Metrics/released_rate: 0.1108
+                 Metrics/withdrawn_rate: 0.0942
+                   Metrics/upright_rate: 0.0889
+           Metrics/current_contact_rate: 0.3337
+            Metrics/box_bottom_height_m: 0.0048
+              Metrics/box_table_force_n: 0.9284
+--------------------------------------------------------------------------------
+                         Iteration time: 1.73s
+                           Time elapsed: 0:00:56
+                                    ETA: 0:00:31
+
+################################################################################
+[1m                          Learning iteration 2232/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 135168 
+                       Steps per second: 2439 
+                        Collection time: 0.749s 
+                          Learning time: 0.930s 
+                     Mean behavior loss: 0.0282
+               Mean fresh_behavior loss: 0.0294
+              Mean replay_behavior loss: 0.0271
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 32.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 25.0000
+            Mean teacher_successes loss: 24.0000
+         Mean teacher_success_rate loss: 0.9600
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2133.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 963.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 644.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 356.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.14
+                    Mean episode length: 248.22
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0198
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0114
+                 Episode_Reward/release: 0.0094
+              Episode_Reward/milestones: 0.0753
+                 Episode_Reward/success: 0.2153
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0020
+            Episode_Termination/success: 0.9841
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0159
+                     Metrics/grasp_rate: 0.4839
+                      Metrics/lift_rate: 0.2468
+                 Metrics/placement_rate: 0.0933
+                   Metrics/success_rate: 0.0059
+                 Metrics/on_target_rate: 0.1313
+                  Metrics/released_rate: 0.1267
+                 Metrics/withdrawn_rate: 0.1042
+                   Metrics/upright_rate: 0.1106
+           Metrics/current_contact_rate: 0.2847
+            Metrics/box_bottom_height_m: 0.0037
+              Metrics/box_table_force_n: 0.9863
+--------------------------------------------------------------------------------
+                         Iteration time: 1.68s
+                           Time elapsed: 0:00:58
+                                    ETA: 0:00:30
+
+################################################################################
+[1m                          Learning iteration 2233/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 139264 
+                       Steps per second: 2480 
+                        Collection time: 0.730s 
+                          Learning time: 0.921s 
+                     Mean behavior loss: 0.0250
+               Mean fresh_behavior loss: 0.0224
+              Mean replay_behavior loss: 0.0275
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 33.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 19.0000
+            Mean teacher_successes loss: 19.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2411.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1003.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 501.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 181.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.44
+                    Mean episode length: 234.49
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0199
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0092
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0001
+            Episode_Termination/success: 0.9766
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0234
+                     Metrics/grasp_rate: 0.4155
+                      Metrics/lift_rate: 0.1704
+                 Metrics/placement_rate: 0.0457
+                   Metrics/success_rate: 0.0046
+                 Metrics/on_target_rate: 0.0652
+                  Metrics/released_rate: 0.0645
+                 Metrics/withdrawn_rate: 0.0559
+                   Metrics/upright_rate: 0.0554
+           Metrics/current_contact_rate: 0.2964
+            Metrics/box_bottom_height_m: 0.0053
+              Metrics/box_table_force_n: 0.9046
+--------------------------------------------------------------------------------
+                         Iteration time: 1.65s
+                           Time elapsed: 0:01:00
+                                    ETA: 0:00:28
+
+################################################################################
+[1m                          Learning iteration 2234/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 143360 
+                       Steps per second: 2425 
+                        Collection time: 0.692s 
+                          Learning time: 0.997s 
+                     Mean behavior loss: 0.0302
+               Mean fresh_behavior loss: 0.0340
+              Mean replay_behavior loss: 0.0264
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 34.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 11.0000
+            Mean teacher_successes loss: 11.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2246.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 921.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 696.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 233.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.44
+                    Mean episode length: 233.71
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0213
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0100
+                 Episode_Reward/release: 0.0094
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0007
+            Episode_Termination/success: 0.9766
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0234
+                     Metrics/grasp_rate: 0.4546
+                      Metrics/lift_rate: 0.2317
+                 Metrics/placement_rate: 0.0623
+                   Metrics/success_rate: 0.0027
+                 Metrics/on_target_rate: 0.0898
+                  Metrics/released_rate: 0.0889
+                 Metrics/withdrawn_rate: 0.0779
+                   Metrics/upright_rate: 0.0720
+           Metrics/current_contact_rate: 0.2844
+            Metrics/box_bottom_height_m: 0.0053
+              Metrics/box_table_force_n: 1.0303
+--------------------------------------------------------------------------------
+                         Iteration time: 1.69s
+                           Time elapsed: 0:01:01
+                                    ETA: 0:00:26
+
+################################################################################
+[1m                          Learning iteration 2235/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 147456 
+                       Steps per second: 2349 
+                        Collection time: 0.715s 
+                          Learning time: 1.028s 
+                     Mean behavior loss: 0.0292
+               Mean fresh_behavior loss: 0.0303
+              Mean replay_behavior loss: 0.0280
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 35.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 21.0000
+            Mean teacher_successes loss: 20.0000
+         Mean teacher_success_rate loss: 0.9524
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2270.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1007.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 558.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 261.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.36
+                    Mean episode length: 244.76
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0193
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0109
+                 Episode_Reward/release: 0.0094
+              Episode_Reward/milestones: 0.0764
+                 Episode_Reward/success: 0.2153
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0015
+            Episode_Termination/success: 0.9722
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0278
+                     Metrics/grasp_rate: 0.4509
+                      Metrics/lift_rate: 0.2036
+                 Metrics/placement_rate: 0.0676
+                   Metrics/success_rate: 0.0049
+                 Metrics/on_target_rate: 0.0874
+                  Metrics/released_rate: 0.0859
+                 Metrics/withdrawn_rate: 0.0769
+                   Metrics/upright_rate: 0.0720
+           Metrics/current_contact_rate: 0.2859
+            Metrics/box_bottom_height_m: 0.0040
+              Metrics/box_table_force_n: 1.0241
+--------------------------------------------------------------------------------
+                         Iteration time: 1.74s
+                           Time elapsed: 0:01:03
+                                    ETA: 0:00:24
+
+################################################################################
+[1m                          Learning iteration 2236/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 151552 
+                       Steps per second: 2840 
+                        Collection time: 0.711s 
+                          Learning time: 0.730s 
+                     Mean behavior loss: 0.0285
+               Mean fresh_behavior loss: 0.0300
+              Mean replay_behavior loss: 0.0269
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 36.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 16.0000
+            Mean teacher_successes loss: 16.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2322.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 994.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 544.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 236.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.35
+                    Mean episode length: 252.84
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0190
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0138
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0010
+            Episode_Termination/success: 0.9756
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0244
+                     Metrics/grasp_rate: 0.4365
+                      Metrics/lift_rate: 0.1948
+                 Metrics/placement_rate: 0.0615
+                   Metrics/success_rate: 0.0039
+                 Metrics/on_target_rate: 0.0820
+                  Metrics/released_rate: 0.0801
+                 Metrics/withdrawn_rate: 0.0659
+                   Metrics/upright_rate: 0.0698
+           Metrics/current_contact_rate: 0.2847
+            Metrics/box_bottom_height_m: 0.0040
+              Metrics/box_table_force_n: 1.0073
+--------------------------------------------------------------------------------
+                         Iteration time: 1.44s
+                           Time elapsed: 0:01:04
+                                    ETA: 0:00:22
+
+################################################################################
+[1m                          Learning iteration 2237/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 155648 
+                       Steps per second: 2866 
+                        Collection time: 0.720s 
+                          Learning time: 0.709s 
+                     Mean behavior loss: 0.0293
+               Mean fresh_behavior loss: 0.0302
+              Mean replay_behavior loss: 0.0284
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 37.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 16.0000
+            Mean teacher_successes loss: 16.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2388.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 901.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 590.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 217.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.35
+                    Mean episode length: 247.96
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0165
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0073
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0002
+            Episode_Termination/success: 0.9807
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0193
+                     Metrics/grasp_rate: 0.4219
+                      Metrics/lift_rate: 0.2012
+                 Metrics/placement_rate: 0.0576
+                   Metrics/success_rate: 0.0039
+                 Metrics/on_target_rate: 0.0859
+                  Metrics/released_rate: 0.0820
+                 Metrics/withdrawn_rate: 0.0618
+                   Metrics/upright_rate: 0.0642
+           Metrics/current_contact_rate: 0.2874
+            Metrics/box_bottom_height_m: 0.0041
+              Metrics/box_table_force_n: 1.0973
+--------------------------------------------------------------------------------
+                         Iteration time: 1.43s
+                           Time elapsed: 0:01:06
+                                    ETA: 0:00:20
+
+################################################################################
+[1m                          Learning iteration 2238/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 159744 
+                       Steps per second: 2331 
+                        Collection time: 0.741s 
+                          Learning time: 1.015s 
+                     Mean behavior loss: 0.0293
+               Mean fresh_behavior loss: 0.0306
+              Mean replay_behavior loss: 0.0280
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 38.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 19.0000
+            Mean teacher_successes loss: 19.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2242.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1083.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 521.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 250.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.47
+                    Mean episode length: 234.89
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0178
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0093
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0004
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0156
+                     Metrics/grasp_rate: 0.4565
+                      Metrics/lift_rate: 0.1929
+                 Metrics/placement_rate: 0.0645
+                   Metrics/success_rate: 0.0046
+                 Metrics/on_target_rate: 0.0781
+                  Metrics/released_rate: 0.0781
+                 Metrics/withdrawn_rate: 0.0701
+                   Metrics/upright_rate: 0.0708
+           Metrics/current_contact_rate: 0.3201
+            Metrics/box_bottom_height_m: 0.0043
+              Metrics/box_table_force_n: 1.0054
+--------------------------------------------------------------------------------
+                         Iteration time: 1.76s
+                           Time elapsed: 0:01:08
+                                    ETA: 0:00:19
+
+################################################################################
+[1m                          Learning iteration 2239/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 163840 
+                       Steps per second: 2394 
+                        Collection time: 0.733s 
+                          Learning time: 0.978s 
+                     Mean behavior loss: 0.0285
+               Mean fresh_behavior loss: 0.0295
+              Mean replay_behavior loss: 0.0275
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 39.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 13.0000
+            Mean teacher_successes loss: 13.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2191.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1060.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 658.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 187.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.45
+                    Mean episode length: 233.81
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0182
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0096
+                 Episode_Reward/release: 0.0095
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0001
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0156
+                     Metrics/grasp_rate: 0.4705
+                      Metrics/lift_rate: 0.2095
+                 Metrics/placement_rate: 0.0500
+                   Metrics/success_rate: 0.0032
+                 Metrics/on_target_rate: 0.0771
+                  Metrics/released_rate: 0.0730
+                 Metrics/withdrawn_rate: 0.0610
+                   Metrics/upright_rate: 0.0547
+           Metrics/current_contact_rate: 0.3157
+            Metrics/box_bottom_height_m: 0.0044
+              Metrics/box_table_force_n: 1.1034
+--------------------------------------------------------------------------------
+                         Iteration time: 1.71s
+                           Time elapsed: 0:01:09
+                                    ETA: 0:00:17
+
+################################################################################
+[1m                          Learning iteration 2240/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 167936 
+                       Steps per second: 2666 
+                        Collection time: 0.740s 
+                          Learning time: 0.796s 
+                     Mean behavior loss: 0.0274
+               Mean fresh_behavior loss: 0.0271
+              Mean replay_behavior loss: 0.0277
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 40.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 18.0000
+            Mean teacher_successes loss: 18.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2025.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1205.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 614.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 252.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.46
+                    Mean episode length: 229.27
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0190
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0075
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0007
+            Episode_Termination/success: 0.9932
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0068
+                     Metrics/grasp_rate: 0.5107
+                      Metrics/lift_rate: 0.2161
+                 Metrics/placement_rate: 0.0649
+                   Metrics/success_rate: 0.0044
+                 Metrics/on_target_rate: 0.0923
+                  Metrics/released_rate: 0.0862
+                 Metrics/withdrawn_rate: 0.0703
+                   Metrics/upright_rate: 0.0811
+           Metrics/current_contact_rate: 0.3345
+            Metrics/box_bottom_height_m: 0.0050
+              Metrics/box_table_force_n: 1.0134
+--------------------------------------------------------------------------------
+                         Iteration time: 1.54s
+                           Time elapsed: 0:01:11
+                                    ETA: 0:00:15
+
+################################################################################
+[1m                          Learning iteration 2241/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 172032 
+                       Steps per second: 2664 
+                        Collection time: 0.707s 
+                          Learning time: 0.831s 
+                     Mean behavior loss: 0.0298
+               Mean fresh_behavior loss: 0.0307
+              Mean replay_behavior loss: 0.0289
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 41.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 19.0000
+            Mean teacher_successes loss: 19.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 1976.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1129.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 658.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 333.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.56
+                    Mean episode length: 225.44
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0208
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0076
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0002
+            Episode_Termination/success: 1.0000
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.5208
+                      Metrics/lift_rate: 0.2473
+                 Metrics/placement_rate: 0.0884
+                   Metrics/success_rate: 0.0046
+                 Metrics/on_target_rate: 0.1226
+                  Metrics/released_rate: 0.1064
+                 Metrics/withdrawn_rate: 0.0952
+                   Metrics/upright_rate: 0.1167
+           Metrics/current_contact_rate: 0.3044
+            Metrics/box_bottom_height_m: 0.0043
+              Metrics/box_table_force_n: 0.9868
+--------------------------------------------------------------------------------
+                         Iteration time: 1.54s
+                           Time elapsed: 0:01:12
+                                    ETA: 0:00:13
+
+################################################################################
+[1m                          Learning iteration 2242/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 176128 
+                       Steps per second: 2469 
+                        Collection time: 0.723s 
+                          Learning time: 0.936s 
+                     Mean behavior loss: 0.0267
+               Mean fresh_behavior loss: 0.0257
+              Mean replay_behavior loss: 0.0277
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 42.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 24.0000
+            Mean teacher_successes loss: 24.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2417.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 893.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 525.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 261.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.55
+                    Mean episode length: 220.54
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0166
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0082
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0003
+            Episode_Termination/success: 1.0000
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0000
+                     Metrics/grasp_rate: 0.4136
+                      Metrics/lift_rate: 0.1958
+                 Metrics/placement_rate: 0.0674
+                   Metrics/success_rate: 0.0059
+                 Metrics/on_target_rate: 0.0798
+                  Metrics/released_rate: 0.0769
+                 Metrics/withdrawn_rate: 0.0706
+                   Metrics/upright_rate: 0.0762
+           Metrics/current_contact_rate: 0.2686
+            Metrics/box_bottom_height_m: 0.0046
+              Metrics/box_table_force_n: 0.9812
+--------------------------------------------------------------------------------
+                         Iteration time: 1.66s
+                           Time elapsed: 0:01:14
+                                    ETA: 0:00:12
+
+################################################################################
+[1m                          Learning iteration 2243/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 180224 
+                       Steps per second: 2542 
+                        Collection time: 0.710s 
+                          Learning time: 0.901s 
+                     Mean behavior loss: 0.0250
+               Mean fresh_behavior loss: 0.0247
+              Mean replay_behavior loss: 0.0253
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 43.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 12.0000
+            Mean teacher_successes loss: 11.0000
+         Mean teacher_success_rate loss: 0.9167
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2333.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1020.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 555.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 188.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.46
+                    Mean episode length: 228.62
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0200
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0143
+                 Episode_Reward/release: 0.0084
+              Episode_Reward/milestones: 0.0694
+                 Episode_Reward/success: 0.1944
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0002
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0009
+            Episode_Termination/success: 0.9958
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0042
+                     Metrics/grasp_rate: 0.4348
+                      Metrics/lift_rate: 0.1855
+                 Metrics/placement_rate: 0.0496
+                   Metrics/success_rate: 0.0027
+                 Metrics/on_target_rate: 0.0591
+                  Metrics/released_rate: 0.0588
+                 Metrics/withdrawn_rate: 0.0530
+                   Metrics/upright_rate: 0.0544
+           Metrics/current_contact_rate: 0.2986
+            Metrics/box_bottom_height_m: 0.0045
+              Metrics/box_table_force_n: 0.9539
+--------------------------------------------------------------------------------
+                         Iteration time: 1.61s
+                           Time elapsed: 0:01:16
+                                    ETA: 0:00:10
+
+################################################################################
+[1m                          Learning iteration 2244/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 184320 
+                       Steps per second: 2926 
+                        Collection time: 0.721s 
+                          Learning time: 0.679s 
+                     Mean behavior loss: 0.0249
+               Mean fresh_behavior loss: 0.0239
+              Mean replay_behavior loss: 0.0259
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 44.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 20.0000
+            Mean teacher_successes loss: 20.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2282.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 926.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 657.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 231.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.45
+                    Mean episode length: 240.17
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0204
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0099
+                 Episode_Reward/release: 0.0097
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0010
+            Episode_Termination/success: 0.9922
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0078
+                     Metrics/grasp_rate: 0.4482
+                      Metrics/lift_rate: 0.2205
+                 Metrics/placement_rate: 0.0605
+                   Metrics/success_rate: 0.0049
+                 Metrics/on_target_rate: 0.0803
+                  Metrics/released_rate: 0.0769
+                 Metrics/withdrawn_rate: 0.0676
+                   Metrics/upright_rate: 0.0703
+           Metrics/current_contact_rate: 0.3059
+            Metrics/box_bottom_height_m: 0.0043
+              Metrics/box_table_force_n: 0.9520
+--------------------------------------------------------------------------------
+                         Iteration time: 1.40s
+                           Time elapsed: 0:01:17
+                                    ETA: 0:00:08
+
+################################################################################
+[1m                          Learning iteration 2245/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 188416 
+                       Steps per second: 2482 
+                        Collection time: 0.718s 
+                          Learning time: 0.932s 
+                     Mean behavior loss: 0.0250
+               Mean fresh_behavior loss: 0.0243
+              Mean replay_behavior loss: 0.0257
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 45.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 18.0000
+            Mean teacher_successes loss: 18.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2235.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 935.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 656.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 270.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.44
+                    Mean episode length: 244.69
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0185
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0110
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0018
+            Episode_Termination/success: 0.9922
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0078
+                     Metrics/grasp_rate: 0.4573
+                      Metrics/lift_rate: 0.2322
+                 Metrics/placement_rate: 0.0701
+                   Metrics/success_rate: 0.0044
+                 Metrics/on_target_rate: 0.0857
+                  Metrics/released_rate: 0.0842
+                 Metrics/withdrawn_rate: 0.0728
+                   Metrics/upright_rate: 0.0789
+           Metrics/current_contact_rate: 0.2979
+            Metrics/box_bottom_height_m: 0.0050
+              Metrics/box_table_force_n: 0.9407
+--------------------------------------------------------------------------------
+                         Iteration time: 1.65s
+                           Time elapsed: 0:01:19
+                                    ETA: 0:00:06
+
+################################################################################
+[1m                          Learning iteration 2246/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 192512 
+                       Steps per second: 2744 
+                        Collection time: 0.736s 
+                          Learning time: 0.757s 
+                     Mean behavior loss: 0.0254
+               Mean fresh_behavior loss: 0.0243
+              Mean replay_behavior loss: 0.0265
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 46.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 22.0000
+            Mean teacher_successes loss: 22.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2467.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 730.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 536.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 363.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.43
+                    Mean episode length: 241.08
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0202
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0091
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0006
+            Episode_Termination/success: 0.9922
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0078
+                     Metrics/grasp_rate: 0.4021
+                      Metrics/lift_rate: 0.2222
+                 Metrics/placement_rate: 0.0945
+                   Metrics/success_rate: 0.0054
+                 Metrics/on_target_rate: 0.1062
+                  Metrics/released_rate: 0.1062
+                 Metrics/withdrawn_rate: 0.0964
+                   Metrics/upright_rate: 0.1023
+           Metrics/current_contact_rate: 0.2268
+            Metrics/box_bottom_height_m: 0.0035
+              Metrics/box_table_force_n: 1.0458
+--------------------------------------------------------------------------------
+                         Iteration time: 1.49s
+                           Time elapsed: 0:01:20
+                                    ETA: 0:00:05
+
+################################################################################
+[1m                          Learning iteration 2247/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 196608 
+                       Steps per second: 2674 
+                        Collection time: 0.738s 
+                          Learning time: 0.794s 
+                     Mean behavior loss: 0.0220
+               Mean fresh_behavior loss: 0.0199
+              Mean replay_behavior loss: 0.0241
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 47.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 18.0000
+            Mean teacher_successes loss: 18.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2577.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 873.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 466.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 180.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.44
+                    Mean episode length: 237.61
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0193
+               Episode_Reward/transport: -0.0003
+          Episode_Reward/table_pressure: -0.0051
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0004
+            Episode_Termination/success: 0.9922
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0078
+                     Metrics/grasp_rate: 0.3745
+                      Metrics/lift_rate: 0.1621
+                 Metrics/placement_rate: 0.0471
+                   Metrics/success_rate: 0.0044
+                 Metrics/on_target_rate: 0.0540
+                  Metrics/released_rate: 0.0537
+                 Metrics/withdrawn_rate: 0.0503
+                   Metrics/upright_rate: 0.0520
+           Metrics/current_contact_rate: 0.2729
+            Metrics/box_bottom_height_m: 0.0042
+              Metrics/box_table_force_n: 0.9878
+--------------------------------------------------------------------------------
+                         Iteration time: 1.53s
+                           Time elapsed: 0:01:22
+                                    ETA: 0:00:03
+
+################################################################################
+[1m                          Learning iteration 2248/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 200704 
+                       Steps per second: 2636 
+                        Collection time: 0.719s 
+                          Learning time: 0.835s 
+                     Mean behavior loss: 0.0239
+               Mean fresh_behavior loss: 0.0228
+              Mean replay_behavior loss: 0.0251
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 48.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 14.0000
+            Mean teacher_successes loss: 13.0000
+         Mean teacher_success_rate loss: 0.9286
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2422.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 995.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 457.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 222.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.31
+                    Mean episode length: 245.70
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0173
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0117
+                 Episode_Reward/release: 0.0093
+              Episode_Reward/milestones: 0.0757
+                 Episode_Reward/success: 0.2153
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0013
+            Episode_Termination/success: 0.9878
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0122
+                     Metrics/grasp_rate: 0.4153
+                      Metrics/lift_rate: 0.1692
+                 Metrics/placement_rate: 0.0583
+                   Metrics/success_rate: 0.0032
+                 Metrics/on_target_rate: 0.0710
+                  Metrics/released_rate: 0.0698
+                 Metrics/withdrawn_rate: 0.0630
+                   Metrics/upright_rate: 0.0652
+           Metrics/current_contact_rate: 0.2805
+            Metrics/box_bottom_height_m: 0.0035
+              Metrics/box_table_force_n: 1.0027
+--------------------------------------------------------------------------------
+                         Iteration time: 1.55s
+                           Time elapsed: 0:01:23
+                                    ETA: 0:00:01
+
+################################################################################
+[1m                          Learning iteration 2249/2250                          [0m 
+
+                               Run name: b1
+                            Total steps: 204800 
+                       Steps per second: 2639 
+                        Collection time: 0.718s 
+                          Learning time: 0.833s 
+                     Mean behavior loss: 0.0230
+               Mean fresh_behavior loss: 0.0221
+              Mean replay_behavior loss: 0.0240
+               Mean replay_samples loss: 8192.0000
+              Mean relative_update loss: 49.0000
+          Mean teacher_probability loss: 1.0000
+     Mean teacher_control_fraction loss: 1.0000
+             Mean student_episodes loss: 0.0000
+            Mean student_successes loss: 0.0000
+             Mean teacher_episodes loss: 14.0000
+            Mean teacher_successes loss: 14.0000
+         Mean teacher_success_rate loss: 1.0000
+         Mean student_success_rate loss: 0.0000
+         Mean fresh_phase_approach loss: 2244.0000
+        Mean replay_phase_approach loss: 2048.0000
+    Mean replay_occupancy_approach loss: 4096.0000
+            Mean fresh_phase_grasp loss: 1104.0000
+           Mean replay_phase_grasp loss: 2048.0000
+       Mean replay_occupancy_grasp loss: 4096.0000
+             Mean fresh_phase_lift loss: 569.0000
+            Mean replay_phase_lift loss: 2048.0000
+        Mean replay_occupancy_lift loss: 4096.0000
+           Mean fresh_phase_placed loss: 179.0000
+          Mean replay_phase_placed loss: 2048.0000
+      Mean replay_occupancy_placed loss: 4096.0000
+            Mean reference_samples loss: 4096.0000
+              Mean rolling_samples loss: 4096.0000
+                Mean fresh_samples loss: 8192.0000
+                            Mean reward: 9.42
+                    Mean episode length: 236.45
+                        Mean action std: 0.05
+                Episode_Reward/approach: 0.0183
+               Episode_Reward/transport: -0.0002
+          Episode_Reward/table_pressure: -0.0141
+                 Episode_Reward/release: 0.0096
+              Episode_Reward/milestones: 0.0778
+                 Episode_Reward/success: 0.2222
+                    Episode_Reward/lost: 0.0000
+             Episode_Reward/action_rate: -0.0001
+          Episode_Reward/joint_velocity: -0.0000
+            Episode_Reward/joint_limits: -0.0001
+            Episode_Termination/success: 0.9844
+        Episode_Termination/box_dropped: 0.0000
+  Episode_Termination/box_out_of_bounds: 0.0000
+     Episode_Termination/unstable_robot: 0.0000
+           Episode_Termination/time_out: 0.0156
+                     Metrics/grasp_rate: 0.4558
+                      Metrics/lift_rate: 0.1887
+                 Metrics/placement_rate: 0.0469
+                   Metrics/success_rate: 0.0034
+                 Metrics/on_target_rate: 0.0527
+                  Metrics/released_rate: 0.0525
+                 Metrics/withdrawn_rate: 0.0486
+                   Metrics/upright_rate: 0.0503
+           Metrics/current_contact_rate: 0.3245
+            Metrics/box_bottom_height_m: 0.0054
+              Metrics/box_table_force_n: 0.9176
+--------------------------------------------------------------------------------
+                         Iteration time: 1.55s
+                           Time elapsed: 0:01:25
+                                    ETA: 0:00:00
+
+Training time: 101.82 seconds

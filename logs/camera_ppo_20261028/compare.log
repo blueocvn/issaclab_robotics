@@ -1,0 +1,80 @@
+{
+  "method": "Camera PPO reward fine-tuning from2200",
+  "iterations": 50,
+  "optimizer_steps": 800,
+  "populations": {
+    "nominal": {
+      "episodes": 256,
+      "baseline_successes": 236,
+      "candidate_successes": 230,
+      "candidate_only_successes": 10,
+      "baseline_only_successes": 16,
+      "both_successes": 220,
+      "both_failures": 10,
+      "gain_pp": -2.34375,
+      "gain_paired_bootstrap_95_pp": [
+        -6.25,
+        1.5625
+      ]
+    },
+    "wide": {
+      "episodes": 256,
+      "baseline_successes": 83,
+      "candidate_successes": 87,
+      "candidate_only_successes": 22,
+      "baseline_only_successes": 18,
+      "both_successes": 65,
+      "both_failures": 151,
+      "gain_pp": 1.5625,
+      "gain_paired_bootstrap_95_pp": [
+        -3.125,
+        6.640625
+      ]
+    }
+  },
+  "historical_initial_comparison": {
+    "nominal": {
+      "episodes": 256,
+      "baseline_successes": 229,
+      "candidate_successes": 236,
+      "candidate_only_successes": 16,
+      "baseline_only_successes": 9,
+      "both_successes": 220,
+      "both_failures": 11,
+      "gain_pp": 2.734375,
+      "gain_paired_bootstrap_95_pp": [
+        -1.171875,
+        6.640625
+      ]
+    },
+    "wide": {
+      "episodes": 256,
+      "baseline_successes": 80,
+      "candidate_successes": 83,
+      "candidate_only_successes": 16,
+      "baseline_only_successes": 13,
+      "both_successes": 67,
+      "both_failures": 160,
+      "gain_pp": 1.171875,
+      "gain_paired_bootstrap_95_pp": [
+        -2.734375,
+        5.46875
+      ]
+    }
+  },
+  "checkpoint_sha256": {
+    "nominal": {
+      "initial": "873c8113117dc8f55849293db57694671303aedf051aa06c80e75f69fd6cf1b3",
+      "endpoint": "89c47f8c837f54d5259a769695dc987b321fb753b155fca6cfa862853ebd749a"
+    },
+    "wide": {
+      "initial": "873c8113117dc8f55849293db57694671303aedf051aa06c80e75f69fd6cf1b3",
+      "endpoint": "89c47f8c837f54d5259a769695dc987b321fb753b155fca6cfa862853ebd749a"
+    }
+  },
+  "source_sha256": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+  "initial_actor_all_tensors_equal": true,
+  "initial_optimizer_fresh": true,
+  "eligible_for_confirmation": false,
+  "decision": "Retain2200; bounded Camera PPO trial did not qualify. No automatic extension."
+}

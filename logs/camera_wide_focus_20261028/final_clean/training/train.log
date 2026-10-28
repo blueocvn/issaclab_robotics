@@ -1,0 +1,40 @@
+{
+  "checkpoint": "logs/camera_wide_focus_20261028/final_clean/training/model_offline_0100.pt",
+  "checkpoint_sha256": "a8ac6e9f0370343c6b585a7af7f696678a3f6e2c4ef092b34705b01666e712c7",
+  "dataset_sha256": {
+    "logs/camera_wide_focus_20261028/final_clean/collection/baseline_collection.pt": "42f4ebf8674a61595d5d64ae19403dee43c3ffac72c9d165eda3f328e88154ed",
+    "/mnt/e/issaclab_robotics/logs/camera_wide_focus_20261028/baseline_collection.pt": "ca501f9142636b37ab0039698176d45a5dd16ce301bab10b4d2810e20d05a6a9",
+    "/mnt/e/issaclab_robotics/logs/camera_wide_focus_20261028/teacher_collection.pt": "e75a49d11204e4d0d27b518a6f12f49e67a211fa001540ca6d9c6cec581535a3"
+  },
+  "optimizer_updates": 100,
+  "optimizer_steps_before": [
+    77184
+  ],
+  "optimizer_steps_after": [
+    77284
+  ],
+  "preservation_observation_corruption": {
+    "wrist_rgb": false,
+    "proprioception": false,
+    "teacher_state": false,
+    "critic": false
+  },
+  "normalizer_unchanged": true,
+  "teacher_unchanged": true,
+  "finite_gradients": true,
+  "successful_preservation_episodes": {
+    "nominal": 88,
+    "wide": 31
+  },
+  "heldout_action_preservation": {
+    "nominal": {
+      "episodes": 26,
+      "mse": 0.0022719826083630323
+    },
+    "wide": {
+      "episodes": 9,
+      "mse": 0.0030036531388759613
+    }
+  },
+  "interpretation": "Offline error is not closed-loop success; screen with default student-only playback."
+}

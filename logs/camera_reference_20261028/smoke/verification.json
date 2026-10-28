@@ -1,0 +1,65 @@
+{
+  "reference_sha256": "e79f69ff7754b42fd8dadd4f24e7b672dac45f43bcfaa1dcd7db059ecb983fcf",
+  "successful_reference_episodes": {
+    "nominal": 32,
+    "wide": 32
+  },
+  "smoke": {
+    "b1": {
+      "path": "logs/rsl_rl/so101_box_camera_anchored/20261028_reference_smoke_b1/model_2201.pt",
+      "relative_updates": 2,
+      "optimizer_steps": 77440,
+      "normalizer_count": 9024000,
+      "reference_unchanged": true,
+      "reference_rng_advanced": true,
+      "teacher_unchanged": true,
+      "student_finite": true,
+      "metrics": {
+        "reference_samples": [
+          4096,
+          4096
+        ],
+        "rolling_samples": [
+          0,
+          4096
+        ],
+        "fresh_samples": [
+          12288,
+          8192
+        ]
+      }
+    },
+    "b2": {
+      "path": "logs/rsl_rl/so101_box_camera_anchored/20261028_reference_smoke_b2/model_2202.pt",
+      "relative_updates": 4,
+      "optimizer_steps": 77696,
+      "normalizer_count": 9024512,
+      "reference_unchanged": true,
+      "reference_rng_advanced": true,
+      "teacher_unchanged": true,
+      "student_finite": true,
+      "metrics": {
+        "reference_samples": [
+          4096,
+          4096
+        ],
+        "rolling_samples": [
+          4096,
+          4096
+        ],
+        "fresh_samples": [
+          8192,
+          8192
+        ]
+      }
+    }
+  },
+  "resume_external_path": "logs/camera_reference_20261028/missing_original_bank.pt",
+  "student_only_playback": {
+    "episodes": 8,
+    "successes": 0,
+    "validated_first_episodes": true,
+    "checkpoint_sha256": "c8a421669081dc5531c41e354e6b460be97dc8251fed3dd7262ac81562bb4dee",
+    "accuracy_gain_claim": false
+  }
+}

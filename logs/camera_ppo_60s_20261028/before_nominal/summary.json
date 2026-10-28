@@ -1,0 +1,29 @@
+{
+  "population": "nominal",
+  "policy": "camera",
+  "episodes": 256,
+  "successes": 253,
+  "success_rate": 0.98828125,
+  "success_wilson_95": [
+    0.9661184273321177,
+    0.9960067128769923
+  ],
+  "required_success_rate": 0.995,
+  "seed_groups": [
+    42
+  ],
+  "stage_counts": {
+    "grasped": 256,
+    "lifted": 256,
+    "placed": 255,
+    "success": 253,
+    "timed_out": 3,
+    "dropped": 0,
+    "out_of_bounds": 0,
+    "unstable_robot": 0
+  },
+  "coverage_sufficient": false,
+  "status": "insufficient_coverage",
+  "completed_jobs": 1,
+  "planned_jobs": 1
+}

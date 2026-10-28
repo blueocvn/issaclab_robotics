@@ -1,0 +1,49 @@
+{
+  "method": "protected-reference",
+  "updates": 50,
+  "populations": {
+    "nominal": {
+      "episodes": 256,
+      "baseline_successes": 229,
+      "candidate_successes": 181,
+      "candidate_only_successes": 25,
+      "baseline_only_successes": 73,
+      "both_successes": 156,
+      "both_failures": 2,
+      "gain_pp": -18.75,
+      "gain_paired_bootstrap_95_pp": [
+        -25.78125,
+        -11.328125
+      ]
+    },
+    "wide": {
+      "episodes": 256,
+      "baseline_successes": 80,
+      "candidate_successes": 20,
+      "candidate_only_successes": 9,
+      "baseline_only_successes": 69,
+      "both_successes": 11,
+      "both_failures": 167,
+      "gain_pp": -23.4375,
+      "gain_paired_bootstrap_95_pp": [
+        -29.6875,
+        -17.1875
+      ]
+    }
+  },
+  "checkpoint_sha256": {
+    "nominal": {
+      "baseline": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+      "candidate": "43392107407f2980d95590238aa523e371f6aec4553838dc5119275ef680637b"
+    },
+    "wide": {
+      "baseline": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+      "candidate": "43392107407f2980d95590238aa523e371f6aec4553838dc5119275ef680637b"
+    }
+  },
+  "selected": "baseline",
+  "confirmation_1024_run": false,
+  "nominal_eligible": false,
+  "qualifies": false,
+  "decision": "Retain2200; stop the50-update screen. Nominal drop exceeds3 points; no continuation or1024-start confirmation."
+}

@@ -1,0 +1,64 @@
+{
+  "baseline": {
+    "sha256": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+    "optimizer_steps": [
+      77184
+    ]
+  },
+  "control_200": {
+    "path": "logs/rsl_rl/so101_box_camera_distillation/20261028_111754_control_b1/model_2399.pt",
+    "iter": 2399,
+    "teacher_exact": true,
+    "student_finite": true,
+    "optimizer_steps": [
+      102784
+    ],
+    "learning_rates": [
+      0.0001
+    ],
+    "sha256": "749f5c4ca0c815410b12fbcb39b8a2db609a3dd66f4fdb129c2d7c33dc44b95e"
+  },
+  "control_400": {
+    "path": "logs/rsl_rl/so101_box_camera_distillation/20261028_111754_control_b2/model_2598.pt",
+    "iter": 2598,
+    "teacher_exact": true,
+    "student_finite": true,
+    "optimizer_steps": [
+      128384
+    ],
+    "learning_rates": [
+      0.0001
+    ],
+    "sha256": "d0beca6871f4e45597de0599a689673ce26b9c994be3ab78c59364f52943067a",
+    "logged_updates": 200
+  },
+  "data_200": {
+    "path": "logs/rsl_rl/so101_box_camera_data_first/20261028_111754_data_b1/model_2399.pt",
+    "iter": 2399,
+    "teacher_exact": true,
+    "student_finite": true,
+    "optimizer_steps": [
+      102784
+    ],
+    "learning_rates": [
+      0.0001
+    ],
+    "relative_updates": 200,
+    "sha256": "03a9f0b34b03348f9a0c72c98ce01a56f3b383609d8d5e6fbae8177c30b3c2be"
+  },
+  "data_400": {
+    "path": "logs/rsl_rl/so101_box_camera_data_first/20261028_111754_data_b2/model_2598.pt",
+    "iter": 2598,
+    "teacher_exact": true,
+    "student_finite": true,
+    "optimizer_steps": [
+      128384
+    ],
+    "relative_updates": 400,
+    "learning_rates": [
+      0.0001
+    ],
+    "sha256": "865196844f46e73856d6138e96bba0b2c01667a1b4e40fdbfdbdb3c0adeac92b",
+    "logged_updates": 200
+  }
+}

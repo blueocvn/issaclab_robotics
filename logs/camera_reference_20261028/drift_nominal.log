@@ -1,0 +1,421 @@
+I: Initializing Version 2.74.0-release.7316+gl.ec99a64b
+I: Client ID: DJTYR3H3
+I: ThreadId(02) hub_client::client::Client::new Launching client mode=Shared with_cleaner=false cache_path=None cache_size=None
+I: ThreadId(03) launch self=Launcher { discovery_lock: RwLock { lock: RwLock { inner: File { fd: 26, path: "/tmp/hub-omniverse.lock", read: false, write: true } } }, mode: Shared, with_cleaner: false, config_file: "/tmp/hub-omniverse-AE372304.config.json" } cmd="hub" "--mode=shared" "--write-config" "/tmp/hub-omniverse-AE372304.config.json" "--"
+I: Not using Hub: Hub not found
+I: Successfully created S3 provider for https://omniverse-content-production.s3-us-west-2.amazonaws.com
+I: Using CloudFront http://dcb18d6mfegct.cloudfront.net/, List = No
+Serving remote assets from the local cache under '/tmp'. Each copy is checked against the server before use; delete the directory to force a full re-download.
+/mnt/e/issaclab_robotics/.venv/lib/python3.12/site-packages/isaaclab_newton/cloner/newton_clone_utils.py:165: FutureWarning: Newton shape color replacement is enabled; this workaround will be deprecated in a future release.
+  replace_newton_builder_shape_colors(builder, stage)
+Failed to get root com velocity. If the articulation is fixed, this is expected. Setting root com velocity to zeros.
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 42
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.03333333333333333
+	Environment step-size : 0.03333333333333333
+[INFO]: Time taken for scene creation Last: 8.833533 s, Mean: 8.833533 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 32
+	Environment spacing   : 1.1
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+Finalize builder took: Last: 0.456516 s, Mean: 0.456516 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.004719 s, Mean: 0.004719 s, Std: 0.000000 s, N: 1
+Contact sensor construction took: Last: 0.000558 s, Mean: 0.002638 s, Std: 0.002942 s, N: 2
+Contact sensor construction took: Last: 0.000626 s, Mean: 0.001968 s, Std: 0.002383 s, N: 3
+Initialize solver took: Last: 1.976405 s, Mean: 1.976405 s, Std: 0.000000 s, N: 1
+[INFO]: Time taken for simulation start Last: 3.066444 s, Mean: 3.066444 s, Std: 0.000000 s, N: 1
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++----------------------+
+| Active Command Terms |
++-------+------+-------+
+| Index | Name |  Type |
++-------+------+-------+
++-------+------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 2 active terms.
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++------------+--------------------------+
+|   Index    | Name                     |
++------------+--------------------------+
+|     0      | box_material             |
++------------+--------------------------+
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++------------+------------------------+
+|   Index    | Name                   |
++------------+------------------------+
+|     0      | reset_home             |
++------------+------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++-----------------------+
+| Active Recorder Terms |
++------------+----------+
+|   Index    | Name     |
++------------+----------+
++------------+----------+
+
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 6)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         5 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 4 groups.
++---------------------------------------------------------------------+
+| Active Observation Terms in Group: 'wrist_rgb' (shape: (6, 48, 64)) |
++----------------+----------------+-----------------------------------+
+|     Index      | Name           |               Shape               |
++----------------+----------------+-----------------------------------+
+|       0        | image          |            (6, 48, 64)            |
++----------------+----------------+-----------------------------------+
++--------------------------------------------------------------------+
+| Active Observation Terms in Group: 'proprioception' (shape: (24,)) |
++--------------+--------------------------------------+--------------+
+|    Index     | Name                                 |    Shape     |
++--------------+--------------------------------------+--------------+
+|      0       | joint_pos                            |     (6,)     |
+|      1       | joint_vel                            |     (6,)     |
+|      2       | joint_target                         |     (6,)     |
+|      3       | previous_action                      |     (6,)     |
++--------------+--------------------------------------+--------------+
++-------------------------------------------------------------------+
+| Active Observation Terms in Group: 'teacher_state' (shape: (54,)) |
++---------------------+---------------------+-----------------------+
+|        Index        | Name                |         Shape         |
++---------------------+---------------------+-----------------------+
+|          0          | state               |         (54,)         |
++---------------------+---------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (54,)) |
++-------------------+-------------------+--------------------+
+|       Index       | Name              |       Shape        |
++-------------------+-------------------+--------------------+
+|         0         | state             |       (54,)        |
++-------------------+-------------------+--------------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 5 active terms.
++--------------------------------------+
+|       Active Termination Terms       |
++-------+-------------------+----------+
+| Index | Name              | Time Out |
++-------+-------------------+----------+
+|   0   | success           |  False   |
+|   1   | box_dropped       |  False   |
+|   2   | box_out_of_bounds |  False   |
+|   3   | unstable_robot    |  False   |
+|   4   | time_out          |   True   |
++-------+-------------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 10 active terms.
++----------------------------------+
+|       Active Reward Terms        |
++-------+----------------+---------+
+| Index | Name           |  Weight |
++-------+----------------+---------+
+|   0   | approach       |     1.0 |
+|   1   | transport      |     2.0 |
+|   2   | table_pressure |    -2.0 |
+|   3   | release        |    10.0 |
+|   4   | milestones     |    10.0 |
+|   5   | success        |   200.0 |
+|   6   | lost           |   -50.0 |
+|   7   | action_rate    |  -0.002 |
+|   8   | joint_velocity | -0.0002 |
+|   9   | joint_limits   |    -1.0 |
++-------+----------------+---------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++-------------------------+
+| Active Curriculum Terms |
++-------------+-----------+
+|    Index    | Name      |
++-------------+-----------+
++-------------+-----------+
+
+[INFO]: Completed setting up the environment...
+CUDA graph took: Last: 0.470078 s, Mean: 0.470078 s, Std: 0.000000 s, N: 1
+{
+  "population": "nominal",
+  "episodes": 32,
+  "seed": 42,
+  "baseline_successes": 19,
+  "baseline_stage_counts": [
+    26,
+    22,
+    19,
+    19
+  ],
+  "groups": {
+    "all_phase0": {
+      "sampled_steps": 2297,
+      "episodes": 32,
+      "candidate_baseline_joint_rmse": [
+        0.17175796627998352,
+        0.23013617098331451,
+        0.1850554496049881,
+        0.2118033915758133,
+        0.20931893587112427,
+        0.2650143802165985
+      ],
+      "candidate_baseline_mse": 0.04593612626194954,
+      "baseline_teacher_mse": 0.4039672315120697,
+      "candidate_teacher_mse": 0.40668854117393494,
+      "baseline_mean_action": [
+        0.18096382915973663,
+        0.0368136391043663,
+        -0.6381622552871704,
+        -0.10479516535997391,
+        -0.10362665355205536,
+        0.08075585216283798
+      ],
+      "candidate_mean_action": [
+        0.2075565755367279,
+        0.03631063178181648,
+        -0.6581708192825317,
+        -0.079653300344944,
+        -0.05592877045273781,
+        0.05416169390082359
+      ]
+    },
+    "all_phase1": {
+      "sampled_steps": 1239,
+      "episodes": 26,
+      "candidate_baseline_joint_rmse": [
+        0.15129654109477997,
+        0.1952526569366455,
+        0.19025710225105286,
+        0.2897009253501892,
+        0.20807254314422607,
+        0.18400105834007263
+      ],
+      "candidate_baseline_mse": 0.0430481992661953,
+      "baseline_teacher_mse": 0.31317371129989624,
+      "candidate_teacher_mse": 0.32898926734924316,
+      "baseline_mean_action": [
+        -0.22871743142604828,
+        -0.34794119000434875,
+        -0.7754793763160706,
+        -0.26812589168548584,
+        -0.15239150822162628,
+        -0.22812333703041077
+      ],
+      "candidate_mean_action": [
+        -0.24519889056682587,
+        -0.2950015664100647,
+        -0.8654335141181946,
+        -0.18140046298503876,
+        -0.18772487342357635,
+        -0.24063743650913239
+      ]
+    },
+    "all_phase2": {
+      "sampled_steps": 777,
+      "episodes": 22,
+      "candidate_baseline_joint_rmse": [
+        0.2291809618473053,
+        0.2795162796974182,
+        0.24512696266174316,
+        0.36391159892082214,
+        0.39166030287742615,
+        0.23746582865715027
+      ],
+      "candidate_baseline_mse": 0.08882665634155273,
+      "baseline_teacher_mse": 0.3869504928588867,
+      "candidate_teacher_mse": 0.3625849783420563,
+      "baseline_mean_action": [
+        -0.34949791431427,
+        -0.12131465971469879,
+        -0.34499531984329224,
+        0.12210644036531448,
+        0.05324314907193184,
+        -0.13075731694698334
+      ],
+      "candidate_mean_action": [
+        -0.31761234998703003,
+        -0.06491923332214355,
+        -0.34117788076400757,
+        0.2172948122024536,
+        0.009175647050142288,
+        -0.08972590416669846
+      ]
+    },
+    "all_phase3": {
+      "sampled_steps": 263,
+      "episodes": 19,
+      "candidate_baseline_joint_rmse": [
+        0.13731466233730316,
+        0.18235471844673157,
+        0.3200885057449341,
+        0.5381640195846558,
+        0.15536907315254211,
+        0.2168390452861786
+      ],
+      "candidate_baseline_mse": 0.0858907401561737,
+      "baseline_teacher_mse": 0.6263578534126282,
+      "candidate_teacher_mse": 0.47726142406463623,
+      "baseline_mean_action": [
+        -0.5482470393180847,
+        -0.4328106641769409,
+        -0.6092830300331116,
+        -0.16093270480632782,
+        0.01453862152993679,
+        -0.07039806991815567
+      ],
+      "candidate_mean_action": [
+        -0.5665567517280579,
+        -0.5142055153846741,
+        -0.8180418610572815,
+        0.20421576499938965,
+        0.00259521440602839,
+        0.03314606472849846
+      ]
+    },
+    "successful_phase0": {
+      "sampled_steps": 575,
+      "episodes": 19,
+      "candidate_baseline_joint_rmse": [
+        0.15399684011936188,
+        0.1110118106007576,
+        0.12401539832353592,
+        0.14489439129829407,
+        0.18607087433338165,
+        0.16452886164188385
+      ],
+      "candidate_baseline_mse": 0.02235082909464836,
+      "baseline_teacher_mse": 0.09098683297634125,
+      "candidate_teacher_mse": 0.0870860293507576,
+      "baseline_mean_action": [
+        0.48689940571784973,
+        0.3226113021373749,
+        -0.6977996826171875,
+        -0.4377841055393219,
+        -0.4282863438129425,
+        0.12112624198198318
+      ],
+      "candidate_mean_action": [
+        0.5616167187690735,
+        0.33521053194999695,
+        -0.7486225962638855,
+        -0.3943463861942291,
+        -0.3707514703273773,
+        0.07576814293861389
+      ]
+    },
+    "successful_phase1": {
+      "sampled_steps": 616,
+      "episodes": 19,
+      "candidate_baseline_joint_rmse": [
+        0.12450116872787476,
+        0.18583166599273682,
+        0.23473262786865234,
+        0.340128093957901,
+        0.1873895674943924,
+        0.16766780614852905
+      ],
+      "candidate_baseline_mse": 0.04734130576252937,
+      "baseline_teacher_mse": 0.09970780462026596,
+      "candidate_teacher_mse": 0.1589517593383789,
+      "baseline_mean_action": [
+        -0.39209455251693726,
+        -0.44250261783599854,
+        -0.7041219472885132,
+        -0.3245584964752197,
+        -0.2617778480052948,
+        -0.447221040725708
+      ],
+      "candidate_mean_action": [
+        -0.4084930419921875,
+        -0.46147269010543823,
+        -0.8333730101585388,
+        -0.13976910710334778,
+        -0.3022240996360779,
+        -0.41961032152175903
+      ]
+    },
+    "successful_phase2": {
+      "sampled_steps": 197,
+      "episodes": 19,
+      "candidate_baseline_joint_rmse": [
+        0.08746139705181122,
+        0.21633394062519073,
+        0.21742774546146393,
+        0.306099534034729,
+        0.14511054754257202,
+        0.1579698920249939
+      ],
+      "candidate_baseline_mse": 0.040238864719867706,
+      "baseline_teacher_mse": 0.14451384544372559,
+      "candidate_teacher_mse": 0.11399851739406586,
+      "baseline_mean_action": [
+        -0.7676565647125244,
+        -0.42456895112991333,
+        -0.7855338454246521,
+        -0.08414755761623383,
+        -0.17325134575366974,
+        -0.4191829562187195
+      ],
+      "candidate_mean_action": [
+        -0.7801089882850647,
+        -0.36131200194358826,
+        -0.8984527587890625,
+        0.08630325645208359,
+        -0.19342103600502014,
+        -0.37197285890579224
+      ]
+    },
+    "successful_phase3": {
+      "sampled_steps": 263,
+      "episodes": 19,
+      "candidate_baseline_joint_rmse": [
+        0.13731466233730316,
+        0.18235471844673157,
+        0.3200885057449341,
+        0.5381640195846558,
+        0.15536907315254211,
+        0.2168390452861786
+      ],
+      "candidate_baseline_mse": 0.0858907401561737,
+      "baseline_teacher_mse": 0.6263578534126282,
+      "candidate_teacher_mse": 0.47726142406463623,
+      "baseline_mean_action": [
+        -0.5482470393180847,
+        -0.4328106641769409,
+        -0.6092830300331116,
+        -0.16093270480632782,
+        0.01453862152993679,
+        -0.07039806991815567
+      ],
+      "candidate_mean_action": [
+        -0.5665567517280579,
+        -0.5142055153846741,
+        -0.8180418610572815,
+        0.20421576499938965,
+        0.00259521440602839,
+        0.03314606472849846
+      ]
+    }
+  },
+  "baseline_sha256": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+  "candidate_sha256": "43392107407f2980d95590238aa523e371f6aec4553838dc5119275ef680637b",
+  "controller": "baseline2200",
+  "candidate_actions_executed": false,
+  "joint_order": [
+    "shoulder_pan",
+    "shoulder_lift",
+    "elbow_flex",
+    "wrist_flex",
+    "wrist_roll",
+    "gripper"
+  ],
+  "interpretation": "Paired predictions on baseline trajectories, not candidate task-success trials; descriptive and correlated samples."
+}

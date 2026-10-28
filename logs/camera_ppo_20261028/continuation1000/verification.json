@@ -1,0 +1,201 @@
+{
+  "run": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000",
+  "source": "logs/camera_ppo_20261028/trial_v2/training/model_49.pt",
+  "selected_checkpoints": [
+    100,
+    700,
+    1048
+  ],
+  "checkpoints": {
+    "100": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_100.pt",
+      "sha256": "98bb7e901d2df84e608567b540d179d2b624d29fb592d48bb33f96358cdae4ba",
+      "continuation_iterations": 52,
+      "optimizer_steps": [
+        1632
+      ],
+      "actor_normalizer_count": 9859072,
+      "finite_actor_critic": true
+    },
+    "200": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_200.pt",
+      "sha256": "60cb0dee781671c4c9c0382621750d8f99ff9d7e819a0015df3ab97db0a164d7",
+      "continuation_iterations": 152,
+      "optimizer_steps": [
+        3232
+      ],
+      "actor_normalizer_count": 10678272,
+      "finite_actor_critic": true
+    },
+    "300": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_300.pt",
+      "sha256": "9fecef512935edde12d9f807329a84fba57f0ac36e4fd546851248ed440030e6",
+      "continuation_iterations": 252,
+      "optimizer_steps": [
+        4832
+      ],
+      "actor_normalizer_count": 11497472,
+      "finite_actor_critic": true
+    },
+    "400": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_400.pt",
+      "sha256": "1acd60f55d6db97dd1e314907090f0df843d7047864500582708d2a996525d34",
+      "continuation_iterations": 352,
+      "optimizer_steps": [
+        6432
+      ],
+      "actor_normalizer_count": 12316672,
+      "finite_actor_critic": true
+    },
+    "500": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_500.pt",
+      "sha256": "15ea578af545b9321323fb3ad163e4a49d7ed588cc8a4fb659ccff0a49e6a2e4",
+      "continuation_iterations": 452,
+      "optimizer_steps": [
+        8032
+      ],
+      "actor_normalizer_count": 13135872,
+      "finite_actor_critic": true
+    },
+    "600": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_600.pt",
+      "sha256": "72720068f1c871a9a38d46b80ad17d832822f443b27eb670eaee5a753a51cbfe",
+      "continuation_iterations": 552,
+      "optimizer_steps": [
+        9632
+      ],
+      "actor_normalizer_count": 13955072,
+      "finite_actor_critic": true
+    },
+    "700": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_700.pt",
+      "sha256": "59d20c3a7485861d63f9b9c30a2e5ac36249d10b2695dc32040245329875a4cd",
+      "continuation_iterations": 652,
+      "optimizer_steps": [
+        11232
+      ],
+      "actor_normalizer_count": 14774272,
+      "finite_actor_critic": true
+    },
+    "800": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_800.pt",
+      "sha256": "c4330f8a2acdf1554c4c5c6ce04aac5a3e764fe11c626c597367fee864891ff1",
+      "continuation_iterations": 752,
+      "optimizer_steps": [
+        12832
+      ],
+      "actor_normalizer_count": 15593472,
+      "finite_actor_critic": true
+    },
+    "900": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_900.pt",
+      "sha256": "2bd52850304dd593fd41084bf72397294e011921ab93cece3340a66c5c2d6b45",
+      "continuation_iterations": 852,
+      "optimizer_steps": [
+        14432
+      ],
+      "actor_normalizer_count": 16412672,
+      "finite_actor_critic": true
+    },
+    "1000": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_1000.pt",
+      "sha256": "b501ae9ba209ebc3962534c155c49c1c4c9e00e6e055a1e870b3b540b3ca1e0e",
+      "continuation_iterations": 952,
+      "optimizer_steps": [
+        16032
+      ],
+      "actor_normalizer_count": 17231872,
+      "finite_actor_critic": true
+    },
+    "1048": {
+      "path": "logs/rsl_rl/so101_box_camera_ppo/2026-10-28_16-56-07_camera_ppo_2200_plus1000/model_1048.pt",
+      "sha256": "32952d1e6783603d81cf9b72b4c13ecbb4f2c329577d3bfa5151a7bf7990b0d2",
+      "continuation_iterations": 1000,
+      "optimizer_steps": [
+        16800
+      ],
+      "actor_normalizer_count": 17625088,
+      "finite_actor_critic": true
+    }
+  },
+  "training_windows": {
+    "Episode_Termination/success": {
+      "100": 0.25729736328125,
+      "200": 0.32071533203125,
+      "300": 0.2917919921875,
+      "400": 0.326416015625,
+      "500": 0.315419921875,
+      "600": 0.330341796875,
+      "700": 0.3330810546875,
+      "800": 0.30915771484375,
+      "900": 0.3110107421875,
+      "1000": 0.32699462890625,
+      "1048": 0.32212158203125
+    },
+    "Episode_Termination/time_out": {
+      "100": 0.53922607421875,
+      "200": 0.67928466796875,
+      "300": 0.7082080078125,
+      "400": 0.673583984375,
+      "500": 0.68677734375,
+      "600": 0.669658203125,
+      "700": 0.6669189453125,
+      "800": 0.69084228515625,
+      "900": 0.6889892578125,
+      "1000": 0.67300537109375,
+      "1048": 0.67787841796875
+    },
+    "Train/mean_reward": {
+      "100": 3.251306197472981,
+      "200": 1.8973630356788636,
+      "300": 1.9245942199230195,
+      "400": 2.033821086883545,
+      "500": 1.9948416447639465,
+      "600": 2.3262683653831484,
+      "700": 2.2364601254463197,
+      "800": 1.6966596055030823,
+      "900": 1.9703051900863648,
+      "1000": 2.0515255665779115,
+      "1048": 2.0887892031669617
+    },
+    "Train/mean_episode_length": {
+      "100": 677.6893815021126,
+      "200": 753.4881970214843,
+      "300": 755.7602001953124,
+      "400": 739.0685974121094,
+      "500": 745.51419921875,
+      "600": 721.8834033203125,
+      "700": 727.2633947753907,
+      "800": 748.8152001953125,
+      "900": 745.6344006347656,
+      "1000": 730.4127990722657,
+      "1048": 723.8692004394532
+    },
+    "Policy/mean_std": {
+      "100": 0.04993701756000519,
+      "200": 0.04985413216054439,
+      "300": 0.04979577645659447,
+      "400": 0.049723055437207224,
+      "500": 0.04964767225086689,
+      "600": 0.04959922485053539,
+      "700": 0.049558306112885475,
+      "800": 0.049491840302944186,
+      "900": 0.0493964722007513,
+      "1000": 0.049341741651296615,
+      "1048": 0.04931023597717285
+    },
+    "Loss/learning_rate": {
+      "100": 9.999999747378752e-06,
+      "200": 9.999999747378752e-06,
+      "300": 9.999999747378752e-06,
+      "400": 9.999999747378752e-06,
+      "500": 9.999999747378752e-06,
+      "600": 9.999999747378752e-06,
+      "700": 9.999999747378752e-06,
+      "800": 9.999999747378752e-06,
+      "900": 9.999999747378752e-06,
+      "1000": 9.999999747378752e-06,
+      "1048": 9.999999747378752e-06
+    }
+  }
+}

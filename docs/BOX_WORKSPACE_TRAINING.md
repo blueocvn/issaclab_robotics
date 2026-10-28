@@ -21,7 +21,7 @@ On this PC, use the existing runtime in WSL distro `Ubuntu-24.04`:
 
 ```bash
 cd /mnt/e/issaclab_robotics
-CKPT='logs/rsl_rl/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt'
+CKPT='checkpoints/archive/so101_box_state/2026-10-27_03-19-50_so101-box-workspace-F-refine/model_5381.pt'
 uv run --locked python -m isaaclab_tutorial.tasks.place_box.workspace_audit --checkpoint "$CKPT" --policy teacher --population stage --stage F --seeds 43 45 --batch-size 1024 --output-dir logs/workspace_5381_stage_screen_20261027
 ```
 

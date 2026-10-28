@@ -1,0 +1,91 @@
+{
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 0,
+  "selected": "baseline",
+  "candidates": {
+    "control": {
+      "nominal": {
+        "episodes": 256,
+        "baseline_successes": 229,
+        "candidate_successes": 168,
+        "candidate_only_successes": 18,
+        "baseline_only_successes": 79,
+        "both_successes": 150,
+        "both_failures": 9,
+        "gain_pp": -23.828125,
+        "gain_paired_bootstrap_95_pp": [
+          -30.859375,
+          -16.796875
+        ]
+      },
+      "wide": {
+        "episodes": 256,
+        "baseline_successes": 80,
+        "candidate_successes": 61,
+        "candidate_only_successes": 39,
+        "baseline_only_successes": 58,
+        "both_successes": 22,
+        "both_failures": 137,
+        "gain_pp": -7.421875,
+        "gain_paired_bootstrap_95_pp": [
+          -14.84375,
+          0.0
+        ]
+      },
+      "qualifies": false
+    },
+    "data-first": {
+      "nominal": {
+        "episodes": 256,
+        "baseline_successes": 229,
+        "candidate_successes": 158,
+        "candidate_only_successes": 18,
+        "baseline_only_successes": 89,
+        "both_successes": 140,
+        "both_failures": 9,
+        "gain_pp": -27.734375,
+        "gain_paired_bootstrap_95_pp": [
+          -34.765625,
+          -20.3125
+        ]
+      },
+      "wide": {
+        "episodes": 256,
+        "baseline_successes": 80,
+        "candidate_successes": 73,
+        "candidate_only_successes": 51,
+        "baseline_only_successes": 58,
+        "both_successes": 22,
+        "both_failures": 125,
+        "gain_pp": -2.734375,
+        "gain_paired_bootstrap_95_pp": [
+          -10.546875,
+          5.46875
+        ]
+      },
+      "qualifies": false
+    }
+  },
+  "interpretation": "Experimental improvement selection, not deployment acceptance. Intervals are descriptive paired bootstrap intervals; no automatic training extension.",
+  "checkpoint_sha256": {
+    "baseline": "3f5ad0ea7dabe634c40b1c0c82d4eee8a88b3ff8624aa88ce1801686a0c817b6",
+    "control": "749f5c4ca0c815410b12fbcb39b8a2db609a3dd66f4fdb129c2d7c33dc44b95e",
+    "data-first": "03a9f0b34b03348f9a0c72c98ce01a56f3b383609d8d5e6fbae8177c30b3c2be"
+  },
+  "sources": {
+    "baseline_nominal": "logs/camera_800_gate_20261027_170933/comparison_cli/2200_nominal",
+    "baseline_wide": "logs/camera_800_gate_20261027_170933/comparison_cli/2200_stage",
+    "candidates": [
+      [
+        "control",
+        "logs/camera_20261028_111754_control_200_nominal",
+        "logs/camera_20261028_111754_control_200_wide"
+      ],
+      [
+        "data-first",
+        "logs/camera_20261028_111754_data_200_nominal",
+        "logs/camera_20261028_111754_data_200_wide"
+      ]
+    ]
+  }
+}
