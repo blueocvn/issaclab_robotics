@@ -1,6 +1,6 @@
 # SO-101 Arm: Imitation Learning with LeLab + LeRobot
 
-This repo holds the files for teaching an **SO-101** robot arm to *"pick up box and put to white zone"* with **imitation learning**. It covers calibration, a trained ACT policy, and the scripts for training, rollout and DAgger / HIL (human-in-the-loop) data collection.
+This repo holds the files for teaching an **SO-101** robot arm to *"pick up box and put to white zone"* with **imitation learning**. It covers calibration, a trained ACT policy, and the scripts for training, rollout and DAgger / HIL (human-in-the-loop) data collection. To record your own data and train, start with [Instruction.md](Instruction.md).
 
 ## 1. Frameworks
 
@@ -52,14 +52,15 @@ LeLab handles the hardware side and data collection. The scripts in this repo co
 | File | Description |
 |---|---|
 | [README.md](README.md) | This document. |
+| [Instruction.md](Instruction.md) | Step-by-step guide to create a dataset and train a model, with the LeLab GUI and with the terminal. |
+| [create_dataset.sh](create_dataset.sh) | Records a new teleoperated dataset with `lerobot-record` (30 episodes of 30 s, reset 10 s, 30 fps, pushed to the Hub). Edit `--dataset.repo_id` and `--dataset.root` before running. |
 | [train.sh](train.sh) | Fine-tunes an ACT checkpoint on the HIL round-2 dataset (`spectrecipher/HIL_fine_tune_datasetlerobot_r2`) for 10k steps with batch size 8. It saves a checkpoint every 1000 steps, with W&B and Hub push turned off. |
 | [rollout.sh](rollout.sh) | Runs a trained policy on the follower arm (`--strategy.type=base`) for 30 s, with no teleop and no recording. Use it to evaluate a checkpoint. |
 | [rollout_dagger.sh](rollout_dagger.sh) | First DAgger run. It starts from the Hub policy `spectrecipher/so101-act-demo-v2`, records corrections to `spectrecipher/rollout_so101_dagger`, and pushes to the Hub. Duration is 300 s. |
-| [rollout_dagger_hil_r1.sh](rollout_dagger_hil.sh) | HIL round 1. It uses the 10k-step ACT checkpoint and records to `rollout_hil_so101_act_10k` for 60 s. It deletes an empty dataset folder left by a failed run and resumes the dataset if it already has episodes. |
+| [rollout_dagger_hil_r1.sh](rollout_dagger_hil_r1.sh) | HIL round 1. It uses the 10k-step ACT checkpoint and records to `rollout_hil_so101_act_10k` for 60 s. It deletes an empty dataset folder left by a failed run and resumes the dataset if it already has episodes. |
 | [rollout_dagger_hil_r2.sh](rollout_dagger_hil_r2.sh) | HIL round 2. It uses the checkpoint fine-tuned on round-1 data and records to `rollout_hil_so101_act_hil_r2`. It has the same cleanup and resume logic. |
 | [so101_arm_robot_config.json](so101_arm_robot_config.json) | LeLab robot config: leader and follower ports, calibration files, and the two cameras (`Twist` rotated 180°, `top`). |
 | [so101_arm.json](so101_arm.json) | Calibration of the **follower** arm: motor IDs 1-6, homing offsets and range min/max for each joint. |
-| [so101_leader_latest.json](so101_leader_latest.json) | Calibration of the **leader** arm, in the same format. |
 | [pretrained_model/](pretrained_model/) | The trained ACT policy in LeRobot format. |
 | [.gitignore](.gitignore) | Ignores `.venv/`, caches and build artifacts. |
 | `.venv/` | Local Python environment with LeRobot installed (not tracked by git). |
@@ -105,5 +106,6 @@ Then point `--policy.path` in the next rollout script at `<output_dir>/checkpoin
 
 - **Ports** (`/dev/ttyACM*` or `/dev/serial/by-id/...`) and **camera indices** (0 and 2) depend on your machine. The `by-id` paths stay stable across reboots, so prefer them. Check them before each run.
 - **Calibration:** the scripts pass `--robot.calibration_dir=/data/lerobot` and `--robot.id=so101_arm_latest`. LeRobot looks for `<id>.json` in that folder. Re-calibrate if you change motors or arms, and re-collect data if the calibration changes a lot.
+- **Calibration files:** the scripts expect `so101_arm_latest.json` (follower) and `so101_leader_latest.json` (leader) in `/data/lerobot`, but neither is in the folder now (only `so101_arm.json` is). Copy them back from the LeLab/LeRobot calibration cache (`~/.cache/huggingface/lerobot/calibration`) or re-calibrate.
 - **Absolute paths** inside the scripts (`/home/apc/...`) point to the author's machine. Update them to match your setup.
 - The camera names (`Twist`, `top`) must match the policy's input feature names. Do not rename them without retraining.
