@@ -224,3 +224,40 @@ Notes:
 | `Output directory already exists` | Use a new `--output_dir`, or `--resume=true` to continue the run. |
 | Policy shakes or does nothing | Check that camera names and positions match the training data. Record more varied demos. |
 | Push to Hub fails | Run `huggingface-cli login` and check that the repo id uses your username. |
+
+---
+
+## Reference: samples from the Hub
+
+Use these as working examples. The full list is in the README, section 5.
+
+- Models: <https://huggingface.co/spectrecipher/models>
+- Datasets: <https://huggingface.co/spectrecipher/datasets>
+
+**Sample dataset to copy the format from or train on:** [spectrecipher/dataset_new_calib_20261028_085359](https://huggingface.co/datasets/spectrecipher/dataset_new_calib_20261028_085359) (61 episodes). It is the dataset behind the 10k-step base model in `pretrained_model/`. You can train directly on it without recording:
+```bash
+.venv/bin/lerobot-train \
+  --policy.type=act \
+  --dataset.repo_id=spectrecipher/dataset_new_calib_20261028_085359 \
+  --steps=10000 --batch_size=8 --save_freq=1000 \
+  --policy.push_to_hub=false --wandb.enable=false \
+  --job_name=act_sample_10k \
+  --output_dir=/data/lerobot/outputs/act_sample_10k
+```
+Training on it works only if your cameras are named `Twist` and `top`, and the arm calibration is compatible.
+
+**Sample trained policies:** run one without training anything by pointing `--policy.path` at a Hub id, as [rollout_dagger.sh](rollout_dagger.sh) does:
+```
+--policy.path=spectrecipher/so101-act-demo-v2
+--policy.path=spectrecipher/act_hil_finetune_10k
+```
+
+**What I did before (the history of this project):**
+
+| Round | Data | Result |
+|---|---|---|
+| 1. Demos | `demo_datasetDemo_20261026_190035` (81 ep), then `dataset_new_calib_20261028_085359` (61 ep) after re-calibration | ACT models `so101-act-demo-*` and the 10k base model |
+| 2. HIL round 1 | `rollout_hil_so101_act_10k` (22 ep) | `HIL_fine_tune_datasetlerobot` (83 ep) and `act_hil_finetune_10k` |
+| 3. HIL round 2 | `rollout_hil_so101_act_hil_r2` (21 ep) | `HIL_fine_tune_datasetlerobot_r2` (104 ep), trained with `train.sh` |
+
+Dataset naming convention used so far: `demo_*` or `dataset_*` for teleoperated demos, `rollout_hil_*` for DAgger/HIL corrections, and `HIL_fine_tune_*` for the combined set used to fine-tune. Reuse it so the repos stay easy to tell apart.

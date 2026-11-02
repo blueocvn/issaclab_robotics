@@ -102,7 +102,53 @@ bash train.sh
 ```
 Then point `--policy.path` in the next rollout script at `<output_dir>/checkpoints/last/pretrained_model`.
 
-## 5. Notes
+## 5. Reference models and datasets (Hugging Face Hub)
+
+Everything below was already created and pushed to the Hub. Use it as a sample to reproduce, or as a starting point. Models: <https://huggingface.co/spectrecipher/models>. Datasets: <https://huggingface.co/spectrecipher/datasets>.
+
+### Datasets
+
+| Dataset | Episodes | Role |
+|---|---|---|
+| [spectrecipher/demo_datasetDemo_20261026_190035](https://huggingface.co/datasets/spectrecipher/demo_datasetDemo_20261026_190035) | 81 | First teleoperated demo dataset, recorded before re-calibration (likely used for the `so101-act-demo-*` models). |
+| [spectrecipher/dataset_new_calib_20261028_085359](https://huggingface.co/datasets/spectrecipher/dataset_new_calib_20261028_085359) | 61 | Demos recorded after re-calibration. The 10k-step base model in [pretrained_model/](pretrained_model/) was trained on it (see `train_config.json`). |
+| [spectrecipher/rollout_hil_so101_act_10k](https://huggingface.co/datasets/spectrecipher/rollout_hil_so101_act_10k) | 22 | HIL round 1 corrections, recorded by [rollout_dagger_hil_r1.sh](rollout_dagger_hil_r1.sh). |
+| [spectrecipher/HIL_fine_tune_datasetlerobot](https://huggingface.co/datasets/spectrecipher/HIL_fine_tune_datasetlerobot) | 83 | Dataset for the first fine-tune (likely the HIL data merged with demos). |
+| [spectrecipher/rollout_hil_so101_act_hil_r2](https://huggingface.co/datasets/spectrecipher/rollout_hil_so101_act_hil_r2) | 21 | HIL round 2 corrections, recorded by [rollout_dagger_hil_r2.sh](rollout_dagger_hil_r2.sh). |
+| [spectrecipher/HIL_fine_tune_datasetlerobot_r2](https://huggingface.co/datasets/spectrecipher/HIL_fine_tune_datasetlerobot_r2) | 104 | Dataset for the second fine-tune, used by [train.sh](train.sh). 104 = 83 + 21, so it is probably the first fine-tune set plus the round-2 corrections. |
+
+### Models (ACT, SO-101)
+
+| Model | Used by | Notes |
+|---|---|---|
+| [spectrecipher/so101-act-demo-v1](https://huggingface.co/spectrecipher/so101-act-demo-v1) | | First trained policy. |
+| [spectrecipher/so101-act-demo-v2](https://huggingface.co/spectrecipher/so101-act-demo-v2) | [rollout_dagger.sh](rollout_dagger.sh) | Starting policy for the first DAgger run. |
+| [spectrecipher/so101-act-demo-20k](https://huggingface.co/spectrecipher/so101-act-demo-20k) | | 20k-step run (the name suggests 20k steps). |
+| [spectrecipher/act_hil_finetune_10k](https://huggingface.co/spectrecipher/act_hil_finetune_10k) | [rollout_dagger_hil_r2.sh](rollout_dagger_hil_r2.sh) | Fine-tuned for 10k steps on HIL data. It is the policy used to collect round-2 corrections. |
+
+The Hub pages show no descriptions, so the "Role" and "Notes" columns come from the script names and the repo names. Check each repo's model card or dataset card before relying on them. The models are about 51.7 MB on the Hub.
+
+### Lineage
+
+```
+demo_datasetDemo_20261026  ──▶ so101-act-demo-v1 / v2 / 20k
+dataset_new_calib_2026102* ──▶ base ACT 10k  (pretrained_model/)
+                                   │  rollout_dagger_hil_r1.sh
+                                   ▼
+                      rollout_hil_so101_act_10k (22 ep)
+                                   │  merged with demos -> HIL_fine_tune_datasetlerobot (83 ep), fine-tune
+                                   ▼
+                          act_hil_finetune_10k
+                                   │  rollout_dagger_hil_r2.sh
+                                   ▼
+                      rollout_hil_so101_act_hil_r2 (21 ep)
+                                   │  + previous set -> HIL_fine_tune_datasetlerobot_r2 (104 ep)
+                                   ▼  train.sh
+                    act_hil_finetune_r2b_10k  (latest)
+```
+The arrows from the demo datasets to the `so101-act-demo-*` models, and the merge steps, are inferred and not confirmed.
+
+## 6. Notes
 
 - **Ports** (`/dev/ttyACM*` or `/dev/serial/by-id/...`) and **camera indices** (0 and 2) depend on your machine. The `by-id` paths stay stable across reboots, so prefer them. Check them before each run.
 - **Calibration:** the scripts pass `--robot.calibration_dir=/data/lerobot` and `--robot.id=so101_arm_latest`. LeRobot looks for `<id>.json` in that folder. Re-calibrate if you change motors or arms, and re-collect data if the calibration changes a lot.
