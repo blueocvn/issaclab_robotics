@@ -1,0 +1,18 @@
+lerobot-rollout \
+    --strategy.type=dagger \
+    --policy.path=spectrecipher/so101-act-demo-v2 \
+    --robot.type=so101_follower \
+    --robot.port=/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C82107630-if00 \
+    --robot.id=so101_arm_latest \
+    --robot.calibration_dir=/data/lerobot \
+    --robot.cameras="{ twist: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30}, top: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}" \
+    --teleop.type=so101_leader \
+    --teleop.port=/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C82110826-if00 \
+    --teleop.id=so101_leader_latest \
+    --teleop.calibration_dir=/data/lerobot \
+    --dataset.repo_id=spectrecipher/rollout_so101_dagger \
+    --dataset.root=/data/lerobot/datasets/rollout_so101_dagger \
+    --dataset.single_task="pick up box and put to white zone" \
+    --dataset.push_to_hub=true \
+    --task="pick up box and put to white zone" \
+    --duration=300
